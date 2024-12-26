@@ -162,9 +162,9 @@ async function checkOut() {
         let totalOrder = total + deliveryCharge;
 
         // Format the message with items in the cart
-        let itemsMessage = "Items:\n";
+        let itemsMessage = "Items:\n"; // Start with "Items:" heading
         cart.forEach((product, index) => {
-            itemsMessage += `${index + 1}) ${product.name} | Quantity x${product.quantity}\n`;
+            itemsMessage += `${index + 1}) ${product.name} | Quantity x${product.quantity}\n`; // Number each item
         });
 
         // Create the final message
@@ -176,7 +176,6 @@ async function checkOut() {
         const telegramApiUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
 
         try {
-            // Sending the message to Telegram
             let response = await fetch(telegramApiUrl, {
                 method: "POST",
                 headers: {
@@ -190,18 +189,6 @@ async function checkOut() {
 
             if (response.ok) {
                 alert("Produsul a fost cumpărat!"); // Notify user of successful checkout
-                
-                // Now send the totalOrder to your server
-                const currentUrl = window.location.href;
-                const refCode = getReferralCode(currentUrl); // Assuming this function is defined above
-                const purchaseUrl = `https://www.temkatut.com/purchase?code=${refCode ? refCode : ''}&total_order=${totalOrder.toFixed(2)}`;
-
-                // Make a GET request to the server with the purchase URL
-                const serverResponse = await fetch(purchaseUrl, { method: 'GET' });
-
-                if (!serverResponse.ok) {
-                    console.error("Failed to send total order to server:", serverResponse.status, serverResponse.statusText);
-                }
             } else {
                 console.error("Failed to send message:", response.status, response.statusText);
             }
@@ -212,12 +199,3 @@ async function checkOut() {
         alert("Your cart is empty!"); // Notify user if cart is empty
     }
 }
-
-// Function to get the referral code from the URL (assumed to be defined earlier)
-function getReferralCode(url) {
-    const urlParams = new URLSearchParams(new URL(url).search);
-    return urlParams.get('code'); // Extracts the 'code' parameter
-}
-
-
-
