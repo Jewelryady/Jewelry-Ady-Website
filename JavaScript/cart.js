@@ -217,7 +217,7 @@ async function sendPurchaseData(totalOrder) {
     const refCode = getReferralCode(currentUrl);
 
     // Construct the purchase URL
-    const purchaseUrl = `https://flask-test-53ar.onrender.com/purchase?code=${refCode ? refCode : ''}&income=${totalOrder}`;
+    const purchaseUrl = `https://www.temkatut.com/purchase?code=${refCode ? refCode : ''}&income=${totalOrder}`;
 
     try {
         // Make a GET request to the server
