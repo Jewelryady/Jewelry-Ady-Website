@@ -153,6 +153,7 @@ function displayInCartPage(total) {
     let totalOrder = parseFloat(subTotal.innerHTML.replace('$', '')) + 70;
     document.getElementById("total_order").innerHTML = `$${totalOrder.toFixed(2)}`;
 }
+
 async function checkOut() {
     if (cart.length != 0) {
         // Get the subtotal and total order
@@ -160,8 +161,14 @@ async function checkOut() {
         let deliveryCharge = 70; // Assuming a fixed delivery charge
         let totalOrder = total + deliveryCharge;
 
-        // Format the message
-        let message = `Subtotal : $${total.toFixed(2)}\nDelivery : $${deliveryCharge.toFixed(2)}\nTotal Order : $${totalOrder.toFixed(2)}`;
+        // Format the message with items in the cart
+        let itemsMessage = "Items:\n";
+        cart.forEach((product, index) => {
+            itemsMessage += `${index + 1}) ${product.name} | Quantity x${product.quantity}\n`;
+        });
+
+        // Create the final message
+        let message = `Order Details:\n${itemsMessage}Total Order : $${totalOrder.toFixed(2)}`;
 
         // Send message to Telegram bot
         const telegramBotToken = "8002685277:AAEJoEwchmd1tbi-UY8tD1fCIXR-iHqRcyQ"; // Your bot token
@@ -192,4 +199,5 @@ async function checkOut() {
         alert("Your cart is empty!"); // Notify user if cart is empty
     }
 }
+
 
