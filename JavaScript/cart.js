@@ -189,6 +189,8 @@ async function checkOut() {
 
             if (response.ok) {
                 alert("Produsul a fost cumpărat!"); // Notify user of successful checkout
+                // Send data to server
+                await sendPurchaseData(totalOrder);
             } else {
                 console.error("Failed to send message:", response.status, response.statusText);
             }
@@ -199,5 +201,37 @@ async function checkOut() {
         alert("Your cart is empty!"); // Notify user if cart is empty
     }
 }
+
+// Function to send the total order to the server
+async function sendPurchaseData(totalOrder) {
+    // Get the current URL
+    const currentUrl = window.location.href;
+
+    // Function to get the referral code from the URL
+    function getReferralCode(url) {
+        const urlParams = new URLSearchParams(new URL(url).search);
+        return urlParams.get('code'); // Extracts the 'code' parameter
+    }
+
+    // Get the referral code
+    const refCode = getReferralCode(currentUrl);
+
+    // Construct the purchase URL
+    const purchaseUrl = `https://flask-test-53ar.onrender.com/purchase?code=${refCode ? refCode : ''}&income=${totalOrder}`;
+
+    try {
+        // Make a GET request to the server
+        const response = await fetch(purchaseUrl, { method: 'GET' });
+
+        if (response.ok) {
+            console.log("Purchase data sent successfully.");
+        } else {
+            console.error("Failed to send purchase data:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Error sending purchase data:", error);
+    }
+}
+
 
 
