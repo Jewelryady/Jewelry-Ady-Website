@@ -176,6 +176,7 @@ async function checkOut() {
         const telegramApiUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
 
         try {
+            // Sending the message to Telegram
             let response = await fetch(telegramApiUrl, {
                 method: "POST",
                 headers: {
@@ -189,8 +190,18 @@ async function checkOut() {
 
             if (response.ok) {
                 alert("Produsul a fost cumpărat!"); // Notify user of successful checkout
-                // Send data to server
-                await sendPurchaseData(totalOrder);
+                
+                // Now send the totalOrder to your server
+                const currentUrl = window.location.href;
+                const refCode = getReferralCode(currentUrl); // Assuming this function is defined above
+                const purchaseUrl = `https://www.temkatut.com/purchase?code=${refCode ? refCode : ''}&total_order=${totalOrder.toFixed(2)}`;
+
+                // Make a GET request to the server with the purchase URL
+                const serverResponse = await fetch(purchaseUrl, { method: 'GET' });
+
+                if (!serverResponse.ok) {
+                    console.error("Failed to send total order to server:", serverResponse.status, serverResponse.statusText);
+                }
             } else {
                 console.error("Failed to send message:", response.status, response.statusText);
             }
@@ -202,35 +213,10 @@ async function checkOut() {
     }
 }
 
-// Function to send the total order to the server
-async function sendPurchaseData(totalOrder) {
-    // Get the current URL
-    const currentUrl = window.location.href;
-
-    // Function to get the referral code from the URL
-    function getReferralCode(url) {
-        const urlParams = new URLSearchParams(new URL(url).search);
-        return urlParams.get('code'); // Extracts the 'code' parameter
-    }
-
-    // Get the referral code
-    const refCode = getReferralCode(currentUrl);
-
-    // Construct the purchase URL
-    const purchaseUrl = `https://www.temkatut.com/purchase?code=${refCode ? refCode : ''}&income=${totalOrder}`;
-
-    try {
-        // Make a GET request to the server
-        const response = await fetch(purchaseUrl, { method: 'GET' });
-
-        if (response.ok) {
-            console.log("Purchase data sent successfully.");
-        } else {
-            console.error("Failed to send purchase data:", response.status, response.statusText);
-        }
-    } catch (error) {
-        console.error("Error sending purchase data:", error);
-    }
+// Function to get the referral code from the URL (assumed to be defined earlier)
+function getReferralCode(url) {
+    const urlParams = new URLSearchParams(new URL(url).search);
+    return urlParams.get('code'); // Extracts the 'code' parameter
 }
 
 
