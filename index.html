@@ -190,13 +190,14 @@
             justify-content: center;
             align-items: center;
         }
-
+        
         nav ul li {
-            padding: 12px;
-            margin: 4px;
+    
+            padding: 4px;
+            margin: 2px;
             position: relative;
         }
-
+        
         nav ul li a {
             font-size: 18px;
             color: #000000;
@@ -831,12 +832,20 @@
     </style>
 </head>
 
-
-
 <body>
     <header class="container" id="header">
         <div class="header_top">
-            <img src="images/logo_block.jpg" alt="page logo" id="logo" onclick="window.location.href='index.html'">
+            <img src="images/logo_block.png" alt="page logo" id="logo" onclick="window.location.href='index.html'">
+
+            <nav id="navbar">
+                <menu>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </menu>
+            </nav>
 
             <div class="header_actions">
                 <div id="display_login">
@@ -854,15 +863,7 @@
                 </a>
             </div>
         </div>
-        <nav id="navbar">
-            <menu>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Shop</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </menu>
-        </nav>
+       
     </header>
     <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
     <!-- slider -->
