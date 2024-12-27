@@ -198,20 +198,27 @@ function checkOut() {
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(orderDetails)}`;
 
     fetch(telegramApiUrl)
-        .then(response => {
-            if (response.ok) {
-                alert("Order placed successfully!");
-                cart = []; // Golește coșul
-                saveCart();
-                checkCart(); // Actualizează interfața
-            } else {
-                alert("Failed to send order details. Please try again.");
-            }
-        })
-        .catch(error => {
-            console.error("Error sending order details:", error);
-            alert("An error occurred while sending the order. Please try again.");
-        });
+    .then(response => {
+        if (response.ok) {
+            alert("Order placed successfully!");
+            cart = []; // Golește coșul
+            saveCart();
+            checkCart(); // Actualizează interfața
+            // Redirecționează către pagina de succes
+            window.location.href = "paymenSuccesful.html";
+        } else {
+            alert("Failed to send order details. Redirecting to payment failed page.");
+            // Redirecționează către pagina de eșec
+            window.location.href = "paymenFailed.html";
+        }
+    })
+    .catch(error => {
+        console.error("Error sending order details:", error);
+        alert("An error occurred while sending the order. Redirecting to payment failed page.");
+        // Redirecționează către pagina de eșec
+        window.location.href = "paymenFailed.html";
+    });
+
 }
 
 // function checkOut(){
