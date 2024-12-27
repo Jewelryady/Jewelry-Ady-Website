@@ -153,15 +153,76 @@ function displayInCartPage(total){
     let totalOrder= parseFloat(subTotal.innerHTML.replace('$', '')) + 70;
     document.getElementById("total_order").innerHTML = `$${totalOrder.toFixed(2)}`;
 }
-function checkOut(){
-    let email = localStorage.getItem('email');
-    let password = localStorage.getItem('password');
-    if (cart.length != 0) {
-        if(email && password){
-          window.location.href = "checkout.html";
+
+function checkOut() {
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before checkout.");
+        return;
+    }
+
+    // Preluarea informațiilor de livrare
+    let shippingInputs = document.querySelectorAll(".Shiping_Info input");
+    let shippingInfo = {
+        Nume: shippingInputs[0].value,
+        Prenume: shippingInputs[1].value,
+        Locatia: shippingInputs[2].value,
+        Telefon: shippingInputs[3].value,
+        Telegram: shippingInputs[4].value,
+        CodulPostal: shippingInputs[5].value
+    };
+
+    // Validare informații utilizator
+    for (let key in shippingInfo) {
+        if (!shippingInfo[key]) {
+            alert(`Please fill in the ${key} field.`);
+            return;
         }
-        else {
-          window.location.href = "login.html";
-        }
-     }
+    }
+
+    // Crearea mesajului de comandă
+    let orderDetails = "Order Details:\nItems:\n";
+    cart.forEach((product, index) => {
+        orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity}\n`;
+    });
+    let totalOrderPrice = `$${updateTotalPrice().toFixed(2)}`;
+    orderDetails += `Total Order: ${totalOrderPrice}\n\n`;
+    orderDetails += `Nume: ${shippingInfo.Nume} ${shippingInfo.Prenume}\n`;
+    orderDetails += `Locatia: ${shippingInfo.Locatia}\n`;
+    orderDetails += `Telefon: ${shippingInfo.Telefon}\n`;
+    orderDetails += `Telegram: ${shippingInfo.Telegram}\n`;
+    orderDetails += `Codul Postal: ${shippingInfo.CodulPostal}`;
+
+    // Trimiterea mesajului prin Telegram API
+    const botToken = "8002685277:AAEJoEwchmd1tbi-UY8tD1fCIXR-iHqRcyQ";
+    const chatId = "6042786969";
+    const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(orderDetails)}`;
+
+    fetch(telegramApiUrl)
+        .then(response => {
+            if (response.ok) {
+                alert("Order placed successfully!");
+                cart = []; // Golește coșul
+                saveCart();
+                checkCart(); // Actualizează interfața
+            } else {
+                alert("Failed to send order details. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error sending order details:", error);
+            alert("An error occurred while sending the order. Please try again.");
+        });
 }
+
+// function checkOut(){
+//     let email = localStorage.getItem('email');
+//     let password = localStorage.getItem('password');
+//     if (cart.length != 0) {
+//         if(email && password){
+//           window.location.href = "checkout.html";
+//         }
+//         else {
+//           window.location.href = "login.html";
+//         }
+//      }
+// }
