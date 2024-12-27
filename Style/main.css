@@ -435,16 +435,6 @@ body.showCart .cart-section{
     justify-content: space-between;
     gap: 20px;
 }
-.footer-top .footer-logo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.footer-top .footer-logo p{
-    font-size: 16px;
-    color: #868686;
-    margin: 12px 0;
-} 
 .footer-top .footer-list{
     display: flex;
     justify-content: space-between;
