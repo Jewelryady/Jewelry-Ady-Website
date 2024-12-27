@@ -38,6 +38,15 @@
               </div>
               <img src="images/logo_block.jpg" alt="page logo" id="logo">
               <div class="header_actions">
+                <div id="display_login">
+                  <span id="user_name">Amira</span>
+                  <a href="#" id="logout" title="Logout" onclick="logout();">
+                   <ion-icon name="log-out-outline"></ion-icon>
+                  </a>
+                </div>
+                <a href="login.html" title="Login" id="login_btn">
+                 <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
                 <a href="#" class="icon-cart">
                   <ion-icon name="cart-outline"></ion-icon>
                   <span id="cart-counter">0</span>
@@ -67,6 +76,15 @@
                     </div>
                  </div>
                  <div class="right_side_cart">
+                    <div class="Promotional_code">
+                        <h2>
+                            Do you have a Promotional Code?
+                        </h2>
+                        <div class="apply_code">
+                            <input type="text" id="code" placeholder="Promo code">
+                            <button >Done</button>
+                        </div>
+                    </div>
                     <div class="summary">
                         <h2>Order Summary</h2>
                         <div class="summary_price">
@@ -83,7 +101,7 @@
                                 <span id="total_order"></span>
                             </div>
                         </div>
-                        <button class="checkout" onclick="checkOut();">Buy</button>
+                        <button class="checkout" onclick="checkOut();">Check Out</button>
                     </div>
                  </div>
              </div>
@@ -114,6 +132,7 @@
         <div class="footer-top">
            <div class="footer-logo">
                <img src="images/logo_block.jpg" alt="logo" width="140">
+               <p>The customer is at the heart of our unique business model, which includes design.</p>
            </div>
            <div class="footer-list">
                <div class="list">
@@ -139,7 +158,8 @@
         </div>
        <div class="footer-bottom">
            <p class="footer-company-name">
-               © 2024 All right reserved
+               © 2024 All right reserved.Made with <ion-icon name="heart"></ion-icon>
+                by <a href="https://www.upwork.com/freelancers/~01a11a163a8ee98a35" target="_blank" id="author">Amira Alaa</a>
            </p>
        </div>
     </footer>

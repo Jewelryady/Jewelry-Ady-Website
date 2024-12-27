@@ -10,7 +10,7 @@
         <meta name="author" content="SA_FashionStyle">
         <link rel="icon" href="images/logowhite.jpg" type="image/x-icon">
         <!-- css -->
-        <link rel="stylesheet" href="Style/products.css">
+        <link rel="stylesheet" href="Style/login.css">
         <link rel="stylesheet" href="Style/main.css">
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,43 +62,32 @@
             </menu>
         </nav>
     </header>
-    <main>
-        <div class="product-header">
-               <div class="menu-icon" onclick="toggleSidebar()">
-                  <ion-icon name="grid-outline"></ion-icon>
-                </div>
-                <div class="product-header-right">
-                    <div class="sortBy">
-                        <span>Sort By :</span>
-                        <select id="sort">
-                            <option value="Alphabetically">Alphabetically, Z-A</option>
-                            <option value="Featured">Featured</option>
-                            <option value="Bestselling">Best selling</option>
-                        </select>
-                    </div>
-                    <span id="productCount"></span>
-                </div>
+    <section id="login">
+       <div class="container">
+        <h1 class="section-header">Login</h1>
+        <div id="form">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Email" id="email" onblur="validationEmail();">
+            <span id="invalidEmail" class="alert">Email is not a valid</span>
+            <label for="password">Password</label>
+            <input type="password" name="Password" placeholder="Password" id="password" onblur="validPassword();">
+            <span id="invalidPass" class="alert">Password must be 8 chars at least</span>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" 
+            placeholder="Confirm Password" 
+            id="confirmPassword" 
+            onblur="validConfirmPassword();">
+            <span id="invalidConfirmPass" class="alert">Password Not Match</span>
+            <div class="submit">
+                <button id="btn-login">Sign In</button> 
+                <a href="signup.html" id="signup">New customer? Sign up for an account</a>
+            </div>  
         </div>
-        <div class="container">
-            <div class="aside">
-                <h2>Categories</h2>
-                <div class="shop_categories">
-                    <a href="#" class="categories_link" productCategory="Accessories" >Accessories</a>
-                    <a href="#" class="categories_link" productCategory="Bags">Bags</a>
-                    <a href="#" class="categories_link" productCategory="Jewelry">Jewelry</a>
-                    <a href="#" class="categories_link" productCategory="Woman">Woman</a>
-                    <a href="#" class="categories_link" productCategory="Man">Man</a>
-                    <a href="#" class="categories_link" productCategory="Bedroom">Bedroom</a>
-                </div>
-            </div>
-            
-            <div class="products">
-               <div class="content">
-                <!-- add products in js -->
-               </div>
-            </div>
-        </div>
-    </main>
+       </div>
+        
+    </section>
+    <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
+     <!-- cart -->
     <div class="cart-section">
         <div class="cart-header">
             <h2>SHOPPING CART</h2>
@@ -107,7 +96,7 @@
             </div>
         </div>
         <div class="cart_products">
-            <!-- add cart products in js -->
+              <!-- add cart products in js -->
         </div>
         <div class="cart_total">
             <h3>Total:</h3>
@@ -118,7 +107,7 @@
             <button class="checkout" onclick="checkOut();">Check Out</button>
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer black-footer">
         <div class="footer-top">
            <div class="footer-logo">
                <img src="images/logo_block.jpg" alt="logo" width="140">
@@ -153,9 +142,8 @@
            </p>
        </div>
     </footer>
-    <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
     <script src="JavaScript/main.js"></script>
-    <script src="JavaScript/cart.js"></script>
-    <script src="JavaScript/getData.js"></script>
+   <script src="JavaScript/validation.js"></script>
+   <script src="JavaScript/cart.js"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@ function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function addToCart(productId, inputQuantity = 1) {
+function addToCart(productId,inputQuantity = 1) {
     let product = products.find(p => p.id == productId);
     if (product) {
         let existingProduct = cart.find(p => p.id == productId);
@@ -84,7 +84,7 @@ function removeFromCart(index) {
     saveCart();
     checkCart();
 }
-function increaseQuantity(index) {
+function increaseQuantity(index){
     cart[index].quantity += 1;
     saveCart();
     checkCart();
@@ -105,12 +105,12 @@ function updateTotalPrice() {
         return sum + (price * product.quantity);
     }, 0);
     totalPrice.innerHTML = `$${total.toFixed(2)}`;
-    localStorage.setItem("total price", total + 70);
+    localStorage.setItem("total price" , total + 70);
     return total;
 }
 
 // Initial call to display the cart products on page load
-function checkCart() {
+function checkCart(){
     if (cart.length == 0) {
         cartTextElements.forEach(element => {
             element.classList.add("empty");
@@ -119,7 +119,7 @@ function checkCart() {
         cartCounter.innerHTML = 0;
         btnControl.style.display = "none";
         cartTotal.style.display = "none";
-        checkCartPage(0, 0);
+        checkCartPage(0,0);
     } else {
         cartTextElements.forEach(element => {
             element.classList.remove("empty");
@@ -130,72 +130,38 @@ function checkCart() {
         btnControl.style.display = "flex";
         cartTotal.style.display = "flex";
         let total = updateTotalPrice();
-        checkCartPage(total, totalQuantity);
+        checkCartPage(total,totalQuantity);       
     }
 }
 // Add cart page not cart section
-function checkCartPage(total, totalQuantity) {
+function checkCartPage(total,totalQuantity){
     if (window.location.pathname.includes("cartPage.html")) {
         if (cart.length == 0) {
             cartItemsCount.innerHTML = `(0 items)`;
             document.getElementById("Subtotal").innerHTML = `$0.00`;
             document.getElementById("total_order").innerHTML = `$0.00`;
         }
-        else {
+        else{
             cartItemsCount.innerHTML = `(${totalQuantity} items)`;
             displayInCartPage(total);
         }
     }
 }
-function displayInCartPage(total) {
+function displayInCartPage(total){
     let subTotal = document.getElementById("Subtotal");
     subTotal.innerHTML = `$${total.toFixed(2)}`;
-    let totalOrder = parseFloat(subTotal.innerHTML.replace('$', '')) + 70;
+    let totalOrder= parseFloat(subTotal.innerHTML.replace('$', '')) + 70;
     document.getElementById("total_order").innerHTML = `$${totalOrder.toFixed(2)}`;
 }
-
-async function checkOut() {
+function checkOut(){
+    let email = localStorage.getItem('email');
+    let password = localStorage.getItem('password');
     if (cart.length != 0) {
-        // Get the subtotal and total order
-        let total = updateTotalPrice();
-        let deliveryCharge = 70; // Assuming a fixed delivery charge
-        let totalOrder = total + deliveryCharge;
-
-        // Format the message with items in the cart
-        let itemsMessage = "Items:\n"; // Start with "Items:" heading
-        cart.forEach((product, index) => {
-            itemsMessage += `${index + 1}) ${product.name} | Quantity x${product.quantity}\n`; // Number each item
-        });
-
-        // Create the final message
-        let message = `Order Details:\n${itemsMessage}Total Order : $${totalOrder.toFixed(2)}`;
-
-        // Send message to Telegram bot
-        const telegramBotToken = "8002685277:AAEJoEwchmd1tbi-UY8tD1fCIXR-iHqRcyQ"; // Your bot token
-        const chatId = "6042786969"; // Your chat ID
-        const telegramApiUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
-
-        try {
-            let response = await fetch(telegramApiUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    chat_id: chatId,
-                    text: message,
-                }),
-            });
-
-            if (response.ok) {
-                alert("Produsul a fost cumpărat!"); // Notify user of successful checkout
-            } else {
-                console.error("Failed to send message:", response.status, response.statusText);
-            }
-        } catch (error) {
-            console.error("Error:", error);
+        if(email && password){
+          window.location.href = "checkout.html";
         }
-    } else {
-        alert("Your cart is empty!"); // Notify user if cart is empty
-    }
+        else {
+          window.location.href = "login.html";
+        }
+     }
 }
