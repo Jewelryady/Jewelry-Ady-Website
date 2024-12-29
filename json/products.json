@@ -23,58 +23,6 @@
         "description": "The Miley Triangle Hair Scarf is a versatile accessory that can be styled in multiple ways. Made from soft, breathable fabric."
     },
     {
-        "id": 3,
-        "name": "Platform Canvas Sneakers",
-        "price": "$77.00",
-        "images": [
-            "images/Accessories/Platform-Canvas-Sneakers_03.webp"
-        ],
-        "category": "Accessories",
-        "description": "Platform Canvas Sneakers provide both comfort and height. Ideal for casual outings and adding a trendy touch to your look."
-    },
-    {
-        "id": 4,
-        "name": "Quilted Heeled Mule Sandal",
-        "price": "$128.00",
-        "images": [
-            "images/Accessories/Quilted-Heeled-Mule-Sandal_01.webp"
-        ],
-        "category": "Accessories",
-        "isTrending":true,
-        "description": "The Quilted Heeled Mule Sandal combines elegance and comfort. Perfect for dressing up any outfit with a touch of sophistication."
-    },
-    {
-        "id": 6,
-        "name": "Adilette Slide Sandal",
-        "price": "$85.00",
-        "images": [
-            "images/Accessories/Adilette-Slide-Sandal_01.webp",
-            "images/Accessories/Adilette-Slide-Sandal_color_01.webp"
-        ],
-        "category": "Accessories",
-        "description": "Adilette Slide Sandals are perfect for casual wear. They feature a comfortable footbed and easy slip-on design."
-    },
-    {
-        "id": 11,
-        "name": "Straw Floppy Hat",
-        "price": "$54.00",
-        "images": [
-            "images/Accessories/straw-floppy-hat_03.webp"
-        ],
-        "category": "Accessories",
-        "description": "The Straw Floppy Hat is a stylish accessory for sunny days. It offers great sun protection while adding a chic touch to your outfit."
-    },
-    {
-        "id": 12,
-        "name": "Cat-Eye Glasses 20257",
-        "price": "$86.00",
-        "images": [
-            "images/Accessories/sunglasses1.webp"
-        ],
-        "category": "Accessories",
-        "description": "Cat-Eye Glasses 20257 feature a classic design with a modern twist. Perfect for adding a sophisticated touch to any look."
-    },
-    {
         "id": 13,
         "name": "Pride Sport Hip Pack",
         "price": "$39.00",
