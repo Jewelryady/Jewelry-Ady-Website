@@ -218,18 +218,4 @@ function checkOut() {
         // Redirecționează către pagina de eșec
         window.location.href = "paymenFailed.html";
     });
-
 }
-
-// function checkOut(){
-//     let email = localStorage.getItem('email');
-//     let password = localStorage.getItem('password');
-//     if (cart.length != 0) {
-//         if(email && password){
-//           window.location.href = "checkout.html";
-//         }
-//         else {
-//           window.location.href = "login.html";
-//         }
-//      }
-// }
