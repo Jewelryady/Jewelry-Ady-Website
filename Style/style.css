@@ -79,7 +79,7 @@
 }
 /* ------------------------phone slider ------------------------ */
 .hero_for_phone{
-    display: none;
+    display: inline-block;
 }
 /* ------------------------- info section --------------------- */
 .information{
