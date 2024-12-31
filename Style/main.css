@@ -120,7 +120,7 @@ header {
 }
 
 .header_top {
-    background-color: white;
+    background-color: #f5f5f3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -831,3 +831,25 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+
+/* Header Social Media */
+.header_social a {
+    font-size: 2rem; /* Face icon-urile mai mari */
+    margin: 0  3px; /* Creează spațiu între icon-uri */
+    display: inline-block; /* Asigură alinierea corectă */
+    text-decoration: none; /* Elimină sublinierea */
+    color: inherit; /* Menține culoarea inițială */
+    transition: transform 0.3s ease; /* Adaugă o animație la hover */
+}
+
+.header_social a:hover {
+    transform: scale(1.2); /* Mărește icon-urile la hover */
+}
+
+.header_social {
+    display: flex; /* Asigură alinierea pe orizontală */
+    justify-content: center; /* Centrează icon-urile */
+    align-items: center; /* Aliniază icon-urile pe verticală */
+}
+
