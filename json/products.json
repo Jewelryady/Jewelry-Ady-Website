@@ -4,9 +4,9 @@
         "name": "Retro Sunglasses",
         "price": "$225.00",
         "images": [
-            "images/Accessories/Retro-sunglasses_03.webp"
+            "images/Bratari/Bratara_1.jpg"
         ],
-        "category": "Accessories",
+        "category": "Brăţări",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -14,23 +14,72 @@
         "name": "Miley Triangle Hair Scarf",
         "price": "$22.00",
         "images": [
-            "images/Accessories/scrf1.webp",
-            "images/Accessories/scrf2.webp",
-            "images/Accessories/scrf3.webp"
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.jpg"
         ],
-        "category": "Accessories",
+        "category": "Brăţări",
         "isTrending":true,
         "description": "The Miley Triangle Hair Scarf is a versatile accessory that can be styled in multiple ways. Made from soft, breathable fabric."
+    },
+    {
+        "id": 11,
+        "name": "Retro Sunglasses",
+        "price": "$225.00",
+        "images": [
+            "images/Bratari/Bratara_5.jpg"
+        ],
+        "category": "Brăţări",
+        "isTrending":true,
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
+
+    {
+        "id": 14,
+        "name": "Retro Sunglasses",
+        "price": "$225.00",
+        "images": [
+            "images/Bratari/Bratara_6.jpg"
+        ],
+        "category": "Brăţări",
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
+
+
+
+    {
+        "id": 13,
+        "name": "Pride Sport Hip Pack",
+        "price": "$39.00",
+        "images": [
+            "images/Inele/Inel_1.jpg",
+            "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
+        ],
+        "category": "Inele",
+        "isTrending":true,
+        "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
     },
     {
         "id": 13,
         "name": "Pride Sport Hip Pack",
         "price": "$39.00",
         "images": [
-            "images/Bags/Pride-Sport-Hip-Pack-_04.webp",
+            "images/Inele/Inel_3.jpg",
             "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
         ],
-        "category": "Bags",
+        "category": "Inele",
+        "isTrending":true,
+        "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
+    },
+    {
+        "id": 13,
+        "name": "Pride Sport Hip Pack",
+        "price": "$39.00",
+        "images": [
+            "images/Inele/Inel_3.jpg",
+            "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
+        ],
+        "category": "Inele",
         "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
     },
     {
@@ -38,10 +87,10 @@
         "name": "Dance Bag Nylon",
         "price": "$18.00",
         "images": [
-            "images/Bags/p27-3_7e6d6ca6-5882-4c64-a166-577d894b0ac3.webp",
-            "images/Bags/p27-1_1bcb95c6-a3da-4de5-b15e-ec08d4cb84b9.webp"
+            "images/Inele/Inel_2.jpg",
+            "images/Inele/Inel_1.jpg"
         ],
-        "category": "Bags",
+        "category": "Inele",
         "description": "The Dance Bag Nylon is lightweight and durable, ideal for carrying dance gear or gym essentials. Features a sleek design and ample storage space."
     }
 ]
