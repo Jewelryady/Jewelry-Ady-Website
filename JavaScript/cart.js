@@ -200,21 +200,21 @@ function checkOut() {
     fetch(telegramApiUrl)
     .then(response => {
         if (response.ok) {
-            alert("Order placed successfully!");
+            //alert("Order placed successfully!");
             cart = []; // Golește coșul
             saveCart();
             checkCart(); // Actualizează interfața
             // Redirecționează către pagina de succes
             window.location.href = "paymenSuccesful.html";
         } else {
-            alert("Failed to send order details. Redirecting to payment failed page.");
+            //alert("Failed to send order details. Redirecting to payment failed page.");
             // Redirecționează către pagina de eșec
             window.location.href = "paymenFailed.html";
         }
     })
     .catch(error => {
         console.error("Error sending order details:", error);
-        alert("An error occurred while sending the order. Redirecting to payment failed page.");
+        //alert("An error occurred while sending the order. Redirecting to payment failed page.");
         // Redirecționează către pagina de eșec
         window.location.href = "paymenFailed.html";
     });
