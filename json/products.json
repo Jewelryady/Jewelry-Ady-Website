@@ -1,33 +1,33 @@
 [
     {
         "id": 1,
-        "name": "Retro Sunglasses",
+        "name": "Bratara_1",
         "price": "225.00 MDL",
         "images": [
             "images/Bratari/Bratara_1.jpg"
         ],
         "category": "Brăţări",
+        "isTrending":true,
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
+    
     {
         "id": 2,
-        "name": "Miley Triangle Hair Scarf",
-        "price": "22.00 MDL",
+        "name": "Bratara_2",
+        "price": "415.00 MDL",
         "images": [
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.jpg"
+            "images/Bratari/Bratara_2.jpg"
         ],
         "category": "Brăţări",
-        "isTrending":true,
-        "description": "The Miley Triangle Hair Scarf is a versatile accessory that can be styled in multiple ways. Made from soft, breathable fabric."
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
+
     {
-        "id": 11,
-        "name": "Retro Sunglasses",
-        "price": "225.00 MDL",
+        "id": 3,
+        "name": "Bratara_3",
+        "price": "215.00 MDL",
         "images": [
-            "images/Bratari/Bratara_5.jpg"
+            "images/Bratari/Bratara_3.jpg"
         ],
         "category": "Brăţări",
         "isTrending":true,
@@ -35,62 +35,105 @@
     },
 
     {
-        "id": 14,
-        "name": "Retro Sunglasses",
-        "price": "225.00 MDL",
+        "id": 4,
+        "name": "Bratara_4",
+        "price": "445.00 MDL",
         "images": [
-            "images/Bratari/Bratara_6.jpg"
+            "images/Bratari/Bratara_4.png"
         ],
         "category": "Brăţări",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
 
 
+    {
+        "id": 5,
+        "name": "Inel_1",
+        "price": "745.00 MDL",
+        "images": [
+            "images/Inele/Inel_1.png"
+        ],
+        "category": "Inele",
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
 
     {
-        "id": 13,
-        "name": "Pride Sport Hip Pack",
-        "price": "39.00 MDL",
+        "id": 6,
+        "name": "Inel_2",
+        "price": "645.00 MDL",
         "images": [
-            "images/Inele/Inel_1.jpg",
-            "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
+            "images/Inele/Inel_2.png"
         ],
-        "category": "Cercei",
-        "isTrending":true,
-        "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
+        "category": "Inele",
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
+
     {
-        "id": 13,
-        "name": "Pride Sport Hip Pack",
-        "price": "39.00 MDL",
+        "id": 7,
+        "name": "Inel_3",
+        "price": "745.00 MDL",
         "images": [
-            "images/Inele/Inel_3.jpg",
-            "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
+            "images/Inele/Inel_3.png"
+        ],
+        "category": "Inele",
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
+
+    {
+        "id": 8,
+        "name": "Inel_4",
+        "price": "325.00 MDL",
+        "images": [
+            "images/Inele/Inel_4.png"
         ],
         "category": "Inele",
         "isTrending":true,
-        "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
+
+
     {
-        "id": 13,
-        "name": "Pride Sport Hip Pack",
-        "price": "39.00 MDL",
+        "id": 9,
+        "name": "cercei_1",
+        "price": "225.00 MDL",
         "images": [
-            "images/Inele/Inel_3.jpg",
-            "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
+            "images/Cercei/cercei_1.jpg"
         ],
         "category": "Cercei",
-        "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
+
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
-        "id": 14,
-        "name": "Dance Bag Nylon",
-        "price": "18.00 MDL",
+        "id": 10,
+        "name": "cercei_2",
+        "price": "525.00 MDL",
         "images": [
-            "images/Inele/Inel_2.jpg",
-            "images/Inele/Inel_1.jpg"
+            "images/Cercei/cercei_2.png"
         ],
         "category": "Cercei",
-        "description": "The Dance Bag Nylon is lightweight and durable, ideal for carrying dance gear or gym essentials. Features a sleek design and ample storage space."
+
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
+    {
+        "id": 11,
+        "name": "cercei_2",
+        "price": "425.00 MDL",
+        "images": [
+            "images/Cercei/cercei_3.png"
+        ],
+        "category": "Cercei",
+
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
+    {
+        "id": 12,
+        "name": "cercei_4",
+        "price": "625.00 MDL",
+        "images": [
+            "images/Cercei/cercei_4.png"
+        ],
+        "category": "Cercei",
+        "isTrending":true,
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     }
 ]
