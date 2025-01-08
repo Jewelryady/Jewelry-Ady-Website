@@ -45,7 +45,7 @@ function addToCart(productId,inputQuantity = 1) {
 function addCartToHTML() {
     let content = ``;
     cart.forEach((product, index) => {
-        let price = parseFloat(product.price.replace('$', ''));
+        let price = parseFloat(product.price.replace('$', '')); // Eliminăm $
         let totalPrice = price * product.quantity;
         content += `
         <div class="cart_product">
@@ -56,7 +56,7 @@ function addCartToHTML() {
                 <div class="top_card">
                     <div class="left_card">
                         <h4 class="product_name">${product.name}</h4>
-                        <span class="product_price">${product.price}</span>
+                        <span class="product_price">${price.toFixed(2)} MDL</span>
                     </div>
                     <div class="remove_product" onclick="removeFromCart(${index})">
                         <ion-icon name="close-outline"></ion-icon>
@@ -64,19 +64,19 @@ function addCartToHTML() {
                 </div>
                 <div class="buttom_card">
                     <div class="counts">
-                        <button class="counts_btns minus"  onclick="decreaseQuantity(${index})">-</button>
+                        <button class="counts_btns minus" onclick="decreaseQuantity(${index})">-</button>
                         <input type="number" inputmode="numeric" name="productCount" min="1" step="1" max="999"
-                            class="product_count"  value=${product.quantity}>
-                        <button  class="counts_btns plus" onclick="increaseQuantity(${index})">+</button>
+                            class="product_count" value=${product.quantity}>
+                        <button class="counts_btns plus" onclick="increaseQuantity(${index})">+</button>
                     </div>
-                    <span class="total_price">$${totalPrice}.00</span>
+                    <span class="total_price">${totalPrice.toFixed(2)} MDL</span>
                 </div>
             </div>
         </div>`;
     });
     cartTextElements.forEach(element => {
         element.innerHTML = content;
-    });;
+    });
 }
 
 function removeFromCart(index) {
@@ -101,11 +101,11 @@ function decreaseQuantity(index) {
 
 function updateTotalPrice() {
     let total = cart.reduce((sum, product) => {
-        let price = parseFloat(product.price.replace('$', ''));
+        let price = parseFloat(product.price.replace('$', '')); // Eliminăm $
         return sum + (price * product.quantity);
     }, 0);
-    totalPrice.innerHTML = `$${total.toFixed(2)}`;
-    localStorage.setItem("total price" , total + 70);
+    totalPrice.innerHTML = `${total.toFixed(2)} MDL`;
+    localStorage.setItem("total price", total + 70); // Adaugă livrarea dacă e necesar
     return total;
 }
 
@@ -147,11 +147,11 @@ function checkCartPage(total,totalQuantity){
         }
     }
 }
-function displayInCartPage(total){
+function displayInCartPage(total) {
     let subTotal = document.getElementById("Subtotal");
-    subTotal.innerHTML = `$${total.toFixed(2)}`;
-    let totalOrder= parseFloat(subTotal.innerHTML.replace('$', '')) + 70;
-    document.getElementById("total_order").innerHTML = `$${totalOrder.toFixed(2)}`;
+    subTotal.innerHTML = `${total.toFixed(2)} MDL`;
+    let totalOrder = parseFloat(subTotal.innerHTML.replace('MDL', '')) + 70; // Adaugăm taxa de livrare
+    document.getElementById("total_order").innerHTML = `${totalOrder.toFixed(2)} MDL`;
 }
 
 function checkOut() {

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Retro Sunglasses",
-        "price": "$225.00",
+        "price": "225.00 MDL",
         "images": [
             "images/Bratari/Bratara_1.jpg"
         ],
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "name": "Miley Triangle Hair Scarf",
-        "price": "$22.00",
+        "price": "22.00 MDL",
         "images": [
             "images/Bratari/Bratara_2.jpg",
             "images/Bratari/Bratara_3.jpg",
@@ -25,7 +25,7 @@
     {
         "id": 11,
         "name": "Retro Sunglasses",
-        "price": "$225.00",
+        "price": "225.00 MDL",
         "images": [
             "images/Bratari/Bratara_5.jpg"
         ],
@@ -37,7 +37,7 @@
     {
         "id": 14,
         "name": "Retro Sunglasses",
-        "price": "$225.00",
+        "price": "225.00 MDL",
         "images": [
             "images/Bratari/Bratara_6.jpg"
         ],
@@ -50,19 +50,19 @@
     {
         "id": 13,
         "name": "Pride Sport Hip Pack",
-        "price": "$39.00",
+        "price": "39.00 MDL",
         "images": [
             "images/Inele/Inel_1.jpg",
             "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
         ],
-        "category": "Inele",
+        "category": "Cercei",
         "isTrending":true,
         "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
     },
     {
         "id": 13,
         "name": "Pride Sport Hip Pack",
-        "price": "$39.00",
+        "price": "39.00 MDL",
         "images": [
             "images/Inele/Inel_3.jpg",
             "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
@@ -74,23 +74,23 @@
     {
         "id": 13,
         "name": "Pride Sport Hip Pack",
-        "price": "$39.00",
+        "price": "39.00 MDL",
         "images": [
             "images/Inele/Inel_3.jpg",
             "images/Bags/Pride-Sport-Hip-Pack-_03.webp"
         ],
-        "category": "Inele",
+        "category": "Cercei",
         "description": "The Pride Sport Hip Pack is perfect for carrying essentials hands-free. Features a vibrant design and multiple compartments for convenience."
     },
     {
         "id": 14,
         "name": "Dance Bag Nylon",
-        "price": "$18.00",
+        "price": "18.00 MDL",
         "images": [
             "images/Inele/Inel_2.jpg",
             "images/Inele/Inel_1.jpg"
         ],
-        "category": "Inele",
+        "category": "Cercei",
         "description": "The Dance Bag Nylon is lightweight and durable, ideal for carrying dance gear or gym essentials. Features a sleek design and ample storage space."
     }
 ]
