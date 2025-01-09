@@ -193,8 +193,8 @@ function checkOut() {
     orderDetails += `Codul Postal: ${shippingInfo.CodulPostal}`;
 
     // Trimiterea mesajului prin Telegram API
-    const botToken = "8002685277:AAEJoEwchmd1tbi-UY8tD1fCIXR-iHqRcyQ";
-    const chatId = "6042786969";
+    const botToken = "8145460035:AAGcPPqbmKALk-xDNB4w6EXl2J4R1to7Sfc"; //8145460035:AAGcPPqbmKALk-xDNB4w6EXl2J4R1to7Sfc ady   //8002685277:AAEJoEwchmd1tbi-UY8tD1fCIXR-iHqRcyQ ameu 
+    const chatId = "7877958009"; //7877958009 adelina    //6042786969 victor
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(orderDetails)}`;
 
     fetch(telegramApiUrl)
