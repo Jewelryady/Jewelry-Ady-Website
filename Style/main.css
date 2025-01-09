@@ -318,6 +318,25 @@ body.showCart .cart-section {
     right: 0;
 }
 
+/* ------------------------ cart overlay ----------------- */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundal gri-transparent */
+    z-index: 9998; /* Sub cart-section */
+    display: none; /* Ascuns implicit */
+    transition: opacity 0.5s ease;
+}
+
+body.showCart .cart-overlay {
+    display: block;
+    opacity: 1;
+}
+
+
 .cart-header {
     display: flex;
     justify-content: space-between;
