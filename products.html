@@ -90,24 +90,29 @@
             </div>
         </div>
     </main>
-    <div class="cart-section">
-        <div class="cart-header">
-            <h2>SHOPPING CART</h2>
-            <div class="closeCart">
-                <ion-icon name="close-outline" id="closeCart"></ion-icon>
-            </div>
-        </div>
-        <div class="cart_products">
-            <!-- add cart products in js -->
-        </div>
-        <div class="cart_total">
-            <h3>Total:</h3>
-            <span id="total_price"></span>
-        </div>
-        <div class="btn_control">
-            <button class="viewCart" onclick="viewCart();">View Cart</button>
-        </div>
-    </div>
+   <!-- Cart Overlay -->
+   <div class="cart-overlay"></div>
+
+   <!-- Cart Section -->
+   <div class="cart-section">
+       <div class="cart-header">
+           <h2>SHOPPING CART</h2>
+           <div class="closeCart" onclick="closeCart();">
+               <ion-icon name="close-outline"></ion-icon>
+           </div>
+       </div>
+       <div class="cart_products">
+           <!-- add cart products in js -->
+       </div>
+       <div class="cart_total">
+           <h3>Total:</h3>
+           <span id="total_price"></span>
+       </div>
+       <div class="btn_control">
+           <button class="viewCart" onclick="viewCart();">View Cart</button>
+           <button class="checkout" onclick="checkout();">Checkout</button>
+       </div>
+   </div>
     
  <!-- Footer Info -->
  <footer class="footer black-footer">
