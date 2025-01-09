@@ -120,12 +120,13 @@ header {
 }
 
 .header_top {
-    background-color: #f5f5f3;
+    background-color: #efeeed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 4%;
     height: 70px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow fin */
 }
 
 .header_top ion-icon {
@@ -515,8 +516,8 @@ body.showCart .cart-section {
 }
 
 .black-footer {
-    background-color: #000000;
-    color: #fff;
+    background-color: #efeeed;
+    color: #000000;
 }
 
 .footer .footer-top {
@@ -653,6 +654,7 @@ body.showCart .cart-section {
         display: block;
         width: 100%;
         height: 350px;
+         box-shadow: 0px 4px 6px rgba(147, 147, 147, 0.1); /* Shadow fin */
     }
 
     .hero_for_phone .hero-content {

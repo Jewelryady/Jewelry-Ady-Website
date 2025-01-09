@@ -159,7 +159,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(255, 255, 255, 0.8);
+    background:  #dedddb;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -170,10 +170,12 @@
     color: #333;
     cursor: pointer;
     transition: all .4s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adăugare shadow */
 }
 .card-img .addToCart:hover{
-    background-color: #000000dc;
-    color: #fff;
+    background-color: #bdbcb8;
+    color: #2b2b2b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }
 .card-info {
     padding: 16px 0;
@@ -182,7 +184,7 @@
 .product-name {
     font-size: 14px;
     font-weight: 400;
-    color: #222;
+    color: #333;
     margin: 0 0 8px;
 }
 
