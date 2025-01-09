@@ -85,10 +85,10 @@ main {
     left: 40px;
     height: 50px;
     width: 50px;
-    background-color: #09547a;
+    background-color: #bdbcb8;
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 8px; /* Colțuri rotunjite, dar pătrat */
     cursor: pointer;
     z-index: 999;
     transition: all 0.4s ease;
@@ -98,14 +98,18 @@ main {
 }
 
 #categoryBtn:hover {
-    color: #09547a;
-    background-color: white;
-    border: 2px solid #09547a;
+    color: #ffffff;
+    background-color: #adaba6;
+}
+
+#category-icon {
+    font-size: 34px; /* Ajustează dimensiunea iconiței */
 }
 
 #category-up {
-    font-size: 20px;
+    font-size: 0px;
 }
+
 
 
 /* --------------------------- header -------------------------------  */
