@@ -141,7 +141,7 @@ header {
 
 nav {
     position: relative;
-    background-color: white;
+    background-color: #efeeed;
 }
 
 .scroll-down {
@@ -206,6 +206,61 @@ nav ul li a {
     color: #000000;
 }
 
+
+/* Stilizare pentru butoanele din meniu */
+.nav-buttons {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centrează elementele */
+    align-items: center;
+    gap: 15px; /* Spațiu între butoane */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-buttons li {
+    margin: 0;
+}
+
+.nav-buttons li a {
+    display: inline-block;
+    background-color: #bdbcb8; /* Culoare de fundal */
+    color: #ffffff; /* Culoare text */
+    font-size: 1rem; /* Dimensiune text adaptivă */
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 16px; /* Dimensiuni buton adaptate */
+    border-radius: 5px; /* Colțuri rotunjite */
+    transition: all 0.3s ease; /* Tranziție pentru hover */
+    box-shadow: 0px 4px 6px rgba(162, 162, 162, 0.2); /* Umbră la hover */
+}
+
+.nav-buttons li a:hover {
+    background-color: #a4a3a1; /* Culoare mai întunecată la hover */
+ 
+    transform: scale(1.05); /* Mărire ușoară */
+}
+
+/* Media Queries pentru dispozitive mici */
+@media (max-width: 768px) {
+    .nav-buttons {
+        gap: 10px; /* Spațiu mai mic între butoane */
+    }
+
+    .nav-buttons li a {
+        font-size: 0.9rem; /* Dimensiune text mai mică */
+        padding: 6px 12px; /* Dimensiuni mai mici pentru butoane */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-buttons li a {
+        font-size: 0.8rem; /* Dimensiune text mai mică pentru telefoane mici */
+        padding: 4px 8px; /* Dimensiuni și mai compacte */
+    }
+}
+
+
 header nav li::after {
     content: "";
     position: absolute;
@@ -227,7 +282,7 @@ header nav li:hover::after {
 
 .icon-cart #cart-counter {
     position: absolute;
-    background-color: red;
+    background-color: #c30202;
     color: #fff;
     width: 17px;
     height: 17px;
@@ -235,19 +290,19 @@ header nav li:hover::after {
     font-weight: 400;
     font-size: 10px;
     line-height: 17px;
-    box-shadow: 1px 1px 3px #0000004d;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adăugare shadow */
     opacity: 1;
     transition: .3s ease-in-out;
     text-align: center;
     border-radius: 50%;
-    top: -12px;
-    right: -10px;
+    top: -8px;
+    right: 0px;
 }
 
 /* ------------------------ cart section ----------------- */
 .cart-section {
     width: 400px;
-    background-color: #fff;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     right: -100%;
