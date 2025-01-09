@@ -51,11 +51,12 @@ main .container{
     top: 50%; /* Centrăm pe verticală */
     left: 0px;
     transform: translateY(-55%); /* Ajustăm pentru a fi centrat pe verticală */
-    background-color: #f2f2f2;
+    background-color: #efeeed;
     overflow-x: hidden;
     transition: 0.5s;
     padding: 60px 30px;
     z-index: 1;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }
 
 .aside h2 {
