@@ -39,7 +39,7 @@ function showToast() {
     showCheckAnimation();
     setTimeout(() => {
         toastOverlay.classList.remove("show");
-        showCart();
+        //showCart();
     }, 1000);
    
 }

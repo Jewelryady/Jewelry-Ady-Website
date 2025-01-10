@@ -97,7 +97,7 @@ addToCartLinks.forEach(link => {
         if (productCard && productCard.dataset.id) {
             let id_product = productCard.dataset.id;
             addToCart(id_product);
-            showCart();
+            //showCart();
         }
         });
     });
