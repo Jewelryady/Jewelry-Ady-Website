@@ -57,7 +57,7 @@ main {
 .carousel {
     width: 100vw;
     height: 600px; /* Dimensiune standard pentru desktop */
-    overflow: hidden;
+    overflow: hidden; /* Ascunde conținutul care depășește dimensiunile carousel-ului */
     position: relative;
     display: flex; /* Flexbox pentru a centra conținutul */
     justify-content: center; /* Center horizontal */
@@ -66,7 +66,7 @@ main {
 }
 
 .slides {
-    display: flex;
+    display: block;
     width: 100%; /* Setăm lățimea la 100% pentru a ocupa tot spațiul */
     transition: transform 0.5s ease-in-out; /* Tranziție smooth */
 }
@@ -74,6 +74,9 @@ main {
 .slide {
     min-width: 100%; /* Fiecare slide ocupă 100% din lățime */
     flex-shrink: 0; /* Previne micșorarea slide-urilor */
+    display: block; /* Folosește flexbox pentru a centra imaginea */
+    justify-content: center; /* Centrează imaginea pe orizontală */
+    align-items: center; /* Centrează imaginea pe verticală */
 }
 
 .slide img {
@@ -88,13 +91,42 @@ main {
 @media (max-width: 768px) {
     .carousel {
         height: 400px; /* Dimensiune mai mică pentru mobil */
+        
+    }
+    display: block; /* Elimină spațiul de sub imagine */
+    .slide img {
+        width: auto; /* Permite ajustarea lățimii imaginii pe mobil */
+        height: 100%; /* Asigură că imaginea ocupă 100% din înălțimea slide-ului */
+        max-height: none; /* Permite imaginii să depășească înălțimea maximă */
+        object-fit: cover; /* Menține aspectul imaginii */
+        
+    }
+}
+
+/* Stilizare pentru dispozitive mari */
+@media (min-width: 1200px) {
+    .carousel {
+        height: 700px; /* Dimensiune mai mare pentru desktop-uri mari */
     }
 
     .slide img {
-        height: auto; /* Ajustăm înălțimea imaginii pentru a menține aspectul */
         max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
+        /* Poți adăuga alte stiluri specifice aici, dacă este necesar */
     }
 }
+
+/* Stilizare pentru dispozitive medii */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .carousel {
+        height: 500px; /* Dimensiune intermediară pentru desktop-uri medii */
+    }
+
+    .slide img {
+        max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
+        /* Poți adăuga alte stiluri specifice aici, dacă este necesar */
+    }
+}
+
 
 
 
