@@ -74,13 +74,12 @@ main {
 
 .slide {
     min-width: 100%; /* Fiecare slide ocupă 100% din lățime */
+    height: 100%; /* Asigură că slide-urile ocupă întreaga înălțime a caruselului */
     display: flex; /* Flexbox pentru a centra imaginea */
     justify-content: center; /* Centrează imaginea pe orizontală */
     align-items: center; /* Centrează imaginea pe verticală */
-    transition: transform 0.5s ease; /* Tranziție pentru efectul de swipe */
-    position: absolute; /* Permite suprapunerea slide-urilor */
+    overflow: hidden; /* Ascunde orice parte a imaginii care depășește slide-ul */
 }
-
 
 .slide img {
     width: 100%; /* Asigură că imaginea ocupă 100% din lățimea slide-ului */

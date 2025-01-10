@@ -316,10 +316,12 @@ const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
 function showSlide(index) {
-    // Calculăm pozițiile slide-urilor
-    slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${(i - index) * 100}%)`; // Translatează slide-urile
+    // Ascunde toate slide-urile
+    slides.forEach(slide => {
+        slide.style.display = 'none'; 
     });
+    // Arată slide-ul curent
+    slides[index].style.display = 'block'; 
 }
 
 // Funcția de schimbare a slide-ului
