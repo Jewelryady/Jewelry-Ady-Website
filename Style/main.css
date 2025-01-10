@@ -56,63 +56,44 @@ main {
 
 .carousel {
     width: 100vw;
-    height: 600px;
-    /* Dimensiune standard pentru desktop */
-    overflow: hidden;
-    /* Ascunde conținutul care depășește dimensiunile carousel-ului */
+    height: 600px; /* Dimensiune standard pentru desktop */
+    overflow: hidden; /* Ascunde conținutul care depășește dimensiunile carousel-ului */
     position: relative;
-    display: flex;
-    /* Flexbox pentru a centra conținutul */
-    justify-content: center;
-    /* Center horizontal */
-    align-items: center;
-    /* Center vertical */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.20);
-    /* Shadow mai accentuat la hover */
+    display: flex; /* Flexbox pentru a centra conținutul */
+    justify-content: center; /* Center horizontal */
+    align-items: center; /* Center vertical */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.20); /* Shadow mai accentuat la hover */
 }
 
 .slides {
-    display: flex;
-    /* Schimbă la flex pentru a permite slide-urilor să se alinieze pe orizontală */
+    display: flex; /* Schimbă la flex pentru a permite slide-urilor să se alinieze pe orizontală */
     width: 100%;
-    transition: transform 0.5s ease-in-out;
-    /* Tranziție smooth */
+    transition: transform 0.5s ease-in-out; /* Tranziție smooth */
 }
 
 .slide {
-    min-width: 100%;
-    /* Fiecare slide ocupă 100% din lățime */
-    display: flex;
-    /* Flexbox pentru a centra imaginea */
-    justify-content: center;
-    /* Centrează imaginea pe orizontală */
-    align-items: center;
-    /* Centrează imaginea pe verticală */
+    min-width: 100%; /* Fiecare slide ocupă 100% din lățime */
+    display: flex; /* Flexbox pentru a centra imaginea */
+    justify-content: center; /* Centrează imaginea pe orizontală */
+    align-items: center; /* Centrează imaginea pe verticală */
 }
 
 .slide img {
-    width: 100%;
-    /* Asigură că imaginea ocupă 100% din lățimea slide-ului */
-    height: auto;
-    /* Menține proporția imaginii */
-    max-height: 100%;
-    /* Asigură că imaginea nu depășește înălțimea slide-ului */
-    object-fit: cover;
-    /* Imaginea acoperă complet containerul */
-    display: block;
-    /* Elimină spațiul de sub imagine */
+    width: 100%; /* Asigură că imaginea ocupă 100% din lățimea slide-ului */
+    height: auto; /* Menține proporția imaginii */
+    max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
+    object-fit: cover; /* Imaginea acoperă complet containerul */
+    display: block; /* Elimină spațiul de sub imagine */
 }
 
 /* Media Queries pentru dispozitive mobile */
 @media (max-width: 768px) {
     .carousel {
-        height: 400px;
-        /* Dimensiune mai mică pentru mobil */
+        height: 400px; /* Dimensiune mai mică pentru mobil */
     }
 
     .slide img {
-        height: 100%;
-        /* Asigură că imaginea ocupă 100% din înălțimea slide-ului */
+        height: 100%; /* Asigură că imaginea ocupă 100% din înălțimea slide-ului */ 
     }
 }
 
@@ -120,26 +101,22 @@ main {
 /* Stilizare pentru dispozitive mari */
 @media (min-width: 1200px) {
     .carousel {
-        height: 700px;
-        /* Dimensiune mai mare pentru desktop-uri mari */
+        height: 700px; /* Dimensiune mai mare pentru desktop-uri mari */
     }
 
     .slide img {
-        max-height: 100%;
-        /* Asigură că imaginea nu depășește înălțimea slide-ului */
+        max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
     }
 }
 
 /* Stilizare pentru dispozitive medii */
 @media (min-width: 768px) and (max-width: 1199px) {
     .carousel {
-        height: 500px;
-        /* Dimensiune intermediară pentru desktop-uri medii */
+        height: 500px; /* Dimensiune intermediară pentru desktop-uri medii */
     }
 
     .slide img {
-        max-height: 100%;
-        /* Asigură că imaginea nu depășește înălțimea slide-ului */
+        max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
     }
 }
 
@@ -170,15 +147,14 @@ main {
     right: 40px;
     height: 50px;
     width: 50px;
-    background-color: #adaba6;
+    background-color: 	#adaba6;
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
     z-index: 999;
     transition: all .4s;
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
-    /* Shadow mai accentuat la hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }
 
 #scrollBtn:hover {
@@ -203,8 +179,7 @@ main {
     background-color: #bdbcb8;
     color: white;
     border: none;
-    border-radius: 0px;
-    /* Colțuri rotunjite, dar pătrat */
+    border-radius: 0px; /* Colțuri rotunjite, dar pătrat */
     cursor: pointer;
     z-index: 999;
     transition: all 0.4s ease;
@@ -219,8 +194,7 @@ main {
 }
 
 #category-icon {
-    font-size: 34px;
-    /* Ajustează dimensiunea iconiței */
+    font-size: 34px; /* Ajustează dimensiunea iconiței */
 }
 
 #category-up {
@@ -247,8 +221,7 @@ header {
     align-items: center;
     padding: 20px 4%;
     height: 70px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Shadow fin */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow fin */
 }
 
 .header_top ion-icon {
@@ -333,11 +306,9 @@ nav ul li a {
 .nav-buttons {
     list-style: none;
     display: flex;
-    justify-content: center;
-    /* Centrează elementele */
+    justify-content: center; /* Centrează elementele */
     align-items: center;
-    gap: 15px;
-    /* Spațiu între butoane */
+    gap: 15px; /* Spațiu între butoane */
     margin: 0;
     padding: 0;
 }
@@ -348,53 +319,39 @@ nav ul li a {
 
 .nav-buttons li a {
     display: inline-block;
-    background-color: #bdbcb8;
-    /* Culoare de fundal */
-    color: #ffffff;
-    /* Culoare text */
-    font-size: 1rem;
-    /* Dimensiune text adaptivă */
+    background-color: #bdbcb8; /* Culoare de fundal */
+    color: #ffffff; /* Culoare text */
+    font-size: 1rem; /* Dimensiune text adaptivă */
     font-weight: 500;
     text-decoration: none;
-    padding: 8px 16px;
-    /* Dimensiuni buton adaptate */
-    border-radius: 5px;
-    /* Colțuri rotunjite */
-    transition: all 0.3s ease;
-    /* Tranziție pentru hover */
-    box-shadow: 0px 4px 6px rgba(162, 162, 162, 0.2);
-    /* Umbră la hover */
+    padding: 8px 16px; /* Dimensiuni buton adaptate */
+    border-radius: 5px; /* Colțuri rotunjite */
+    transition: all 0.3s ease; /* Tranziție pentru hover */
+    box-shadow: 0px 4px 6px rgba(162, 162, 162, 0.2); /* Umbră la hover */
 }
 
 .nav-buttons li a:hover {
-    background-color: #a4a3a1;
-    /* Culoare mai întunecată la hover */
-
-    transform: scale(1.05);
-    /* Mărire ușoară */
+    background-color: #a4a3a1; /* Culoare mai întunecată la hover */
+ 
+    transform: scale(1.05); /* Mărire ușoară */
 }
 
 /* Media Queries pentru dispozitive mici */
 @media (max-width: 768px) {
     .nav-buttons {
-        gap: 10px;
-        /* Spațiu mai mic între butoane */
+        gap: 10px; /* Spațiu mai mic între butoane */
     }
 
     .nav-buttons li a {
-        font-size: 0.9rem;
-        /* Dimensiune text mai mică */
-        padding: 6px 12px;
-        /* Dimensiuni mai mici pentru butoane */
+        font-size: 0.9rem; /* Dimensiune text mai mică */
+        padding: 6px 12px; /* Dimensiuni mai mici pentru butoane */
     }
 }
 
 @media (max-width: 480px) {
     .nav-buttons li a {
-        font-size: 0.8rem;
-        /* Dimensiune text mai mică pentru telefoane mici */
-        padding: 4px 8px;
-        /* Dimensiuni și mai compacte */
+        font-size: 0.8rem; /* Dimensiune text mai mică pentru telefoane mici */
+        padding: 4px 8px; /* Dimensiuni și mai compacte */
     }
 }
 
@@ -428,8 +385,7 @@ header nav li:hover::after {
     font-weight: 400;
     font-size: 10px;
     line-height: 17px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Adăugare shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adăugare shadow */
     opacity: 1;
     transition: .3s ease-in-out;
     text-align: center;
@@ -464,12 +420,9 @@ body.showCart .cart-section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Fundal gri-transparent */
-    z-index: 9998;
-    /* Sub cart-section */
-    display: none;
-    /* Ascuns implicit */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundal gri-transparent */
+    z-index: 9998; /* Sub cart-section */
+    display: none; /* Ascuns implicit */
     transition: opacity 0.5s ease;
 }
 
@@ -797,36 +750,30 @@ body.showCart .cart-overlay {
 
     /* Mai mult spațiu între elemente */
     .nav-buttons li {
-        margin: 0 15px;
-        /* Spațiu mai mare între butoane */
+        margin: 0 15px; /* Spațiu mai mare între butoane */
     }
 
     .cart-section {
-        max-width: 400px;
-        /* Maximizează lățimea pe ecrane mari */
+        max-width: 400px; /* Maximizează lățimea pe ecrane mari */
     }
 
     .footer .footer-top {
-        gap: 30px;
-        /* Spațiu mai mare între coloane */
+        gap: 30px; /* Spațiu mai mare între coloane */
     }
 }
 
 /* Stilizare pentru dispozitive medii */
 @media (min-width: 768px) and (max-width: 1199px) {
     .nav-buttons {
-        gap: 20px;
-        /* Spațiu mai mic între butoane */
+        gap: 20px; /* Spațiu mai mic între butoane */
     }
 
     .products {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 coloane pe ecrane medii */
+        grid-template-columns: repeat(3, 1fr); /* 3 coloane pe ecrane medii */
     }
 
     .cart-section {
-        width: 70%;
-        /* Lățime mai mică pe ecrane medii */
+        width: 70%; /* Lățime mai mică pe ecrane medii */
     }
 }
 
@@ -852,8 +799,7 @@ body.showCart .cart-overlay {
         display: block;
         width: 100%;
         height: 350px;
-        box-shadow: 0px 4px 6px rgba(147, 147, 147, 0.1);
-        /* Shadow fin */
+         box-shadow: 0px 4px 6px rgba(147, 147, 147, 0.1); /* Shadow fin */
     }
 
     .hero_for_phone .hero-content {
@@ -1036,35 +982,24 @@ input[type=number] {
 
 /* Header Social Media */
 .header_social a {
-    font-size: 2rem;
-    /* Face icon-urile mai mari */
-    margin: 0 3px;
-    /* Creează spațiu între icon-uri */
-    display: inline-block;
-    /* Asigură alinierea corectă */
-    text-decoration: none;
-    /* Elimină sublinierea */
-    color: inherit;
-    /* Menține culoarea inițială */
-    transition: transform 0.3s ease;
-    /* Adaugă o animație la hover */
+    font-size: 2rem; /* Face icon-urile mai mari */
+    margin: 0  3px; /* Creează spațiu între icon-uri */
+    display: inline-block; /* Asigură alinierea corectă */
+    text-decoration: none; /* Elimină sublinierea */
+    color: inherit; /* Menține culoarea inițială */
+    transition: transform 0.3s ease; /* Adaugă o animație la hover */
 }
 
 .header_social a:hover {
-    transform: scale(1.2);
-    /* Mărește icon-urile la hover */
+    transform: scale(1.2); /* Mărește icon-urile la hover */
 }
 
 .header_social {
-    display: flex;
-    /* Asigură alinierea pe orizontală */
-    justify-content: center;
-    /* Centrează icon-urile */
-    align-items: center;
-    /* Aliniază icon-urile pe verticală */
+    display: flex; /* Asigură alinierea pe orizontală */
+    justify-content: center; /* Centrează icon-urile */
+    align-items: center; /* Aliniază icon-urile pe verticală */
 }
 
 .text-message-center {
-    text-align: center;
-    /* Text aliniat pe mijloc */
+    text-align: center; /* Text aliniat pe mijloc */
 }
