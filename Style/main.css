@@ -910,3 +910,6 @@ input[type=number] {
     align-items: center; /* Aliniază icon-urile pe verticală */
 }
 
+.text-message-center {
+    text-align: center; /* Text aliniat pe mijloc */
+}
