@@ -67,21 +67,21 @@
         <div class="container">
             <div class="aside">
                 <h2>Categorii</h2>
-                
                 <div class="shop_categories">
                     <a href="#" class="categories_link active" productCategory="">Toate Produsele</a>
                     <a href="#" class="categories_link" productCategory="Brăţări">Brăţări</a>
                     <a href="#" class="categories_link" productCategory="Inele">Inele</a>
                     <a href="#" class="categories_link" productCategory="Cercei">Cercei</a>
                 </div>
-                
             </div>
-
+            <div class="aside-overlay"></div>
             <div class="products">
                 <div class="content">
-                    <!-- add products in js -->
+                    <!-- Produse generate din JavaScript -->
                 </div>
             </div>
+            
+     
         </div>
     </main>
    <!-- Cart Overlay -->
@@ -155,5 +155,17 @@
     <script src="JavaScript/cart.js"></script>
     <script src="JavaScript/getData.js"></script>
 </body>
+
+<script>
+    function toggleSidebar() {
+    var sidebar = document.querySelector(".aside");
+    var overlay = document.querySelector(".aside-overlay");
+    sidebar.classList.toggle("open");
+    if (overlay) {
+        overlay.style.pointerEvents = sidebar.classList.contains("open") ? "auto" : "none";
+    }
+}
+
+</script>
 
 </html>
