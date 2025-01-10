@@ -49,44 +49,69 @@ main {
     color: #097a6e;
 }
 
+
+
+
+
+
 .carousel {
     width: 100vw;
-    height: 600px;
+    height: 600px; /* Dimensiune standard pentru desktop */
     overflow: hidden;
-    border: 2px solid #ccc;
     position: relative;
+    display: flex; /* Flexbox pentru a centra conținutul */
+    justify-content: center; /* Center horizontal */
+    align-items: center; /* Center vertical */
 }
 
 .slides {
     display: flex;
-    width: 400%; /* 4 slides */
-    animation: slideAnimation 20s ease-in-out infinite;
-    will-change: transform;
+    width: 100%; /* Setăm lățimea la 100% pentru a ocupa tot spațiul */
+    transition: transform 0.5s ease-in-out; /* Tranziție smooth */
 }
 
 .slide {
-    width: 100%; /* Each slide takes full width of the carousel */
-    flex-shrink: 0;
+    min-width: 100%; /* Fiecare slide ocupă 100% din lățime */
+    flex-shrink: 0; /* Previne micșorarea slide-urilor */
 }
 
 .slide img {
-    width: 25%;
-    height: 100%;
-    object-fit: cover; /* Ajustează imaginea pentru a se potrivi */
+    width: 100%; /* Asigură că imaginea ocupă 100% din lățimea slide-ului */
+    height: auto; /* Menține proporția imaginii */
+    max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
+    object-fit: cover; /* Imaginea acoperă complet containerul */
+    display: block; /* Elimină spațiul de sub imagine */
 }
 
-/* Keyframes for the sliding animation */
-@keyframes slideAnimation {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    95% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
+/* Media Queries pentru dispozitive mobile */
+@media (max-width: 768px) {
+    .carousel {
+        height: 400px; /* Dimensiune mai mică pentru mobil */
+    }
+
+    .slide img {
+        height: auto; /* Ajustăm înălțimea imaginii pentru a menține aspectul */
+        max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* -------------------- scroll button -------------------- */
 #scrollBtn {

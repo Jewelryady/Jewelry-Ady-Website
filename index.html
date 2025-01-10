@@ -52,15 +52,17 @@
 
     </header>
     <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
+   
+    
     <!-- slider -->
-   <div class="carousel">
-        <div class="slides">
-            <div class="slide"><img src="images/background/background2.png" alt="Slide 1"></div>
-            <div class="slide"><img src="images/background/background2.png" alt="Slide 2"></div>
-            <div class="slide"><img src="images/background/background2.png" alt="Slide 3"></div>
-            <div class="slide"><img src="images/background/background2.png" alt="Slide 4"></div>
-        </div>
+<div class="carousel">
+    <div class="slides">
+        <div class="slide"><img src="images/background/background3.webp" alt="Slide 1"></div>
+        <div class="slide"><img src="images/background/banner4.webp" alt="Slide 2"></div>
+        <div class="slide"><img src="images/background/erf.webp" alt="Slide 3"></div>
     </div>
+</div>
+
      
     <!-- Cart Overlay -->
 <div class="cart-overlay"></div>
@@ -306,5 +308,34 @@
     <script src="JavaScript/main.js"></script>
     <script src="JavaScript/cart.js"></script>
 </body>
+
+
+<script>
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    // Ascunde toate slide-urile
+    slides.forEach(slide => {
+        slide.style.display = 'none'; 
+    });
+    // Arată slide-ul curent
+    slides[index].style.display = 'block'; 
+}
+
+// Funcția de schimbare a slide-ului
+function changeSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides; // Rotește la început după ultima imagine
+    showSlide(currentIndex);
+}
+
+// Afișează prima imagine inițial
+showSlide(currentIndex);
+
+// Schimbă slide-ul la fiecare 5 secunde
+setInterval(changeSlide, 5000);
+
+</script>
 
 </html>
