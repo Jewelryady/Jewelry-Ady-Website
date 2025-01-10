@@ -11,6 +11,7 @@ main {
     align-items: center;
     border-radius: 8px; /* Colțuri mai rotunjite */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Umbră blândă */
+    margin-bottom: 120px; /* Spațiu între header și conținut */
 }
 
 .product-header .menu-icon {
@@ -112,6 +113,7 @@ main .container {
     display: grid;
     gap: 20px;
     padding: 16px;
+    margin-top: 120px; /* Spațiu deasupra conținutului */
 }
 
 .product-card {
