@@ -114,7 +114,7 @@ function checkCart(){
     if (cart.length == 0) {
         cartTextElements.forEach(element => {
             element.classList.add("empty");
-            element.innerHTML = "Your cart is empty";
+            element.innerHTML = "Coșul dvs. este gol";
         })
         cartCounter.innerHTML = 0;
         btnControl.style.display = "none";
@@ -156,7 +156,7 @@ function displayInCartPage(total) {
 
 function checkOut() {
     if (cart.length === 0) {
-        alert("Your cart is empty. Please add items before checkout.");
+        alert("Vă rugăm să adăugați articole înainte de checkout.");
         return;
     }
 
