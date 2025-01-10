@@ -62,6 +62,7 @@ main {
     display: flex; /* Flexbox pentru a centra conținutul */
     justify-content: center; /* Center horizontal */
     align-items: center; /* Center vertical */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.20); /* Shadow mai accentuat la hover */
 }
 
 .slides {
