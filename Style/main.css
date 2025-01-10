@@ -52,8 +52,6 @@ main {
 
 
 
-
-
 .carousel {
     width: 100vw;
     height: 600px; /* Dimensiune standard pentru desktop */
@@ -68,20 +66,22 @@ main {
 .slides {
     display: flex; /* Schimbă la flex pentru a permite slide-urilor să se alinieze pe orizontală */
     width: 100%;
+    height: 100%; /* Asigură că slide-urile ocupă întreaga înălțime a caruselului */
     transition: transform 0.5s ease-in-out; /* Tranziție smooth */
 }
 
 .slide {
     min-width: 100%; /* Fiecare slide ocupă 100% din lățime */
+    height: 100%; /* Asigură că slide-urile ocupă întreaga înălțime a caruselului */
     display: flex; /* Flexbox pentru a centra imaginea */
     justify-content: center; /* Centrează imaginea pe orizontală */
     align-items: center; /* Centrează imaginea pe verticală */
+    overflow: hidden; /* Ascunde orice parte a imaginii care depășește slide-ul */
 }
 
 .slide img {
     width: 100%; /* Asigură că imaginea ocupă 100% din lățimea slide-ului */
-    height: auto; /* Menține proporția imaginii */
-    max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
+    height: 100%; /* Asigură că imaginea ocupă 100% din înălțimea slide-ului */
     object-fit: cover; /* Imaginea acoperă complet containerul */
     display: block; /* Elimină spațiul de sub imagine */
 }
@@ -92,11 +92,20 @@ main {
         height: 400px; /* Dimensiune mai mică pentru mobil */
     }
 
+    .slides {
+        height: 100%; /* Asigură că slide-urile ocupă întreaga înălțime a caruselului */
+    }
+
+    .slide {
+        height: 100%; /* Asigură că slide-urile ocupă întreaga înălțime a caruselului */
+    }
+
     .slide img {
-        height: 100%; /* Asigură că imaginea ocupă 100% din înălțimea slide-ului */ 
+        height: 100%; /* Asigură că imaginea ocupă 100% din înălțimea slide-ului */
+        width: 100%; /* Asigură că imaginea ocupă 100% din lățimea slide-ului */
+        object-fit: cover; /* Asigură că imaginea acoperă complet slide-ul */
     }
 }
-
 
 /* Stilizare pentru dispozitive mari */
 @media (min-width: 1200px) {
@@ -119,6 +128,7 @@ main {
         max-height: 100%; /* Asigură că imaginea nu depășește înălțimea slide-ului */
     }
 }
+
 
 
 
