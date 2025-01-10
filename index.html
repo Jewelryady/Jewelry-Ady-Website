@@ -54,7 +54,7 @@
     <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
    
     
-    <!-- slider -->
+<!-- slider -->
 <div class="carousel">
     <div class="slides">
         <div class="slide"><img src="images/background/p1.png" alt="Slide 1"></div>
@@ -310,32 +310,53 @@
 </body>
 
 
+
 <script>
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-
-function showSlide(index) {
-    // Ascunde toate slide-urile
-    slides.forEach(slide => {
-        slide.style.display = 'none'; 
-    });
-    // Arată slide-ul curent
-    slides[index].style.display = 'block'; 
-}
-
-// Funcția de schimbare a slide-ului
-function changeSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides; // Rotește la început după ultima imagine
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    
+    // Clonează primul slide și adaugă-l la sfârșitul containerului
+    const firstSlideClone = slides[0].cloneNode(true);
+    document.querySelector('.slides').appendChild(firstSlideClone);
+    
+    const newTotalSlides = totalSlides + 1; // Actualizăm numărul total de slide-uri
+    
+    function showSlide(index) {
+        const offset = index * -100; // Negativ pentru a muta slide-urile spre stânga
+        document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+    }
+    
+    // Funcția de schimbare a slide-ului
+    function changeSlide() {
+        currentIndex++;
+    
+        // Dacă am ajuns la ultimul slide (copie a primului slide)
+        if (currentIndex === newTotalSlides) {
+            // Trecem la slide-ul 1 fără animație
+            currentIndex = 1; 
+            document.querySelector('.slides').style.transition = 'none'; // Oprire temporară a tranziției
+            showSlide(currentIndex); // Afișăm primul slide fără tranziție
+            
+            // După un scurt timeout, reactualizăm tranziția
+            setTimeout(() => {
+                document.querySelector('.slides').style.transition = 'transform 0.5s ease-in-out';
+                currentIndex++; // Mergem la slide-ul următor
+                showSlide(currentIndex); // Afișăm slide-ul următor cu animație
+            }, 20);
+        } else {
+            document.querySelector('.slides').style.transition = 'transform 0.5s ease-in-out'; // Asigurăm tranziția
+            showSlide(currentIndex);
+        }
+    }
+    
+    // Afișează prima imagine inițial
     showSlide(currentIndex);
-}
-
-// Afișează prima imagine inițial
-showSlide(currentIndex);
-
-// Schimbă slide-ul la fiecare 5 secunde
-setInterval(changeSlide, 5000);
-
-</script>
+    
+    // Schimbă slide-ul la fiecare 5 secunde
+    setInterval(changeSlide, 1000);
+    </script>
+    
+    
 
 </html>
