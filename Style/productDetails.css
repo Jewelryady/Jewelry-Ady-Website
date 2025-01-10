@@ -1,162 +1,181 @@
-main .container{
-    padding:8%;
+/* Stiluri generale pentru container */
+main .container {
+    padding: 8%;
+    max-width: 1200px; /* Limitează lățimea maximă */
+    margin: auto; /* Centrează containerul */
 }
-.productDetails{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 100px;
 
+/* Stiluri pentru detaliile produsului */
+.productDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px; /* Gap mai mic pentru un aspect mai compact */
+    margin-top: 20px; /* Adaugă un spațiu de sus */
 }
-.productDetails .images img{
+
+.productDetails .images img {
     width: 100%;
     height: auto;
+    border-radius: 10px; /* Colțuri rotunjite pentru imagine */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră pentru efect 3D */
 }
-.details .category_name{
+
+.details {
+    display: flex;
+    flex-direction: column; /* Aranjare pe verticală */
+}
+
+.details .category_name {
     font-size: 14px;
     color: #868686;
     margin-bottom: 6px;
 }
-.details .product_name{
-    font-size: 26px;
-    font-weight: 400;
+
+.details .product_name {
+    font-size: 28px; /* Dimensiune font mai mare */
+    font-weight: 600; /* Font bold */
     color: #000;
     margin-bottom: 12px;
 }
-.details .product_price{
-    font-size: 20px;
-    font-weight: 400;
-    color: #000;
+
+.details .product_price {
+    font-size: 24px; /* Dimensiune mai mare */
+    font-weight: 500; /* Font semi-bold */
+    color: #39b626; /* Culoare verde pentru preț */
     margin-bottom: 20px;
     position: relative;
 }
-.details .product_price::after{
+
+.details .product_price::after {
     content: "";
     position: absolute;
     bottom: -10px;
     left: 0;
     width: 100%;
-    height: 1px;
+    height: 2px; /* Linie mai groasă */
     background-color: #86868694;
 }
-.product_des{
+
+.product_des {
     font-size: 16px;
     color: #868686;
     margin: 20px 0;
 }
-.buttons{
-    display: flex; 
-    justify-content: left;
+
+.buttons {
+    display: flex;
+    justify-content: space-between; /* Spaciere între elemente */
     align-items: center;
     width: 100%;
-}
-.buttons .counts{
-    min-width: 140px;
-    width: 140px;
-    height: 55px;
-    border: 2px solid rgb(134 134 134 / 50%);
-    text-align: center;
-    display: inline-block;
-    position: relative;
-    margin-right: 20px;
-    touch-action:manipulation;
-}
-.counts_btns{
-    position: absolute;
-    display: block;
-    padding: 0;
-    top: 0;
-    width: 30px;
-    height: 51px;
-    border: 0;
-    background: 0 0;
-    color:  rgb(134 134 134 / 50%);
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-#minus{
-    left: 0;
-    text-align: left;
-    padding-left: 15px;
-}
-#plus{
-    right: 0;
-    text-align: right;
-    padding-right: 15px;
-}
-.product_count{
-    width: 35px;
-    border: 0px;
-    height: 51px;
-    background: 0px 0px;
-    padding: 0;
-    font-weight: 500;
-    font-size: 18px;
-    color: #000;
-    text-align: center;
-   
-}
-.product_count:focus{
-    outline: none;
-    
-}
-/* to remove updown from input number */
-/* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-   margin: 0;
+    margin-top: 10px; /* Spațiu de sus */
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+.buttons .counts {
+    display: flex;
+    align-items: center;
 }
-#btn_add{
-    background-color: #39b626;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 400;
-    min-height: 55px;
-    min-width: 55px;
-    width: 70%;
-    text-transform: uppercase;
+
+.counts_btns {
+    background: transparent;
     border: none;
-    padding: 5px 25px;
+    font-size: 24px;
+    color: rgb(134 134 134 / 50%);
     cursor: pointer;
 }
-.toast-overlay{
-    position: absolute;
-    top: -1000px;
+
+.product_count {
+    width: 50px; /* Lățime mai mare */
+    border: 1px solid #ccc; /* Bordură pentru input */
+    border-radius: 5px; /* Colțuri rotunjite */
+    height: 40px; /* Înălțime fixă */
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 10px; /* Spațiu între butoane */
+}
+
+#btn_add {
+    background-color: #39b626; /* Culoare verde */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    height: 55px; /* Înălțime fixă */
+    width: 100%; /* Lățime 100% */
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px; /* Colțuri rotunjite */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Animare la hover */
+}
+
+#btn_add:hover {
+    background-color: #32a62f; /* Culoare mai închisă la hover */
+}
+
+/* Stiluri pentru toast overlay */
+.toast-overlay {
+    position: fixed; /* Schimbat la fixed pentru a rămâne în fața paginii */
+    top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    padding: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Fundal semi-transparent */
+    z-index: 1000; /* La suprafața altor elemente */
+    visibility: hidden; /* Ascuns inițial */
+    opacity: 0; /* Ascuns inițial */
+    transition: visibility 0s, opacity 0.5s linear; /* Tranziție pentru vizibilitate */
 }
-.toast-overlay.show{
-    top: 0;
+
+.toast-overlay.show {
+    visibility: visible; /* Devine vizibil */
+    opacity: 1; /* Devine complet opac */
 }
-.success-msg{
+
+.success-msg {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    border: 1px solid #000;
-    padding: 24px 50px;
+    border-radius: 10px; /* Colțuri rotunjite */
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Umbră pentru efect 3D */
 }
-.success-msg ion-icon{
+
+.success-msg ion-icon {
     font-size: 48px;
     color: green;
     margin-bottom: 24px;
-
-}
-.success-msg h4{
-    font-size: 14px;
-    font-weight: 400;
 }
 
+.success-msg h4 {
+    font-size: 16px; /* Dimensiune mai mare */
+    font-weight: 500; /* Font mai gros */
+    text-align: center; /* Centrăm textul */
+}
+
+/* Stiluri responsive */
+@media (max-width: 768px) {
+    .productDetails {
+        grid-template-columns: 1fr; /* O singură coloană pe ecrane mici */
+    }
+
+    .productDetails .images img {
+        border-radius: 5px; /* Colțuri rotunjite pentru imagini */
+    }
+
+    .buttons {
+        flex-direction: column; /* Aranjare verticală pentru butoane pe ecrane mici */
+    }
+
+    .buttons .counts {
+        margin-bottom: 10px; /* Spațiu între count și buton */
+    }
+
+    .product_count {
+        width: 60px; /* Lățime mai mare pentru input pe ecrane mici */
+    }
+}
