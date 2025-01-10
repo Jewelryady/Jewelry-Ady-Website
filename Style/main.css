@@ -49,6 +49,45 @@ main {
     color: #097a6e;
 }
 
+.carousel {
+    width: 100vw;
+    height: 600px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 400%; /* 4 slides */
+    animation: slideAnimation 20s ease-in-out infinite;
+    will-change: transform;
+}
+
+.slide {
+    width: 100%; /* Each slide takes full width of the carousel */
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover; /* Ajustează imaginea pentru a se potrivi */
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
 /* -------------------- scroll button -------------------- */
 #scrollBtn {
     display: none;
