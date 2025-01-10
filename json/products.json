@@ -83,6 +83,16 @@
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
+        "id": 11,
+        "name": "cercei_2",
+        "price": "425.00 MDL",
+        "images": [
+            "images/Cercei/cercei_3.png"
+        ],
+        "category": "Cercei",
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
+    {
         "id": 12,
         "name": "cercei_4",
         "price": "625.00 MDL",
