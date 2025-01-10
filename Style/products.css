@@ -5,11 +5,11 @@ main {
 
 .product-header {
     background-color: #ffffff; /* Fundal alb pentru header */
-    padding: 15px 30px; /* Spațiu mai generos */
+    padding: 10px 10px; /* Spațiu mai generos */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 8px; /* Colțuri mai rotunjite */
+ 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Umbră blândă */
     margin-bottom: 120px; /* Spațiu între header și conținut */
 }

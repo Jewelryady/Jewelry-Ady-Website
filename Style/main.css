@@ -89,7 +89,7 @@ main {
     background-color: #bdbcb8;
     color: white;
     border: none;
-    border-radius: 8px; /* Colțuri rotunjite, dar pătrat */
+    border-radius: 0px; /* Colțuri rotunjite, dar pătrat */
     cursor: pointer;
     z-index: 999;
     transition: all 0.4s ease;
