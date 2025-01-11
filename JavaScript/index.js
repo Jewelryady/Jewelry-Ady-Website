@@ -73,6 +73,7 @@ async function getTrendingProducts() {
 
 
 
+
 function displayTrendingProducts(trendingProducts) {
     let content = ``;
     for (let i = 0; i < trendingProducts.length; i++) {
@@ -125,20 +126,11 @@ function displayTrendingProducts(trendingProducts) {
                     return;
                 }
 
-                // Aici trebuie să incluzi cantitatea
-                let quantity = 1; // Poți modifica logica pentru a prelua cantitatea dintr-un input, dacă e nevoie.
-                addToCart(id_product, quantity, selectedSize);
+                addToCart(id_product, selectedSize);
             }
         });
     });
 }
-
-function addToCart(productId, quantity, selectedSize) {
-    console.log(`Produsul cu ID ${productId} a fost adăugat în coș.`);
-    console.log(`Cantitate: ${quantity}`);
-    console.log(`Marime: ${selectedSize}`);
-}
-
 
 
 
