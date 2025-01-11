@@ -9,7 +9,7 @@
         "category": "Bratari",
         "isTrending": true,
         "isNew": true,
-      
+        "product_sizes": [32, "36 CM", "60 MM", 70],
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -22,6 +22,7 @@
         "category": "Bratari",
         "out_Off_stock": true,
         "isTrending": true,
+        "product_sizes": [32, 36, 60, 70],
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -32,6 +33,7 @@
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
+        "product_sizes": [32, 36, 60, 70],
  
         "old_price": "635.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
@@ -45,7 +47,7 @@
         ],
         "category": "Inele",
         "out_Off_stock": true,
- 
+        "product_sizes": [32, 36, 60, 70],
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -57,7 +59,7 @@
             "images/Inele/Inel_2.png"
         ],
      
-
+        "product_sizes": [32, 36, 60, 70],
         "category": "Inele",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -70,7 +72,7 @@
             "images/Inele/Inel_3.png"
         ],
         "category": "Inele",
-
+        "product_sizes": [32, 36, 60, 70],
         "isNew": true,
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -83,7 +85,7 @@
         ],
         "category": "Inele",
         "isTrending": true,
- 
+        "product_sizes": [32, 36, 60, 70],
         "old_price": "1245.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -95,7 +97,7 @@
             "images/Cercei/cercei_3.png"
         ],
         "isNew": true,
-        
+        "product_sizes": [32, 36, 60, 70],
         "out_Off_stock": true,
         "category": "Cercei",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
@@ -108,7 +110,7 @@
             "images/Cercei/cercei_3.png"
         ],
         "category": "Cercei",
-
+        "product_sizes": [32, 36, 60, 70],
         "old_price": "1645.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -120,7 +122,8 @@
             "images/Cercei/cercei_4.png"
         ],
         "category": "Cercei",
-       
+        "product_sizes": [32, 3, "3 CM" ,60, 70],
+        
         "isTrending": true,
    
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
