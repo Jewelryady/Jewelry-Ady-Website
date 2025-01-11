@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     getData(categoryFromURL);
 });
 
+
 function displayProducts(products) {
     const content = document.querySelector(".content");
     content.innerHTML = ""; // Golește conținutul anterior
@@ -49,17 +50,16 @@ function displayProducts(products) {
         return;
     }
 
-    // Presupunem că 'products' este array-ul cu produsele tale
     products.forEach(product => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
 
         productCard.innerHTML = `
-            <a href="productDetails.html?productId=${product.id}" class="product-link"> <!-- Link către pagina detalii -->
+            <a href="productDetails.html?productId=${product.id}" class="product-link"> <!-- Verifică calea aici -->
                 <div class="card-img">
                     ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
-                    ${product.isNew ? `<div class="new-flag">NOU</div>` : ''} <!-- Adăugăm insigna "NOU" -->
-                    ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''} <!-- Panoul pentru "Out of stock" -->
+                    ${product.isNew ? `<div class="new-flag">NOU</div>` : ''}
+                    ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
                     <img src="${product.images[0]}" alt="${product.name}">
                 </div>
                 <div class="card-info">
