@@ -28,6 +28,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 
     <title>SA__FashionStyle</title>
+
+<style>
+    .sale-flag {
+        position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10; /* Asigură-te că este deasupra imaginii */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
+}
+.card-img {
+    position: relative; /* Permite poziționarea absolută a sale-flag */
+}
+
+</style>
 </head>
 
 <body>
@@ -59,15 +78,22 @@
     <main>
         <div class="container">
             <div class="productDetails">
+                
                 <div class="images">
-                    <img id="product_image" src="" alt="productDetails">
+                    <div class="card-img">
+                        <div class="sale-flag" id="saleFlag" style="display: none;">Reducere</div>
+                        <img id="product_image" src="" alt="productDetails">
+                    </div>
                 </div>
+                
+
                 <div class="details">
                     <span class="category_name"></span>
                     <h2 class="product_name"></h2>
                     <h3 class="product_price"></h3>
                     <p class="product_des"></p>
                     <div class="buttons">
+                        
                         <div class="counts">
                             <button id="minus" class="counts_btns">-</button>
                             <input type="number" inputmode="numeric" name="productCount" min="1" step="1" max="999"
@@ -155,4 +181,37 @@
     <script src="JavaScript/cart.js"></script>
 </body>
 
+<script>
+    async function loadProductDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('productId');
+
+    try {
+        const response = await fetch('json/products.json');
+        const products = await response.json();
+        const product = products.find(prod => prod.id == productId);
+
+        if (product) {
+            document.getElementById('product_image').src = product.images[0];
+            document.querySelector('.category_name').textContent = product.category;
+            document.querySelector('.product_name').textContent = product.name;
+            document.querySelector('.product_price').textContent = product.price;
+
+            // Afișează inscripția de reducere dacă există un preț vechi
+            if (product.old_price) {
+                document.querySelector('.product_des').textContent = product.description; // Descrierea produsului
+                document.getElementById('saleFlag').style.display = 'block'; // Afișează inscripția de reducere
+            } else {
+                document.getElementById('saleFlag').style.display = 'none'; // Ascunde inscripția de reducere
+            }
+        }
+    } catch (error) {
+        console.error("Eroare la încărcarea detaliilor produsului:", error);
+    }
+}
+
+// Asigură-te că funcția este apelată
+loadProductDetails();
+
+</script>
 </html>
