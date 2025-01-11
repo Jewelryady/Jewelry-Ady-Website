@@ -8,7 +8,7 @@
         ],
         "category": "Bratari",
         "isTrending": true,
-        "old_price": "145.00 MDL",
+ 
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -20,7 +20,7 @@
         ],
         "category": "Bratari",
         "isTrending": true,
-        "old_price": "1645.00 MDL",
+        "old_price": "645.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -31,7 +31,7 @@
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
-        "old_price": "1645.00 MDL",
+        "old_price": "635.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -65,7 +65,7 @@
             "images/Inele/Inel_3.png"
         ],
         "category": "Inele",
-        "old_price": "1645.00 MDL",
+   
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -77,7 +77,7 @@
         ],
         "category": "Inele",
         "isTrending": true,
-        "old_price": "1645.00 MDL",
+        "old_price": "1245.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -88,7 +88,6 @@
             "images/Cercei/cercei_3.png"
         ],
         "category": "Cercei",
-        "old_price": "1645.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
