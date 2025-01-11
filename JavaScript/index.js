@@ -1,11 +1,11 @@
 var currentSlide = 1;
-window.addEventListener("load",function(){
+window.addEventListener("load", function () {
     // slider not run in small window
     if (window.innerWidth > 767) {
-    if (document.querySelectorAll(".slider .slide-content").length > 0) {
-        theChecker();
-        playSlider();
-    }
+        if (document.querySelectorAll(".slider .slide-content").length > 0) {
+            theChecker();
+            playSlider();
+        }
     }
     getTrendingProducts();
 });
@@ -53,8 +53,8 @@ function theChecker() {
     }
 }
 function playSlider() {
-   var imgSlider = document.querySelectorAll(".slide-content");
-   setInterval(function() {
+    var imgSlider = document.querySelectorAll(".slide-content");
+    setInterval(function () {
         if (currentSlide < imgSlider.length) {
             currentSlide++;
         } else {
@@ -70,9 +70,9 @@ async function getTrendingProducts() {
     let trendingProducts = products.filter(product => product.isTrending);
     displayTrendingProducts(trendingProducts);
 }
-function displayTrendingProducts(trendingProducts){
+function displayTrendingProducts(trendingProducts) {
     let content = ``;
-    for(let i = 0 ; i < trendingProducts.length ; i++){
+    for (let i = 0; i < trendingProducts.length; i++) {
         content += `
         <div class="product-card"  data-id="${trendingProducts[i].id}">
         <div class="card-img">
@@ -87,25 +87,25 @@ function displayTrendingProducts(trendingProducts){
         </div>
     </div>`
     }
-    
-document.querySelector(".top_products .products").innerHTML = content;
-let addToCartLinks = document.querySelectorAll('.addToCart');
-addToCartLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        let productCard = event.target.closest('.product-card');
-        if (productCard && productCard.dataset.id) {
-            let id_product = productCard.dataset.id;
-            addToCart(id_product);
-            //showCart();
-        }
+
+    document.querySelector(".top_products .products").innerHTML = content;
+    let addToCartLinks = document.querySelectorAll('.addToCart');
+    addToCartLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            let productCard = event.target.closest('.product-card');
+            if (productCard && productCard.dataset.id) {
+                let id_product = productCard.dataset.id;
+                addToCart(id_product);
+                //showCart();
+            }
         });
     });
 }
-function showCart(){
+function showCart() {
     let body = document.querySelector('body');
     body.classList.add('showCart');
 }
-function displayDetails(productId){
+function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }

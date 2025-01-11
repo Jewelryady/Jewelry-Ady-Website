@@ -200,21 +200,21 @@ function checkOut() {
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(orderDetails)}`;
 
     fetch(telegramApiUrl)
-    .then(response => {
-        if (response.ok) {
-            cart = []; // Golește coșul
-            saveCart();
-            checkCart(); // Actualizează interfața
-            // Redirecționează către pagina de succes
-            window.location.href = "paymenSuccesful.html";
-        } else {
+        .then(response => {
+            if (response.ok) {
+                cart = []; // Golește coșul
+                saveCart();
+                checkCart(); // Actualizează interfața
+                // Redirecționează către pagina de succes
+                window.location.href = "paymenSuccesful.html";
+            } else {
+                // Redirecționează către pagina de eșec
+                window.location.href = "paymenFailed.html";
+            }
+        })
+        .catch(error => {
+            console.error("Error sending order details:", error);
             // Redirecționează către pagina de eșec
             window.location.href = "paymenFailed.html";
-        }
-    })
-    .catch(error => {
-        console.error("Error sending order details:", error);
-        // Redirecționează către pagina de eșec
-        window.location.href = "paymenFailed.html";
-    });
+        });
 }

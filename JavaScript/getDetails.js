@@ -7,7 +7,7 @@ async function getData() {
     try {
         let response = await fetch('json/products.json');
         let json = await response.json();
-        let product = json.find(item => item.id == productId); 
+        let product = json.find(item => item.id == productId);
 
         if (product) {
             displayDetails(product);
@@ -28,9 +28,9 @@ function displayDetails(product) {
     document.querySelector(".product_price").innerHTML = product.price;
     document.querySelector(".product_des").innerHTML = product.description;
     const linkAdd = document.getElementById("btn_add");
-    linkAdd.addEventListener('click', function(event) {
+    linkAdd.addEventListener('click', function (event) {
         event.preventDefault();
-        addToCart(product.id, parseInt(quantity.value) || 1); 
+        addToCart(product.id, parseInt(quantity.value) || 1);
         showToast();
     });
 }
@@ -48,15 +48,15 @@ function showCart() {
     body.classList.add('showCart');
 }
 
-document.getElementById("minus").addEventListener("click", function() {
-    let value = parseInt(quantity.value) || 1; 
+document.getElementById("minus").addEventListener("click", function () {
+    let value = parseInt(quantity.value) || 1;
     if (value > 1) {
         quantity.value = value - 1;
     }
 });
 
-document.getElementById("plus").addEventListener("click", function() {
-    let value = parseInt(quantity.value) || 1; 
+document.getElementById("plus").addEventListener("click", function () {
+    let value = parseInt(quantity.value) || 1;
     if (value < 999) {
         quantity.value = value + 1;
     }

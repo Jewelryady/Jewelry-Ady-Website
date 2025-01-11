@@ -42,7 +42,7 @@
             </nav>
 
             <div class="header_actions">
- 
+
                 <a href="#" class="icon-cart">
                     <ion-icon name="cart-outline"></ion-icon>
                     <span id="cart-counter">0</span>
@@ -56,14 +56,14 @@
             <div class="menu-icon" onclick="toggleSidebar()">
                 <ion-icon name="grid-outline"></ion-icon>
             </div>
- 
+
             <div class="product-header-right">
                 <span id="productCount"></span>
             </div>
         </div>
     </header>
     <main>
-       
+
         <div class="container">
             <div class="aside">
                 <h2>Categorii</h2>
@@ -80,79 +80,78 @@
                     <!-- Produse generate din JavaScript -->
                 </div>
             </div>
-            
-     
+
+
         </div>
     </main>
-   <!-- Cart Overlay -->
-   <div class="cart-overlay"></div>
+    <!-- Cart Overlay -->
+    <div class="cart-overlay"></div>
 
 
-   
-   <!-- Cart Section -->
-   <div class="cart-section">
-       <div class="cart-header">
-           <h2>Coș de cumpărături</h2>
-           <div class="closeCart" onclick="closeCart();">
-               <ion-icon name="close-outline"></ion-icon>
-           </div>
-       </div>
-       <div class="cart_products">
-           <!-- add cart products in js -->
-       </div>
-       <div class="cart_total">
-           <h3>Total:</h3>
-           <span id="total_price"></span>
-       </div>
-       <div class="btn_control">
-           <button class="viewCart" onclick="viewCart();">Vezi coșul</button>
-           <button class="checkout" onclick="checkout();">Cumpără</button>
-       </div>
-   </div>
-    
- <!-- Footer Info -->
- <footer class="footer black-footer">
-    <div class="footer-top">
-        <div class="footer-list">
 
-            <div class="list">
-                <h4>INFORMATII</h4>
-                <ul>
-                    <li><a href="#">Despre noi</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+    <!-- Cart Section -->
+    <div class="cart-section">
+        <div class="cart-header">
+            <h2>Coș de cumpărături</h2>
+            <div class="closeCart" onclick="closeCart();">
+                <ion-icon name="close-outline"></ion-icon>
             </div>
-            <div class="list">
-                <h4>RELATII CLIENTI</h4>
-                <ul>
-                    <li><a href="#">Termeni si conditii</a></li>
-                    <li><a href="#">Politica de confidentialitate</a></li>
-                </ul>
-            </div>
-
+        </div>
+        <div class="cart_products">
+            <!-- add cart products in js -->
+        </div>
+        <div class="cart_total">
+            <h3>Total:</h3>
+            <span id="total_price"></span>
+        </div>
+        <div class="btn_control">
+            <button class="viewCart" onclick="viewCart();">Vezi coșul</button>
+            <button class="checkout" onclick="checkout();">Cumpără</button>
         </div>
     </div>
-    <div class="footer-bottom">
 
-        <div class="header_social">
-            <a href="https://www.instagram.com/" target="_blank">
-                <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://www.facebook.com/"
-                target="_blank">
-                <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-            <a href="https://wa.me/201007738790" target="_blank">
-                <ion-icon name="logo-whatsapp"></ion-icon>
-            </a>
+    <!-- Footer Info -->
+    <footer class="footer black-footer">
+        <div class="footer-top">
+            <div class="footer-list">
+
+                <div class="list">
+                    <h4>INFORMATII</h4>
+                    <ul>
+                        <li><a href="#">Despre noi</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <h4>RELATII CLIENTI</h4>
+                    <ul>
+                        <li><a href="#">Termeni si conditii</a></li>
+                        <li><a href="#">Politica de confidentialitate</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
-        
-        <p class="footer-company-name">
-            © 2024 Toate drepturile rezervate.
-        </p>
-</footer>
+        <div class="footer-bottom">
+
+            <div class="header_social">
+                <a href="https://www.instagram.com/" target="_blank">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="https://wa.me/201007738790" target="_blank">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+            </div>
+
+            <p class="footer-company-name">
+                © 2024 Toate drepturile rezervate.
+            </p>
+    </footer>
     <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
- 
+
     <script src="JavaScript/main.js"></script>
     <script src="JavaScript/cart.js"></script>
     <script src="JavaScript/getData.js"></script>
@@ -160,13 +159,13 @@
 
 <script>
     function toggleSidebar() {
-    var sidebar = document.querySelector(".aside");
-    var overlay = document.querySelector(".aside-overlay");
-    sidebar.classList.toggle("open");
-    if (overlay) {
-        overlay.style.pointerEvents = sidebar.classList.contains("open") ? "auto" : "none";
+        var sidebar = document.querySelector(".aside");
+        var overlay = document.querySelector(".aside-overlay");
+        sidebar.classList.toggle("open");
+        if (overlay) {
+            overlay.style.pointerEvents = sidebar.classList.contains("open") ? "auto" : "none";
+        }
     }
-}
 
 </script>
 

@@ -39,7 +39,7 @@ function displayProducts() {
     // Adăugarea evenimentului de click pentru butonul "addToCart"
     let addToCartLinks = document.querySelectorAll('.addToCart');
     addToCartLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
+        link.addEventListener('click', function (event) {
             event.preventDefault();
             let productCard = event.target.closest('.product-card');
             if (productCard && productCard.dataset.id) {
@@ -74,7 +74,7 @@ function setActiveLink(activeLink) {
 }
 
 // Adăugăm evenimentele pentru link-urile de categorii
-Array.from(linkName).forEach(function(element) {
+Array.from(linkName).forEach(function (element) {
     element.addEventListener('click', getCategory);
 });
 

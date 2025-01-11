@@ -1,4 +1,4 @@
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -8,9 +8,9 @@ function scrollFunction() {
     }
 }
 
-document.getElementById("scrollBtn").addEventListener("click", function() {
-    document.body.scrollTop = 0; 
-    document.documentElement.scrollTop = 0; 
+document.getElementById("scrollBtn").addEventListener("click", function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 });
 
 // nav 
@@ -26,19 +26,19 @@ if (window.addEventListener) {
 }
 
 function scrollHandler() {
-     var currentScroll = window.pageYOffset;
-     if (currentScroll === 0) {
-         nav.classList.remove(scrollDown);
-         nav.classList.remove(scrollUp);
+    var currentScroll = window.pageYOffset;
+    if (currentScroll === 0) {
+        nav.classList.remove(scrollDown);
+        nav.classList.remove(scrollUp);
         return;
-     }
-     if (currentScroll > lastScroll && !nav.classList.contains(scrollDown)) {
-                // down
+    }
+    if (currentScroll > lastScroll && !nav.classList.contains(scrollDown)) {
+        // down
         nav.classList.remove(scrollUp);
         nav.classList.add(scrollDown);
-    } 
+    }
     else if (currentScroll < lastScroll && nav.classList.contains(scrollDown)) {
-                // up
+        // up
         nav.classList.remove(scrollDown);
         nav.classList.add(scrollUp);
     }
@@ -57,7 +57,7 @@ closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
 
-function viewCart(){
+function viewCart() {
     window.location.href = "cartPage.html"
 }
 
@@ -75,7 +75,7 @@ function setupUI() {
     }
 }
 
-function logout(){
+function logout() {
     localStorage.removeItem("email");
     localStorage.removeItem("password");
     setupUI();
