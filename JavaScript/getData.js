@@ -55,7 +55,7 @@ function displayProducts(products) {
         productCard.className = 'product-card';
 
         productCard.innerHTML = `
-            <a href="productDetails.html?productId=${product.id}" class="product-link"> <!-- Verifică calea aici -->
+            <a href="ProductDetails.html?productId=${product.id}" class="product-link"> <!-- Link către pagina detalii -->
                 <div class="card-img">
                     ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
                     ${product.isNew ? `<div class="new-flag">NOU</div>` : ''}
