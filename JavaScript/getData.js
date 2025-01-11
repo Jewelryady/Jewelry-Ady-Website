@@ -3,74 +3,75 @@ let linkName = document.getElementsByClassName("categories_link");
 
 // Încărcăm toate produsele la început
 getData();
-async function getData(category = null) {
+
+async function getData(category = "") {
     try {
-        let response = await fetch('json/products.json'); // Înlocuiește cu calea reală către fișierul JSON
-        let json = await response.json();
-        productsContainer = json;
+        const response = await fetch('json/products.json');
+        const products = await response.json();
 
-        // Filtrare pe baza categoriei
-        if (category) {
-            productsContainer = productsContainer.filter(product => product.category === category);
-        }
+        // Filtrare produse după categorie
+        const filteredProducts = category
+            ? products.filter(product => product.category === category)
+            : products;
 
-        displayProducts(); // Afișează produsele
+        displayProducts(filteredProducts);
     } catch (error) {
         console.error("Eroare la încărcarea datelor:", error);
     }
 }
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const category = decodeURIComponent(urlParams.get("category")); // Decodificăm categoria din URL
+    const categoryFromURL = urlParams.get("category") || "";
 
-    // Dacă există o categorie, încarcă produsele pentru aceasta
-    if (category) {
-        getData(category);
-    } else {
-        getData(); // Încarcă toate produsele dacă nu există categorie
-    }
+    // Marchează butonul activ în funcție de categorie
+    const categoryLinks = document.querySelectorAll(".categories_link");
+    categoryLinks.forEach(link => {
+        if (link.getAttribute("productCategory") === categoryFromURL) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+
+    // Încarcă produsele pe baza categoriei din URL
+    getData(categoryFromURL);
 });
 
 
 
-// Afișarea produselor pe baza filtrului
-function displayProducts() {
-    let container = ``;
-    for (let i = 0; i < productsContainer.length; i++) {
-        container += `
-        <div class="product-card" data-id="${productsContainer[i].id}">
-            <div class="card-img">
-                <img onclick="displayDetails(${productsContainer[i].id});" 
-                     src="${productsContainer[i].images[0]}" 
-                     alt="${productsContainer[i].name}">
-                <a href="#" class="addToCart">
-                    <ion-icon name="cart-outline" class="Cart"></ion-icon>
-                </a>
-            </div>
-            <div class="card-info">
-                <h4 class="product-name" onclick="displayDetails(${productsContainer[i].id});">${productsContainer[i].name}</h4>
-                <h5 class="product-price">${productsContainer[i].price}</h5>
-            </div>
-        </div>`;
-    }
-    document.getElementById("productCount").innerHTML = `${productsContainer.length} Produse`;
-    document.querySelector('.products .content').innerHTML = container;
+function displayProducts(products) {
+    const content = document.querySelector(".content");
+    content.innerHTML = ""; // Golește conținutul anterior
 
-    // Adăugarea evenimentului de click pentru butonul "addToCart"
-    let addToCartLinks = document.querySelectorAll('.addToCart');
-    addToCartLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            let productCard = event.target.closest('.product-card');
-            if (productCard && productCard.dataset.id) {
-                let id_product = productCard.dataset.id;
-                addToCart(id_product);
-            }
-        });
+    if (products.length === 0) {
+        content.innerHTML = `<p>Niciun produs nu a fost găsit în această categorie.</p>`;
+        return;
+    }
+
+    // Generează carduri pentru fiecare produs
+    products.forEach(product => {
+        const productCard = `
+            <div class="product-card">
+                <div class="card-img">
+                    <img src="${product.images[0]}" alt="${product.name}">
+                    <div class="addToCart" onclick="addToCart(${product.id})">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <p class="product-name">${product.name}</p>
+                    <p class="product-price">${product.price}</p>
+                </div>
+            </div>
+        `;
+        content.insertAdjacentHTML("beforeend", productCard);
     });
 }
+
+
 
 // Obține categoria selectată și încarcă produsele corespunzătoare
 function getCategory(e) {
