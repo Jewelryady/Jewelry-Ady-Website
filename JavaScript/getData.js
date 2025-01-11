@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     getData(categoryFromURL);
 });
 
-
 function displayProducts(products) {
     const content = document.querySelector(".content");
     content.innerHTML = ""; // Golește conținutul anterior
@@ -59,6 +58,7 @@ function displayProducts(products) {
             <a href="productDetails.html?productId=${product.id}" class="product-link"> <!-- Link către pagina detalii -->
                 <div class="card-img">
                     ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
+                    ${product.isNew ? `<div class="new-flag">NOU</div>` : ''} <!-- Adăugăm insigna "NOU" -->
                     <img src="${product.images[0]}" alt="${product.name}">
                 </div>
                 <div class="card-info">
@@ -72,6 +72,7 @@ function displayProducts(products) {
         document.querySelector('.content').appendChild(productCard);
     });
 }
+
 
 
 

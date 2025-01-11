@@ -1162,6 +1162,20 @@ input[type=number] {
     position: relative; /* Permite poziționarea absolută a sale-flag */
 }
 .old-price {
+    font-weight: 500;
     text-decoration: line-through; /* Linia pe mijloc pentru prețul vechi */
-    color: #888; /* Poate adăuga o culoare deschisă pentru a face linia mai subtilă */
+    color: #ff0000; /* Poate adăuga o culoare deschisă pentru a face linia mai subtilă */
+}
+
+.new-flag {
+    position: absolute;
+    top: 0px; /* Așezăm insigna sub insigna de reducere, dacă este activă */
+    left: 0px;
+    background-color: green; /* Culoare verde pentru insigna „NOU” */
+    color: white;
+    padding: 2px 5px;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10; /* Asigură-te că este deasupra imaginii */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }

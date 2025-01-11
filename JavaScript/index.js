@@ -71,7 +71,6 @@ async function getTrendingProducts() {
     displayTrendingProducts(trendingProducts);
 }
 
-
 function displayTrendingProducts(trendingProducts) {
     let content = ``;
     for (let i = 0; i < trendingProducts.length; i++) {
@@ -79,6 +78,7 @@ function displayTrendingProducts(trendingProducts) {
         <div class="product-card" data-id="${trendingProducts[i].id}">
             <div class="card-img">
                 ${trendingProducts[i].old_price ? `<div class="sale-flag">Reducere</div>` : ''}
+                ${trendingProducts[i].isNew ? `<div class="new-flag">NOU</div>` : ''}
                 <img src=${trendingProducts[i].images[0]} onclick=displayDetails(${trendingProducts[i].id});>
                 <a href="" class="addToCart">
                     <ion-icon name="cart-outline" class="Cart"></ion-icon>
@@ -107,6 +107,7 @@ function displayTrendingProducts(trendingProducts) {
         });
     });
 }
+
 
 function showCart() {
     let body = document.querySelector('body');
