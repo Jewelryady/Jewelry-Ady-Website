@@ -4,14 +4,36 @@ let linkName = document.getElementsByClassName("categories_link");
 // Încărcăm toate produsele la început
 getData();
 async function getData(category = null) {
-    let response = await fetch('json/products.json');
-    let json = await response.json();
-    productsContainer = json;
-    if (category) {
-        productsContainer = productsContainer.filter(product => product.category === category);
+    try {
+        let response = await fetch('json/products.json'); // Înlocuiește cu calea reală către fișierul JSON
+        let json = await response.json();
+        productsContainer = json;
+
+        // Filtrare pe baza categoriei
+        if (category) {
+            productsContainer = productsContainer.filter(product => product.category === category);
+        }
+
+        displayProducts(); // Afișează produsele
+    } catch (error) {
+        console.error("Eroare la încărcarea datelor:", error);
     }
-    displayProducts();
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = decodeURIComponent(urlParams.get("category")); // Decodificăm categoria din URL
+
+    // Dacă există o categorie, încarcă produsele pentru aceasta
+    if (category) {
+        getData(category);
+    } else {
+        getData(); // Încarcă toate produsele dacă nu există categorie
+    }
+});
+
+
 
 // Afișarea produselor pe baza filtrului
 function displayProducts() {

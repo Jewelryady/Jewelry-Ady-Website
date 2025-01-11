@@ -6,7 +6,7 @@
         "images": [
             "images/Bratari/Bratara_1.jpg"
         ],
-        "category": "Brăţări",
+        "category": "Bratari",
         "isTrending": true,
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -17,7 +17,7 @@
         "images": [
             "images/Bratari/Bratara_3.jpg"
         ],
-        "category": "Brăţări",
+        "category": "Bratari",
         "isTrending": true,
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -28,7 +28,7 @@
         "images": [
             "images/Bratari/Bratara_4.png"
         ],
-        "category": "Brăţări",
+        "category": "Bratari",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -51,6 +51,7 @@
         "category": "Inele",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
+    
     {
         "id": 7,
         "name": "Inel_3",
