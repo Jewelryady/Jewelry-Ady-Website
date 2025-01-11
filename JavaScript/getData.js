@@ -33,7 +33,7 @@ function displayProducts() {
             </div>
         </div>`;
     }
-    document.getElementById("productCount").innerHTML = `${productsContainer.length} Products`;
+    document.getElementById("productCount").innerHTML = `${productsContainer.length} Produse`;
     document.querySelector('.products .content').innerHTML = container;
 
     // Adăugarea evenimentului de click pentru butonul "addToCart"
