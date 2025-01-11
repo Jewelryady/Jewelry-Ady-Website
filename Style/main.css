@@ -1179,3 +1179,22 @@ input[type=number] {
     z-index: 10; /* Asigură-te că este deasupra imaginii */
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }
+
+/* Out of stock panel */
+.out-of-stock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; /* Acoperă întreaga lățime a imaginii */
+    bottom: 0; /* Acoperă întreaga înălțime a imaginii */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundal negru cu transparență */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 20; /* Asigură-te că este deasupra imaginii și a altor elemente */
+    pointer-events: none; /* Permite interacțiunea cu panoul */
+}
+
+ 

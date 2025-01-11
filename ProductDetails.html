@@ -59,6 +59,28 @@
         .card-img {
             position: relative; /* Permite poziționarea absolută a sale-flag */
         }
+
+/* Out of stock panel */
+.out-of-stock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; /* Acoperă întreaga lățime a imaginii */
+    bottom: 0; /* Acoperă întreaga înălțime a imaginii */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundal negru cu transparență */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 20; /* Asigură-te că este deasupra imaginii și a altor elemente */
+    pointer-events: auto; /* Asigură-te că panoul poate primi interacțiuni */
+}
+
+.card-img img {
+    pointer-events: none; /* Imaginea nu poate primi interacțiuni */
+}
+
     </style>
 </head>
 
@@ -96,8 +118,10 @@
                     <div class="card-img">
                         <div class="sale-flag" id="saleFlag" style="display: none;">Reducere</div>
                         <div class="new-flag" id="newFlag" style="display: none;">NOU</div> <!-- Insigna "NOU" -->
+                        <div class="out-of-stock" id="outOfStock" style="display: none;">Out of stock</div> <!-- Panoul pentru "Out of stock" -->
                         <img id="product_image" src="" alt="productDetails">
                     </div>
+                    
                 </div>
                 
 
@@ -196,42 +220,50 @@
 </body>
 
 <script>
-    async function loadProductDetails() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('productId');
+async function loadProductDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('productId');
 
-        try {
-            const response = await fetch('json/products.json');
-            const products = await response.json();
-            const product = products.find(prod => prod.id == productId);
+    try {
+        const response = await fetch('json/products.json');
+        const products = await response.json();
+        const product = products.find(prod => prod.id == productId);
 
-            if (product) {
-                document.getElementById('product_image').src = product.images[0];
-                document.querySelector('.category_name').textContent = product.category;
-                document.querySelector('.product_name').textContent = product.name;
-                document.querySelector('.product_price').textContent = product.price;
+        if (product) {
+            document.getElementById('product_image').src = product.images[0];
+            document.querySelector('.category_name').textContent = product.category;
+            document.querySelector('.product_name').textContent = product.name;
+            document.querySelector('.product_price').textContent = product.price;
 
-                // Afișează inscripția de reducere dacă există un preț vechi
-                if (product.old_price) {
-                    document.querySelector('.product_des').textContent = product.description; // Descrierea produsului
-                    document.getElementById('saleFlag').style.display = 'block'; // Afișează inscripția de reducere
-                } else {
-                    document.getElementById('saleFlag').style.display = 'none'; // Ascunde inscripția de reducere
-                }
-
-                // Afișează inscripția „NOU” dacă produsul este nou
-                if (product.isNew) {
-                    document.getElementById('newFlag').style.display = 'block'; // Afișează inscripția „NOU”
-                } else {
-                    document.getElementById('newFlag').style.display = 'none'; // Ascunde inscripția „NOU”
-                }
+            // Afișează inscripția de reducere dacă există un preț vechi
+            if (product.old_price) {
+                document.querySelector('.product_des').textContent = product.description; // Descrierea produsului
+                document.getElementById('saleFlag').style.display = 'block'; // Afișează inscripția de reducere
+            } else {
+                document.getElementById('saleFlag').style.display = 'none'; // Ascunde inscripția de reducere
             }
-        } catch (error) {
-            console.error("Eroare la încărcarea detaliilor produsului:", error);
-        }
-    }
 
-    // Asigură-te că funcția este apelată
-    loadProductDetails();
+            // Afișează inscripția „NOU” dacă produsul este nou
+            if (product.isNew) {
+                document.getElementById('newFlag').style.display = 'block'; // Afișează inscripția „NOU”
+            } else {
+                document.getElementById('newFlag').style.display = 'none'; // Ascunde inscripția „NOU”
+            }
+
+            // Afișează mesajul "Out of stock" dacă produsul este indisponibil
+            if (product.out_Off_stock) {
+                document.getElementById('outOfStock').style.display = 'flex'; // Afișează panoul "Out of stock"
+            } else {
+                document.getElementById('outOfStock').style.display = 'none'; // Ascunde panoul "Out of stock"
+            }
+        }
+    } catch (error) {
+        console.error("Eroare la încărcarea detaliilor produsului:", error);
+    }
+}
+
+// Asigură-te că funcția este apelată
+loadProductDetails();
+
 </script>
 </html>

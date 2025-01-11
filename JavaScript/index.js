@@ -71,6 +71,7 @@ async function getTrendingProducts() {
     displayTrendingProducts(trendingProducts);
 }
 
+
 function displayTrendingProducts(trendingProducts) {
     let content = ``;
     for (let i = 0; i < trendingProducts.length; i++) {
@@ -79,13 +80,14 @@ function displayTrendingProducts(trendingProducts) {
             <div class="card-img">
                 ${trendingProducts[i].old_price ? `<div class="sale-flag">Reducere</div>` : ''}
                 ${trendingProducts[i].isNew ? `<div class="new-flag">NOU</div>` : ''}
-                <img src=${trendingProducts[i].images[0]} onclick=displayDetails(${trendingProducts[i].id});>
-                <a href="" class="addToCart">
+                ${trendingProducts[i].out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''} <!-- Panoul pentru "Out of stock" -->
+                <img src="${trendingProducts[i].images[0]}" onclick="displayDetails(${trendingProducts[i].id});">
+                <a href="#" class="addToCart">
                     <ion-icon name="cart-outline" class="Cart"></ion-icon>
                 </a>
             </div>
             <div class="card-info">
-                <h4 class="product-name" onclick=displayDetails(${trendingProducts[i].id});>${trendingProducts[i].name}</h4>
+                <h4 class="product-name" onclick="displayDetails(${trendingProducts[i].id});">${trendingProducts[i].name}</h4>
                 <h5 class="product-price">${trendingProducts[i].price}</h5>
                 ${trendingProducts[i].old_price ? `<h5 class="old-price">${trendingProducts[i].old_price}</h5>` : ''}
             </div>
@@ -107,6 +109,7 @@ function displayTrendingProducts(trendingProducts) {
         });
     });
 }
+
 
 
 function showCart() {

@@ -59,6 +59,7 @@ function displayProducts(products) {
                 <div class="card-img">
                     ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
                     ${product.isNew ? `<div class="new-flag">NOU</div>` : ''} <!-- Adăugăm insigna "NOU" -->
+                    ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''} <!-- Panoul pentru "Out of stock" -->
                     <img src="${product.images[0]}" alt="${product.name}">
                 </div>
                 <div class="card-info">
