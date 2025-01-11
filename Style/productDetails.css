@@ -1,28 +1,35 @@
 /* Stiluri generale pentru container */
 main .container {
     padding: 8%;
-    max-width: 1200px; /* Limitează lățimea maximă */
-    margin: auto; /* Centrează containerul */
+    max-width: 1200px;
+    /* Limitează lățimea maximă */
+    margin: auto;
+    /* Centrează containerul */
 }
 
 /* Stiluri pentru detaliile produsului */
 .productDetails {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px; /* Gap mai mic pentru un aspect mai compact */
-    margin-top: 20px; /* Adaugă un spațiu de sus */
+    gap: 50px;
+    /* Gap mai mic pentru un aspect mai compact */
+    margin-top: 20px;
+    /* Adaugă un spațiu de sus */
 }
 
 .productDetails .images img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Colțuri rotunjite pentru imagine */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră pentru efect 3D */
+    border-radius: 10px;
+    /* Colțuri rotunjite pentru imagine */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Umbră pentru efect 3D */
 }
 
 .details {
     display: flex;
-    flex-direction: column; /* Aranjare pe verticală */
+    flex-direction: column;
+    /* Aranjare pe verticală */
 }
 
 .details .category_name {
@@ -32,16 +39,21 @@ main .container {
 }
 
 .details .product_name {
-    font-size: 28px; /* Dimensiune font mai mare */
-    font-weight: 600; /* Font bold */
+    font-size: 28px;
+    /* Dimensiune font mai mare */
+    font-weight: 600;
+    /* Font bold */
     color: #000;
     margin-bottom: 12px;
 }
 
 .details .product_price {
-    font-size: 24px; /* Dimensiune mai mare */
-    font-weight: 500; /* Font semi-bold */
-    color: #39b626; /* Culoare verde pentru preț */
+    font-size: 24px;
+    /* Dimensiune mai mare */
+    font-weight: 500;
+    /* Font semi-bold */
+    color: #39b626;
+    /* Culoare verde pentru preț */
     margin-bottom: 20px;
     position: relative;
 }
@@ -52,7 +64,8 @@ main .container {
     bottom: -10px;
     left: 0;
     width: 100%;
-    height: 2px; /* Linie mai groasă */
+    height: 2px;
+    /* Linie mai groasă */
     background-color: #86868694;
 }
 
@@ -64,10 +77,12 @@ main .container {
 
 .buttons {
     display: flex;
-    justify-content: space-between; /* Spaciere între elemente */
+    justify-content: space-between;
+    /* Spaciere între elemente */
     align-items: center;
     width: 100%;
-    margin-top: 10px; /* Spațiu de sus */
+    margin-top: 10px;
+    /* Spațiu de sus */
 }
 
 .buttons .counts {
@@ -84,98 +99,70 @@ main .container {
 }
 
 .product_count {
-    width: 50px; /* Lățime mai mare */
-    border: 1px solid #ccc; /* Bordură pentru input */
-    border-radius: 5px; /* Colțuri rotunjite */
-    height: 40px; /* Înălțime fixă */
+    width: 50px;
+    /* Lățime mai mare */
+    border: 1px solid #ccc;
+    /* Bordură pentru input */
+    border-radius: 5px;
+    /* Colțuri rotunjite */
+    height: 40px;
+    /* Înălțime fixă */
     text-align: center;
     font-weight: 500;
     font-size: 18px;
-    margin: 0 10px; /* Spațiu între butoane */
+    margin: 0 10px;
+    /* Spațiu între butoane */
 }
 
 #btn_add {
-    background-color: #39b626; /* Culoare verde */
+    background-color: #39b626;
+    /* Culoare verde */
     color: #fff;
     font-size: 16px;
     font-weight: 500;
-    height: 55px; /* Înălțime fixă */
-    width: 100%; /* Lățime 100% */
+    height: 55px;
+    /* Înălțime fixă */
+    width: 100%;
+    /* Lățime 100% */
     text-transform: uppercase;
     border: none;
-    border-radius: 5px; /* Colțuri rotunjite */
+    border-radius: 5px;
+    /* Colțuri rotunjite */
     cursor: pointer;
-    transition: background-color 0.3s; /* Animare la hover */
+    transition: background-color 0.3s;
+    /* Animare la hover */
 }
 
 #btn_add:hover {
-    background-color: #32a62f; /* Culoare mai închisă la hover */
+    background-color: #32a62f;
+    /* Culoare mai închisă la hover */
 }
 
-/* Stiluri pentru toast overlay */
-.toast-overlay {
-    position: fixed; /* Schimbat la fixed pentru a rămâne în fața paginii */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7); /* Fundal semi-transparent */
-    z-index: 1000; /* La suprafața altor elemente */
-    visibility: hidden; /* Ascuns inițial */
-    opacity: 0; /* Ascuns inițial */
-    transition: visibility 0s, opacity 0.5s linear; /* Tranziție pentru vizibilitate */
-}
-
-.toast-overlay.show {
-    visibility: visible; /* Devine vizibil */
-    opacity: 1; /* Devine complet opac */
-}
-
-.success-msg {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 10px; /* Colțuri rotunjite */
-    padding: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Umbră pentru efect 3D */
-}
-
-.success-msg ion-icon {
-    font-size: 48px;
-    color: green;
-    margin-bottom: 24px;
-}
-
-.success-msg h4 {
-    font-size: 16px; /* Dimensiune mai mare */
-    font-weight: 500; /* Font mai gros */
-    text-align: center; /* Centrăm textul */
-}
 
 /* Stiluri responsive */
 @media (max-width: 768px) {
     .productDetails {
-        grid-template-columns: 1fr; /* O singură coloană pe ecrane mici */
+        grid-template-columns: 1fr;
+        /* O singură coloană pe ecrane mici */
     }
 
     .productDetails .images img {
-        border-radius: 5px; /* Colțuri rotunjite pentru imagini */
+        border-radius: 5px;
+        /* Colțuri rotunjite pentru imagini */
     }
 
     .buttons {
-        flex-direction: column; /* Aranjare verticală pentru butoane pe ecrane mici */
+        flex-direction: column;
+        /* Aranjare verticală pentru butoane pe ecrane mici */
     }
 
     .buttons .counts {
-        margin-bottom: 10px; /* Spațiu între count și buton */
+        margin-bottom: 10px;
+        /* Spațiu între count și buton */
     }
 
     .product_count {
-        width: 60px; /* Lățime mai mare pentru input pe ecrane mici */
+        width: 60px;
+        /* Lățime mai mare pentru input pe ecrane mici */
     }
 }

@@ -1,7 +1,6 @@
 window.addEventListener("load", function(){
     clearCart();
     let totalPrice = document.getElementById("total_price");
-    showCheckAnimation();
     addDate();
     let total = localStorage.getItem('total price');
     if (total) {
@@ -10,24 +9,7 @@ window.addEventListener("load", function(){
     } else {
         totalPrice.innerHTML = `$0.00`;
     }
-})
-
-function showCheckAnimation(){
-    const checkIconContainer = document.getElementById('checkoutIcon');
-     checkIconContainer.innerHTML = '';
-     const newCheckIcon = document.createElement('div');
-     newCheckIcon.style.width = '200px';
-     newCheckIcon.style.height = '200px';
-     checkIconContainer.appendChild(newCheckIcon);
- 
-     lottie.loadAnimation({
-         container: newCheckIcon,
-         renderer: 'svg',
-         loop: false,
-         autoplay: true,
-         path: 'json/AnimationCheckoutPage.json' 
-     });
-}
+});
 
 function addDate(){
     let date = document.getElementById("order_date");
@@ -41,9 +23,11 @@ function addDate(){
     const year = now.getFullYear();
     date.innerHTML  = ` ${month} ${day},  ${year}`;
 }
+
 function clearCart() {
     localStorage.removeItem('cart');
 }
+
 function backHome() {
     window.location.href = "index.html"; 
 }
