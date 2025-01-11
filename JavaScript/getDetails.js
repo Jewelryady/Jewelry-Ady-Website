@@ -27,6 +27,15 @@ function displayDetails(product) {
     document.querySelector(".product_name").innerHTML = product.name;
     document.querySelector(".product_price").innerHTML = product.price;
     document.querySelector(".product_des").innerHTML = product.description;
+
+    // Adăugăm prețul vechi, dacă există
+    const oldPriceElement = document.createElement('p');
+    oldPriceElement.className = 'old-price';
+    if (product.old_price) {
+        oldPriceElement.textContent = product.old_price;
+        document.querySelector(".product_price").insertAdjacentElement('afterend', oldPriceElement); // Adăugăm prețul vechi sub prețul actual
+    }
+
     const linkAdd = document.getElementById("btn_add");
     linkAdd.addEventListener('click', function (event) {
         event.preventDefault();

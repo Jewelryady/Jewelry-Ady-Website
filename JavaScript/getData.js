@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 function displayProducts(products) {
     const content = document.querySelector(".content");
     content.innerHTML = ""; // Golește conținutul anterior
@@ -51,23 +50,26 @@ function displayProducts(products) {
         return;
     }
 
-    // Generează carduri pentru fiecare produs
+    // Presupunem că 'products' este array-ul cu produsele tale
     products.forEach(product => {
-        const productCard = `
-            <div class="product-card">
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+
+        productCard.innerHTML = `
+            <a href="productDetails.html?productId=${product.id}" class="product-link"> <!-- Link către pagina detalii -->
                 <div class="card-img">
+                    ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
                     <img src="${product.images[0]}" alt="${product.name}">
-                    <div class="addToCart" onclick="addToCart(${product.id})">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
                 </div>
                 <div class="card-info">
                     <p class="product-name">${product.name}</p>
                     <p class="product-price">${product.price}</p>
+                    ${product.old_price ? `<p class="old-price">${product.old_price}</p>` : ''}
                 </div>
-            </div>
+            </a>
         `;
-        content.insertAdjacentHTML("beforeend", productCard);
+
+        document.querySelector('.content').appendChild(productCard);
     });
 }
 
@@ -116,3 +118,12 @@ function displayDetails(productId) {
 function addToCart(productId) {
     console.log(`Produsul cu ID ${productId} a fost adăugat în coș.`);
 }
+
+
+// Adaugă elementul <style> în head-ul documentului
+document.head.appendChild(style);
+
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = 'Style/main.css'; // înlocuiește cu calea fișierului tău CSS
+document.head.appendChild(link);

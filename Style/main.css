@@ -1142,3 +1142,26 @@ input[type=number] {
 .text-message-center {
     text-align: center; /* Text aliniat pe mijloc */
 }
+
+
+/* Sales flag and old price*/
+
+.sale-flag {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10; /* Asigură-te că este deasupra imaginii */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
+}
+.card-img {
+    position: relative; /* Permite poziționarea absolută a sale-flag */
+}
+.old-price {
+    text-decoration: line-through; /* Linia pe mijloc pentru prețul vechi */
+    color: #888; /* Poate adăuga o culoare deschisă pentru a face linia mai subtilă */
+}

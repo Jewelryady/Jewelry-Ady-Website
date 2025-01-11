@@ -70,25 +70,30 @@ async function getTrendingProducts() {
     let trendingProducts = products.filter(product => product.isTrending);
     displayTrendingProducts(trendingProducts);
 }
+
+
 function displayTrendingProducts(trendingProducts) {
     let content = ``;
     for (let i = 0; i < trendingProducts.length; i++) {
         content += `
-        <div class="product-card"  data-id="${trendingProducts[i].id}">
-        <div class="card-img">
-            <img src=${trendingProducts[i].images[0]}  onclick=displayDetails(${trendingProducts[i].id});>
-            <a href="" class="addToCart">
-                <ion-icon name="cart-outline" class="Cart"></ion-icon>
-            </a>
-        </div>
-        <div class="card-info">
-             <h4 class="product-name" onclick=displayDetails(${trendingProducts[i].id});>${trendingProducts[i].name}</h4>
-             <h5 class="product-price">${trendingProducts[i].price}</h5>
-        </div>
-    </div>`
+        <div class="product-card" data-id="${trendingProducts[i].id}">
+            <div class="card-img">
+                ${trendingProducts[i].old_price ? `<div class="sale-flag">Reducere</div>` : ''}
+                <img src=${trendingProducts[i].images[0]} onclick=displayDetails(${trendingProducts[i].id});>
+                <a href="" class="addToCart">
+                    <ion-icon name="cart-outline" class="Cart"></ion-icon>
+                </a>
+            </div>
+            <div class="card-info">
+                <h4 class="product-name" onclick=displayDetails(${trendingProducts[i].id});>${trendingProducts[i].name}</h4>
+                <h5 class="product-price">${trendingProducts[i].price}</h5>
+                ${trendingProducts[i].old_price ? `<h5 class="old-price">${trendingProducts[i].old_price}</h5>` : ''}
+            </div>
+        </div>`;
     }
 
     document.querySelector(".top_products .products").innerHTML = content;
+
     let addToCartLinks = document.querySelectorAll('.addToCart');
     addToCartLinks.forEach(link => {
         link.addEventListener('click', function (event) {
@@ -102,6 +107,7 @@ function displayTrendingProducts(trendingProducts) {
         });
     });
 }
+
 function showCart() {
     let body = document.querySelector('body');
     body.classList.add('showCart');
@@ -109,3 +115,12 @@ function showCart() {
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
+
+
+// Adaugă elementul <style> în head-ul documentului
+document.head.appendChild(style);
+
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = 'Style/main.css'; // înlocuiește cu calea fișierului tău CSS
+document.head.appendChild(link);
