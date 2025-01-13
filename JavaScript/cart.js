@@ -66,6 +66,7 @@ function addCartToHTML() {
                     <div class="left_card">
                         <h4 class="product_name">${product.name}</h4>
                         <span class="product_price">${price.toFixed(2)} MDL</span>
+                        <br> <!-- Adăugăm un break pentru a muta mărimea pe un rând nou -->
                         <span class="product_size">Mărime: ${product.size}</span> <!-- Afișăm mărimea -->
                     </div>
                     <div class="remove_product" onclick="removeFromCart(${index})">
@@ -83,6 +84,7 @@ function addCartToHTML() {
                 </div>
             </div>
         </div>`;
+    
     });
     cartTextElements.forEach(element => {
         element.innerHTML = content;
