@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function displayProducts(products) {
     const content = document.querySelector(".content");
-    content.innerHTML = ""; // Golește conținutul anterior
+    content.innerHTML = ""; // Clear previous content
 
     if (products.length === 0) {
         content.innerHTML = `<p>Niciun produs nu a fost găsit în această categorie.</p>`;
@@ -51,26 +51,64 @@ function displayProducts(products) {
     }
 
     products.forEach(product => {
+        // Check for product sizes
+        let sizes = product.product_sizes || [];
+
+        // Generate dropdown options
+        let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
+        sizes.forEach(size => {
+            dropdownOptions += `<option value="${size}">${size}</option>`;
+        });
+
+        // Create product card
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
+        productCard.setAttribute('data-id', product.id); // Set data-id for the product card
 
         productCard.innerHTML = `
-            <a href="ProductDetails.html?productId=${product.id}" class="product-link"> <!-- Link către pagina detalii -->
-                <div class="card-img">
-                    ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
-                    ${product.isNew ? `<div class="new-flag">NOU</div>` : ''}
-                    ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
-                    <img src="${product.images[0]}" alt="${product.name}">
-                </div>
-                <div class="card-info">
-                    <p class="product-name">${product.name}</p>
-                    <p class="product-price">${product.price}</p>
-                    ${product.old_price ? `<p class="old-price">${product.old_price}</p>` : ''}
-                </div>
-            </a>
+            <div class="card-img">
+                ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
+                ${product.isNew ? `<div class="new-flag">NOU</div>` : ''}
+                ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
+                <img src="${product.images[0]}" alt="${product.name}" onclick="displayDetails(${product.id});">
+                <a href="#" class="addToCart">
+                    <ion-icon name="cart-outline" class="Cart"></ion-icon>
+                </a>
+            </div>
+            <div class="card-info">
+                <h4 class="product-name" onclick="displayDetails(${product.id});">${product.name}</h4>
+                <h5 class="product-price">${product.price}</h5>
+                ${product.old_price ? `<h5 class="old-price">${product.old_price}</h5>` : ''}
+                <!-- Dropdown for sizes -->
+                <select class="size-dropdown">
+                    ${dropdownOptions}
+                </select>
+            </div>
         `;
 
-        document.querySelector('.content').appendChild(productCard);
+        content.appendChild(productCard);
+    });
+
+    // Adding event listeners for the Add to Cart buttons
+    let addToCartLinks = document.querySelectorAll('.addToCart');
+    addToCartLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            let productCard = event.target.closest('.product-card');
+            if (productCard && productCard.dataset.id) {
+                let id_product = productCard.dataset.id;
+
+                // Get selected size from dropdown
+                let selectedSize = productCard.querySelector('.size-dropdown').value;
+                if (selectedSize === "Alege mărimea") {
+                    alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
+                    return;
+                }
+
+                // Add product to cart with the selected size
+                addToCart(id_product, 1, selectedSize); // Default quantity is 1
+            }
+        });
     });
 }
 
