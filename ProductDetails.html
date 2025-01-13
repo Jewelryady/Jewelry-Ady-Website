@@ -186,6 +186,57 @@
             background-color: #ccc;
             cursor: not-allowed;
         }
+
+
+        /* Image Preview */
+        .prewiev-image-navigation {
+            display: flex;
+            /* Use flexbox for layout */
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            overflow-y: hidden;
+            /* Hide vertical overflow */
+            white-space: nowrap;
+            /* Prevent line breaks */
+            width: 400px;
+            /* Set a fixed width for the scrolling area */
+            padding: 10px 0;
+            /* Optional: Add padding for better appearance */
+            border: 2px solid #ccc;
+            /* Optional: Add border for visibility */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Light background for contrast */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+        }
+
+        .preview-square {
+            width: 90px;
+            /* Fixed width */
+            height: 90px;
+            /* Fixed height */
+            background-color: #333;
+            /* Darker background color */
+            border: 1px solid #fff;
+            /* White border for contrast */
+            flex-shrink: 0;
+            /* Prevents shrinking */
+            border-radius: 5px;
+            /* Rounded corners */
+            margin-right: 10px;
+            /* Space between squares */
+            transition: transform 0.2s, border 0.2s;
+            /* Smooth transitions */
+        }
+
+        .preview-square:hover {
+            transform: scale(1.1);
+            /* Scale effect on hover */
+            border: 1px solid #007BFF;
+            /* Highlight border on hover */
+        }
     </style>
 </head>
 
@@ -226,6 +277,17 @@
                         <div class="out-of-stock" id="outOfStock" style="display: none;">Out of stock</div>
                         <img id="product_image" src="" alt="productDetails">
                     </div>
+
+
+                    <div class="prewiev-image-navigation">
+                        <div class="preview-square"></div>
+                        <div class="preview-square"></div>
+                        <div class="preview-square"></div>  
+                    </div>
+
+
+
+
                     <div class="image-navigation">
                         <button id="prevImage">Previous</button>
                         <button id="nextImage">Next</button>
@@ -339,5 +401,63 @@
     <script src="JavaScript/getDetails.js"></script>
     <script src="JavaScript/cart.js"></script>
 </body>
+
+
+<script>
+    const previewContainer = document.querySelector('.prewiev-image-navigation');
+
+    let isDown = false; // Track whether the mouse is down
+    let startX; // Starting X position
+    let scrollLeft; // Scroll position at the start
+
+    // Mouse down event
+    previewContainer.addEventListener('mousedown', (e) => {
+        isDown = true; // Set isDown to true
+        startX = e.pageX - previewContainer.offsetLeft; // Get the starting X position
+        scrollLeft = previewContainer.scrollLeft; // Get the initial scroll position
+        previewContainer.style.cursor = 'grabbing'; // Change cursor to grabbing
+    });
+
+    // Mouse leave event
+    previewContainer.addEventListener('mouseleave', () => {
+        isDown = false; // Set isDown to false
+        previewContainer.style.cursor = 'grab'; // Reset cursor
+    });
+
+    // Mouse up event
+    previewContainer.addEventListener('mouseup', () => {
+        isDown = false; // Set isDown to false
+        previewContainer.style.cursor = 'grab'; // Reset cursor
+    });
+
+    // Mouse move event
+    previewContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return; // If not dragging, return
+        const x = e.pageX - previewContainer.offsetLeft; // Current X position
+        const walk = (x - startX) * 2; // Amount to scroll
+        previewContainer.scrollLeft = scrollLeft - walk; // Set new scroll position
+    });
+
+    // For touch devices (swipe)
+    previewContainer.addEventListener('touchstart', (e) => {
+        isDown = true; // Set isDown to true
+        startX = e.touches[0].clientX - previewContainer.offsetLeft; // Get starting position
+        scrollLeft = previewContainer.scrollLeft; // Get initial scroll position
+    });
+
+    previewContainer.addEventListener('touchend', () => {
+        isDown = false; // Set isDown to false
+    });
+
+    previewContainer.addEventListener('touchmove', (e) => {
+        if (!isDown) return; // If not dragging, return
+        const x = e.touches[0].clientX - previewContainer.offsetLeft; // Current position
+        const walk = (x - startX) * 2; // Amount to scroll
+        previewContainer.scrollLeft = scrollLeft - walk; // Set new scroll position
+    });
+
+
+</script>
+
 
 </html>

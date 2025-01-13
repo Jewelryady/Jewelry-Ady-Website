@@ -47,7 +47,6 @@ document.getElementById("nextImage").addEventListener("click", () => {
     }
 });
 
-// Funcție care afișează detaliile produsului și initializează navigarea imaginilor
 function displayDetails(product) {
     let productDetails = document.getElementsByClassName('productDetails')[0];
     productDetails.setAttribute("data-id", product.id);
@@ -77,6 +76,23 @@ function displayDetails(product) {
         sizeSelect.appendChild(option);
     });
 
+    // Load product images into preview squares
+    const previewContainer = document.querySelector('.prewiev-image-navigation');
+    previewContainer.innerHTML = ''; // Clear existing previews
+
+    product.images.forEach(image => {
+        const previewSquare = document.createElement('div');
+        previewSquare.className = 'preview-square';
+        previewSquare.style.backgroundImage = `url(${image})`;
+        previewSquare.style.backgroundSize = 'cover'; // Ensure the image covers the square
+        previewSquare.style.backgroundPosition = 'center'; // Center the image
+        previewSquare.addEventListener('click', () => {
+            currentImageIndex = product.images.indexOf(image); // Update index based on clicked image
+            updateImageNavigation();
+        });
+        previewContainer.appendChild(previewSquare); // Append to the preview container
+    });
+
     const linkAdd = document.getElementById("btn_add");
     linkAdd.addEventListener("click", function (event) {
         event.preventDefault();
@@ -91,8 +107,6 @@ function displayDetails(product) {
         showToast();
     });
 }
-
-
 
 
 function showToast() {
