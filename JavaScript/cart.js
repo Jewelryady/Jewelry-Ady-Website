@@ -37,9 +37,9 @@ function addToCart(productId, inputQuantity = 1, selectedSize = "Mărime necunos
             existingProduct.quantity += inputQuantity;
         } else {
             // Dacă nu există, adăugăm produsul cu mărimea selectată
-            let productWithQuantity = { 
-                ...product, 
-                quantity: inputQuantity, 
+            let productWithQuantity = {
+                ...product,
+                quantity: inputQuantity,
                 size: selectedSize // Salvăm mărimea selectată
             };
             cart.push(productWithQuantity);
@@ -48,8 +48,6 @@ function addToCart(productId, inputQuantity = 1, selectedSize = "Mărime necunos
         checkCart(); // Actualizăm UI-ul
     }
 }
-
-
 
 function addCartToHTML() {
     let content = ``;
@@ -84,7 +82,7 @@ function addCartToHTML() {
                 </div>
             </div>
         </div>`;
-    
+
     });
     cartTextElements.forEach(element => {
         element.innerHTML = content;
@@ -194,15 +192,19 @@ function checkOut() {
         }
     }
 
+    // Generarea timestamp-ului
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.toLocaleDateString()} | ${currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}`;
+
     // Crearea mesajului de comandă
-    let orderDetails = "Order Details:\nItems:\n";
+    let orderDetails = `Order Details:\nItems:\nDate ${formattedDate}\n\n`;
     cart.forEach((product, index) => {
         orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity} | Size ${product.size}\n`;
     });
 
     let totalOrderPrice = `${updateTotalPrice().toFixed(2)} MDL`;
     orderDetails += `Total: ${totalOrderPrice}\n\n`;
-    orderDetails += `Nume: ${shippingInfo.Nume}\n`; // Se trimite Nume
+    orderDetails += `Nume: ${shippingInfo.Nume}\n`;
     orderDetails += `Locatia: ${shippingInfo.Locatia}\n`;
     orderDetails += `Telefon: ${shippingInfo.Telefon}\n`;
     orderDetails += `Telegram: ${shippingInfo.Telegram}\n`;
