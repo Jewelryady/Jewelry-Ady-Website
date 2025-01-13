@@ -71,7 +71,6 @@ document.getElementById("plus").addEventListener("click", function () {
     }
 });
 
-
 async function loadProductDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');

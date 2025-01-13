@@ -20,8 +20,6 @@ async function getData(category = "") {
     }
 }
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const categoryFromURL = urlParams.get("category") || "";
@@ -39,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Încarcă produsele pe baza categoriei din URL
     getData(categoryFromURL);
 });
-
 
 function displayProducts(products) {
     const content = document.querySelector(".content");
@@ -112,9 +109,6 @@ function displayProducts(products) {
     });
 }
 
-
-
-
 // Obține categoria selectată și încarcă produsele corespunzătoare
 function getCategory(e) {
     let category = e.target.getAttribute('productCategory');
@@ -158,7 +152,6 @@ function displayDetails(productId) {
 function addToCart(productId) {
     console.log(`Produsul cu ID ${productId} a fost adăugat în coș.`);
 }
-
 
 // Adaugă elementul <style> în head-ul documentului
 document.head.appendChild(style);
