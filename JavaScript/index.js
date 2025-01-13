@@ -72,26 +72,15 @@ async function getTrendingProducts() {
 }
 
 
-
-
 function displayTrendingProducts(trendingProducts) {
     let content = ``;
     for (let i = 0; i < trendingProducts.length; i++) {
-        // Verificăm dacă există `product_sizes`
-        let sizes = trendingProducts[i].product_sizes || [];
-
-        // Generăm opțiunile dropdown din array
-        let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
-        sizes.forEach(size => {
-            dropdownOptions += `<option value="${size}">${size}</option>`;
-        });
-
         content += `
         <div class="product-card" data-id="${trendingProducts[i].id}">
             <div class="card-img">
                 ${trendingProducts[i].old_price ? `<div class="sale-flag">Reducere</div>` : ''}
                 ${trendingProducts[i].isNew ? `<div class="new-flag">NOU</div>` : ''}
-                ${trendingProducts[i].out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
+                ${trendingProducts[i].out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''} <!-- Panoul pentru "Out of stock" -->
                 <img src="${trendingProducts[i].images[0]}" onclick="displayDetails(${trendingProducts[i].id});">
                 <a href="#" class="addToCart">
                     <ion-icon name="cart-outline" class="Cart"></ion-icon>
@@ -101,10 +90,6 @@ function displayTrendingProducts(trendingProducts) {
                 <h4 class="product-name" onclick="displayDetails(${trendingProducts[i].id});">${trendingProducts[i].name}</h4>
                 <h5 class="product-price">${trendingProducts[i].price}</h5>
                 ${trendingProducts[i].old_price ? `<h5 class="old-price">${trendingProducts[i].old_price}</h5>` : ''}
-                <!-- Dropdown pentru mărimi -->
-                <select class="size-dropdown">
-                    ${dropdownOptions}
-                </select>
             </div>
         </div>`;
     }
@@ -118,15 +103,8 @@ function displayTrendingProducts(trendingProducts) {
             let productCard = event.target.closest('.product-card');
             if (productCard && productCard.dataset.id) {
                 let id_product = productCard.dataset.id;
-
-                // Preia valoarea selectată din dropdown
-                let selectedSize = productCard.querySelector('.size-dropdown').value;
-                if (selectedSize === "Alege mărimea") {
-                    alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
-                    return;
-                }
-
-                addToCart(id_product, selectedSize);
+                addToCart(id_product);
+                //showCart();
             }
         });
     });
@@ -138,10 +116,10 @@ function showCart() {
     let body = document.querySelector('body');
     body.classList.add('showCart');
 }
-
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
+
 
 // Adaugă elementul <style> în head-ul documentului
 document.head.appendChild(style);
