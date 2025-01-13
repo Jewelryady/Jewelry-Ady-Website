@@ -30,7 +30,6 @@
     <title>SA__FashionStyle</title>
 
     <style>
-        
         .sale-flag {
             position: absolute;
             top: 0px;
@@ -40,48 +39,60 @@
             padding: 2px 5px;
             font-weight: bold;
             border-radius: 3px;
-            z-index: 10; /* Asigură-te că este deasupra imaginii */
-            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
+            z-index: 10;
+            /* Asigură-te că este deasupra imaginii */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+            /* Shadow mai accentuat la hover */
         }
-        
+
         .new-flag {
             position: absolute;
-            top: 0px; /* Așezăm insigna sub insigna de reducere */
+            top: 0px;
+            /* Așezăm insigna sub insigna de reducere */
             left: 0px;
-            background-color: green; /* Culoare verde pentru insigna „NOU” */
+            background-color: green;
+            /* Culoare verde pentru insigna „NOU” */
             color: white;
             padding: 2px 5px;
             font-weight: bold;
             border-radius: 3px;
-            z-index: 10; /* Asigură-te că este deasupra imaginii */
-            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
+            z-index: 10;
+            /* Asigură-te că este deasupra imaginii */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+            /* Shadow mai accentuat la hover */
         }
 
         .card-img {
-            position: relative; /* Permite poziționarea absolută a sale-flag */
+            position: relative;
+            /* Permite poziționarea absolută a sale-flag */
         }
 
-/* Out of stock panel */
-.out-of-stock {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0; /* Acoperă întreaga lățime a imaginii */
-    bottom: 0; /* Acoperă întreaga înălțime a imaginii */
-    background-color: rgba(0, 0, 0, 0.6); /* Fundal negru cu transparență */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    z-index: 20; /* Asigură-te că este deasupra imaginii și a altor elemente */
-    pointer-events: auto; /* Asigură-te că panoul poate primi interacțiuni */
-}
+        /* Out of stock panel */
+        .out-of-stock {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            /* Acoperă întreaga lățime a imaginii */
+            bottom: 0;
+            /* Acoperă întreaga înălțime a imaginii */
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Fundal negru cu transparență */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 20;
+            /* Asigură-te că este deasupra imaginii și a altor elemente */
+            pointer-events: auto;
+            /* Asigură-te că panoul poate primi interacțiuni */
+        }
 
-.card-img img {
-    pointer-events: none; /* Imaginea nu poate primi interacțiuni */
-}
-
+        .card-img img {
+            pointer-events: none;
+            /* Imaginea nu poate primi interacțiuni */
+        }
     </style>
 </head>
 
@@ -114,32 +125,33 @@
     <main>
         <div class="container">
             <div class="productDetails">
-                
+
                 <div class="images">
                     <div class="card-img">
                         <div class="sale-flag" id="saleFlag" style="display: none;">Reducere</div>
                         <div class="new-flag" id="newFlag" style="display: none;">NOU</div> <!-- Insigna "NOU" -->
-                        <div class="out-of-stock" id="outOfStock" style="display: none;">Out of stock</div> <!-- Panoul pentru "Out of stock" -->
+                        <div class="out-of-stock" id="outOfStock" style="display: none;">Out of stock</div>
+                        <!-- Panoul pentru "Out of stock" -->
                         <img id="product_image" src="" alt="productDetails">
                     </div>
-                    
+
                 </div>
-                
+
 
                 <div class="details">
                     <span class="category_name"></span>
                     <h2 class="product_name"></h2>
                     <h3 class="product_price"></h3>
                     <p class="product_des"></p>
-                
-                 <!-- Dropdown pentru mărimi -->
-<label for="sizeSelect">Alegeți mărimea:</label>
-<select id="sizeSelect" class="size-dropdown"> <!-- Aici am adăugat clasa size-dropdown -->
-    <option disabled selected>Alege mărimea</option>
-    <!-- Opțiunile vor fi populate din JavaScript -->
-</select>
 
-                    
+                    <!-- Dropdown pentru mărimi -->
+                    <label for="sizeSelect">Alegeți mărimea:</label>
+                    <select id="sizeSelect" class="size-dropdown"> <!-- Aici am adăugat clasa size-dropdown -->
+                        <option disabled selected>Alege mărimea</option>
+                        <!-- Opțiunile vor fi populate din JavaScript -->
+                    </select>
+
+
                     <div class="buttons">
                         <div class="counts">
                             <button id="minus" class="counts_btns">-</button>
@@ -149,25 +161,27 @@
                         </div>
                         <button id="btn_add">Adăugați la coș</button>
                     </div>
-                
+
                     <div class="btn_control">
                         <button class="viewCart" onclick="viewCart();">Vezi coșul</button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </main>
 
     <!-- alert -->
 
-    <!-- cart -->
+    <!-- Cart Overlay -->
+    <div class="cart-overlay"></div>
 
+    <!-- Cart Section -->
     <div class="cart-section">
         <div class="cart-header">
             <h2>Coș de cumpărături</h2>
-            <div class="closeCart">
-                <ion-icon name="close-outline" id="closeCart"></ion-icon>
+            <div class="closeCart" onclick="closeCart();">
+                <ion-icon name="close-outline"></ion-icon>
             </div>
         </div>
         <div class="cart_products">
@@ -179,6 +193,7 @@
         </div>
         <div class="btn_control">
             <button class="viewCart" onclick="viewCart();">Vezi coșul</button>
+            <button class="checkout" onclick="checkout();">Cumpără</button>
         </div>
     </div>
 
@@ -227,4 +242,5 @@
     <script src="JavaScript/getDetails.js"></script>
     <script src="JavaScript/cart.js"></script>
 </body>
+
 </html>
