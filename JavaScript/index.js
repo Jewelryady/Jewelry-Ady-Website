@@ -1,68 +1,7 @@
 var currentSlide = 1;
 window.addEventListener("load", function () {
-    // slider not run in small window
-    if (window.innerWidth > 767) {
-        if (document.querySelectorAll(".slider .slide-content").length > 0) {
-            theChecker();
-            playSlider();
-        }
-    }
     getTrendingProducts();
 });
-
-function nextSlider() {
-    var btnNext = document.getElementsByClassName("next")[0];
-    if (btnNext.classList.contains('disabled')) {
-        return false;
-    } else {
-        currentSlide++;
-        theChecker();
-    }
-}
-
-function prevSlider() {
-    var btnPrev = document.getElementsByClassName("prev")[0];
-    if (btnPrev.classList.contains('disabled')) {
-        return false;
-    } else {
-        currentSlide--;
-        theChecker();
-    }
-}
-
-function theChecker() {
-    var imgSlider = document.querySelectorAll(".slide-content");
-    var btnNext = document.getElementsByClassName("next")[0];
-    var btnPrev = document.getElementsByClassName("prev")[0];
-    imgSlider.forEach(function (img) {
-        img.classList.remove('active');
-    });
-
-    imgSlider[currentSlide - 1].classList.add('active');
-
-    if (currentSlide == 1) {
-        btnPrev.classList.add('disabled');
-    } else {
-        btnPrev.classList.remove('disabled');
-    }
-
-    if (currentSlide == imgSlider.length) {
-        btnNext.classList.add('disabled');
-    } else {
-        btnNext.classList.remove('disabled');
-    }
-}
-function playSlider() {
-    var imgSlider = document.querySelectorAll(".slide-content");
-    setInterval(function () {
-        if (currentSlide < imgSlider.length) {
-            currentSlide++;
-        } else {
-            currentSlide = 1;
-        }
-        theChecker();
-    }, 3000);
-}
 
 async function getTrendingProducts() {
     let response = await fetch('json/products.json');
@@ -70,7 +9,6 @@ async function getTrendingProducts() {
     let trendingProducts = products.filter(product => product.isTrending);
     displayTrendingProducts(trendingProducts);
 }
-
 
 function displayTrendingProducts(trendingProducts) {
     let content = ``;
@@ -131,8 +69,6 @@ function displayTrendingProducts(trendingProducts) {
     });
 }
 
-
-
 function showCart() {
     let body = document.querySelector('body');
     body.classList.add('showCart');
@@ -140,7 +76,6 @@ function showCart() {
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
-
 
 // Adaugă elementul <style> în head-ul documentului
 document.head.appendChild(style);
