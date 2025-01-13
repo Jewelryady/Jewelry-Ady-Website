@@ -197,8 +197,9 @@ function checkOut() {
     // Crearea mesajului de comandă
     let orderDetails = "Order Details:\nItems:\n";
     cart.forEach((product, index) => {
-        orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity}\n`;
+        orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity} | Size ${product.size}\n`;
     });
+
     let totalOrderPrice = `${updateTotalPrice().toFixed(2)} MDL`;
     orderDetails += `Total: ${totalOrderPrice}\n\n`;
     orderDetails += `Nume: ${shippingInfo.Nume}\n`; // Se trimite Nume
