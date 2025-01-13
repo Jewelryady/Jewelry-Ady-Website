@@ -148,11 +148,6 @@ function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
 
-// Funcție pentru a adăuga produse în coș
-function addToCart(productId) {
-    console.log(`Produsul cu ID ${productId} a fost adăugat în coș.`);
-}
-
 // Adaugă elementul <style> în head-ul documentului
 document.head.appendChild(style);
 
