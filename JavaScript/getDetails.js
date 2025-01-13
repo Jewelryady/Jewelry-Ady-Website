@@ -18,25 +18,57 @@ async function getData() {
         console.error('Error fetching the data', error);
     }
 }
+let currentImageIndex = 0; // Indexul imaginii curente
+let productImages = []; // Lista imaginilor produsului
 
+function updateImageNavigation() {
+    // Verificăm dacă indexul curent este valid
+    if (currentImageIndex >= 0 && currentImageIndex < productImages.length) {
+        // Actualizăm sursa imaginii
+        document.getElementById("product_image").src = productImages[currentImageIndex];
+    }
+
+    // Dezactivăm/activăm butoanele în funcție de poziția curentă
+    document.getElementById("prevImage").disabled = currentImageIndex === 0;
+    document.getElementById("nextImage").disabled = currentImageIndex === productImages.length - 1;
+}
+
+document.getElementById("prevImage").addEventListener("click", () => {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateImageNavigation();
+    }
+});
+
+document.getElementById("nextImage").addEventListener("click", () => {
+    if (currentImageIndex < productImages.length - 1) {
+        currentImageIndex++;
+        updateImageNavigation();
+    }
+});
+
+// Funcție care afișează detaliile produsului și initializează navigarea imaginilor
 function displayDetails(product) {
     let productDetails = document.getElementsByClassName('productDetails')[0];
     productDetails.setAttribute("data-id", product.id);
-    document.getElementById("product_image").src = product.images[0];
+
+    // Preluăm lista de imagini și resetăm indexul curent
+    productImages = product.images || [];
+    currentImageIndex = 0;
+    updateImageNavigation();
+
     document.querySelector(".category_name").innerHTML = product.category;
     document.querySelector(".product_name").innerHTML = product.name;
     document.querySelector(".product_price").innerHTML = product.price;
     document.querySelector(".product_des").innerHTML = product.description;
 
-    // Afișăm prețul vechi, dacă există
     const oldPriceElement = document.createElement('p');
     oldPriceElement.className = 'old-price';
     if (product.old_price) {
         oldPriceElement.textContent = product.old_price;
-        document.querySelector(".product_price").insertAdjacentElement('afterend', oldPriceElement); // Adăugăm prețul vechi sub prețul actual
+        document.querySelector(".product_price").insertAdjacentElement('afterend', oldPriceElement);
     }
 
-    // Populează dropdown-ul pentru mărimi
     const sizeSelect = document.getElementById('sizeSelect');
     product.product_sizes.forEach(size => {
         const option = document.createElement('option');
@@ -46,21 +78,21 @@ function displayDetails(product) {
     });
 
     const linkAdd = document.getElementById("btn_add");
-    linkAdd.addEventListener('click', function (event) {
+    linkAdd.addEventListener("click", function (event) {
         event.preventDefault();
-        
-        // Preia mărimea selectată
+
         const selectedSize = sizeSelect.value;
         if (selectedSize === "Alege mărimea") {
             alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
             return;
         }
-    
+
         addToCart(product.id, parseInt(quantity.value) || 1, selectedSize);
         showToast();
     });
-    
 }
+
+
 
 
 function showToast() {

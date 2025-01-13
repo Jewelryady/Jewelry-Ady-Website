@@ -4,7 +4,10 @@
         "name": "Bratara_1",
         "price": "225.00 MDL",
         "images": [
-            "images/Bratari/Bratara_1.jpg"
+           "images/Bratari/Bratara_1.jpg",
+           "images/Bratari/Bratara_2.jpg",
+           "images/Bratari/Bratara_3.jpg",
+           "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
         "isTrending": true,
@@ -17,7 +20,10 @@
         "name": "Bratara_3",
         "price": "215.00 MDL",
         "images": [
-            "images/Bratari/Bratara_3.jpg"
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
         "out_Off_stock": true,
@@ -30,6 +36,9 @@
         "name": "Bratara_4",
         "price": "445.00 MDL",
         "images": [
+            "images/Bratari/Bratara_4.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
@@ -42,7 +51,10 @@
         "name": "Inel_1",
         "price": "745.00 MDL",
         "images": [
-            "images/Inele/Inel_1.png"
+            "images/Inele/Inel_1.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
         ],
         "category": "Inele",
         "out_Off_stock": true,
@@ -55,7 +67,10 @@
         "price": "645.00 MDL",
  
         "images": [
-            "images/Inele/Inel_2.png"
+            "images/Inele/Inel_2.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
         ],
      
         "product_sizes": [32, 36, 60, 70],
@@ -68,7 +83,11 @@
         "name": "Inel_3",
         "price": "745.00 MDL",
         "images": [
-            "images/Inele/Inel_3.png"
+            "images/Inele/Inel_3.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
+            
         ],
         "category": "Inele",
         "product_sizes": [32, 36, 60, 70],
@@ -80,7 +99,10 @@
         "name": "Inel_4",
         "price": "325.00 MDL",
         "images": [
-            "images/Inele/Inel_4.png"
+            "images/Inele/Inel_4.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
         ],
         "category": "Inele",
         "isTrending": true,
@@ -93,7 +115,10 @@
         "name": "cercei_2",
         "price": "425.00 MDL",
         "images": [
-            "images/Cercei/cercei_3.png"
+            "images/Cercei/cercei_3.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
         ],
         "isNew": true,
         "product_sizes": [32, 36, 60, 70],
@@ -106,7 +131,10 @@
         "name": "cercei_2",
         "price": "425.00 MDL",
         "images": [
-            "images/Cercei/cercei_3.png"
+            "images/Cercei/cercei_3.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
         ],
         "category": "Cercei",
         "product_sizes": [32, 36, 60, 70],
@@ -118,7 +146,10 @@
         "name": "cercei_4",
         "price": "625.00 MDL",
         "images": [
-            "images/Cercei/cercei_4.png"
+            "images/Cercei/cercei_4.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
         ],
         "category": "Cercei",
        
