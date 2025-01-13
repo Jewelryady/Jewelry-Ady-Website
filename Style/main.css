@@ -1248,7 +1248,7 @@ input[type=number] {
 .product-card .old-price {
     font-size: 14px;
     text-decoration: line-through;
-    color: #888;
+    color: red;
 }
 
 /* Adaptează design-ul pentru dispozitive mobile */
