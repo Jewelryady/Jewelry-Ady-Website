@@ -27,20 +27,29 @@ function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function addToCart(productId, inputQuantity = 1) {
+function addToCart(productId, inputQuantity = 1, selectedSize = "Mărime necunoscută") {
     let product = products.find(p => p.id == productId);
     if (product) {
-        let existingProduct = cart.find(p => p.id == productId);
+        // Verificăm dacă produsul există deja în coș cu aceeași mărime
+        let existingProduct = cart.find(p => p.id == productId && p.size === selectedSize);
         if (existingProduct) {
-            existingProduct.quantity += 1;
+            // Dacă există, actualizăm cantitatea
+            existingProduct.quantity += inputQuantity;
         } else {
-            let productWithQuantity = { ...product, quantity: inputQuantity };
+            // Dacă nu există, adăugăm produsul cu mărimea selectată
+            let productWithQuantity = { 
+                ...product, 
+                quantity: inputQuantity, 
+                size: selectedSize // Salvăm mărimea selectată
+            };
             cart.push(productWithQuantity);
         }
-        saveCart();
-        checkCart();
+        saveCart(); // Salvăm coșul în localStorage
+        checkCart(); // Actualizăm UI-ul
     }
 }
+
+
 
 function addCartToHTML() {
     let content = ``;
@@ -50,13 +59,14 @@ function addCartToHTML() {
         content += `
         <div class="cart_product">
             <div class="cart_product_img">  
-                <img src=${product.images[0]}>
+                <img src=${product.images[0]} alt="${product.name}">
             </div>
             <div class="cart_product_info">  
                 <div class="top_card">
                     <div class="left_card">
                         <h4 class="product_name">${product.name}</h4>
                         <span class="product_price">${price.toFixed(2)} MDL</span>
+                        <span class="product_size">Mărime: ${product.size}</span> <!-- Afișăm mărimea -->
                     </div>
                     <div class="remove_product" onclick="removeFromCart(${index})">
                         <ion-icon name="close-outline"></ion-icon>
@@ -78,6 +88,7 @@ function addCartToHTML() {
         element.innerHTML = content;
     });
 }
+
 
 function removeFromCart(index) {
     cart.splice(index, 1);
