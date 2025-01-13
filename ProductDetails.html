@@ -187,56 +187,67 @@
             cursor: not-allowed;
         }
 
+/* Image Preview */
+.prewiev-image-navigation {
+    display: flex; /* Use flexbox for layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical overflow */
+    white-space: nowrap; /* Prevent line breaks */
+    max-width: 100%; /* Make it responsive */
+    padding: 10px 0; /* Optional: Add padding for better appearance */
+    border: 2px solid #ccc; /* Optional: Add border for visibility */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 
-        /* Image Preview */
-        .prewiev-image-navigation {
-            display: flex;
-            /* Use flexbox for layout */
-            overflow-x: auto;
-            /* Enable horizontal scrolling */
-            overflow-y: hidden;
-            /* Hide vertical overflow */
-            white-space: nowrap;
-            /* Prevent line breaks */
-            width: 400px;
-            /* Set a fixed width for the scrolling area */
-            padding: 10px 0;
-            /* Optional: Add padding for better appearance */
-            border: 2px solid #ccc;
-            /* Optional: Add border for visibility */
-            border-radius: 10px;
-            /* Rounded corners */
-            background-color: #f9f9f9;
-            /* Light background for contrast */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Subtle shadow */
-        }
+.preview-square {
+    width: 90px; /* Fixed width */
+    height: 90px; /* Fixed height */
+    background-color: #333; /* Darker background color */
+    border: 1px solid #fff; /* White border for contrast */
+    flex-shrink: 0; /* Prevents shrinking */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between squares */
+    transition: transform 0.2s, border 0.2s; /* Smooth transitions */
+}
 
-        .preview-square {
-            width: 90px;
-            /* Fixed width */
-            height: 90px;
-            /* Fixed height */
-            background-color: #333;
-            /* Darker background color */
-            border: 1px solid #fff;
-            /* White border for contrast */
-            flex-shrink: 0;
-            /* Prevents shrinking */
-            border-radius: 5px;
-            /* Rounded corners */
-            margin-right: 10px;
-            /* Space between squares */
-            transition: transform 0.2s, border 0.2s;
-            /* Smooth transitions */
-        }
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .preview-square {
+        width: 70px; /* Adjust size for smaller screens */
+        height: 70px; /* Adjust size for smaller screens */
+        margin-right: 5px; /* Reduce margin */
+    }
+}
 
-        .preview-square:hover {
-            transform: scale(1.1);
-            /* Scale effect on hover */
-            border: 1px solid #007BFF;
-            /* Highlight border on hover */
-        }
+@media (max-width: 400px) {
+    .preview-square {
+        width: 60px; /* Further adjust size for very small screens */
+        height: 60px; /* Further adjust size for very small screens */
+    }
+}
+
+/* Hover effect */
+.preview-square:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+    border: 1px solid #007BFF; /* Highlight border on hover */
+}
+
+/* Additional styling for smooth scrolling */
+.prewiev-image-navigation::-webkit-scrollbar {
+    height: 8px; /* Height of the scrollbar */
+}
+
+.prewiev-image-navigation::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.prewiev-image-navigation::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker on hover */
+}
+
     </style>
 </head>
 
@@ -277,17 +288,13 @@
                         <div class="out-of-stock" id="outOfStock" style="display: none;">Out of stock</div>
                         <img id="product_image" src="" alt="productDetails">
                     </div>
-<!-- 
+
 
                     <div class="prewiev-image-navigation">
-                        <div class="preview-square"></div>
-                        <div class="preview-square"></div>
-                        <div class="preview-square"></div>  
-                    </div> -->
+          
+                    </div>
 
-
-
-
+ 
                     <div class="image-navigation">
                         <button id="prevImage">Previous</button>
                         <button id="nextImage">Next</button>

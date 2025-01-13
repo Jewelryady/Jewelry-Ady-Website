@@ -5,8 +5,7 @@
         "price": "225.00 MDL",
         "images": [
            "images/Bratari/Bratara_1.jpg",
-           "images/Bratari/Bratara_2.jpg",
-           "images/Bratari/Bratara_3.jpg" 
+           "images/Bratari/Bratara_2.jpg" 
         ],
         "category": "Bratari",
         "isTrending": true,
