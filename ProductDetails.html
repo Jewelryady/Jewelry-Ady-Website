@@ -30,6 +30,7 @@
     <title>SA__FashionStyle</title>
 
     <style>
+        
         .sale-flag {
             position: absolute;
             top: 0px;
@@ -130,8 +131,15 @@
                     <h2 class="product_name"></h2>
                     <h3 class="product_price"></h3>
                     <p class="product_des"></p>
+                
+                    <!-- Dropdown pentru mărimi -->
+                    <label for="sizeSelect">Alegeți mărimea:</label>
+                    <select id="sizeSelect" class="size_select">
+                        <option disabled selected>Alege mărimea</option>
+                        <!-- Opțiunile vor fi populate din JavaScript -->
+                    </select>
+                    
                     <div class="buttons">
-                        
                         <div class="counts">
                             <button id="minus" class="counts_btns">-</button>
                             <input type="number" inputmode="numeric" name="productCount" min="1" step="1" max="999"
@@ -140,12 +148,12 @@
                         </div>
                         <button id="btn_add">Adăugați la coș</button>
                     </div>
-
+                
                     <div class="btn_control">
                         <button class="viewCart" onclick="viewCart();">Vezi coșul</button>
                     </div>
-
                 </div>
+                
             </div>
         </div>
     </main>
