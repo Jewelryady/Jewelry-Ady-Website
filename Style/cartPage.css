@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -8,6 +9,8 @@ h2 {
     font-weight: 400;
     margin-bottom: 24px;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .cart_page .container {
     padding: 4% 8%;
 }
@@ -22,6 +25,7 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 100px;
 }
+<<<<<<< HEAD
 .apply_code {
     display: flex;
     width: 100%;
@@ -63,6 +67,8 @@ h2 {
     background-color: #333; /* Darker shade on hover */
     transform: translateY(-2px); /* Lift effect on hover */
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .summary_price {
     background-color: #fff; /* White background for contrast */
     padding: 20px;

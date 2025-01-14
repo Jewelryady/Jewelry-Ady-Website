@@ -25,6 +25,7 @@
 .slider .slide-content.active {
     display: flex;
 }
+<<<<<<< HEAD
 .prev:hover, .next:hover {
     background-color: #097a6e;
     border: 2px solid #fff;
@@ -52,6 +53,8 @@
 .prev {
     left: 0;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .slide .text {
     width: 500px;
     position: absolute;
@@ -60,6 +63,7 @@
     font-size: 60px;
     font-weight: 400;
 }
+<<<<<<< HEAD
 .shop-btn {
     background-color: #000;
     color: white;
@@ -78,6 +82,8 @@
 .hero_for_phone {
     display: inline-block;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .information {
     width: 100%;
     display: flex;
@@ -133,12 +139,15 @@
     gap: 20px;
     padding: 16px;
 }
+<<<<<<< HEAD
 .product-card {
     overflow: hidden;
     transition: transform 0.3s ease;
     border-radius: 8px; /* Colțuri rotunjite */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Umbră pentru carduri */
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .card-img {
     position: relative;
     overflow: hidden;
@@ -176,6 +185,7 @@
     color: #2b2b2b;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }
+<<<<<<< HEAD
 .card-info {
     padding: 16px 0;
     text-align: center; /* Centrează textul în interiorul cardului */
@@ -192,6 +202,8 @@
     color: #696969;
     margin: 0;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .collection {
     padding: 60px 0;
     
@@ -243,9 +255,12 @@
     content: "";
     position: absolute;
 }
+<<<<<<< HEAD
 .hover\:shine {
     overflow: hidden;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .hover\:shine .has-bg-image {
     position: absolute;
     top: 0;
@@ -258,6 +273,7 @@
 .hover\:shine:is(:hover, :focus) .has-bg-image {
     transform: scale(1.15);
 }
+<<<<<<< HEAD
 .hover\:shine::before {
     top: 0;
     left: -140%;
@@ -271,6 +287,8 @@
 .hover\:shine:is(:hover, :focus-within)::before {
     animation: shine 1s ease forwards;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .btn-link {
     color: #ffffff;
     font-weight: 600;
@@ -283,6 +301,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+<<<<<<< HEAD
 }
 .news {
     width: 100%;
@@ -320,4 +339,6 @@
     border: none;
     text-transform: capitalize;
     cursor: pointer;
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 }

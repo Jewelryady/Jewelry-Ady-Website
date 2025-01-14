@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 main {
     padding: 8%;
     background-color: #f9f9f9; /* Fundal mai deschis pentru contrast */
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .product-header {
     background-color: #ffffff; /* Fundal alb pentru header */
     padding: 10px 10px; /* Spațiu mai generos */
@@ -125,12 +128,15 @@ main .container {
     padding: 16px;
     margin-top: 120px; /* Spațiu deasupra conținutului */
 }
+<<<<<<< HEAD
 .product-card {
     overflow: hidden;
     transition: transform 0.3s ease;
     border-radius: 8px; /* Colțuri rotunjite */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Umbră pentru carduri */
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .card-img {
     position: relative;
     overflow: hidden;
@@ -167,6 +173,7 @@ main .container {
     background-color: #bdbcb8;
     color: #2b2b2b;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
+<<<<<<< HEAD
 }
 .card-info {
     padding: 16px 0;
@@ -185,4 +192,6 @@ main .container {
     font-weight: 600; /* Îngroșat pentru evidențiere */
     color: #696969;
     margin: 0;
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -30,6 +31,8 @@ main {
 :root {
     --image-margin-top: 50px; /* Variabilă pentru a controla margin-top-ul imaginii */
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .carousel {
     width: 100vw;
     height: 600px; /* Dimensiune standard pentru desktop */
@@ -85,6 +88,7 @@ main {
     padding-top: 4px;
     font-size: 20px;
 }
+<<<<<<< HEAD
 #categoryBtn {
     display: block;
     position: fixed;
@@ -122,6 +126,8 @@ header {
     left: 0;
     z-index: 60;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .header_top {
     background-color: #efeeed;
     display: flex;
@@ -139,6 +145,7 @@ header {
 .header_top img {
     width: 100px;
 }
+<<<<<<< HEAD
 nav {
     position: relative;
     background-color: #efeeed;
@@ -158,6 +165,8 @@ nav {
     align-items: center;
     justify-content: center;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .header_actions {
     display: flex;
     justify-content: center;
@@ -175,6 +184,7 @@ nav {
     justify-content: center;
     align-items: center;
 }
+<<<<<<< HEAD
 nav ul {
     list-style: none;
     display: flex;
@@ -191,6 +201,8 @@ nav ul li a {
     font-size: 18px;
     color: #000000;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .nav-buttons {
     list-style: none;
     display: flex;
@@ -220,6 +232,7 @@ nav ul li a {
  
     transform: scale(1.05); /* Mărire ușoară */
 }
+<<<<<<< HEAD
 header nav li::after {
     content: "";
     position: absolute;
@@ -233,6 +246,8 @@ header nav li::after {
 header nav li:hover::after {
     width: 25px;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .icon-cart {
     position: relative;
 }
@@ -325,6 +340,7 @@ body.showCart .cart-overlay {
 .cart_products::-webkit-scrollbar-thumb:hover {
     background-color: #097a6e;
 }
+<<<<<<< HEAD
 .cart_product {
     display: flex;
     margin-bottom: 25px;
@@ -359,10 +375,13 @@ body.showCart .cart-overlay {
     font-size: 13px;
     font-weight: 400;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .cart_product .top_card .product_price {
     font-size: 12px;
     color: #010101;
 }
+<<<<<<< HEAD
 .remove_product {
     width: 26px;
     height: 26px;
@@ -374,6 +393,8 @@ body.showCart .cart-overlay {
     cursor: pointer;
     padding-left: 1px;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .cart_total {
     display: flex;
     justify-content: space-between;
@@ -389,12 +410,15 @@ body.showCart .cart-overlay {
     font-weight: 600;
     color: red;
 }
+<<<<<<< HEAD
 .buttom_card {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .buttom_card .counts {
     width: 100px;
     height: 30px;
@@ -420,6 +444,7 @@ body.showCart .cart-overlay {
     align-items: center;
     cursor: pointer;
 }
+<<<<<<< HEAD
 .buttom_card .minus {
     left: 0;
     text-align: left;
@@ -430,6 +455,8 @@ body.showCart .cart-overlay {
     text-align: right;
     padding-right: 15px;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .buttom_card .product_count {
     width: 35px;
     border: 0px;
@@ -541,6 +568,7 @@ body.showCart .cart-overlay {
 .footer-bottom #author:hover {
     color: #696969;
 }
+<<<<<<< HEAD
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -549,6 +577,8 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .header_social a {
     font-size: 2rem; /* Face icon-urile mai mari */
     margin: 0  3px; /* Creează spațiu între icon-uri */
@@ -651,6 +681,7 @@ input[type=number] {
     text-underline-offset: 4px;
     text-decoration-thickness: 1px !important;
 }
+<<<<<<< HEAD
 .alert {
     display: none;
     color: red;
@@ -659,6 +690,8 @@ input[type=number] {
     margin-bottom: 4px;
     text-align: center; /* Aliniere pe mijloc pentru mesajele de alertă */
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .text-message-center {
     text-align: center; /* Text aliniat pe mijloc */
 }
@@ -677,11 +710,14 @@ input[type=number] {
 .card-img {
     position: relative; /* Permite poziționarea absolută a sale-flag */
 }
+<<<<<<< HEAD
 .old-price {
     font-weight: 500;
     text-decoration: line-through; /* Linia pe mijloc pentru prețul vechi */
     color: #ff0000; /* Poate adăuga o culoare deschisă pentru a face linia mai subtilă */
 }
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 .new-flag {
     position: absolute;
     top: 0px; /* Așezăm insigna sub insigna de reducere, dacă este activă */
@@ -732,6 +768,7 @@ input[type=number] {
     font-size: 14px;
     color: #333;
     background-color: #fff;
+<<<<<<< HEAD
 }
 .product-card .card-info {
     padding: 15px;
@@ -747,4 +784,6 @@ input[type=number] {
     font-size: 14px;
     text-decoration: line-through;
     color: red;
+=======
+>>>>>>> parent of db6aa06 (Revert "Clear Unused CSS")
 }
