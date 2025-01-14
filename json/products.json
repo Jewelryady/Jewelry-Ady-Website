@@ -1,179 +1,210 @@
 [
     {
         "id": 1,
-        "name": "Bratara_1",
+        "name": "Inel 1",
         "price": "225.00 MDL",
         "images": [
-           "images/Bratari/Bratara_1.jpg",
-           "images/Bratari/Bratara_3.jpg",
-           "images/Bratari/Bratara_3.jpg",
-     
-           "images/Bratari/Bratara_2.jpg" 
+           "images/Inele/Inel_1.png"
         ],
-        "category": "Bratari",
+        "category": "Inele",
         "isTrending": true,
-        "isNew": true,
+        "old_price": "635.00 MDL",
+ 
         "product_sizes": [15, 16, 17, 18, 19],
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    {
+        "id": 2,
+        "name": "Inel 2",
+        "price": "315.00 MDL",
+        "images": [
+           "images/Inele/Inel_2.png"
+        ],
+        "category": "Inele",
+      
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": 3,
-        "name": "Bratara_3",
-        "price": "215.00 MDL",
+        "name": "Inel 3",
+        "price": "415.00 MDL",
         "images": [
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
+           "images/Inele/Inel_3.png"
         ],
-        "category": "Bratari",
-        "out_Off_stock": true,
-        "isTrending": true,
+        "category": "Inele",
+      
+        
         "product_sizes": [15, 16, 17, 18, 19],
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": 4,
-        "name": "Bratara_4",
-        "price": "445.00 MDL",
+        "name": "Inel 4",
+        "price": "615.00 MDL",
         "images": [
-            "images/Bratari/Bratara_4.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
-        ],
-        "category": "Bratari",
-        "product_sizes": [15, 16, 17, 18, 19],
-        "old_price": "635.00 MDL",
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
-    },
-    {
-        "id": 5,
-        "name": "Inel_1",
-        "price": "745.00 MDL",
-        "images": [
-            "images/Inele/Inel_1.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
+           "images/Inele/Inel_4.png"
         ],
         "category": "Inele",
-        "out_Off_stock": true,
+        "isNew": true,
+        
         "product_sizes": [15, 16, 17, 18, 19],
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+
+
+
+
+
+
+    {
+        "id": 5,
+        "name": "Colier 1",
+        "price": "445.00 MDL",
+        "images": [
+            "images/Coliere/Colier_1.jpg"
+        ],
+        "category": "Coliere",
+        "product_sizes": [15, 16, 17, 18, 19],
+        "old_price": "635.00 MDL",
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": 6,
-        "name": "Inel_2",
+        "name": "Colier 2",
+        "price": "745.00 MDL",
+        "images": [
+            "images/Coliere/Colier_2.jpg"
+        ],
+        "category": "Coliere",
+ 
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+
+
+
+
+
+
+    {
+        "id": 7,
+        "name": "Bratara 1",
+        "price": "425.00 MDL",
+        "images": [
+            "images/Bratari/Bratara_1.jpg"
+        ],
+        "isNew": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+ 
+        "category": "Bratari",
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    {
+        "id": 8,
+        "name": "Bratara 2",
+        "price": "425.00 MDL",
+        "images": [
+           "images/Bratari/Bratara_2.png"
+        ],
+        "category": "Bratari",
+        "product_sizes": [15, 16, 17, 18, 19],
+        "old_price": "1645.00 MDL",
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    {
+        "id": 9,
+        "name": "Bratara 3",
+        "price": "625.00 MDL",
+        "images": [
+              "images/Bratari/Bratara_3.png"
+        ],
+        "isNew": true,
+        "category": "Bratari",
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    {
+        "id": 10,
+        "name": "Bratara 4",
+        "price": "325.00 MDL",
+        "images": [
+            "images/Bratari/Bratara_4.png"
+        ],
+        "isNew": true,
+        "category": "Bratari",
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+
+
+
+
+    {
+        "id": 11,
+        "name": "Cercel 1",
         "price": "645.00 MDL",
  
         "images": [
-            "images/Inele/Inel_2.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
+            "images/Cercei/cercei_1.jpg"
         ],
      
         "product_sizes": [15, 16, 17, 18, 19],
-        "category": "Inele",
+        "category": "Cercei",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     
     {
-        "id": 7,
-        "name": "Inel_3",
+        "id": 12,
+        "name": "Cercel 2",
         "price": "745.00 MDL",
         "images": [
-            "images/Inele/Inel_3.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
+            "images/Cercei/cercei_2.png"
         ],
-        "category": "Inele",
+        "category": "Cercei",
         "product_sizes": [15, 16, 17, 18, 19],
         "isNew": true,
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
     
     {
-        "id": 8,
-        "name": "Inel_4",
-        "price": "325.00 MDL",
+        "id": 13,
+        "name": "Cercel 3",
+        "price": "625.00 MDL",
         "images": [
-            "images/Inele/Inel_4.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
+            "images/Cercei/cercei_3.png"
         ],
-        "category": "Inele",
+        "category": "Cercei",
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    {
+        "id": 14,
+        "name": "Cercel 4",
+        "price": "425.00 MDL",
+        "images": [
+            "images/Cercei/cercei_4.png"
+        ],
+        "category": "Cercei",
         "isTrending": true,
         "product_sizes": [15, 16, 17, 18, 19],
         "old_price": "1245.00 MDL",
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
     {
-        "id": 11,
-        "name": "cercei_2",
-        "price": "425.00 MDL",
+        "id": 15,
+        "name": "Cercel 5",
+        "price": "225.00 MDL",
         "images": [
-            "images/Cercei/cercei_3.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
-        ],
-        "isNew": true,
-        "product_sizes": [15, 16, 17, 18, 19],
-        "out_Off_stock": true,
-        "category": "Cercei",
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
-    },
-    {
-        "id": 13,
-        "name": "cercei_2",
-        "price": "425.00 MDL",
-        "images": [
-            "images/Cercei/cercei_3.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
+            "images/Cercei/cercei_5.png"
         ],
         "category": "Cercei",
         "product_sizes": [15, 16, 17, 18, 19],
-        "old_price": "1645.00 MDL",
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
-    },
-    {
-        "id": 12,
-        "name": "cercei_4",
-        "price": "625.00 MDL",
-        "images": [
-            "images/Cercei/cercei_4.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
-        ],
-        "category": "Cercei",
-       
-        "isTrending": true,
-        "product_sizes": [15, 16, 17, 18, 19],
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
-    },
-
-
-    {
-        "id": 13,
-        "name": "Colier_1",
-        "price": "625.00 MDL",
-        "images": [
-            "images/Cercei/cercei_4.png",
-            "images/Bratari/Bratara_2.jpg",
-            "images/Bratari/Bratara_3.jpg",
-            "images/Bratari/Bratara_4.png"
-        ],
-        "category": "Coliere",
-       
-        "isTrending": true,
-        "product_sizes": [15, 16, 17, 18, 19],
-        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+       "isNew": true,
+       "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     }
-] 
+]
