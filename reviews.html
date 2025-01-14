@@ -22,36 +22,45 @@
         .text-message-center {
             position: relative;
             width: 100%; /* Adjust width as needed */
-            height: 300px; /* Height of the visible card */
+            height: 400px; /* Set the height according to the image */
             overflow: hidden; /* Hide overflow to only show one card */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
         }
 
         .card-container {
             position: absolute;
             width: 100%; /* Ensure it covers the full width */
-            height: 400px; /* Ensure it matches the height */
-            transition: transform 0.5s ease;
+            height: 100%; /* Match the height */
+            /* Removed transition for instant change */
+            
         }
 
         .card {
-            width: 100%; /* Set to full width of the container */
-            height: 100%; /* Set to full height of the container */
-            margin: 0; /* Remove margin to use the full space */
+            width: 100%; /* Full width of the container */
+            height: 100%; /* Full height of the container */
+            margin: 0; /* No margin to use the full space */
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
             overflow: hidden;
             background-color: white;
             position: absolute; /* Stack cards on top of each other */
-            top: 0; /* Align at the top */
+            top: 50%; /* Align at the center */
             left: 50%; /* Center align */
-            transform: translateX(-50%); /* Centering effect */
+            transform: translate(-50%, -50%); /* Centering effect */
+            display: none; /* Initially hide all cards */
+            
         }
 
         .card img.profile-image {
-            width: 100%; /* Make the image take the full width of the card */
-            height: 100%; /* Make the image take the full height of the card */
-            object-fit: cover; /* Cover the area without distortion */
+            max-width: 100%; /* Make the image responsive */
+            max-height: 100%; /* Ensure image doesn't overflow */
+            object-fit: contain; /* Contain the image within the card */
             object-position: center; /* Center the image within the card */
+            
+        }
+
+        .card.active {
+            display: block; /* Show the active card */
         }
 
         .card h2, .card p {
@@ -69,6 +78,7 @@
             padding: 5px;
             border: none;
             border-radius: 5px;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
             cursor: pointer;
         }
 
@@ -81,6 +91,7 @@
             background-color: red;
             color: white;
         }
+        
     </style>
 </head>
 
@@ -106,17 +117,18 @@
     </header>
     <section id="login">
         <div class="container">
+            <h1 class="section-header"> </h1>
             <h1 class="section-header">Recenzii</h1>
             <div class="text-message-center">
                 <div class="card-container">
-                    <div class="card">
+                    <div class="card active">
                         <img src="images/reviews/rew_1.jpg" alt="Recenzie 1" class="profile-image">
                     </div>
                     <div class="card">
                         <img src="images/reviews/rew_2.jpg" alt="Recenzie 2" class="profile-image">
                     </div>
                     <div class="card">
-                        <img src="images/reviews/rew_3.jpg" alt="Recenzie 2" class="profile-image">
+                        <img src="images/reviews/rew_3.jpg" alt="Recenzie 3" class="profile-image">
                     </div>
                     <!-- Add more cards as needed -->
                 </div>
@@ -170,13 +182,16 @@
     </footer>
 
     <script>
-        const cardContainer = document.querySelector('.card-container');
         const cards = document.querySelectorAll('.card');
         let currentIndex = 0;
 
         function showCard(index) {
-            const offset = index * -100; // Adjust based on card height
-            cardContainer.style.transform = `translateY(${offset}px)`; // Change to Y-axis for vertical stacking
+            cards.forEach((card, i) => {
+                card.classList.remove('active'); // Remove active class from all cards
+                if (i === index) {
+                    card.classList.add('active'); // Add active class to the current card
+                }
+            });
         }
 
         document.querySelectorAll('.card-actions button').forEach(button => {
@@ -185,11 +200,18 @@
 
                 // Update the index based on action
                 if (action === 'like' || action === 'dislike') {
-                    currentIndex++;
-                    if (currentIndex >= cards.length) {
-                        currentIndex = 0; // Reset to first card
+                    if (action === 'dislike') {
+                        currentIndex++; // Move to the next card
+                    } else {
+                        currentIndex--; // Move to the previous card
                     }
-                    showCard(currentIndex);
+                    // Loop the index to ensure it stays within bounds
+                    if (currentIndex >= cards.length) {
+                        currentIndex = 0; // Reset to the first card
+                    } else if (currentIndex < 0) {
+                        currentIndex = cards.length - 1; // Go to the last card
+                    }
+                    showCard(currentIndex); // Show the updated card
                 }
             });
         });
