@@ -13,7 +13,7 @@
         "category": "Bratari",
         "isTrending": true,
         "isNew": true,
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -29,7 +29,7 @@
         "category": "Bratari",
         "out_Off_stock": true,
         "isTrending": true,
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -43,7 +43,7 @@
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "old_price": "635.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -59,7 +59,7 @@
         ],
         "category": "Inele",
         "out_Off_stock": true,
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
     {
@@ -74,7 +74,7 @@
             "images/Bratari/Bratara_4.png"
         ],
      
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "category": "Inele",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -90,7 +90,7 @@
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Inele",
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "isNew": true,
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
@@ -107,7 +107,7 @@
         ],
         "category": "Inele",
         "isTrending": true,
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "old_price": "1245.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -122,7 +122,7 @@
             "images/Bratari/Bratara_4.png"
         ],
         "isNew": true,
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "out_Off_stock": true,
         "category": "Cercei",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
@@ -138,7 +138,7 @@
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Cercei",
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
         "old_price": "1645.00 MDL",
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     },
@@ -155,7 +155,25 @@
         "category": "Cercei",
        
         "isTrending": true,
-        "product_sizes": [32, 36, 60, 70],
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
+    },
+
+
+    {
+        "id": 13,
+        "name": "Colier_1",
+        "price": "625.00 MDL",
+        "images": [
+            "images/Cercei/cercei_4.png",
+            "images/Bratari/Bratara_2.jpg",
+            "images/Bratari/Bratara_3.jpg",
+            "images/Bratari/Bratara_4.png"
+        ],
+        "category": "Coliere",
+       
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
         "description": "These Retro Sunglasses offer a vintage-inspired look with modern protection. Perfect for adding a stylish edge to any outfit."
     }
-]
+] 
