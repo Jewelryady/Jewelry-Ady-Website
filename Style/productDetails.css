@@ -1,3 +1,4 @@
+/* Stiluri generale pentru container */
 main .container {
     padding: 8%;
     max-width: 1200px;
@@ -5,6 +6,8 @@ main .container {
     margin: auto;
     /* Centrează containerul */
 }
+
+/* Stiluri pentru detaliile produsului */
 .productDetails {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -13,6 +16,7 @@ main .container {
     margin-top: 20px;
     /* Adaugă un spațiu de sus */
 }
+
 .productDetails .images img {
     width: 100%;
     height: auto;
@@ -21,16 +25,19 @@ main .container {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Umbră pentru efect 3D */
 }
+
 .details {
     display: flex;
     flex-direction: column;
     /* Aranjare pe verticală */
 }
+
 .details .category_name {
     font-size: 14px;
     color: #868686;
     margin-bottom: 6px;
 }
+
 .details .product_name {
     font-size: 28px;
     /* Dimensiune font mai mare */
@@ -39,6 +46,7 @@ main .container {
     color: #000;
     margin-bottom: 12px;
 }
+
 .details .product_price {
     font-size: 24px;
     /* Dimensiune mai mare */
@@ -49,6 +57,7 @@ main .container {
     margin-bottom: 20px;
     position: relative;
 }
+
 .details .product_price::after {
     content: "";
     position: absolute;
@@ -59,11 +68,13 @@ main .container {
     /* Linie mai groasă */
     background-color: #86868694;
 }
+
 .product_des {
     font-size: 16px;
     color: #868686;
     margin: 20px 0;
 }
+
 .buttons {
     display: flex;
     justify-content: space-between;
@@ -73,10 +84,12 @@ main .container {
     margin-top: 10px;
     /* Spațiu de sus */
 }
+
 .buttons .counts {
     display: flex;
     align-items: center;
 }
+
 .counts_btns {
     background: transparent;
     border: none;
@@ -84,6 +97,7 @@ main .container {
     color: rgb(134 134 134 / 50%);
     cursor: pointer;
 }
+
 .product_count {
     width: 50px;
     /* Lățime mai mare */
@@ -99,6 +113,7 @@ main .container {
     margin: 0 10px;
     /* Spațiu între butoane */
 }
+
 #btn_add {
     background-color: #39b626;
     /* Culoare verde */
@@ -117,7 +132,37 @@ main .container {
     transition: background-color 0.3s;
     /* Animare la hover */
 }
+
 #btn_add:hover {
     background-color: #32a62f;
     /* Culoare mai închisă la hover */
+}
+
+
+/* Stiluri responsive */
+@media (max-width: 768px) {
+    .productDetails {
+        grid-template-columns: 1fr;
+        /* O singură coloană pe ecrane mici */
+    }
+
+    .productDetails .images img {
+        border-radius: 5px;
+        /* Colțuri rotunjite pentru imagini */
+    }
+
+    .buttons {
+        flex-direction: column;
+        /* Aranjare verticală pentru butoane pe ecrane mici */
+    }
+
+    .buttons .counts {
+        margin-bottom: 10px;
+        /* Spațiu între count și buton */
+    }
+
+    .product_count {
+        width: 60px;
+        /* Lățime mai mare pentru input pe ecrane mici */
+    }
 }
