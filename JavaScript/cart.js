@@ -118,7 +118,7 @@ function updateTotalPrice() {
         return sum + (price * product.quantity);
     }, 0);
     totalPrice.innerHTML = `${total.toFixed(2)} MDL`;
-    localStorage.setItem("total price", total + 70); // Adaugă livrarea dacă e necesar
+    localStorage.setItem("total price", total + 0); // Adaugă livrarea dacă e necesar
     return total;
 }
 
@@ -164,7 +164,7 @@ function checkCartPage(total, totalQuantity) {
 function displayInCartPage(total) {
     let subTotal = document.getElementById("Subtotal");
     subTotal.innerHTML = `${total.toFixed(2)} MDL`;
-    let totalOrder = parseFloat(subTotal.innerHTML.replace('MDL', '')) + 70; // Adaugăm taxa de livrare
+    let totalOrder = parseFloat(subTotal.innerHTML.replace('MDL', '')) + 0; // Adaugăm taxa de livrare
     document.getElementById("total_order").innerHTML = `${totalOrder.toFixed(2)} MDL`;
 }
 
