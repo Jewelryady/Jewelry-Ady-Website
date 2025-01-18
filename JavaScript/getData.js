@@ -9,12 +9,11 @@ async function getData(category = "") {
         const response = await fetch('json/products.json');
         const products = await response.json();
 
-        // Filtrare produse după categorie
         const filteredProducts = category
             ? products.filter(product => product.category === category)
             : products;
 
-        displayProducts(filteredProducts);
+        displayProducts(filteredProducts, category);
     } catch (error) {
         console.error("Eroare la încărcarea datelor:", error);
     }
@@ -38,8 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
     getData(categoryFromURL);
 });
 
-function displayProducts(products) {
+function displayProducts(products, category = "") {
     const content = document.querySelector(".content");
+    const currentCategorySpan = document.getElementById("currentCategory");
+    const productCountSpan = document.getElementById("productCount");
+
+    // Actualizare text pentru categoria curentă
+    currentCategorySpan.textContent = `> ${category || "Toate Produsele"}`;
+
+    // Actualizare text pentru numărul total de produse
+    productCountSpan.textContent = `Produse: ${products.length}`;
+
     content.innerHTML = ""; // Clear previous content
 
     if (products.length === 0) {
@@ -60,7 +68,7 @@ function displayProducts(products) {
         // Create product card
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
-        productCard.setAttribute('data-id', product.id); // Set data-id for the product card
+        productCard.setAttribute('data-id', product.id);
 
         productCard.innerHTML = `
             <div class="card-img">
@@ -76,7 +84,6 @@ function displayProducts(products) {
                 <h4 class="product-name" onclick="displayDetails(${product.id});">${product.name}</h4>
                 <h5 class="product-price">${product.price}</h5>
                 ${product.old_price ? `<h5 class="old-price">${product.old_price}</h5>` : ''}
-                <!-- Dropdown for sizes -->
                 <select class="size-dropdown">
                     ${dropdownOptions}
                 </select>
@@ -95,21 +102,18 @@ function displayProducts(products) {
             if (productCard && productCard.dataset.id) {
                 let id_product = productCard.dataset.id;
 
-                // Get selected size from dropdown
                 let selectedSize = productCard.querySelector('.size-dropdown').value;
                 if (selectedSize === "Alege mărimea") {
                     alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
                     return;
                 }
 
-                // Add product to cart with the selected size
-                addToCart(id_product, 1, selectedSize); // Default quantity is 1
+                addToCart(id_product, 1, selectedSize);
             }
         });
     });
 }
 
-// Obține categoria selectată și încarcă produsele corespunzătoare
 function getCategory(e) {
     let category = e.target.getAttribute('productCategory');
     setActiveLink(e.target);
@@ -119,10 +123,10 @@ function getCategory(e) {
         console.log("Categoria nu a fost găsită:", e);
     }
     if (window.innerWidth <= 768) {
-        // Închidem bara laterală pe dispozitive mobile
         toggleSidebar();
     }
 }
+
 
 // Setăm link-ul activ pentru categoria selectată
 function setActiveLink(activeLink) {
