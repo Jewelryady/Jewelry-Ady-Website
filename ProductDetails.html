@@ -148,7 +148,7 @@
 
         .new-flag {
             background-color: green;
-            top: 40px;
+            top: 10px;
             /* Pentru a evita suprapunerea */
         }
 
@@ -264,7 +264,7 @@
     bottom: 0;
     right: 0;
     width: 80px;
-    height: 80px;
+    height: 60px;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0), rgb(255, 255, 255)); /* Gradient din colțul din jos, spre sus */
     border-radius: 20px 0 0 0; /* Radius doar pe colțul din stânga sus */
     overflow: hidden; /* Ascunde orice parte a imaginii care depășește pătrățelul */
@@ -277,10 +277,12 @@
 }
 
 .card-watermark-logo img {
-    max-width: 100%; /* Imaginea va ocupa întreaga lățime a pătrățelului, dar nu va depăși dimensiunile acestuia */
-    max-height: 100%; /* Imaginea va ocupa întreaga înălțime a pătrățelului, dar nu va depăși dimensiunile acestuia */
+    width: 100%; /* Imaginea va ocupa întreaga lățime a pătrățelului */
+    height: 100%; /* Imaginea va ocupa întreaga înălțime a pătrățelului */
     object-fit: contain; /* Asigură-te că imaginea va acoperi întregul pătrățel fără a distorsiona */
 }
+
+
 
     </style>
 </head>
@@ -329,18 +331,18 @@
                             </a>
                         </div> <!-- Pătrățelul watermark -->
                     </div>
+                    
+                    
                     <div class="image-navigation">
                         <button id="prevImage">Previous</button>
                         <button id="nextImage">Next</button>
                     </div>
-                    
                     <div class="prewiev-image-navigation">
                         
           
                     </div>
 
  
-                   
                 </div>
 
 
