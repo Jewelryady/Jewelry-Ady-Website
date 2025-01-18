@@ -14,6 +14,15 @@ main {
  
 }
 
+.product-header-left {
+    display: flex;
+    align-items: center; /* Aliniere verticală */
+    margin-left: 10px; /* Spațiu față de ion-icon */
+    font-size: 16px; /* Dimensiune text */
+    font-weight: 600; /* Font mai pronunțat */
+    color: #333; /* Culoare text */
+}
+
 .product-header .menu-icon {
     display: flex;
     align-items: center;
