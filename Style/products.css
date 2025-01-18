@@ -3,15 +3,14 @@ main {
     background-color: #f9f9f9; /* Fundal mai deschis pentru contrast */
 }
 
+/* Stiluri generale pentru product-header */
 .product-header {
     background-color: #ffffff; /* Fundal alb pentru header */
     padding: 10px 10px; /* Spațiu mai generos */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Aliniere între elemente */
     align-items: center;
- 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Umbră blândă */
- 
 }
 
 .product-header-left {
@@ -31,10 +30,21 @@ main {
     visibility: hidden; /* Ascuns pe desktop */
 }
 
+
+.current-category-pc span {
+    display: inline-block;
+    font-size: 16px; /* Mărime text ușor mai mare */
+    font-weight: 600;
+    margin-right: 4px;
+    color: #333; /* Culoare mai închisă pentru text */
+}
+
+/* Alinierea la dreapta a product-header-right */
 .product-header-right {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Aliniere la dreapta */
     align-items: center;
+ 
 }
 
 .product-header-right span {
@@ -230,21 +240,52 @@ main .container {
     margin: 0;
 }
 
+/* Ajustare pentru mobil */
 @media screen and (max-width: 768px) {
     .product-header .menu-icon {
         visibility: visible; /* Vizibil pe mobil */
     }
+    .current-category-pc {
+        display: none; /* Ascunde întregul element pentru a nu ocupa spațiu */
+    }
+    
+    .product-header-left,
+    .product-header-right {
+        flex: 1; /* Fiecare parte ocupă o proporție egală din spațiul disponibil */
+        display: flex;
+        justify-content: right; /* Centrare a conținutului */
+    }
+
+    .product-header .menu-icon {
+        margin: 0 10px; /* Marje pentru distanțare */
+    }
+
     .sortBy {
         display: none; /* Ascunde sortare pe mobil */
     }
+
     .aside {
         width: 100%;
         left: -200%;
     }
+
     .aside.open {
         left: 0;
     }
+
     .products {
         padding-left: 16px; /* Spațiu mai mic pe mobil */
+    }
+}
+
+/* Reguli pentru ecranele mai mari */
+@media screen and (min-width: 769px) {
+    .product-header .menu-icon {
+        visibility: hidden; /* Ascuns pe desktop */
+    }
+
+    /* Aici asigurăm că .current-category-pc span este vizibil pe desktop */
+    .current-category-pc span {
+        visibility: visible; /* Vizibil pe desktop */
     }
 }
