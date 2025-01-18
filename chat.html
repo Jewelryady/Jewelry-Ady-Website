@@ -11,6 +11,16 @@
             margin: 0;
             overflow: hidden; /* Ascunde scroll-ul paginii */
         }
+        .overlay {
+            display: none; /* Ascunde overlay-ul inițial */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundal negru cu transparență */
+            z-index: 900; /* Asigură că overlay-ul este sub popup */
+        }
         .chat-container {
             width: 400px;
             max-width: 90%; /* Responsivitate pe dispozitive mici */
@@ -22,7 +32,7 @@
             bottom: 20px; /* Distanța față de partea de jos */
             right: 20px; /* Distanța față de partea dreaptă */
             display: none; /* Ascunde inițial popup-ul */
-            z-index: 1000; /* Asigură că popup-ul este deasupra altor elemente */
+            z-index: 1000; /* Asigură că popup-ul este deasupra overlay-ului */
             transition: transform 0.3s ease; /* Animare la deschidere/închidere */
         }
         .chat-header {
@@ -127,6 +137,7 @@
     </style>
 </head>
 <body>
+    <div class="overlay" id="overlay"></div> <!-- Overlay element -->
     <button class="chat-button" onclick="toggleChat()">💬</button>
 
     <div class="chat-container" id="chatContainer">
@@ -153,16 +164,15 @@
     <script>
         const chatBody = document.getElementById('chatBody');
         const chatContainer = document.getElementById('chatContainer');
+        const overlay = document.getElementById('overlay');
 
         function toggleChat() {
             if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
                 chatContainer.style.display = "block";
-                chatContainer.style.transform = "scale(1)";
+                overlay.style.display = "block"; // Show overlay when chat is open
             } else {
-                chatContainer.style.transform = "scale(0)";
-                setTimeout(() => {
-                    chatContainer.style.display = "none";
-                }, 300); // delay for animation
+                chatContainer.style.display = "none";
+                overlay.style.display = "none"; // Hide overlay when chat is closed
             }
         }
 
@@ -178,7 +188,13 @@
             // Simulate bot response
             setTimeout(() => {
                 let botResponse = getBotResponse(message);
-                appendMessage(botResponse, 'message-bot');
+                appendMessage(botResponse.message, 'message-bot');
+
+                // If the response has a button, append it
+                if (botResponse.button) {
+                    appendButton(botResponse.button.text, botResponse.button.link);
+                }
+
                 chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom
             }, 1000); // Simulate response delay of 1 second
 
@@ -200,6 +216,17 @@
             chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom after appending a new message
         }
 
+        function appendButton(buttonText, link) {
+            const buttonElement = document.createElement('button');
+            buttonElement.classList.add('preset-button');
+            buttonElement.innerText = buttonText;
+            buttonElement.onclick = function() {
+                window.location.href = link; // Redirect when button is clicked
+            };
+            chatBody.appendChild(buttonElement);
+            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom after appending the button
+        }
+
         function getBotResponse(message) {
             // Simple bot response logic
             const responses = {
@@ -209,7 +236,16 @@
                 "Salut": "Salut! Cum pot să te ajut?",
                 "Ce servicii oferiți?": "Oferim o gamă variată de servicii."
             };
-            return responses[message] || "Îmi pare rău, nu înțeleg. Încercați altceva.";
+
+            // Check if the response should include a button
+            if (responses[message]) {
+                return { message: responses[message] };
+            } else {
+                return {
+                    message: "Pentru întrebări mai complexe, puteți întreba de operatorul nostru pe Telegram.",
+                    button: { text: "Contactați operatorul", link: "https://t.me/jewelryady" } // Add the button details
+                };
+            }
         }
     </script>
 </body>
