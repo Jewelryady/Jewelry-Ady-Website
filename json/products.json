@@ -85,8 +85,33 @@
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
 
+    {
+        "id": 18,
+        "name": "Argint",
+        "price": "1445.00 MDL",
+        "images": [
+            "images/Coliere/IMG_1099.jpeg"
+             
+        ],
+        "category": "Coliere",
+ 
+        "product_sizes": [15, 16],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
 
-
+ {
+        "id": 19,
+        "name": "ady boss",
+        "price": "2500.00 MDL",
+        "images": [
+            "images/Coliere/IMG_1100.jpeg"
+             
+        ],
+        "category": "Coliere",
+ 
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
 
 
 
