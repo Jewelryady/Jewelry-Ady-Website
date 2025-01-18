@@ -248,6 +248,40 @@
     background: #555; /* Darker on hover */
 }
 
+
+
+
+
+
+
+/* card watermark logo */
+.card-img {
+    position: relative;
+}
+
+.card-watermark-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0), rgb(255, 255, 255)); /* Gradient din colțul din jos, spre sus */
+    border-radius: 20px 0 0 0; /* Radius doar pe colțul din stânga sus */
+    overflow: hidden; /* Ascunde orice parte a imaginii care depășește pătrățelul */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.489); /* Adaugă o umbră subtilă pe fundal */
+    pointer-events: none; /* Face elementul transparent pentru clicuri, lăsând clicurile să treacă prin el */
+
+    display: flex; /* Activează Flexbox */
+    justify-content: center; /* Centrează imaginea pe orizontală */
+    align-items: center; /* Centrează imaginea pe verticală */
+}
+
+.card-watermark-logo img {
+    max-width: 100%; /* Imaginea va ocupa întreaga lățime a pătrățelului, dar nu va depăși dimensiunile acestuia */
+    max-height: 100%; /* Imaginea va ocupa întreaga înălțime a pătrățelului, dar nu va depăși dimensiunile acestuia */
+    object-fit: contain; /* Asigură-te că imaginea va acoperi întregul pătrățel fără a distorsiona */
+}
+
     </style>
 </head>
 
@@ -288,18 +322,25 @@
                         <div class="new-flag" id="newFlag" style="display: none;">NOU</div>
                         <div class="out-of-stock" id="outOfStock" style="display: none;">Out of stock</div>
                         <img id="product_image" src="" alt="productDetails">
+                        
+                        <div class="card-watermark-logo">
+                            <a href="link_catre_imagine.html">
+                                <img src="images/logo_block.png" alt="Image description">
+                            </a>
+                        </div> <!-- Pătrățelul watermark -->
                     </div>
-
-
-                    <div class="prewiev-image-navigation">
-          
-                    </div>
-
- 
                     <div class="image-navigation">
                         <button id="prevImage">Previous</button>
                         <button id="nextImage">Next</button>
                     </div>
+                    
+                    <div class="prewiev-image-navigation">
+                        
+          
+                    </div>
+
+ 
+                   
                 </div>
 
 
