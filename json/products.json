@@ -4,7 +4,10 @@
         "name": "Inel 1",
         "price": "225.00 MDL",
         "images": [
-           "images/Inele/Inel_1.png"
+           "images/Inele/Inel_1.png",
+           "images/Inele/IMG_2418.png",
+           "images/Inele/IMG_2417.png"
+            
         ],
         "category": "ArgintProbaS925",
         "isTrending": true,
