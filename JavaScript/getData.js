@@ -20,8 +20,9 @@ async function getData(category = "") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryFromURL = urlParams.get("category") || "";
+    // Verifică dacă există o categorie salvată în localStorage
+    const savedCategory = localStorage.getItem("selectedCategory") || "";
+    const categoryFromURL = new URLSearchParams(window.location.search).get("category") || savedCategory;
 
     // Marchează butonul activ în funcție de categorie
     const categoryLinks = document.querySelectorAll(".categories_link");
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Încarcă produsele pe baza categoriei din URL
+    // Încarcă produsele pe baza categoriei din localStorage sau URL
     getData(categoryFromURL);
 });
 
@@ -116,10 +117,13 @@ function displayProducts(products, category = "") {
     });
 }
 
-
 function getCategory(e) {
     let category = e.target.getAttribute('productCategory');
     setActiveLink(e.target);
+    
+    // Salvează categoria selectată în localStorage
+    localStorage.setItem("selectedCategory", category);
+
     try {
         getData(category);
     } catch (e) {
@@ -129,7 +133,6 @@ function getCategory(e) {
         toggleSidebar();
     }
 }
-
 
 // Setăm link-ul activ pentru categoria selectată
 function setActiveLink(activeLink) {
@@ -144,21 +147,7 @@ Array.from(linkName).forEach(function (element) {
     element.addEventListener('click', getCategory);
 });
 
-// Deschidem sau închidem bara laterală
-function toggleSidebar() {
-    var sidebar = document.querySelector(".aside");
-    sidebar.classList.toggle("open");
-}
-
 // Navigăm la pagina de detalii produs
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
-
-// Adaugă elementul <style> în head-ul documentului
-document.head.appendChild(style);
-
-const link = document.createElement('link');
-link.rel = 'stylesheet';
-link.href = 'Style/main.css'; // înlocuiește cu calea fișierului tău CSS
-document.head.appendChild(link);
