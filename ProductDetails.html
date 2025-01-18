@@ -111,11 +111,11 @@
             width: 100%;
             max-width: 400px;
             aspect-ratio: 1 / 1;
-            /* Păstrează un raport de 1:1 pentru imagine */
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
 
         .card-img img {
             width: 100%;
@@ -149,6 +149,7 @@
         .new-flag {
             background-color: green;
             top: 10px;
+
             /* Pentru a evita suprapunerea */
         }
 
@@ -159,11 +160,16 @@
         }
 
         .image-navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            width: 100%;
-            max-width: 400px;
-            gap: 10px;
+            transform: translateY(-50%);
+            /* Centrează pe verticală */
+            padding: 0 10px;
+            z-index: 20;
+            /* Asigură-te că sunt deasupra imaginii */
         }
 
         .image-navigation button {
@@ -171,32 +177,28 @@
             align-items: center;
             justify-content: center;
             gap: 0;
-            /* Elimină spațiul între text și iconiță */
-            flex: 0;
-            /* Nu mai lărgește butoanele pentru a le face pătrate */
-            width: 50px;
-            /* Lățime fixă de 50px */
-            height: 50px;
-            /* Înălțime fixă de 50px */
-            background-color: #007BFF;
+            width: 30px;
+            height: 30px;
+            background-color: #a4a4a4e5;
+            /* Culoare cu transparență */
             color: white;
             border: none;
-            border-radius: 5%;
-            /* Pentru colțuri rotunjite (pentru a crea un cerc) */
-
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+            /* Shadow mai accentuat la hover */
         }
 
 
 
         .image-navigation button ion-icon {
             font-size: 1.5rem;
-            /* Ajustează dimensiunea iconiței */
         }
 
         .image-navigation button:hover {
-            background-color: #0056b3;
+            background-color: #787878e5;
+            /* Culoare la hover */
         }
 
         .image-navigation button:disabled {
@@ -379,18 +381,20 @@
                             <a href="link_catre_imagine.html">
                                 <img src="images/logo_block.png" alt="Image description">
                             </a>
-                        </div> <!-- Pătrățelul watermark -->
+                        </div>
+
+                        <!-- Butoanele de navigare adăugate în interiorul card-ului -->
+                        <div class="image-navigation">
+                            <button id="prevImage">
+                                <ion-icon name="chevron-back-outline"></ion-icon>
+                            </button>
+                            <button id="nextImage">
+                                <ion-icon name="chevron-forward-outline"></ion-icon>
+                            </button>
+                        </div>
                     </div>
 
 
-                    <div class="image-navigation">
-                        <button id="prevImage">
-                            <ion-icon name="chevron-back-outline"></ion-icon>
-                        </button>
-                        <button id="nextImage">
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
-                        </button>
-                    </div>
 
                     <div class="prewiev-image-navigation">
 
@@ -563,4 +567,5 @@
     });
 
 </script>
+
 </html>
