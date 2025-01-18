@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,47 +10,66 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f8ff;
             margin: 0;
-            overflow: hidden; /* Ascunde scroll-ul paginii */
+            overflow: hidden;
+            /* Ascunde scroll-ul paginii */
         }
+
         .overlay {
-            display: none; /* Ascunde overlay-ul inițial */
+            display: none;
+            /* Ascunde overlay-ul inițial */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundal negru cu transparență */
-            z-index: 900; /* Asigură că overlay-ul este sub popup */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundal negru cu transparență */
+            z-index: 900;
+            /* Asigură că overlay-ul este sub popup */
         }
+
         .chat-container {
             width: 400px;
-            max-width: 90%; /* Responsivitate pe dispozitive mici */
+            max-width: 90%;
+            /* Responsivitate pe dispozitive mici */
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            position: fixed; /* Pozitionare fixa pentru popup */
-            bottom: 20px; /* Distanța față de partea de jos */
-            right: 20px; /* Distanța față de partea dreaptă */
-            display: none; /* Ascunde inițial popup-ul */
-            z-index: 1000; /* Asigură că popup-ul este deasupra overlay-ului */
-            transition: transform 0.3s ease; /* Animare la deschidere/închidere */
+            position: fixed;
+            /* Pozitionare fixa pentru popup */
+            bottom: 20px;
+            /* Distanța față de partea de jos */
+            right: 20px;
+            /* Distanța față de partea dreaptă */
+            display: none;
+            /* Ascunde inițial popup-ul */
+            z-index: 1000;
+            /* Asigură că popup-ul este deasupra overlay-ului */
+            transition: transform 0.3s ease;
+            /* Animare la deschidere/închidere */
         }
+
         .chat-header {
             background-color: #007bff;
             color: #fff;
             padding: 15px;
             text-align: center;
             font-size: 20px;
-            position: relative; /* Pozitie relativa pentru butonul de close */
+            position: relative;
+            /* Pozitie relativa pentru butonul de close */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
         }
+
         .chat-body {
             padding: 20px;
             height: 300px;
             overflow-y: auto;
             background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
-            transition: scroll-behavior 0.3s ease; /* Smooth scroll effect */
+            transition: scroll-behavior 0.3s ease;
+            /* Smooth scroll effect */
         }
+
         .chat-message {
             margin-bottom: 15px;
             padding: 10px;
@@ -57,18 +77,23 @@
             max-width: 80%;
             word-wrap: break-word;
         }
+
         .message-user {
             background-color: #d4edda;
             color: #155724;
             text-align: right;
             margin-left: auto;
+            box-shadow: 0px 6px 8px rgba(50, 50, 50, 0.044); /* Shadow mai accentuat la hover */
         }
+
         .message-bot {
             background-color: #cce5ff;
             color: #004085;
             text-align: left;
             margin-right: auto;
+            box-shadow: 0px 6px 8px rgba(50, 50, 50, 0.044); /* Shadow mai accentuat la hover */
         }
+
         .chat-input {
             display: flex;
             align-items: center;
@@ -76,6 +101,7 @@
             border-top: 1px solid #ddd;
             background-color: #f8f9fa;
         }
+
         .chat-input input {
             flex: 1;
             padding: 10px;
@@ -83,14 +109,29 @@
             border-radius: 5px;
             margin-right: 10px;
         }
+
         .chat-input button {
             background-color: #007bff;
             color: #fff;
             border: none;
             padding: 10px;
             border-radius: 5px;
+
             cursor: pointer;
         }
+
+        .preset-buttons {
+            display: flex;
+            flex-direction: column;
+            /* Align buttons in a vertical column */
+            justify-content: center;
+            /* Center buttons vertically */
+            align-items: center;
+            /* Center buttons horizontally */
+            height: 100%;
+            /* Ensure the container takes full height */
+        }
+
         .preset-button {
             background-color: #e7f3ff;
             color: #007bff;
@@ -98,14 +139,23 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            margin-bottom: 5px; /* Distanța între butoane */
-            width: 100%; /* Lățimea butoanelor pe întreaga lățime a containerului */
+            margin-bottom: 5px;
+            /* Distanța între butoane */
+            width: 380px;
+            /* Lățimea butoanelor pe întreaga lățime a containerului */
+            max-height: 50px;
+            /* Max height of the button */
+            box-sizing: border-box;
+            /* Ensure padding and border are included in the total height */
             transition: background-color 0.2s ease, color 0.2s ease;
         }
+
         .preset-button:hover {
-            background-color: #007bff; /* Schimbare de culoare la hover */
+            background-color: #007bff;
+            /* Schimbare de culoare la hover */
             color: #fff;
         }
+
         .chat-button {
             width: 50px;
             height: 50px;
@@ -122,8 +172,11 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000; /* Asigură că butonul este deasupra altor elemente */
+            z-index: 1000;
+            /* Asigură că butonul este deasupra altor elemente */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
         }
+
         .close-button {
             position: absolute;
             top: 10px;
@@ -136,6 +189,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="overlay" id="overlay"></div> <!-- Overlay element -->
     <button class="chat-button" onclick="toggleChat()">💬</button>
@@ -151,9 +205,12 @@
             </div>
         </div>
         <div class="preset-buttons">
-            <button class="preset-button" onclick="sendPresetMessage('In cât timp ajung coletele?')">In cât timp ajung coletele?</button>
-            <button class="preset-button" onclick="sendPresetMessage('Oferiți livrare express?')">Oferiți livrare express?</button>
-            <button class="preset-button" onclick="sendPresetMessage('Ce servicii oferiți?')">Ce servicii oferiți?</button>
+            <button class="preset-button" onclick="sendPresetMessage('In cât timp ajung coletele?')">In cât timp ajung
+                coletele?</button>
+            <button class="preset-button" onclick="sendPresetMessage('Oferiți livrare express?')">Oferiți livrare
+                express?</button>
+            <button class="preset-button" onclick="sendPresetMessage('Ce servicii oferiți?')">Ce servicii
+                oferiți?</button>
         </div>
         <div class="chat-input">
             <input type="text" id="userInput" placeholder="Scrieți un mesaj...">
@@ -220,7 +277,7 @@
             const buttonElement = document.createElement('button');
             buttonElement.classList.add('preset-button');
             buttonElement.innerText = buttonText;
-            buttonElement.onclick = function() {
+            buttonElement.onclick = function () {
                 window.location.href = link; // Redirect when button is clicked
             };
             chatBody.appendChild(buttonElement);
@@ -249,4 +306,5 @@
         }
     </script>
 </body>
+
 </html>
