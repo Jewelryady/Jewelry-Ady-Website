@@ -39,16 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function displayProducts(products, category = "") {
     const content = document.querySelector(".content");
-    const currentCategorySpan = document.getElementById("currentCategory");
+    const currentCategoryElements = document.querySelectorAll("#currentCategory");
     const productCountSpan = document.getElementById("productCount");
 
-    // Actualizare text pentru categoria curentă
-    currentCategorySpan.textContent = `> ${category || "Toate Produsele"}`;
+    // Actualizează toate elementele cu ID-ul `currentCategory`
+    currentCategoryElements.forEach(element => {
+        element.textContent = `> ${category || "Toate Produsele"}`;
+    });
 
     // Actualizare text pentru numărul total de produse
     productCountSpan.textContent = `Produse: ${products.length}`;
 
-    content.innerHTML = ""; // Clear previous content
+    content.innerHTML = ""; // Curăță conținutul anterior
 
     if (products.length === 0) {
         content.innerHTML = `<p>Niciun produs nu a fost găsit în această categorie.</p>`;
@@ -113,6 +115,7 @@ function displayProducts(products, category = "") {
         });
     });
 }
+
 
 function getCategory(e) {
     let category = e.target.getAttribute('productCategory');
