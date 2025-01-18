@@ -108,7 +108,7 @@ main {
 /* Media Queries pentru dispozitive mobile */
 @media (max-width: 768px) {
     .carousel {
-        height: 400px; /* Dimensiune mai mică pentru mobil */
+        height: 330px; /* Dimensiune mai mică pentru mobil */
     }
 
     .slides {
