@@ -1247,3 +1247,28 @@ input[type=number] {
         font-size: 12px;
     }
 }
+
+
+/* card watermark logo */
+.card-img {
+    position: relative;
+}
+
+.card-watermark-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0), rgb(255, 255, 255)); /* Gradient din colțul din jos, spre sus */
+    border-radius: 20px 0 0 0; /* Radius doar pe colțul din stânga sus */
+    overflow: hidden; /* Ascunde orice parte a imaginii care depășește pătrățelul */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.489); /* Adaugă o umbră subtilă pe fundal */
+    pointer-events: none; /* Face elementul transparent pentru clicuri, lăsând clicurile să treacă prin el */
+}
+
+.card-watermark-logo img {
+    width: 100%; /* Imaginea va ocupa întreaga lățime a pătrățelului */
+    height: 100%; /* Imaginea va ocupa întreaga înălțime a pătrățelului */
+    object-fit: contain; /* Asigură-te că imaginea va acoperi întregul pătrățel fără a distorsiona */
+}

@@ -29,6 +29,14 @@ function displayTrendingProducts(trendingProducts) {
                 ${trendingProducts[i].isNew ? `<div class="new-flag">NOU</div>` : ''}
                 ${trendingProducts[i].out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
                 <img src="${trendingProducts[i].images[0]}" onclick="displayDetails(${trendingProducts[i].id});">
+               
+             <div class="card-watermark-logo">
+    <a href="link_catre_imagine.html">
+        <img src="images/logo_block.png" alt="Image description">
+    </a>
+</div> <!-- Pătrățelul watermark -->
+
+               
                 <a href="#" class="addToCart">
                     <ion-icon name="cart-outline" class="Cart"></ion-icon>
                 </a>
@@ -76,11 +84,3 @@ function showCart() {
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
-
-// Adaugă elementul <style> în head-ul documentului
-document.head.appendChild(style);
-
-const link = document.createElement('link');
-link.rel = 'stylesheet';
-link.href = 'Style/main.css'; // înlocuiește cu calea fișierului tău CSS
-document.head.appendChild(link);
