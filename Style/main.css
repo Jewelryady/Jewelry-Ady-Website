@@ -149,27 +149,6 @@ main {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -------------------- scroll button -------------------- */
 #scrollBtn {
     display: none;
@@ -231,7 +210,6 @@ main {
 #category-up {
     font-size: 0px;
 }
-
 
 
 /* --------------------------- header -------------------------------  */
@@ -974,7 +952,7 @@ body.showCart .cart-overlay {
     }
 
     .productDetails {
-        grid-template-columns: 1fr;
+        grid-template-columns: fr;
     }
 
     .toast-overlay {
@@ -996,7 +974,7 @@ body.showCart .cart-overlay {
     }
 
     .collection-card {
-        min-height: 450px;
+        min-height: 250px;
     }
 }
 
