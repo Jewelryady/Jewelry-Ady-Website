@@ -11,43 +11,32 @@
             background-color: #f0f8ff;
             margin: 0;
             overflow: hidden;
-            /* Ascunde scroll-ul paginii */
         }
 
         .overlay {
             display: none;
-            /* Ascunde overlay-ul inițial */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            /* Fundal negru cu transparență */
             z-index: 900;
-            /* Asigură că overlay-ul este sub popup */
         }
 
         .chat-container {
             width: 400px;
             max-width: 90%;
-            /* Responsivitate pe dispozitive mici */
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: fixed;
-            /* Pozitionare fixa pentru popup */
             bottom: 20px;
-            /* Distanța față de partea de jos */
-            right: 20px;
-            /* Distanța față de partea dreaptă */
+            right: 90px; /* Adjusted for spacing between button and popup */
             display: none;
-            /* Ascunde inițial popup-ul */
             z-index: 1000;
-            /* Asigură că popup-ul este deasupra overlay-ului */
             transition: transform 0.3s ease;
-            /* Animare la deschidere/închidere */
         }
 
         .chat-header {
@@ -57,8 +46,7 @@
             text-align: center;
             font-size: 20px;
             position: relative;
-            /* Pozitie relativa pentru butonul de close */
-            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
         }
 
         .chat-body {
@@ -66,8 +54,6 @@
             height: 300px;
             overflow-y: auto;
             background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
-            transition: scroll-behavior 0.3s ease;
-            /* Smooth scroll effect */
         }
 
         .chat-message {
@@ -83,7 +69,6 @@
             color: #155724;
             text-align: right;
             margin-left: auto;
-            box-shadow: 0px 6px 8px rgba(50, 50, 50, 0.044); /* Shadow mai accentuat la hover */
         }
 
         .message-bot {
@@ -91,7 +76,6 @@
             color: #004085;
             text-align: left;
             margin-right: auto;
-            box-shadow: 0px 6px 8px rgba(50, 50, 50, 0.044); /* Shadow mai accentuat la hover */
         }
 
         .chat-input {
@@ -116,20 +100,15 @@
             border: none;
             padding: 10px;
             border-radius: 5px;
-
             cursor: pointer;
         }
 
         .preset-buttons {
             display: flex;
             flex-direction: column;
-            /* Align buttons in a vertical column */
             justify-content: center;
-            /* Center buttons vertically */
             align-items: center;
-            /* Center buttons horizontally */
             height: 100%;
-            /* Ensure the container takes full height */
         }
 
         .preset-button {
@@ -140,19 +119,14 @@
             border-radius: 5px;
             cursor: pointer;
             margin-bottom: 5px;
-            /* Distanța între butoane */
             width: 380px;
-            /* Lățimea butoanelor pe întreaga lățime a containerului */
             max-height: 50px;
-            /* Max height of the button */
             box-sizing: border-box;
-            /* Ensure padding and border are included in the total height */
             transition: background-color 0.2s ease, color 0.2s ease;
         }
 
         .preset-button:hover {
             background-color: #007bff;
-            /* Schimbare de culoare la hover */
             color: #fff;
         }
 
@@ -163,7 +137,7 @@
             border-radius: 50%;
             position: fixed;
             bottom: 20px;
-            left: 20px;
+            right: 20px;
             border: none;
             color: white;
             font-size: 24px;
@@ -171,10 +145,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            /* Asigură că butonul este deasupra altor elemente */
-            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
         }
 
         .close-button {
@@ -191,7 +163,7 @@
 </head>
 
 <body>
-    <div class="overlay" id="overlay"></div> <!-- Overlay element -->
+    <div class="overlay" id="overlay"></div>
     <button class="chat-button" onclick="toggleChat()">💬</button>
 
     <div class="chat-container" id="chatContainer">
@@ -226,10 +198,10 @@
         function toggleChat() {
             if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
                 chatContainer.style.display = "block";
-                overlay.style.display = "block"; // Show overlay when chat is open
+                overlay.style.display = "block";
             } else {
                 chatContainer.style.display = "none";
-                overlay.style.display = "none"; // Hide overlay when chat is closed
+                overlay.style.display = "none";
             }
         }
 
@@ -239,30 +211,27 @@
 
             if (message.trim() === "") return;
 
-            // Append user's message
             appendMessage(message, 'message-user');
 
-            // Simulate bot response
             setTimeout(() => {
                 let botResponse = getBotResponse(message);
                 appendMessage(botResponse.message, 'message-bot');
 
-                // If the response has a button, append it
                 if (botResponse.button) {
                     appendButton(botResponse.button.text, botResponse.button.link);
                 }
 
-                chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom
-            }, 1000); // Simulate response delay of 1 second
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
 
-            userInput.value = ""; // Clear input
-            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom after sending user message
+            userInput.value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
         }
 
         function sendPresetMessage(presetMessage) {
             const userInput = document.getElementById('userInput');
-            userInput.value = presetMessage; // Set the input value to the preset message
-            sendMessage(); // Send the message
+            userInput.value = presetMessage;
+            sendMessage();
         }
 
         function appendMessage(message, className) {
@@ -270,7 +239,7 @@
             messageElement.classList.add('chat-message', className);
             messageElement.innerText = message;
             chatBody.appendChild(messageElement);
-            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom after appending a new message
+            chatBody.scrollTop = chatBody.scrollHeight;
         }
 
         function appendButton(buttonText, link) {
@@ -278,14 +247,13 @@
             buttonElement.classList.add('preset-button');
             buttonElement.innerText = buttonText;
             buttonElement.onclick = function () {
-                window.location.href = link; // Redirect when button is clicked
+                window.location.href = link;
             };
             chatBody.appendChild(buttonElement);
-            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom after appending the button
+            chatBody.scrollTop = chatBody.scrollHeight;
         }
 
         function getBotResponse(message) {
-            // Simple bot response logic
             const responses = {
                 "In cât timp ajung coletele?": "Coletele ajung în 3-4 zile lucrătoare.",
                 "Oferiți livrare express?": "Da, oferim livrare express.",
@@ -294,13 +262,12 @@
                 "Ce servicii oferiți?": "Oferim o gamă variată de servicii."
             };
 
-            // Check if the response should include a button
             if (responses[message]) {
                 return { message: responses[message] };
             } else {
                 return {
                     message: "Pentru întrebări mai complexe, puteți întreba de operatorul nostru pe Telegram.",
-                    button: { text: "Contactați operatorul", link: "https://t.me/jewelryady" } // Add the button details
+                    button: { text: "Contactați operatorul", link: "https://t.me/jewelryady" }
                 };
             }
         }
