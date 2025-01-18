@@ -6,7 +6,7 @@
         "images": [
            "images/Inele/Inel_1.png"
         ],
-        "category": "Inele",
+        "category": "ArgintProbaS925",
         "isTrending": true,
         "old_price": "635.00 MDL",
  
@@ -203,6 +203,18 @@
             "images/Cercei/cercei_5.png"
         ],
         "category": "Cercei",
+        "product_sizes": [15, 16, 17, 18, 19],
+       "isNew": true,
+       "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    {
+        "id": 16,
+        "name": "inel aring",
+        "price": "56.00 MDL",
+        "images": [
+            "images/Cercei/cercei_5.png"
+        ],
+        "category": "ArgintProbaS925",
         "product_sizes": [15, 16, 17, 18, 19],
        "isNew": true,
        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
