@@ -167,15 +167,32 @@
         }
 
         .image-navigation button {
-            flex: 1;
-            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            /* Elimină spațiul între text și iconiță */
+            flex: 0;
+            /* Nu mai lărgește butoanele pentru a le face pătrate */
+            width: 50px;
+            /* Lățime fixă de 50px */
+            height: 50px;
+            /* Înălțime fixă de 50px */
             background-color: #007BFF;
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 5%;
+            /* Pentru colțuri rotunjite (pentru a crea un cerc) */
+
             cursor: pointer;
             transition: background-color 0.3s ease;
+        }
+
+
+
+        .image-navigation button ion-icon {
+            font-size: 1.5rem;
+            /* Ajustează dimensiunea iconiței */
         }
 
         .image-navigation button:hover {
@@ -187,103 +204,136 @@
             cursor: not-allowed;
         }
 
-/* Image Preview */
-.prewiev-image-navigation {
-    display: flex; /* Use flexbox for layout */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Hide vertical overflow */
-    white-space: nowrap; /* Prevent line breaks */
-    max-width: 100%; /* Make it responsive */
-    padding: 10px 0; /* Optional: Add padding for better appearance */
-    border: 2px solid #ccc; /* Optional: Add border for visibility */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background for contrast */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
+        /* Image Preview */
+        .prewiev-image-navigation {
+            display: flex;
+            /* Use flexbox for layout */
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            overflow-y: hidden;
+            /* Hide vertical overflow */
+            white-space: nowrap;
+            /* Prevent line breaks */
+            max-width: 100%;
+            /* Make it responsive */
+            padding: 10px 0;
+            /* Optional: Add padding for better appearance */
+            border: 2px solid #ccc;
+            /* Optional: Add border for visibility */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Light background for contrast */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+        }
 
-.preview-square {
-    width: 90px; /* Fixed width */
-    height: 90px; /* Fixed height */
-    background-color: #333; /* Darker background color */
-    border: 1px solid #fff; /* White border for contrast */
-    flex-shrink: 0; /* Prevents shrinking */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 10px; /* Space between squares */
-    transition: transform 0.2s, border 0.2s; /* Smooth transitions */
-}
+        .preview-square {
+            width: 90px;
+            /* Fixed width */
+            height: 90px;
+            /* Fixed height */
+            background-color: #333;
+            /* Darker background color */
+            border: 1px solid #fff;
+            /* White border for contrast */
+            flex-shrink: 0;
+            /* Prevents shrinking */
+            border-radius: 5px;
+            /* Rounded corners */
+            margin-right: 10px;
+            /* Space between squares */
+            transition: transform 0.2s, border 0.2s;
+            /* Smooth transitions */
+        }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .preview-square {
-        width: 70px; /* Adjust size for smaller screens */
-        height: 70px; /* Adjust size for smaller screens */
-        margin-right: 5px; /* Reduce margin */
-    }
-}
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .preview-square {
+                width: 70px;
+                /* Adjust size for smaller screens */
+                height: 70px;
+                /* Adjust size for smaller screens */
+                margin-right: 5px;
+                /* Reduce margin */
+            }
+        }
 
-@media (max-width: 400px) {
-    .preview-square {
-        width: 60px; /* Further adjust size for very small screens */
-        height: 60px; /* Further adjust size for very small screens */
-    }
-}
+        @media (max-width: 400px) {
+            .preview-square {
+                width: 60px;
+                /* Further adjust size for very small screens */
+                height: 60px;
+                /* Further adjust size for very small screens */
+            }
+        }
 
-/* Hover effect */
-.preview-square:hover {
-    transform: scale(1.1); /* Scale effect on hover */
-    border: 1px solid #007BFF; /* Highlight border on hover */
-}
+        /* Hover effect */
+        .preview-square:hover {
+            transform: scale(1.1);
+            /* Scale effect on hover */
+            border: 1px solid #007BFF;
+            /* Highlight border on hover */
+        }
 
-/* Additional styling for smooth scrolling */
-.prewiev-image-navigation::-webkit-scrollbar {
-    height: 8px; /* Height of the scrollbar */
-}
+        /* Additional styling for smooth scrolling */
+        .prewiev-image-navigation::-webkit-scrollbar {
+            height: 8px;
+            /* Height of the scrollbar */
+        }
 
-.prewiev-image-navigation::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners for the thumb */
-}
+        .prewiev-image-navigation::-webkit-scrollbar-thumb {
+            background: #888;
+            /* Color of the scrollbar thumb */
+            border-radius: 10px;
+            /* Rounded corners for the thumb */
+        }
 
-.prewiev-image-navigation::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker on hover */
-}
-
-
-
-
-
-
-
-/* card watermark logo */
-.card-img {
-    position: relative;
-}
-
-.card-watermark-logo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 80px;
-    height: 60px;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0), rgb(255, 255, 255)); /* Gradient din colțul din jos, spre sus */
-    border-radius: 20px 0 0 0; /* Radius doar pe colțul din stânga sus */
-    overflow: hidden; /* Ascunde orice parte a imaginii care depășește pătrățelul */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.489); /* Adaugă o umbră subtilă pe fundal */
-    pointer-events: none; /* Face elementul transparent pentru clicuri, lăsând clicurile să treacă prin el */
-
-    display: flex; /* Activează Flexbox */
-    justify-content: center; /* Centrează imaginea pe orizontală */
-    align-items: center; /* Centrează imaginea pe verticală */
-}
-
-.card-watermark-logo img {
-    width: 100%; /* Imaginea va ocupa întreaga lățime a pătrățelului */
-    height: 100%; /* Imaginea va ocupa întreaga înălțime a pătrățelului */
-    object-fit: contain; /* Asigură-te că imaginea va acoperi întregul pătrățel fără a distorsiona */
-}
+        .prewiev-image-navigation::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            /* Darker on hover */
+        }
 
 
 
+        /* card watermark logo */
+        .card-img {
+            position: relative;
+        }
+
+        .card-watermark-logo {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 60px;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+            /* Gradient din colțul din jos, spre sus */
+            border-radius: 20px 0 0 0;
+            /* Radius doar pe colțul din stânga sus */
+            overflow: hidden;
+            /* Ascunde orice parte a imaginii care depășește pătrățelul */
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.489);
+            /* Adaugă o umbră subtilă pe fundal */
+            pointer-events: none;
+            /* Face elementul transparent pentru clicuri, lăsând clicurile să treacă prin el */
+
+            display: flex;
+            /* Activează Flexbox */
+            justify-content: center;
+            /* Centrează imaginea pe orizontală */
+            align-items: center;
+            /* Centrează imaginea pe verticală */
+        }
+
+        .card-watermark-logo img {
+            width: 100%;
+            /* Imaginea va ocupa întreaga lățime a pătrățelului */
+            height: 100%;
+            /* Imaginea va ocupa întreaga înălțime a pătrățelului */
+            object-fit: contain;
+            /* Asigură-te că imaginea va acoperi întregul pătrățel fără a distorsiona */
+        }
     </style>
 </head>
 
@@ -324,25 +374,30 @@
                         <div class="new-flag" id="newFlag" style="display: none;">NOU</div>
                         <div class="out-of-stock" id="outOfStock" style="display: none;">Out of stock</div>
                         <img id="product_image" src="" alt="productDetails">
-                        
+
                         <div class="card-watermark-logo">
                             <a href="link_catre_imagine.html">
                                 <img src="images/logo_block.png" alt="Image description">
                             </a>
                         </div> <!-- Pătrățelul watermark -->
                     </div>
-                    
-                    
+
+
                     <div class="image-navigation">
-                        <button id="prevImage">Previous</button>
-                        <button id="nextImage">Next</button>
-                    </div>
-                    <div class="prewiev-image-navigation">
-                        
-          
+                        <button id="prevImage">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <button id="nextImage">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
                     </div>
 
- 
+                    <div class="prewiev-image-navigation">
+
+
+                    </div>
+
+
                 </div>
 
 
@@ -507,8 +562,5 @@
         previewContainer.scrollLeft = scrollLeft - walk; // Set new scroll position
     });
 
-
 </script>
-
-
 </html>
