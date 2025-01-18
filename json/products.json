@@ -24,7 +24,7 @@
         ],
         "category": "Inele",
       
-        "isTrending": true,
+      
         "product_sizes": [15, 16, 17, 18, 19],
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
@@ -218,6 +218,8 @@
         "images": [
             "images/Cercei/cercei_5.png"
         ],
+          "isTrending": true,
+        
         "category": "ArgintProbaS925",
         "product_sizes": [15, 16, 17, 18, 19],
        "isNew": true,
