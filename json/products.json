@@ -249,19 +249,5 @@
         "product_sizes": [15, 16, 17, 18, 19],
        "isNew": true,
        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
-    },
-      {
-        "id": 20,
-        "name": "Cutie 1",
-        "price": "765.00 MDL",
-        "images": [
-            "images/Cercei/IMG_1101.jpeg"
-        ],
-          "isTrending": true,
-        
-        "category": "Cutii",
-        "product_sizes": [15, 16, 17, 18, 19],
-       "isNew": true,
-       "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     }
 
