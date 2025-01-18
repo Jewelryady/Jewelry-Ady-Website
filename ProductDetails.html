@@ -206,91 +206,72 @@
             cursor: not-allowed;
         }
 
-        /* Image Preview */
-        .prewiev-image-navigation {
-            display: flex;
-            /* Use flexbox for layout */
-    
-         
-            white-space: nowrap;
-            /* Prevent line breaks */
-            max-width: 100%;
-            /* Make it responsive */
-            padding: 10px 0;
-            /* Optional: Add padding for better appearance */
-            border: 3px solid #e7e7e7;
-            /* Optional: Add border for visibility */
-            border-radius: 5px;
-            /* Rounded corners */
-            background-color: #f9f9f9;
-            /* Light background for contrast */
-        }
+/* Image Preview */
+.prewiev-image-navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spațiere între previzualizări */
+    overflow-x: auto; /* Activează scroll-ul orizontal */
+    white-space: nowrap; /* Previne ruperea rândului */
+    max-width: 100%; /* Responsiv */
+    padding: 4px 7px;
+    background-color: #f5f5f5; /* Fundal deschis */
+    border-radius: 8px; /* Colțuri rotunjite */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    scrollbar-width: thin; /* Scrollbar subțire pentru Firefox */
+    scrollbar-color: #007BFF transparent; /* Culoare scroll */
+}
 
-        .preview-square {
-            width: 90px;
-            /* Fixed width */
-            height: 90px;
-            /* Fixed height */
-            background-color: #333;
-            /* Darker background color */
-            border: 1px solid #fff;
-            /* White border for contrast */
-            flex-shrink: 0;
-            /* Prevents shrinking */
-            border-radius: 5px;
-            /* Rounded corners */
-            margin-right: 10px;
-            /* Space between squares */
-            transition: transform 0.2s, border 0.2s;
-            /* Smooth transitions */
-        }
+.preview-square {
+    flex-shrink: 0; /* Previne micșorarea */
+    width: 80px;
+    height: 80px;
+    background-color: #e0e0e0; /* Fundal neutru */
+    border: 2px solid transparent; /* Margine inițială */
+    border-radius: 5px; /* Colțuri rotunjite */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Animație la hover */
+    cursor: pointer; /* Indicator de clic */
+}
+.preview-square img {
+    width: 100%; /* Imagine responsivă */
+    height: 100%; /* Imagine responsivă */
+    object-fit: cover; /* Decupare corectă a imaginii */
+    border-radius: 5px; /* Colțuri rotunjite */
+}
+/* Ajustări pentru ecrane mici */
+@media (max-width: 600px) {
+    .preview-square {
+        width: 60px;
+        height: 60px;
+    }
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .preview-square {
-                width: 70px;
-                /* Adjust size for smaller screens */
-                height: 70px;
-                /* Adjust size for smaller screens */
-                margin-right: 5px;
-                /* Reduce margin */
-            }
-        }
+@media (max-width: 400px) {
+    .preview-square {
+        width: 50px;
+        height: 50px;
+    }
+}
 
-        @media (max-width: 400px) {
-            .preview-square {
-                width: 60px;
-                /* Further adjust size for very small screens */
-                height: 60px;
-                /* Further adjust size for very small screens */
-            }
-        }
+/* Efect la hover */
+.preview-square:hover {
+    transform: scale(1.1); /* Mărire ușoară */
+    border-color: #007BFF; /* Margine evidențiată */
+}
 
-        /* Hover effect */
-        .preview-square:hover {
-            transform: scale(1.1);
-            /* Scale effect on hover */
-            border: 1px solid #007BFF;
-            /* Highlight border on hover */
-        }
 
-        /* Additional styling for smooth scrolling */
-        .prewiev-image-navigation::-webkit-scrollbar {
-            height: 8px;
-            /* Height of the scrollbar */
-        }
+    /* Scrollbar personalizat pentru WebKit */
+.prewiev-image-navigation::-webkit-scrollbar {
+    height: 6px; /* Înălțime scrollbar */
+}
 
-        .prewiev-image-navigation::-webkit-scrollbar-thumb {
-            background: #888;
-            /* Color of the scrollbar thumb */
-            border-radius: 10px;
-            /* Rounded corners for the thumb */
-        }
-
-        .prewiev-image-navigation::-webkit-scrollbar-thumb:hover {
-            background: #555;
-            /* Darker on hover */
-        }
+.prewiev-image-navigation::-webkit-scrollbar-thumb {
+    background-color: #007BFF; /* Culoarea thumb-ului */
+    border-radius: 10px; /* Rotunjit */
+}
+.prewiev-image-navigation::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3; /* Culoare mai închisă la hover */
+}
 
 
 
