@@ -168,24 +168,6 @@
 
 /* ------------------------ collection --------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .collection {
     padding: 60px 0;
     
@@ -200,15 +182,15 @@
 
 .collection-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     
 }
 
 .collection-card {
     background-color: gray; /* Poți schimba culoarea de fundal pentru a se potrivi cu designul tău */
-    min-height: 350px;
-    padding: 40px;
+    min-height: 250px;
+    padding: 10px;
     padding-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -302,21 +284,6 @@
     background-size: cover;
     background-position: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ------------------------ news ----------------------- */
 .news {
