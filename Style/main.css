@@ -798,6 +798,9 @@ body.showCart .cart-overlay {
     .nav-buttons {
         gap: 20px; /* Spațiu mai mic între butoane */
     }
+    .products .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .products {
         grid-template-columns: repeat(3, 1fr); /* 3 coloane pe ecrane medii */

@@ -142,7 +142,7 @@ main .container {
 /* Stiluri responsive */
 @media (max-width: 768px) {
     .productDetails {
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr;
         /* O singură coloană pe ecrane mici */
     }
 
