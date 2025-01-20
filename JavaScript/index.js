@@ -16,11 +16,19 @@ function displayTrendingProducts(trendingProducts) {
         // Verificăm dacă există `product_sizes`
         let sizes = trendingProducts[i].product_sizes || [];
 
-        // Generăm opțiunile dropdown din array
-        let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
-        sizes.forEach(size => {
-            dropdownOptions += `<option value="${size}">${size}</option>`;
-        });
+        // Verificăm dacă există mărimi disponibile
+        let sizeDropdown = '';
+        if (sizes.length > 0) {
+            // Generăm opțiunile dropdown din array
+            let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
+            sizes.forEach(size => {
+                dropdownOptions += `<option value="${size}">${size}</option>`;
+            });
+            sizeDropdown = `<select class="size-dropdown">${dropdownOptions}</select>`;
+        } else {
+            // Dacă nu există mărimi, setăm un dropdown dezactivat
+            sizeDropdown = `<select class="size-dropdown" disabled><option>Fără mărime disponibilă</option></select>`;
+        }
 
         content += `
         <div class="product-card" data-id="${trendingProducts[i].id}">
@@ -29,14 +37,11 @@ function displayTrendingProducts(trendingProducts) {
                 ${trendingProducts[i].isNew ? `<div class="new-flag">NOU</div>` : ''}
                 ${trendingProducts[i].out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
                 <img src="${trendingProducts[i].images[0]}" onclick="displayDetails(${trendingProducts[i].id});">
-               
-             <div class="card-watermark-logo">
-    <a href="link_catre_imagine.html">
-        <img src="images/logo_block.png" alt="Image description">
-    </a>
-</div> <!-- Pătrățelul watermark -->
-
-               
+                <div class="card-watermark-logo">
+                    <a href="link_catre_imagine.html">
+                        <img src="images/logo_block.png" alt="Image description">
+                    </a>
+                </div>
                 <a href="#" class="addToCart">
                     <ion-icon name="cart-outline" class="Cart"></ion-icon>
                 </a>
@@ -45,10 +50,7 @@ function displayTrendingProducts(trendingProducts) {
                 <h4 class="product-name" onclick="displayDetails(${trendingProducts[i].id});">${trendingProducts[i].name}</h4>
                 <h5 class="product-price">${trendingProducts[i].price}</h5>
                 ${trendingProducts[i].old_price ? `<h5 class="old-price">${trendingProducts[i].old_price}</h5>` : ''}
-                <!-- Dropdown pentru mărimi -->
-                <select class="size-dropdown">
-                    ${dropdownOptions}
-                </select>
+                ${sizeDropdown} <!-- Afișăm dropdown-ul pentru mărimi -->
             </div>
         </div>`;
     }
@@ -63,19 +65,21 @@ function displayTrendingProducts(trendingProducts) {
             if (productCard && productCard.dataset.id) {
                 let id_product = productCard.dataset.id;
 
-                // Preia valoarea selectată din dropdown
+                // Preia valoarea selectată din dropdown, dacă este activ
                 let selectedSize = productCard.querySelector('.size-dropdown').value;
-                if (selectedSize === "Alege mărimea") {
+                // Dacă dropdown-ul este dezactivat, putem adăuga produsul fără a alege o mărime
+                if (!productCard.querySelector('.size-dropdown').disabled && selectedSize === "Alege mărimea") {
                     alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
                     return;
                 }
 
-                // Adaugă produsul în coș cu mărimea selectată
+                // Adaugă produsul în coș cu mărimea selectată (sau fără mărime dacă nu există)
                 addToCart(id_product, 1, selectedSize); // Cantitatea este implicit 1
             }
         });
     });
 }
+
 
 function showCart() {
     let body = document.querySelector('body');
