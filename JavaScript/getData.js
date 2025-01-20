@@ -43,15 +43,15 @@ function displayProducts(products, category = "") {
     const currentCategoryElements = document.querySelectorAll("#currentCategory");
     const productCountSpan = document.getElementById("productCount");
 
-    // Actualizează toate elementele cu ID-ul `currentCategory`
+    // Update category display
     currentCategoryElements.forEach(element => {
         element.textContent = `> ${category || "Toate Produsele"}`;
     });
 
-    // Actualizare text pentru numărul total de produse
+    // Update product count
     productCountSpan.textContent = `Produse: ${products.length}`;
 
-    content.innerHTML = ""; // Curăță conținutul anterior
+    content.innerHTML = ""; // Clear previous content
 
     if (products.length === 0) {
         content.innerHTML = `<p>Niciun produs nu a fost găsit în această categorie.</p>`;
@@ -61,12 +61,20 @@ function displayProducts(products, category = "") {
     products.forEach(product => {
         // Check for product sizes
         let sizes = product.product_sizes || [];
-
-        // Generate dropdown options
-        let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
-        sizes.forEach(size => {
-            dropdownOptions += `<option value="${size}">${size}</option>`;
-        });
+        
+        // Generate size dropdown options
+        let sizeDropdown;
+        if (sizes.length > 0) {
+            // Generate options if sizes are available
+            let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
+            sizes.forEach(size => {
+                dropdownOptions += `<option value="${size}">${size}</option>`;
+            });
+            sizeDropdown = `<select class="size-dropdown">${dropdownOptions}</select>`;
+        } else {
+            // Show message when no sizes are available
+            sizeDropdown = `<select class="size-dropdown" disabled><option>Fără mărime disponibilă</option></select>`;
+        }
 
         // Create product card
         const productCard = document.createElement('div');
@@ -79,25 +87,20 @@ function displayProducts(products, category = "") {
                 ${product.isNew ? `<div class="new-flag">NOU</div>` : ''}
                 ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
                 <img src="${product.images[0]}" alt="${product.name}" onclick="displayDetails(${product.id});">
-              
                 <div class="card-watermark-logo">
-    <a href="link_catre_imagine.html">
-        <img src="images/logo_block.png" alt="Image description">
-    </a>
-</div> <!-- Pătrățelul watermark -->
-                
+                    <a href="link_catre_imagine.html">
+                        <img src="images/logo_block.png" alt="Image description">
+                    </a>
+                </div>
                 <a href="#" class="addToCart">
                     <ion-icon name="cart-outline" class="Cart"></ion-icon>
                 </a>
-            
-                </div>
+            </div>
             <div class="card-info">
                 <h4 class="product-name" onclick="displayDetails(${product.id});">${product.name}</h4>
                 <h5 class="product-price">${product.price}</h5>
                 ${product.old_price ? `<h5 class="old-price">${product.old_price}</h5>` : ''}
-                <select class="size-dropdown">
-                    ${dropdownOptions}
-                </select>
+                ${sizeDropdown} <!-- Display the size dropdown -->
             </div>
         `;
 
@@ -113,17 +116,23 @@ function displayProducts(products, category = "") {
             if (productCard && productCard.dataset.id) {
                 let id_product = productCard.dataset.id;
 
-                let selectedSize = productCard.querySelector('.size-dropdown').value;
-                if (selectedSize === "Alege mărimea") {
+                // Get the selected size from the dropdown
+                let selectedSizeElement = productCard.querySelector('.size-dropdown');
+                let selectedSize = selectedSizeElement ? selectedSizeElement.value : null;
+
+                // Check if size is selected (if available)
+                if (selectedSizeElement && !selectedSizeElement.disabled && selectedSize === "Alege mărimea") {
                     alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
                     return;
                 }
 
-                addToCart(id_product, 1, selectedSize);
+                // Add product to cart with selected size or no size if not applicable
+                addToCart(id_product, 1, selectedSize); // Quantity is default to 1
             }
         });
     });
 }
+
 
 function getCategory(e) {
     let category = e.target.getAttribute('productCategory');
