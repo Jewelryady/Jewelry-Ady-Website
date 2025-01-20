@@ -223,7 +223,7 @@
 
     {
         "id": 11,
-        "name": "Cercel 1",
+        "name": "Cercei în formă de inimă ",
         "price": "645.00 MDL",
  
         "images": [
@@ -237,7 +237,7 @@
     
     {
         "id": 12,
-        "name": "Cercel 2",
+        "name": "Cercei cu șurub cu inimioră strălucitoare infinit",
         "price": "745.00 MDL",
         "images": [
             "images/Cercei/cercei_2.png"
@@ -250,7 +250,7 @@
     
     {
         "id": 13,
-        "name": "Cercel 3",
+        "name": "Cercei cu șurub încercuiți Familia pentru totdeauna",
         "price": "625.00 MDL",
         "images": [
             "images/Cercei/cercei_3.png"
