@@ -275,7 +275,7 @@
     },
     {
         "id": 15,
-        "name": "Cercel 5",
+        "name": "Cercei Rotunzi în formă de Inimă",
         "price": "225.00 MDL",
         "images": [
             "images/Cercei/cercei_5.png"
@@ -313,6 +313,42 @@
         "images": [
             "images/Cutii/cutie22.jpg",
             "images/Cutii/cutie23.jpg"
+        ],
+           "isTrending": true,
+        
+        "category": "Cutii",
+        "product_sizes": [1,2],
+ 
+       "description": "Descrierea cutiei"
+    
+    },
+
+     {
+        "id": 126,
+        "name": "Cutie Pandora roz",
+        "price": "279.00 MDL",
+        "images": [
+            "images/Cutii/cutie24.jpg"
+           
+        ],
+           "isTrending": true,
+        
+        "category": "Cutii",
+        "product_sizes": [1,2],
+ 
+       "description": "Descrierea cutiei"
+    
+    },
+
+
+
+     {
+        "id": 127,
+        "name": "JewelryAdy",
+        "price": "0.00 MDL",
+        "images": [
+            "images/Cutii/pachet.jpg"
+           
         ],
            "isTrending": true,
         
