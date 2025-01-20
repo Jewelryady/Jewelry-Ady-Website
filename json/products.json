@@ -15,6 +15,22 @@
         "product_sizes": [15, 16, 17, 18, 19],
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
+
+ {
+        "id": 11,
+        "name": "Inel cu inimă dublă",
+        "price": "750.00 MDL",
+        "images": [
+           "images/Inele/ring1.png",
+           "images/Inele/ring2.jpeg"
+      ],
+        "category": "Inele",
+     
+    
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint proba S925 cu un design clasic.Pietrele centrale sunt bine fixate într-un montaj cu aspect sofisticat, fiind înconjurate de mici detalii strălucitoare care completează designul."
+    },
+    
     {
         "id": 2,
         "name": "Inel 2",
