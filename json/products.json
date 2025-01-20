@@ -184,6 +184,21 @@
         "product_sizes": [15, 16, 17, 18, 19],
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
+
+ {
+        "id": 89,
+        "name": "Brățară pentu Baieti 2",
+        "price": "499.00 MDL",
+        "images": [
+              "images/Bratari/boy.2.jpg"
+        ],
+        "isNew": true,
+        "category": "Bratari",
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    
     
     {
         "id": 10,
