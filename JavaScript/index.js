@@ -75,16 +75,30 @@ function displayTrendingProducts(trendingProducts) {
 
                 // Adaugă produsul în coș cu mărimea selectată (sau fără mărime dacă nu există)
                 addToCart(id_product, 1, selectedSize); // Cantitatea este implicit 1
+                
+                // Apelează showToast după adăugarea produsului
+                showToast();
             }
         });
     });
 }
 
 
+
+function showToast() {
+ 
+    setTimeout(() => {
+    
+        showCart();
+    }, 500);
+   
+}
+
 function showCart() {
     let body = document.querySelector('body');
     body.classList.add('showCart');
 }
+
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }

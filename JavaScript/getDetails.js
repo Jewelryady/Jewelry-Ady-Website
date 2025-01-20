@@ -116,17 +116,19 @@ function displayDetails(product) {
 
         addToCart(product.id, parseInt(quantity.value) || 1, selectedSize);
         showToast();
+        
     });
 }
 
 
 
 function showToast() {
-    const toastOverlay = document.getElementById("toast-overlay");
-    toastOverlay.classList.add("show");
+ 
     setTimeout(() => {
-        toastOverlay.classList.remove("show");
-    }, 1000);
+    
+        showCart();
+    }, 500);
+   
 }
 
 function showCart() {

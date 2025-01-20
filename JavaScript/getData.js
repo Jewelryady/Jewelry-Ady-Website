@@ -128,11 +128,27 @@ function displayProducts(products, category = "") {
 
                 // Add product to cart with selected size or no size if not applicable
                 addToCart(id_product, 1, selectedSize); // Quantity is default to 1
+
+                showToast();
             }
         });
     });
 }
 
+
+function showToast() {
+ 
+    setTimeout(() => {
+    
+        showCart();
+    }, 500);
+   
+}
+
+function showCart() {
+    let body = document.querySelector('body');
+    body.classList.add('showCart');
+}
 
 function getCategory(e) {
     let category = e.target.getAttribute('productCategory');
