@@ -304,10 +304,9 @@
         "product_sizes": [1,2],
  
        "description": "Descrierea cutiei"
-    }
-]
+    },
 
-{
+    {
         "id": 116,
         "name": "Cutie Pandora 2",
         "price": "250.00 MDL",
@@ -321,8 +320,11 @@
         "product_sizes": [1,2],
  
        "description": "Descrierea cutiei"
-    ]
-    },
+    
+    }
+]
+
+
 
 
 
