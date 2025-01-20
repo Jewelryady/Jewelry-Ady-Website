@@ -198,6 +198,36 @@
         "product_sizes": [15, 16, 17, 18, 19],
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
+
+  {
+        "id": 9,
+        "name": "Brățară Tennis",
+        "price": "625.00 MDL",
+        "images": [
+              "images/Bratari/Bratara_3.png"
+        ],
+        "isNew": true,
+        "category": "Bratari",
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+    
+    {
+        "id": 133,
+        "name": "Brățară pentru Băieți",
+        "price": "280.00 MDL",
+        "images": [
+            "images/Bratari/boy.jpg"
+        ],
+        "isNew": true,
+        "category": "Bratari",
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+
+    
     {  "id": 26,
         "name": "Brățară Pandora cu inimă roșie",
         "price": "1200.00 MDL",
