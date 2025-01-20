@@ -147,7 +147,7 @@
 
        {
         "id": 99,
-        "name": "Colier Infiniti",
+        "name": "Colier Infinity",
         "price": "742.00 MDL",
         "images": [
             "images/Coliere/Colier222.jpg"
@@ -158,22 +158,7 @@
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
  
-    {
-        "id": 7,
-        "name": "Colier Infinity",
-        "price": "425.00 MDL",
-        "images": [
-            "images/Bratari/Bratara_1.jpg",
-             "images/Bratari/Bratara_2.png",
-             "images/Bratari/Bratara_1.jpg",
-             "images/Bratari/Bratara_2.png" 
-        ],
-        "isNew": true,
-   
-        "isTrending": true,
-        "category": "Bratari",
-        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
-    },
+
     {
         "id": 8,
         "name": "Set Cercei+Colier Eleganță Clasică",
