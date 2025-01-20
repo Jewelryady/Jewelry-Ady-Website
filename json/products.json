@@ -306,3 +306,22 @@
        "description": "Descrierea cutiei"
     }
 ]
+{
+        "id": 116,
+        "name": "Cutie Pandora",
+        "price": "250.00 MDL",
+        "images": [
+            "images/Cutii/cutie22.jpg",
+            "images/Cutii/cutie23.jpg"
+        ],
+           "isTrending": true,
+        
+        "category": "Cutii",
+        "product_sizes": [1,2],
+ 
+       "description": "Descrierea cutiei"
+    }
+]
+
+
+
