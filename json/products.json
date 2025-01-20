@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Inel 1",
+        "name": "Inel Pandora cu inimă roșie",
         "price": "225.00 MDL",
         "images": [
            "images/Inele/Inel_1.png",
@@ -33,7 +33,7 @@
     
     {
         "id": 2,
-        "name": "Inel 2",
+        "name": "Inel Pandora cu inimă albă",
         "price": "315.00 MDL",
         "images": [
            "images/Inele/Inel_2.png"
@@ -59,7 +59,7 @@
     },
     {
         "id": 4,
-        "name": "Inel 4",
+        "name": "Inel cu Formă Pătrată Strălucitoare",
         "price": "615.00 MDL",
         "images": [
            "images/Inele/Inel_4.png"
@@ -72,7 +72,7 @@
     },
      {
         "id": 134,
-        "name": "Inel Cartier",
+        "name": "Inel rotund cu pietricele",
         "price": "7625.00 MDL",
         "images": [
            "images/Inele/IMG_2420.JPG"
