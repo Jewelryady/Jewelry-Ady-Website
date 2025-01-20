@@ -223,7 +223,7 @@
 
     {
         "id": 11,
-        "name": "Cercei în formă de inimă ",
+        "name": "Cercei în Formă de Inimă ",
         "price": "645.00 MDL",
  
         "images": [
@@ -237,7 +237,7 @@
     
     {
         "id": 12,
-        "name": "Cercei cu șurub cu inimioră strălucitoare infinit",
+        "name": "Cercei cu Șurub cu Inimioră strălucitoare infinit",
         "price": "745.00 MDL",
         "images": [
             "images/Cercei/cercei_2.png"
@@ -250,7 +250,7 @@
     
     {
         "id": 13,
-        "name": "Cercei cu șurub încercuiți Familia pentru totdeauna",
+        "name": "Cercei cu Șurub încercuiți Familia pentru totdeauna",
         "price": "625.00 MDL",
         "images": [
             "images/Cercei/cercei_3.png"
@@ -262,7 +262,7 @@
     },
     {
         "id": 14,
-        "name": "Cercel 4",
+        "name": "Cercei cu Formă Inimă roz",
         "price": "425.00 MDL",
         "images": [
             "images/Cercei/cercei_4.png"
@@ -293,8 +293,8 @@
 
     {
         "id": 115,
-        "name": "Cutie 1",
-        "price": "22.00 MDL",
+        "name": "Cutie Pandora",
+        "price": "230.00 MDL",
         "images": [
             "images/Cutii/cutie_1.png"
         ],
