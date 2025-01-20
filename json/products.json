@@ -306,9 +306,10 @@
        "description": "Descrierea cutiei"
     }
 ]
+
 {
         "id": 116,
-        "name": "Cutie Pandora",
+        "name": "Cutie Pandora 2",
         "price": "250.00 MDL",
         "images": [
             "images/Cutii/cutie22.jpg",
