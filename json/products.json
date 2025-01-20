@@ -73,7 +73,7 @@
 
  {
         "id": 46,
-        "name": "Inel în formă de bant",
+        "name": "Inel cu fundiță roșie",
         "price": "699.00 MDL",
         "images": [
            "images/Inele/inelbant.jpg"
@@ -84,6 +84,22 @@
         "product_sizes": [15, 16, 17, 18, 19],
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
+
+ {
+        "id": 422,
+        "name": "Inel cu fundiță albă",
+        "price": "699.00 MDL",
+        "images": [
+           "images/Inele/inelbant2.jpg"
+        ],
+        "category": "Inele",
+        "isNew": true,
+        
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+
+    
 
     
      {
