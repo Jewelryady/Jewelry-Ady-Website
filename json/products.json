@@ -70,6 +70,22 @@
         "product_sizes": [15, 16, 17, 18, 19],
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
+
+ {
+        "id": 46,
+        "name": "Inel în formă de bant",
+        "price": "699.00 MDL",
+        "images": [
+           "images/Inele/inelbant.jpg"
+        ],
+        "category": "Inele",
+        "isNew": true,
+        
+        "product_sizes": [15, 16, 17, 18, 19],
+        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+    },
+
+    
      {
         "id": 134,
         "name": "Inel rotund cu pietricele",
