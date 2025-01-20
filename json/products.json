@@ -164,7 +164,9 @@
         "category": "Bratari",
         "isTrending": true,
         "product_sizes": [15, 16, 17, 18, 19],
- {
+     },
+  
+    {
         "id": 21,
         "name": "Bratara 34",
         "price": "699.00 MDL",
