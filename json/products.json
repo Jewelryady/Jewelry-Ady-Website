@@ -250,7 +250,7 @@
     
     {
         "id": 13,
-        "name": "Cercei cu Șurub încercuiți Familia pentru totdeauna",
+        "name":"Cercei cu Șurub încercuiți Familia pentru totdeauna",
         "price": "625.00 MDL",
         "images": [
             "images/Cercei/cercei_3.png"
@@ -304,5 +304,5 @@
         "product_sizes": [1,2],
  
        "description": "Descrierea cutiei"
-    }
+    },
 ]
