@@ -152,6 +152,18 @@
         "product_sizes": [15, 16, 17, 18, 19],
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
+     {  "id": 26,
+        "name": "Bratara pandora cu inima",
+        "price": "1200.00 MDL",
+        "images": [
+               "images/Bratari/Bratara1.jpg",
+               "images/Bratari/bratara2.jpg"
+            
+        ],
+        "isNew": true,
+        "category": "Bratari",
+        "isTrending": true,
+        "product_sizes": [15, 16, 17, 18, 19],
  {
         "id": 21,
         "name": "Bratara 34",
