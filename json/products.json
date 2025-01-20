@@ -166,6 +166,23 @@
         "isTrending": true,
         "product_sizes": [15,16,17,18],
         "description": "Aceasta este o brățară elegantă, cu un design rafinat și modern. Brățara are un pandantiv central în formă de inimă, cu o piatră de culoare roșie intensă, care adaugă un contrast vibrant și un element romantic. Designul său o face potrivită pentru ocazii speciale sau pentru a completa o ținută elegantă."
+
+
+        "id": 27,
+        "name": "Brățară Pandora cu inimă albă",
+        "price": "1200.00 MDL",
+        "images": [
+               "images/Bratari/br22.jpg",
+               "images/Bratari/br23.jpg"
+    
+            
+        ],
+        "isNew": true,
+        "category": "Bratari",
+        "isTrending": true,
+        "product_sizes": [15,16,17,18],
+        "description": "Aceasta este o brățară elegantă, cu un design rafinat și modern. Brățara are un pandantiv central în formă de inimă, cu o piatră de culoare albă intensă, care adaugă un contrast vibrant și un element romantic. Designul său o face potrivită pentru ocazii speciale sau pentru a completa o ținută elegantă."
+     },
      },
   
     {
