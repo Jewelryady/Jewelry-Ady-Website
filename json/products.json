@@ -153,7 +153,7 @@
         "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
     },
      {  "id": 26,
-        "name": "Bratara pandora cu inima",
+        "name": "Brățară Pandora cu inimă roșie",
         "price": "1200.00 MDL",
         "images": [
                "images/Bratari/Bratara1.jpg",
@@ -163,8 +163,8 @@
         "isNew": true,
         "category": "Bratari",
         "isTrending": true,
-        "product_sizes": [15, 16, 17, 18, 19],
-        "description": "Inel elegant din argint S925, cu un design clasic și rafinat, potrivit pentru orice ocazie. Este ideal atât pentru a fi purtat de oricine, cât și pentru a fi oferit cadou persoanei dragi."
+        "product_sizes": [],
+        "description": "Aceasta este o brățară elegantă, cu un design rafinat și modern. Brățara are un pandantiv central în formă de inimă, cu o piatră de culoare roșie intensă, care adaugă un contrast vibrant și un element romantic. Designul său o face potrivită pentru ocazii speciale sau pentru a completa o ținută elegantă."
      },
   
     {
