@@ -68,13 +68,22 @@ function displayDetails(product) {
         document.querySelector(".product_price").insertAdjacentElement('afterend', oldPriceElement);
     }
 
-    const sizeSelect = document.getElementById('sizeSelect');
-    product.product_sizes.forEach(size => {
-        const option = document.createElement('option');
-        option.value = size;
-        option.textContent = size;
-        sizeSelect.appendChild(option);
-    });
+    const sizeDropdownContainer = document.getElementById('sizeDropdownContainer');
+    sizeDropdownContainer.innerHTML = ''; // Clear existing options
+
+    if (product.product_sizes && product.product_sizes.length > 0) {
+        let dropdownOptions = `<select class="size-dropdown">
+            <option disabled selected>Alege mărimea</option>`;
+        product.product_sizes.forEach(size => {
+            dropdownOptions += `<option value="${size}">${size}</option>`;
+        });
+        dropdownOptions += `</select>`;
+        sizeDropdownContainer.innerHTML = dropdownOptions; // Add the dropdown to the container
+    } else {
+        sizeDropdownContainer.innerHTML = `<select class="size-dropdown" disabled>
+            <option>Fără mărime disponibilă</option>
+        </select>`;
+    }
 
     // Load product images into preview squares
     const previewContainer = document.querySelector('.prewiev-image-navigation');
@@ -97,8 +106,10 @@ function displayDetails(product) {
     linkAdd.addEventListener("click", function (event) {
         event.preventDefault();
 
-        const selectedSize = sizeSelect.value;
-        if (selectedSize === "Alege mărimea") {
+        const sizeSelect = sizeDropdownContainer.querySelector('.size-dropdown'); // Get the size dropdown
+        const selectedSize = sizeSelect ? sizeSelect.value : null;
+
+        if (selectedSize === "Alege mărimea" || selectedSize === null) {
             alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
             return;
         }
@@ -107,6 +118,7 @@ function displayDetails(product) {
         showToast();
     });
 }
+
 
 
 function showToast() {
