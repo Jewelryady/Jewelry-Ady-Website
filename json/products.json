@@ -339,6 +339,25 @@
        "description": "Descrierea cutiei"
     
     }
+
+     },
+
+     {
+        "id": 127,
+        "name": "JewelryAdy",
+        "price": "0.00 MDL",
+        "images": [
+            "images/Cutii/cutielogo.jpg"
+           
+        ],
+           "isTrending": true,
+        
+        "category": "Cutii",
+        "product_sizes": [1,2],
+ 
+       "description": "Descrierea cutiei"
+    
+    }
 ]
 
 
