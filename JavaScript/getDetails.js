@@ -1,14 +1,16 @@
 const params = new URL(location.href).searchParams;
 const productId = params.get('productId');
-let quantity = document.getElementById("productCount");
+const quantity = document.getElementById("productCount");
+let currentImageIndex = 0;
+let productImages = [];
+
 getData();
 
 async function getData() {
     try {
-        let response = await fetch('json/products.json');
-        let json = await response.json();
-        let product = json.find(item => item.id == productId);
-
+        const response = await fetch('json/products.json');
+        const json = await response.json();
+        const product = json.find(item => item.id == productId);
         if (product) {
             displayDetails(product);
         } else {
@@ -18,17 +20,11 @@ async function getData() {
         console.error('Error fetching the data', error);
     }
 }
-let currentImageIndex = 0; // Indexul imaginii curente
-let productImages = []; // Lista imaginilor produsului
 
 function updateImageNavigation() {
-    // Verificăm dacă indexul curent este valid
     if (currentImageIndex >= 0 && currentImageIndex < productImages.length) {
-        // Actualizăm sursa imaginii
         document.getElementById("product_image").src = productImages[currentImageIndex];
     }
-
-    // Dezactivăm/activăm butoanele în funcție de poziția curentă
     document.getElementById("prevImage").disabled = currentImageIndex === 0;
     document.getElementById("nextImage").disabled = currentImageIndex === productImages.length - 1;
 }
@@ -48,10 +44,9 @@ document.getElementById("nextImage").addEventListener("click", () => {
 });
 
 function displayDetails(product) {
-    let productDetails = document.getElementsByClassName('productDetails')[0];
+    const productDetails = document.getElementsByClassName('productDetails')[0];
     productDetails.setAttribute("data-id", product.id);
 
-    // Preluăm lista de imagini și resetăm indexul curent
     productImages = product.images || [];
     currentImageIndex = 0;
     updateImageNavigation();
@@ -61,89 +56,80 @@ function displayDetails(product) {
     document.querySelector(".product_price").innerHTML = product.price;
     document.querySelector(".product_des").innerHTML = product.description;
 
-    const oldPriceElement = document.createElement('p');
-    oldPriceElement.className = 'old-price';
     if (product.old_price) {
+        const oldPriceElement = document.createElement('p');
+        oldPriceElement.className = 'old-price';
         oldPriceElement.textContent = product.old_price;
         document.querySelector(".product_price").insertAdjacentElement('afterend', oldPriceElement);
     }
 
     const sizeDropdownContainer = document.getElementById('sizeDropdownContainer');
-    sizeDropdownContainer.innerHTML = ''; // Clear existing options
+    sizeDropdownContainer.innerHTML = product.product_sizes && product.product_sizes.length > 0 ? generateSizeDropdown(product.product_sizes) : generateDisabledDropdown();
 
-    if (product.product_sizes && product.product_sizes.length > 0) {
-        let dropdownOptions = `<select class="size-dropdown">
-            <option disabled selected>Alege mărimea</option>`;
-        product.product_sizes.forEach(size => {
-            dropdownOptions += `<option value="${size}">${size}</option>`;
-        });
-        dropdownOptions += `</select>`;
-        sizeDropdownContainer.innerHTML = dropdownOptions; // Add the dropdown to the container
-    } else {
-        sizeDropdownContainer.innerHTML = `<select class="size-dropdown" disabled>
-            <option>Fără mărime disponibilă</option>
-        </select>`;
-    }
+    loadProductImages(product.images);
+    addAddToCartEvent(product.id);
+}
 
-    // Load product images into preview squares
+function generateSizeDropdown(sizes) {
+    let dropdownOptions = `<select class="size-dropdown"><option disabled selected>Alege mărimea</option>`;
+    sizes.forEach(size => {
+        dropdownOptions += `<option value="${size}">${size}</option>`;
+    });
+    return dropdownOptions + `</select>`;
+}
+
+function generateDisabledDropdown() {
+    return `<select class="size-dropdown" disabled><option>Fără mărime disponibilă</option></select>`;
+}
+
+function loadProductImages(images) {
     const previewContainer = document.querySelector('.prewiev-image-navigation');
-    previewContainer.innerHTML = ''; // Clear existing previews
-
-    product.images.forEach(image => {
+    previewContainer.innerHTML = '';
+    images.forEach(image => {
         const previewSquare = document.createElement('div');
         previewSquare.className = 'preview-square';
         previewSquare.style.backgroundImage = `url(${image})`;
-        previewSquare.style.backgroundSize = 'cover'; // Ensure the image covers the square
-        previewSquare.style.backgroundPosition = 'center'; // Center the image
+        previewSquare.style.backgroundSize = 'cover';
+        previewSquare.style.backgroundPosition = 'center';
         previewSquare.addEventListener('click', () => {
-            currentImageIndex = product.images.indexOf(image); // Update index based on clicked image
+            currentImageIndex = images.indexOf(image);
             updateImageNavigation();
         });
-        previewContainer.appendChild(previewSquare); // Append to the preview container
+        previewContainer.appendChild(previewSquare);
     });
+}
 
+function addAddToCartEvent(productId) {
     const linkAdd = document.getElementById("btn_add");
-    linkAdd.addEventListener("click", function (event) {
+    linkAdd.addEventListener("click", event => {
         event.preventDefault();
-
-        const sizeSelect = sizeDropdownContainer.querySelector('.size-dropdown'); // Get the size dropdown
+        const sizeSelect = document.querySelector('.size-dropdown');
         const selectedSize = sizeSelect ? sizeSelect.value : null;
-
         if (selectedSize === "Alege mărimea" || selectedSize === null) {
             alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
             return;
         }
-
-        addToCart(product.id, parseInt(quantity.value) || 1, selectedSize);
+        addToCart(productId, parseInt(quantity.value) || 1, selectedSize);
         showToast();
-        
     });
 }
 
-
-
 function showToast() {
- 
-    setTimeout(() => {
-    
-        showCart();
-    }, 500);
-   
+    setTimeout(showCart, 500);
 }
 
 function showCart() {
-    let body = document.querySelector('body');
-    body.classList.add('showCart');
+    document.querySelector('body').classList.add('showCart');
 }
 
-document.getElementById("minus").addEventListener("click", function () {
+document.getElementById("minus").addEventListener("click", () => {
     let value = parseInt(quantity.value) || 1;
     if (value > 1) {
         quantity.value = value - 1;
     }
 });
 
-document.getElementById("plus").addEventListener("click", function () {
+document.getElementById("plus").addEventListener("click", () => {
     let value = parseInt(quantity.value) || 1;
     if (value < 999) {
         quantity.value = value + 1;
@@ -165,26 +151,23 @@ async function loadProductDetails() {
             document.querySelector('.product_name').textContent = product.name;
             document.querySelector('.product_price').textContent = product.price;
 
-            // Afișează inscripția de reducere dacă există un preț vechi
             if (product.old_price) {
-                document.querySelector('.product_des').textContent = product.description; // Descrierea produsului
-                document.getElementById('saleFlag').style.display = 'block'; // Afișează inscripția de reducere
+                document.querySelector('.product_des').textContent = product.description;
+                document.getElementById('saleFlag').style.display = 'block';
             } else {
-                document.getElementById('saleFlag').style.display = 'none'; // Ascunde inscripția de reducere
+                document.getElementById('saleFlag').style.display = 'none';
             }
 
-            // Afișează inscripția „NOU” dacă produsul este nou
             if (product.isNew) {
-                document.getElementById('newFlag').style.display = 'block'; // Afișează inscripția „NOU”
+                document.getElementById('newFlag').style.display = 'block';
             } else {
-                document.getElementById('newFlag').style.display = 'none'; // Ascunde inscripția „NOU”
+                document.getElementById('newFlag').style.display = 'none';
             }
 
-            // Afișează mesajul "Out of stock" dacă produsul este indisponibil
             if (product.out_Off_stock) {
-                document.getElementById('outOfStock').style.display = 'flex'; // Afișează panoul "Out of stock"
+                document.getElementById('outOfStock').style.display = 'flex';
             } else {
-                document.getElementById('outOfStock').style.display = 'none'; // Ascunde panoul "Out of stock"
+                document.getElementById('outOfStock').style.display = 'none';
             }
         }
     } catch (error) {
@@ -192,5 +175,4 @@ async function loadProductDetails() {
     }
 }
 
-// Asigură-te că funcția este apelată
 loadProductDetails();
