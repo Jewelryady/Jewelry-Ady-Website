@@ -122,8 +122,8 @@ body {
     background-color: transparent;
     border-radius: 50%;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
     border: none;
     cursor: pointer;
     display: flex;
