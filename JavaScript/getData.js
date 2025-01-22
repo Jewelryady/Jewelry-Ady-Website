@@ -1,148 +1,130 @@
 let productsContainer = [];
-let linkName = document.getElementsByClassName("categories_link");
+const linkName = document.getElementsByClassName("categories_link");
 
-// Încărcăm toate produsele la început
-getData();
+document.addEventListener("DOMContentLoaded", () => {
+    const savedCategory = localStorage.getItem("selectedCategory") || "";
+    const categoryFromURL = new URLSearchParams(window.location.search).get("category") || savedCategory;
+    markActiveCategory(categoryFromURL);
+    getData(categoryFromURL);
+});
 
 async function getData(category = "") {
     try {
         const response = await fetch('json/products.json');
         const products = await response.json();
-
-        const filteredProducts = category
-            ? products.filter(product => product.category === category)
-            : products;
-
+        const filteredProducts = category ? products.filter(product => product.category === category) : products;
         displayProducts(filteredProducts, category);
     } catch (error) {
         console.error("Eroare la încărcarea datelor:", error);
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Verifică dacă există o categorie salvată în localStorage
-    const savedCategory = localStorage.getItem("selectedCategory") || "";
-    const categoryFromURL = new URLSearchParams(window.location.search).get("category") || savedCategory;
-
-    // Marchează butonul activ în funcție de categorie
+function markActiveCategory(category) {
     const categoryLinks = document.querySelectorAll(".categories_link");
     categoryLinks.forEach(link => {
-        if (link.getAttribute("productCategory") === categoryFromURL) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
+        link.classList.toggle("active", link.getAttribute("productCategory") === category);
     });
-
-    // Încarcă produsele pe baza categoriei din localStorage sau URL
-    getData(categoryFromURL);
-});
+}
 
 function displayProducts(products, category = "") {
     const content = document.querySelector(".content");
     const currentCategoryElements = document.querySelectorAll("#currentCategory");
     const productCountSpan = document.getElementById("productCount");
 
-    // Actualizează toate elementele cu ID-ul `currentCategory`
     currentCategoryElements.forEach(element => {
         element.textContent = `> ${category || "Toate Produsele"}`;
     });
 
-    // Actualizare text pentru numărul total de produse
     productCountSpan.textContent = `Produse: ${products.length}`;
+    content.innerHTML = products.length === 0 ? `<p>Niciun produs nu a fost găsit în această categorie.</p>` : generateProductCards(products);
 
-    content.innerHTML = ""; // Curăță conținutul anterior
+    addCartEventListeners();
+}
 
-    if (products.length === 0) {
-        content.innerHTML = `<p>Niciun produs nu a fost găsit în această categorie.</p>`;
-        return;
-    }
+function generateProductCards(products) {
+    return products.map(product => {
+        const sizes = product.product_sizes || [];
+        const sizeDropdown = sizes.length > 0 ? generateSizeDropdown(sizes) : generateDisabledDropdown();
+        return generateProductCard(product, sizeDropdown);
+    }).join('');
+}
 
-    products.forEach(product => {
-        // Check for product sizes
-        let sizes = product.product_sizes || [];
+function generateSizeDropdown(sizes) {
+    let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
+    sizes.forEach(size => {
+        dropdownOptions += `<option value="${size}">${size}</option>`;
+    });
+    return `<select class="size-dropdown">${dropdownOptions}</select>`;
+}
 
-        // Generate dropdown options
-        let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
-        sizes.forEach(size => {
-            dropdownOptions += `<option value="${size}">${size}</option>`;
-        });
+function generateDisabledDropdown() {
+    return `<select class="size-dropdown" disabled><option>Fără mărime disponibilă</option></select>`;
+}
 
-        // Create product card
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
-        productCard.setAttribute('data-id', product.id);
-
-        productCard.innerHTML = `
+function generateProductCard(product, sizeDropdown) {
+    return `
+        <div class="product-card" data-id="${product.id}">
             <div class="card-img">
                 ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
                 ${product.isNew ? `<div class="new-flag">NOU</div>` : ''}
                 ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
                 <img src="${product.images[0]}" alt="${product.name}" onclick="displayDetails(${product.id});">
-              
                 <div class="card-watermark-logo">
-    <a href="link_catre_imagine.html">
-        <img src="images/logo_block.png" alt="Image description">
-    </a>
-</div> <!-- Pătrățelul watermark -->
-                
+                    <a href="link_catre_imagine.html">
+                        <img src="images/logo_block.png" alt="Image description">
+                    </a>
+                </div>
                 <a href="#" class="addToCart">
                     <ion-icon name="cart-outline" class="Cart"></ion-icon>
                 </a>
-            
-                </div>
+            </div>
             <div class="card-info">
                 <h4 class="product-name" onclick="displayDetails(${product.id});">${product.name}</h4>
                 <h5 class="product-price">${product.price}</h5>
                 ${product.old_price ? `<h5 class="old-price">${product.old_price}</h5>` : ''}
-                <select class="size-dropdown">
-                    ${dropdownOptions}
-                </select>
+                ${sizeDropdown}
             </div>
-        `;
+        </div>`;
+}
 
-        content.appendChild(productCard);
-    });
-
-    // Adding event listeners for the Add to Cart buttons
-    let addToCartLinks = document.querySelectorAll('.addToCart');
+function addCartEventListeners() {
+    const addToCartLinks = document.querySelectorAll('.addToCart');
     addToCartLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
+        link.addEventListener('click', event => {
             event.preventDefault();
-            let productCard = event.target.closest('.product-card');
+            const productCard = event.target.closest('.product-card');
             if (productCard && productCard.dataset.id) {
-                let id_product = productCard.dataset.id;
-
-                let selectedSize = productCard.querySelector('.size-dropdown').value;
-                if (selectedSize === "Alege mărimea") {
+                const id_product = productCard.dataset.id;
+                const selectedSize = productCard.querySelector('.size-dropdown').value;
+                if (!productCard.querySelector('.size-dropdown').disabled && selectedSize === "Alege mărimea") {
                     alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
                     return;
                 }
-
                 addToCart(id_product, 1, selectedSize);
+                showToast();
             }
         });
     });
 }
 
-function getCategory(e) {
-    let category = e.target.getAttribute('productCategory');
-    setActiveLink(e.target);
-    
-    // Salvează categoria selectată în localStorage
-    localStorage.setItem("selectedCategory", category);
+function showToast() {
+    setTimeout(showCart, 500);
+}
 
-    try {
-        getData(category);
-    } catch (e) {
-        console.log("Categoria nu a fost găsită:", e);
-    }
+function showCart() {
+    document.querySelector('body').classList.add('showCart');
+}
+
+function getCategory(e) {
+    const category = e.target.getAttribute('productCategory');
+    setActiveLink(e.target);
+    localStorage.setItem("selectedCategory", category);
+    getData(category);
     if (window.innerWidth <= 768) {
         toggleSidebar();
     }
 }
 
-// Setăm link-ul activ pentru categoria selectată
 function setActiveLink(activeLink) {
     Array.from(linkName).forEach(link => {
         link.classList.remove('active');
@@ -150,14 +132,11 @@ function setActiveLink(activeLink) {
     activeLink.classList.add('active');
 }
 
-// Adăugăm evenimentele pentru link-urile de categorii
-Array.from(linkName).forEach(function (element) {
+Array.from(linkName).forEach(element => {
     element.addEventListener('click', getCategory);
 });
 
-// Navigăm la pagina de detalii produs
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
 
- 

@@ -1,5 +1,13 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", () => {
     clearCart();
+    updateTotalPrice();
+});
+
+function clearCart() {
+    localStorage.removeItem('cart');
+}
+
+function updateTotalPrice() {
     let totalPrice = document.getElementById("total_price");
 
     let total = localStorage.getItem('total price');
@@ -9,10 +17,6 @@ window.addEventListener("load", function(){
     } else {
         totalPrice.innerHTML = `$0.00`;
     }
-});
-
-function clearCart() {
-    localStorage.removeItem('cart');
 }
 
 function backHome() {

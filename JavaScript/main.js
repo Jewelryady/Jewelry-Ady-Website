@@ -1,44 +1,37 @@
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
+    const scrollBtn = document.getElementById("scrollBtn");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("scrollBtn").style.display = "block";
+        scrollBtn.style.display = "block";
     } else {
-        document.getElementById("scrollBtn").style.display = "none";
+        scrollBtn.style.display = "none";
     }
 }
 
-document.getElementById("scrollBtn").addEventListener("click", function () {
+document.getElementById("scrollBtn").addEventListener("click", () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 });
 
 // nav 
-var nav = document.getElementById('header');
-var scrollUp = "scroll-up";
-var scrollDown = "scroll-down";
-var lastScroll = 0;
+const nav = document.getElementById('header');
+const scrollUp = "scroll-up";
+const scrollDown = "scroll-down";
+let lastScroll = 0;
 
-if (window.addEventListener) {
-    window.addEventListener("scroll", scrollHandler);
-} else {
-    window.attachEvent("scroll", scrollHandler);
-}
+window.addEventListener("scroll", scrollHandler);
 
 function scrollHandler() {
-    var currentScroll = window.pageYOffset;
+    const currentScroll = window.pageYOffset;
     if (currentScroll === 0) {
-        nav.classList.remove(scrollDown);
-        nav.classList.remove(scrollUp);
+        nav.classList.remove(scrollDown, scrollUp);
         return;
     }
     if (currentScroll > lastScroll && !nav.classList.contains(scrollDown)) {
-        // down
         nav.classList.remove(scrollUp);
         nav.classList.add(scrollDown);
-    }
-    else if (currentScroll < lastScroll && nav.classList.contains(scrollDown)) {
-        // up
+    } else if (currentScroll < lastScroll && nav.classList.contains(scrollDown)) {
         nav.classList.remove(scrollDown);
         nav.classList.add(scrollUp);
     }
@@ -46,17 +39,18 @@ function scrollHandler() {
 }
 
 // cart 
-let closeCart = document.querySelector('.closeCart');
-let iconCart = document.querySelector('.icon-cart');
-let body = document.querySelector('body');
+const closeCart = document.querySelector('.closeCart');
+const iconCart = document.querySelector('.icon-cart');
+const body = document.querySelector('body');
 
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
-})
+});
+
 closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
-})
+});
 
 function viewCart() {
-    window.location.href = "cartPage.html"
+    window.location.href = "cartPage.html";
 }
