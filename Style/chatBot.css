@@ -73,11 +73,7 @@ body {
 }
 
 .chat-input {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    background-color: #f8f9fa;
+    display: none; /* Hide the input field and send button */
 }
 
 .chat-input input {
@@ -122,6 +118,17 @@ body {
 .preset-button:hover {
     background-color: #007bff;
     color: #fff;
+}
+
+.contact-operator-button {
+    background-color: #28a745; /* Green background */
+    color: #fff; /* White text */
+    border: 1px solid #28a745; /* Green border */
+}
+
+.contact-operator-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    border-color: #1e7e34; /* Darker green border on hover */
 }
 
 .chat-button {
