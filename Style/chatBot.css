@@ -143,8 +143,13 @@ body {
     background: none;
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 30px; /* Larger font size */
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
 /* Responsive Styles */
