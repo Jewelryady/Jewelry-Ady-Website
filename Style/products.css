@@ -1,12 +1,12 @@
 main {
     padding: 8%;
     font-family: "Poppins", sans-serif;
-    background-color: #f9f9f9; /* Fundal mai deschis pentru contrast */
+    background-color: #F5F5F5; /* Light marble background */
 }
 
 /* Stiluri generale pentru product-header */
 .product-header {
-    background-color: #ffffff; /* Fundal alb pentru header */
+    background-color: #E0E0E0; /* Light grey */
     padding: 10px 10px; /* Spațiu mai generos */
     display: flex;
     justify-content: space-between; /* Aliniere între elemente */
@@ -20,7 +20,7 @@ main {
     margin-left: 10px; /* Spațiu față de ion-icon */
     font-size: 16px; /* Dimensiune text */
     font-weight: 600; /* Font mai pronunțat */
-    color: #333; /* Culoare text */
+    color: #333333; /* Dark grey */
 }
 
 .product-header .menu-icon {
@@ -30,7 +30,6 @@ main {
     cursor: pointer;
     visibility: hidden; /* Ascuns pe desktop */
 }
-
 
 .current-category-pc span {
     display: inline-block;
@@ -45,7 +44,6 @@ main {
     display: flex;
     justify-content: flex-end; /* Aliniere la dreapta */
     align-items: center;
- 
 }
 
 .product-header-right span {
@@ -53,7 +51,7 @@ main {
     font-size: 16px; /* Mărime text ușor mai mare */
     font-weight: 600;
     margin-right: 4px;
-    color: #333; /* Culoare mai închisă pentru text */
+    color: #333333; /* Dark grey */
 }
 
 .product-header-right #sort {
@@ -66,12 +64,12 @@ main {
     font-weight: 300;
     margin: 0;
     padding: 12px;
-    color: #333;
+    color: #666666; /* Medium grey */
     transition: background-color 0.3s; /* Tranziție pentru hover */
 }
 
 .product-header-right #sort:hover {
-    background-color: #f0f0f0; /* Fundal la hover */
+    background-color: #D3D3D3; /* Light grey */
 }
 
 #productCount {
@@ -88,7 +86,7 @@ main .container {
     top: 405px; /* Centrăm pe verticală */
     left: 0px;
     transform: translateY(-55%); /* Ajustăm pentru a fi centrat pe verticală */
-    background-color: #fbfbfb;
+    background-color: #E8E8E8; /* Light grey */
     overflow-x: hidden;
     transition: 0.5s;
     padding: 60px 30px;
@@ -100,14 +98,14 @@ main .container {
     font-size: 30px;
     font-weight: 300;
     margin-bottom: 8px;
-    color: #333; /* Culoare mai închisă pentru titlu */
+    color: #333333; /* Dark grey */
 }
 
 .shop_categories a {
     padding: 12px 15px; /* Spațiu mai generos */
     text-decoration: none;
     font-size: 18px;
-    color: #555; /* Culoare mai deschisă */
+    color: #666666; /* Medium grey */
     display: block;
     transition: 0.3s;
     border-radius: 5px; /* Colțuri rotunjite */
@@ -116,11 +114,10 @@ main .container {
 
 .shop_categories a.active,
 .shop_categories a:hover {
-    color: #fff; /* Culoare albă pentru text */
-    background-color: #73bd7d; /* Fundal verde la hover */
+    color: #FFFFFF; /* White */
+    background-color: #B0B0B0; /* Medium grey */
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }
-
 
 /* Asigură-te că meniul lateral este deasupra fundalului */
 .aside {
@@ -152,7 +149,6 @@ main .container {
     position: relative;
     z-index: 1; /* Sub overlay */
 }
-
 
 /*---------------- products ---------------------*/
 .products {
@@ -200,7 +196,7 @@ main .container {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #dedddb;
+    background: #B0B0B0; /* Medium grey */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -208,23 +204,22 @@ main .container {
     width: 30px;
     height: 30px;
     font-size: 15px;
-    color: #333;
+    color: #FFFFFF; /* Updated color */
     cursor: pointer;
     transition: all .4s;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adăugare shadow */
 }
 
 .card-img .addToCart:hover {
-    background-color: #bdbcb8;
-    color: #2b2b2b;
+    background-color: #A0A0A0; /* Slightly darker grey */
+    color: #FFFFFF; /* Updated color */
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Shadow mai accentuat la hover */
 }
 
 .card-info {
     padding: 16px 0;
     text-align: center; /* Centrează textul în interiorul cardului */
-    background-color: #f5f5f5;
-    
+    background-color: #FFFFFF; /* White */
 }
 
 .product-name {

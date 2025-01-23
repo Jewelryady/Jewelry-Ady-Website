@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #F5F5F5; /* Light marble background */
     margin: 0;
     overflow: auto;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .chat-header {
-    background-color: #007bff;
+    background-color: #B0B0B0; /* Medium grey */
     color: #fff;
     padding: 15px;
     text-align: center;
@@ -59,7 +59,7 @@ body {
 }
 
 .message-user {
-    background-color: #d4edda;
+    background-color: #E0E0E0; /* Light grey */
     color: #155724;
     text-align: right;
     margin-left: auto;
@@ -67,7 +67,7 @@ body {
 }
 
 .message-bot {
-    background-color: #cce5ff;
+    background-color: #D3D3D3; /* Light grey */
     color: #004085;
     text-align: left;
     margin-right: auto;
@@ -87,8 +87,8 @@ body {
 }
 
 .preset-button {
-    background-color: #e7f3ff;
-    color: #007bff;
+    background-color: #E7E7E7; /* Light grey */
+    color: #666666; /* Medium grey */
     border: 1px solid #007bff;
     padding: 10px;
     border-radius: 5px;
@@ -101,18 +101,18 @@ body {
 }
 
 .preset-button:hover {
-    background-color: #007bff;
+    background-color: #D3D3D3; /* Light grey */
     color: #fff;
 }
 
 .contact-operator-button {
-    background-color: #28a745;
+    background-color: #A0A0A0; /* Slightly darker grey */
     color: #fff;
     border: 1px solid #28a745;
 }
 
 .contact-operator-button:hover {
-    background-color: #218838;
+    background-color: #909090; /* Darker grey */
     border-color: #1e7e34;
 }
 

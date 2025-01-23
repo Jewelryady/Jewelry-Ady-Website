@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9; /* Light background color */
+    background-color: #F5F5F5; /* Light marble background */
 }
 
 /* General Heading Styles */
@@ -32,7 +32,7 @@ h2 {
 
 /* Summary Price Styles */
 .summary_price {
-    background-color: #fff; /* White background for contrast */
+    background-color: #FFFFFF; /* White */
     padding: 20px;
     margin-bottom: 24px;
     border-radius: 8px; /* Rounded corners */
@@ -76,7 +76,7 @@ h2 {
 
 .summary .checkout {
     width: 100%;
-    background-color: #000;
+    background-color: #333333; /* Dark grey */
     color: #fff;
     border: none;
     font-size: 16px;
@@ -102,7 +102,7 @@ h2 {
     width: 100%; /* Full width for input fields */
     padding: 14px 20px; /* Same padding as promo code */
     border: none; /* No border */
-    background-color: #f1f1f1; /* Light gray background */
+    background-color: #E8E8E8; /* Light grey */
     color: #868686; /* Text color */
     font-size: 14px; /* Font size */
     border-radius: 5px; /* Rounded corners */
@@ -128,7 +128,7 @@ h2 {
 
 /* Optional button style for a submit button in shipping info, similar to promo code */
 .Shiping_Info button {
-    background-color: #000; /* Black background */
+    background-color: #333333; /* Dark grey */
     color: #fff; /* White text */
     font-size: 16px; /* Font size */
     font-weight: 700; /* Bold text */
@@ -143,6 +143,6 @@ h2 {
 
 /* Change background on hover */
 .Shiping_Info button:hover {
-    background-color: #333; /* Darker shade on hover */
+    background-color: #222222; /* Darker grey */
     transform: translateY(-2px); /* Lift effect on hover */
 }

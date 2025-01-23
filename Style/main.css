@@ -24,7 +24,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #f9f9f9; /* Fundal mai deschis pentru contrast */
+    background-color: #F5F5F5; /* Light marble background */
 }
 
 a {
@@ -157,7 +157,7 @@ main {
     right: 40px;
     height: 50px;
     width: 50px;
-    background-color: 	#adaba6;
+    background-color: #B0B0B0; /* Medium grey */
     color: white;
     border: none;
     border-radius: 50%;
@@ -169,7 +169,7 @@ main {
 
 #scrollBtn:hover {
     color: white;
-    background-color: #7b7975;
+    background-color: #A0A0A0; /* Slightly darker grey */
 }
 
 #scrollBtn #btn-up {
@@ -186,7 +186,7 @@ main {
     left: 40px;
     height: 50px;
     width: 50px;
-    background-color: #bdbcb8;
+    background-color: #D3D3D3; /* Light grey */
     color: white;
     border: none;
     border-radius: 0px; /* Colțuri rotunjite, dar pătrat */
@@ -200,7 +200,7 @@ main {
 
 #categoryBtn:hover {
     color: #ffffff;
-    background-color: #adaba6;
+    background-color: #B0B0B0; /* Medium grey */
 }
 
 #category-icon {
@@ -224,7 +224,7 @@ header {
 }
 
 .header_top {
-    background-color: #efeeed;
+    background-color: #E8E8E8; /* Light grey */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -329,7 +329,7 @@ nav ul li a {
 
 .nav-buttons li a {
     display: inline-block;
-    background-color: #bdbcb8; /* Culoare de fundal */
+    background-color: #D3D3D3; /* Light grey */
     color: #ffffff; /* Culoare text */
     font-size: 1rem; /* Dimensiune text adaptivă */
     font-weight: 500;
@@ -341,7 +341,7 @@ nav ul li a {
 }
 
 .nav-buttons li a:hover {
-    background-color: #a4a3a1; /* Culoare mai întunecată la hover */
+    background-color: #B0B0B0; /* Medium grey */
  
     transform: scale(1.05); /* Mărire ușoară */
 }
@@ -407,7 +407,7 @@ header nav li:hover::after {
 /* ------------------------ cart section ----------------- */
 .cart-section {
     width: 400px;
-    background-color: #ffffff;
+    background-color: #FFFFFF; /* White */
     position: fixed;
     top: 0;
     right: -100%;
@@ -430,7 +430,7 @@ body.showCart .cart-section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundal gri-transparent */
+    background-color: rgba(0, 0, 0, 0.5); /* Black transparent */
     z-index: 9998; /* Sub cart-section */
     display: none; /* Ascuns implicit */
     transition: opacity 0.5s ease;
@@ -671,31 +671,31 @@ body.showCart .cart-overlay {
 }
 
 .btn_control .viewCart {
-    background-color: #fff;
+    background-color: #FFFFFF; /* White */
     border: 1px solid #000000;
 }
 
 .btn_control .checkout:hover,
 .btn_control .viewCart:hover {
-    background-color: #0ec1ae;
+    background-color: #A0A0A0; /* Slightly darker grey */
     color: #fff;
     border: 1px solid #fff;
 }
 
 .btn_control .checkout {
-    background-color: #000;
+    background-color: #333333; /* Dark grey */
     color: #fff;
     border: none;
 }
 
 /* ------------------------ footer ----------------------- */
 .footer {
-    background-color: #fff;
+    background-color: #FFFFFF; /* White */
     padding: 4% 8%;
 }
 
 .black-footer {
-    background-color: #efeeed;
+    background-color: #E8E8E8; /* Light grey */
     color: #000000;
 }
 
@@ -1025,7 +1025,7 @@ input[type=number] {
     justify-content: center;
     align-items: center;
     padding: 50px;
-    background-color: #f9f9f9; /* Fundal mai deschis pentru contrast */
+    background-color: #F5F5F5; /* Light marble background */
 }
 
 #login .container {
@@ -1073,7 +1073,7 @@ input[type=number] {
 
 #form input:focus {
     outline: 0;
-    border-color: #097a6e; /* Culoare de border pe focus */
+    border-color: #B0B0B0; /* Medium grey */
     box-shadow: 0 0 5px 2px rgba(0, 122, 113, 0.15); /* Umbra la focus */
 }
 
@@ -1085,7 +1085,7 @@ input[type=number] {
 #form .submit button {
     font-size: 16px;
     font-weight: 500;
-    background-color: #000;
+    background-color: #333333; /* Dark grey */
     color: white;
     cursor: pointer;
     display: inline-flex;
@@ -1099,7 +1099,7 @@ input[type=number] {
 }
 
 #form .submit button:hover {
-    background-color: #097a6e; /* Schimbare culoare la hover */
+    background-color: #A0A0A0; /* Slightly darker grey */
 }
 
 #form .submit #signup {
@@ -1133,7 +1133,7 @@ input[type=number] {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: red;
+    background-color: #B0B0B0; /* Medium grey */
     color: white;
     padding: 2px 5px;
     font-weight: bold;
@@ -1154,7 +1154,7 @@ input[type=number] {
     position: absolute;
     top: 0px; /* Așezăm insigna sub insigna de reducere, dacă este activă */
     left: 0px;
-    background-color: green; /* Culoare verde pentru insigna „NOU” */
+    background-color: #A0A0A0; /* Slightly darker grey */
     color: white;
     padding: 2px 5px;
     font-weight: bold;
@@ -1217,6 +1217,7 @@ input[type=number] {
 .product-card .card-info {
     padding: 15px;
     text-align: center; /* Centrează textul */
+    background-color: #f4f4f4;
 }
 
 /* Prețurile produselor */

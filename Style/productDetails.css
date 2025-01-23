@@ -52,8 +52,7 @@ main .container {
     /* Dimensiune mai mare */
     font-weight: 500;
     /* Font semi-bold */
-    color: #39b626;
-    /* Culoare verde pentru preț */
+    color: #666666; /* Medium grey */
     margin-bottom: 20px;
     position: relative;
 }
@@ -115,8 +114,7 @@ main .container {
 }
 
 #btn_add {
-    background-color: #39b626;
-    /* Culoare verde */
+    background-color: #B0B0B0; /* Medium grey */
     color: #fff;
     font-size: 16px;
     font-weight: 500;
@@ -134,10 +132,8 @@ main .container {
 }
 
 #btn_add:hover {
-    background-color: #32a62f;
-    /* Culoare mai închisă la hover */
+    background-color: #A0A0A0; /* Slightly darker grey */
 }
-
 
 /* Stiluri responsive */
 @media (max-width: 768px) {
