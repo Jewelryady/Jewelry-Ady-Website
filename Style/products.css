@@ -84,7 +84,7 @@ main .container {
 .aside {
     width: 250px;
     position: fixed; /* Schimbat de la absolute la fixed */
-    top: 240pt; /* Centrăm pe verticală */
+    top: 405px; /* Centrăm pe verticală */
     left: 0px;
     transform: translateY(-55%); /* Ajustăm pentru a fi centrat pe verticală */
     background-color: #efeeed;
