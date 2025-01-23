@@ -84,7 +84,7 @@ main .container {
 .aside {
     width: 250px;
     position: fixed; /* Schimbat de la absolute la fixed */
-    top: 260pt; /* Centrăm pe verticală */
+    top: 240pt; /* Centrăm pe verticală */
     left: 0px;
     transform: translateY(-55%); /* Ajustăm pentru a fi centrat pe verticală */
     background-color: #efeeed;
@@ -287,5 +287,9 @@ main .container {
     /* Aici asigurăm că .current-category-pc span este vizibil pe desktop */
     .current-category-pc span {
         visibility: visible; /* Vizibil pe desktop */
+    }
+
+    .products .content {
+        margin-top: 0; /* Elimină spațiul deasupra conținutului pe ecrane mari */
     }
 }
