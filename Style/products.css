@@ -1,5 +1,6 @@
 main {
     padding: 8%;
+    font-family: "Poppins", sans-serif;
     background-color: #f9f9f9; /* Fundal mai deschis pentru contrast */
 }
 
@@ -87,7 +88,7 @@ main .container {
     top: 405px; /* Centrăm pe verticală */
     left: 0px;
     transform: translateY(-55%); /* Ajustăm pentru a fi centrat pe verticală */
-    background-color: #efeeed;
+    background-color: #fbfbfb;
     overflow-x: hidden;
     transition: 0.5s;
     padding: 60px 30px;
