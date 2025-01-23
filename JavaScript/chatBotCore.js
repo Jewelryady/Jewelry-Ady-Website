@@ -16,16 +16,11 @@ function toggleChat() {
     }
 }
 
-function sendMessage() {
-    const userInput = document.getElementById('userInput');
-    const message = userInput.value;
-
-    if (message.trim() === "") return;
-
-    appendMessage(message, 'message-user');
+function sendPresetMessage(presetMessage) {
+    appendMessage(presetMessage, 'message-user');
 
     setTimeout(() => {
-        let botResponse = getBotResponse(message);
+        let botResponse = getBotResponse(presetMessage);
         appendMessage(botResponse.message, 'message-bot');
 
         if (botResponse.button) {
@@ -35,14 +30,7 @@ function sendMessage() {
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 1000);
 
-    userInput.value = "";
     chatBody.scrollTop = chatBody.scrollHeight;
-}
-
-function sendPresetMessage(presetMessage) {
-    const userInput = document.getElementById('userInput');
-    userInput.value = presetMessage;
-    sendMessage();
 }
 
 function appendMessage(message, className) {
@@ -56,6 +44,9 @@ function appendMessage(message, className) {
 function appendButton(buttonText, link) {
     const buttonElement = document.createElement('button');
     buttonElement.classList.add('preset-button');
+    if (buttonText === "Contactați operatorul") {
+        buttonElement.classList.add('contact-operator-button'); // Add a special class for the green button
+    }
     buttonElement.innerText = buttonText;
     buttonElement.onclick = function () {
         window.location.href = link;
@@ -66,14 +57,19 @@ function appendButton(buttonText, link) {
 
 function getBotResponse(message) {
     const responses = {
-        "In cât timp ajung coletele?": "Coletele ajung în 3-4 zile lucrătoare.",
-        "Oferiți livrare express?": "Da, oferim livrare express.",
-        "Ce servicii oferiți?": "Oferim o gamă variată de servicii.",
-        "Salut": "Salut! Cum pot să te ajut?",
-        "Ce servicii oferiți?": "Oferim o gamă variată de servicii."
+        "În câte zile ajunge livrarea?": "Livrarea ajunge la dumneavoastră în decurs de 2 până la 5 zile.",
+        "Care sunt opțiunile de livrare disponibile?": "Oferim livrare Gratuită/ Curier în raza orașului Chișinău, și livrare prin poștă în toată Moldova.",
+        "Cum pot să urmăresc statusul comenzii mele?": "Vei primi mesaj de confirmare a comenzii pe număr de telefon, că comandă a fost livrată.",
+        "Achitarea se efectuează la primire sau cu cardul?": "Detaliile achitării întrebați de operator."
     };
 
     if (responses[message]) {
+        if (message === "Achitarea se efectuează la primire sau cu cardul?") {
+            return {
+                message: responses[message],
+                button: { text: "Contactați operatorul", link: "https://t.me/jewelryady" }
+            };
+        }
         return { message: responses[message] };
     } else {
         return {

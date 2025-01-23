@@ -14,6 +14,7 @@
     <!-- css -->
     <link rel="stylesheet" href="Style/productDetails.css">
     <link rel="stylesheet" href="Style/main.css">
+    <link rel="stylesheet" href="Style/chatBot.css">
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,72 +207,100 @@
             cursor: not-allowed;
         }
 
-/* Image Preview */
-.prewiev-image-navigation {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Spațiere între previzualizări */
-    overflow-x: auto; /* Activează scroll-ul orizontal */
-    white-space: nowrap; /* Previne ruperea rândului */
-    max-width: 100%; /* Responsiv */
-    padding: 4px 7px;
-    background-color: #f5f5f5; /* Fundal deschis */
-    border-radius: 8px; /* Colțuri rotunjite */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
-    scrollbar-width: thin; /* Scrollbar subțire pentru Firefox */
-    scrollbar-color: #007BFF transparent; /* Culoare scroll */
-}
+        /* Image Preview */
+        .prewiev-image-navigation {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Spațiere între previzualizări */
+            overflow-x: auto;
+            /* Activează scroll-ul orizontal */
+            white-space: nowrap;
+            /* Previne ruperea rândului */
+            max-width: 100%;
+            /* Responsiv */
+            padding: 4px 7px;
+            background-color: #f5f5f5;
+            /* Fundal deschis */
+            border-radius: 8px;
+            /* Colțuri rotunjite */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            /* Umbră subtilă */
+            scrollbar-width: thin;
+            /* Scrollbar subțire pentru Firefox */
+            scrollbar-color: #007BFF transparent;
+            /* Culoare scroll */
+        }
 
-.preview-square {
-    flex-shrink: 0; /* Previne micșorarea */
-    width: 80px;
-    height: 80px;
-    background-color: #e0e0e0; /* Fundal neutru */
-    border: 2px solid transparent; /* Margine inițială */
-    border-radius: 5px; /* Colțuri rotunjite */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Animație la hover */
-    cursor: pointer; /* Indicator de clic */
-}
-.preview-square img {
-    width: 100%; /* Imagine responsivă */
-    height: 100%; /* Imagine responsivă */
-    object-fit: cover; /* Decupare corectă a imaginii */
-    border-radius: 5px; /* Colțuri rotunjite */
-}
-/* Ajustări pentru ecrane mici */
-@media (max-width: 600px) {
-    .preview-square {
-        width: 60px;
-        height: 60px;
-    }
-}
+        .preview-square {
+            flex-shrink: 0;
+            /* Previne micșorarea */
+            width: 80px;
+            height: 80px;
+            background-color: #e0e0e0;
+            /* Fundal neutru */
+            border: 2px solid transparent;
+            /* Margine inițială */
+            border-radius: 5px;
+            /* Colțuri rotunjite */
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            /* Animație la hover */
+            cursor: pointer;
+            /* Indicator de clic */
+        }
 
-@media (max-width: 400px) {
-    .preview-square {
-        width: 50px;
-        height: 50px;
-    }
-}
+        .preview-square img {
+            width: 100%;
+            /* Imagine responsivă */
+            height: 100%;
+            /* Imagine responsivă */
+            object-fit: cover;
+            /* Decupare corectă a imaginii */
+            border-radius: 5px;
+            /* Colțuri rotunjite */
+        }
 
-/* Efect la hover */
-.preview-square:hover {
-    transform: scale(1.1); /* Mărire ușoară */
-    border-color: #007BFF; /* Margine evidențiată */
-}
+        /* Ajustări pentru ecrane mici */
+        @media (max-width: 600px) {
+            .preview-square {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .preview-square {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Efect la hover */
+        .preview-square:hover {
+            transform: scale(1.1);
+            /* Mărire ușoară */
+            border-color: #007BFF;
+            /* Margine evidențiată */
+        }
 
 
-    /* Scrollbar personalizat pentru WebKit */
-.prewiev-image-navigation::-webkit-scrollbar {
-    height: 6px; /* Înălțime scrollbar */
-}
+        /* Scrollbar personalizat pentru WebKit */
+        .prewiev-image-navigation::-webkit-scrollbar {
+            height: 6px;
+            /* Înălțime scrollbar */
+        }
 
-.prewiev-image-navigation::-webkit-scrollbar-thumb {
-    background-color: #007BFF; /* Culoarea thumb-ului */
-    border-radius: 10px; /* Rotunjit */
-}
-.prewiev-image-navigation::-webkit-scrollbar-thumb:hover {
-    background-color: #0056b3; /* Culoare mai închisă la hover */
-}
+        .prewiev-image-navigation::-webkit-scrollbar-thumb {
+            background-color: #007BFF;
+            /* Culoarea thumb-ului */
+            border-radius: 10px;
+            /* Rotunjit */
+        }
+
+        .prewiev-image-navigation::-webkit-scrollbar-thumb:hover {
+            background-color: #0056b3;
+            /* Culoare mai închisă la hover */
+        }
 
 
 
@@ -480,10 +509,41 @@
             </p>
     </footer>
 
+    <!-- Chat Bot -->
+    <div class="overlay" id="overlay"></div>
+    <button class="chat-button" id="chatButton" onclick="toggleChat()">
+        <img id="chatIcon" src="images/Chat Bot/Chat On.png" alt="Chat Icon" style="width: 100%; height: auto;">
+    </button>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            AI Consultant (Online)
+            <button class="close-button" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message message-bot">
+                👋 Bună ziua! Cum vă putem ajuta?
+            </div>
+        </div>
+        <div class="preset-buttons">
+            <button class="preset-button" onclick="sendPresetMessage('În câte zile ajunge livrarea?')">În câte zile
+                ajunge livrarea?</button>
+            <button class="preset-button"
+                onclick="sendPresetMessage('Care sunt opțiunile de livrare disponibile?')">Care sunt opțiunile de
+                livrare disponibile?</button>
+            <button class="preset-button" onclick="sendPresetMessage('Cum pot să urmăresc statusul comenzii mele?')">Cum
+                pot să urmăresc statusul comenzii mele?</button>
+            <button class="preset-button"
+                onclick="sendPresetMessage('Achitarea se efectuează la primire sau cu cardul?')">Achitarea se efectuează
+                la primire sau cu cardul?</button>
+        </div>
+    </div>
+
     <button id="scrollBtn"><ion-icon name="arrow-up-outline" id="btn-up"></ion-icon></button>
     <script src="JavaScript/main.js"></script>
     <script src="JavaScript/getDetails.js"></script>
     <script src="JavaScript/cart.js"></script>
+    <script src="JavaScript/chatBotCore.js"></script>
 </body>
 
 

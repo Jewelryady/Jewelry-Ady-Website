@@ -14,7 +14,7 @@
     <!-- css -->
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="Style/main.css">
-
+    <link rel="stylesheet" href="Style/chatBot.css"> <!-- Link to external CSS -->
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -364,9 +364,41 @@
             </p>
     </footer>
 
+
+    <!-- Chat Bot -->
+    <div class="overlay" id="overlay"></div>
+    <button class="chat-button" id="chatButton" onclick="toggleChat()">
+        <img id="chatIcon" src="images/Chat Bot/Chat On.png" alt="Chat Icon" style="width: 100%; height: auto;">
+    </button>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            Consultant
+            <button class="close-button" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message message-bot">
+                👋 Bună ziua! Cum vă putem ajuta?
+            </div>
+        </div>
+        <div class="preset-buttons">
+            <button class="preset-button" onclick="sendPresetMessage('In cât timp ajung coletele?')">In cât timp ajung
+                coletele?</button>
+            <button class="preset-button" onclick="sendPresetMessage('Oferiți livrare express?')">Oferiți livrare
+                express?</button>
+            <button class="preset-button" onclick="sendPresetMessage('Ce servicii oferiți?')">Ce servicii
+                oferiți?</button>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Scrieți un mesaj...">
+            <button onclick="sendMessage()">Trimite</button>
+        </div>
+    </div>
+
     <script src="JavaScript/index.js"></script>
     <script src="JavaScript/main.js"></script>
     <script src="JavaScript/cart.js"></script>
+    <script src="JavaScript/chatBotCore.js"></script> <!-- Link to external JavaScript -->
 
 </body>
 
