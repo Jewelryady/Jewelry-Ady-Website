@@ -321,6 +321,7 @@ nav ul li a {
     gap: 15px; /* Spațiu între butoane */
     margin: 0;
     padding: 0;
+      background-color: #E8E8E8; /* Light grey */
 }
 
 .nav-buttons li {
@@ -329,7 +330,7 @@ nav ul li a {
 
 .nav-buttons li a {
     display: inline-block;
-    background-color: #D3D3D3; /* Light grey */
+    background-color: #d3d3d3; /* Light grey */
     color: #ffffff; /* Culoare text */
     font-size: 1rem; /* Dimensiune text adaptivă */
     font-weight: 500;
@@ -338,12 +339,6 @@ nav ul li a {
     border-radius: 5px; /* Colțuri rotunjite */
     transition: all 0.3s ease; /* Tranziție pentru hover */
     box-shadow: 0px 4px 6px rgba(162, 162, 162, 0.2); /* Umbră la hover */
-}
-
-.nav-buttons li a:hover {
-    background-color: #B0B0B0; /* Medium grey */
- 
-    transform: scale(1.05); /* Mărire ușoară */
 }
 
 /* Media Queries pentru dispozitive mici */
@@ -365,29 +360,13 @@ nav ul li a {
     }
 }
 
-
-header nav li::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #000000;
-    left: calc(50% - 12px);
-    bottom: -4px;
-    transition: .4s ease-in-out;
-}
-
-header nav li:hover::after {
-    width: 25px;
-}
-
 .icon-cart {
     position: relative;
 }
 
 .icon-cart #cart-counter {
     position: absolute;
-    background-color: #c30202;
+    background-color: #e70f0f;
     color: #fff;
     width: 17px;
     height: 17px;
@@ -1133,7 +1112,7 @@ input[type=number] {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: #B0B0B0; /* Medium grey */
+    background-color: #ff0000; /* Medium grey */
     color: white;
     padding: 2px 5px;
     font-weight: bold;
@@ -1154,7 +1133,7 @@ input[type=number] {
     position: absolute;
     top: 0px; /* Așezăm insigna sub insigna de reducere, dacă este activă */
     left: 0px;
-    background-color: #A0A0A0; /* Slightly darker grey */
+    background-color: #28a745; /* Slightly darker grey */
     color: white;
     padding: 2px 5px;
     font-weight: bold;
