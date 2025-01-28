@@ -222,6 +222,7 @@ function displayProduct(product) {
         <p>Images: ${product.images.join(', ')}</p>
         ${product.isTrending ? '<p>Trending: Yes</p>' : ''}
         ${product.old_price ? `<p>Old Price: ${product.old_price} MDL</p>` : ''}
+        ${product.out_Of_stock ? '<p>Out Of Stock: Yes</p>' : ''}
         ${product.isNew ? '<p>New: Yes</p>' : ''}
         ${product.product_sizes ? `<p>Sizes: ${product.product_sizes.join(', ')}</p>` : ''}
         <button class="editButton" onclick="editProduct('${product.id}')">Editează</button>

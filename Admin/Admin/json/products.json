@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "id": "1.1",
+        "name": "rfewr",
+        "price": "23",
+        "images": [
+            "sdsd"
+        ],
+        "category": "cat 1",
+        "description": "bb",
+        "isTrending": true
+    }
+]
