@@ -1,13 +1,14 @@
 [
     {
         "id": "1.1",
-        "name": "rfewr",
-        "price": "23",
+        "name": "Inel Pandora cu inim\u0103 ro\u0219ie",
+        "price": "225.00",
         "images": [
-            "sdsd"
+            "images/Cercei/cercei_1.jpg",
+            "images/Cercei/cercei_2.png"
         ],
-        "category": "cat 1",
-        "description": "bb",
+        "category": "Inele",
+        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
         "isTrending": true
     }
 ]

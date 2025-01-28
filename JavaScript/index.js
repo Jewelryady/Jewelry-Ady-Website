@@ -2,7 +2,7 @@ let currentSlide = 1;
 window.addEventListener("load", getTrendingProducts);
 
 async function getTrendingProducts() {
-    const response = await fetch('json/products.json');
+    const response = await fetch('Admin/Admin/json/products.json');
     const products = await response.json();
     const trendingProducts = products.filter(product => product.isTrending);
     displayTrendingProducts(trendingProducts);

@@ -12,7 +12,7 @@ getData();
 checkCart();
 
 async function getData() {
-    let response = await fetch('json/products.json');
+    let response = await fetch('Admin/Admin/json/products.json');
     let json = await response.json();
     products = json;
 }

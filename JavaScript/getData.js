@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function getData(category = "") {
     try {
-        const response = await fetch('json/products.json');
+        const response = await fetch('Admin/Admin/json/products.json');
         const products = await response.json();
         const filteredProducts = category ? products.filter(product => product.category === category) : products;
         displayProducts(filteredProducts, category);

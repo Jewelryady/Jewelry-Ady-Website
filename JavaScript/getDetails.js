@@ -8,7 +8,7 @@ getData();
 
 async function getData() {
     try {
-        const response = await fetch('json/products.json');
+        const response = await fetch('Admin/Admin/json/products.json');
         const json = await response.json();
         const product = json.find(item => item.id == productId);
         if (product) {
@@ -141,7 +141,7 @@ async function loadProductDetails() {
     const productId = urlParams.get('productId');
 
     try {
-        const response = await fetch('json/products.json');
+        const response = await fetch('Admin/Admin/json/products.json');
         const products = await response.json();
         const product = products.find(prod => prod.id == productId);
 
