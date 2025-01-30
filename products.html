@@ -59,16 +59,17 @@
             <div class="current-category-pc">
                 <h2><span id="currentCategory"></span></h2>
             </div>
-
+            
             <div class="menu-icon" onclick="toggleSidebar()">
                 <ion-icon name="grid-outline"></ion-icon>
                 <div class="product-header-left">
                     <span id="currentCategory"></span>
-
                 </div>
             </div>
+     
 
             <div class="product-header-right">
+                <span id="productCount">Produse: 0</span>
                 <select id="sortDropdown" onchange="sortProducts()">
                     <option value="implicit">Sortare Implicită</option>
                     <option value="priceAsc">Preț Mic > Mare</option>
@@ -76,7 +77,6 @@
                     <option value="nameAsc">Nume A-Z</option>
                     <option value="nameDesc">Nume Z-A</option>
                 </select>
-                <span id="productCount">Produse: 0</span>
             </div>
         </div>
 
