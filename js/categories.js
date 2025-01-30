@@ -23,10 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     const category = this.getAttribute('productCategory');
                     markActiveCategory(category);
                     getData(category);
+                    // Save selected category to localStorage
+                    localStorage.setItem('selectedCategory', category);
                     // Close the sidebar after selecting a category
                     toggleSidebar();
                 });
             });
+
+            // Load selected category from localStorage
+            const savedCategory = localStorage.getItem('selectedCategory') || "";
+            markActiveCategory(savedCategory);
+            getData(savedCategory);
         })
         .catch(error => console.error('Error fetching categories:', error));
 });
