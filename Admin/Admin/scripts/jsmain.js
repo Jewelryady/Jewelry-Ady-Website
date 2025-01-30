@@ -189,6 +189,12 @@ function saveProduct() {
     saveProductsToJSON(); // Save products to JSON
     displayAllProducts(); // Refresh product display after saving
     resetProductForm(); // Reset form after saving
+
+    // Reapply the filter after saving a new product
+    const selectedCategory = document.getElementById('filterDropdown').value;
+    if (selectedCategory) {
+        filterProductsByCategory(selectedCategory);
+    }
 }
 
 function loadProducts() {

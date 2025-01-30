@@ -11,6 +11,22 @@ if ($data !== null) {
     // Calea către fișierul JSON unde stocăm produsele
     $filePath = 'json/products.json';
 
+    // Citim produsele existente
+    $existingProducts = json_decode(file_get_contents($filePath), true);
+
+    // Actualizăm produsele existente cu noile date
+    foreach ($data as &$newProduct) {
+        foreach ($existingProducts as &$existingProduct) {
+            if ($newProduct['id'] === $existingProduct['id']) {
+                // Preservăm categoria existentă dacă nu este setată în noile date
+                if (!isset($newProduct['category']) || $newProduct['category'] === "") {
+                    $newProduct['category'] = $existingProduct['category'];
+                }
+                break;
+            }
+        }
+    }
+
     // Salvăm datele în fișierul JSON cu opțiuni de formatare
     if (file_put_contents($filePath, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
         // Răspuns de succes
