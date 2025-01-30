@@ -123,7 +123,7 @@ function filterProductsByCategory(category) {
 function saveProduct() {
     const id = document.getElementById('id').textContent;
     const name = document.getElementById('name').value.trim();
-    const price = document.getElementById('price').value.trim();
+    let price = document.getElementById('price').value.trim();
     const images = document.getElementById('images').value.split(',').map(img => img.trim()).filter(img => img !== '');
     const category = document.getElementById('selectedCategory').textContent;
     const description = document.getElementById('description').value.trim();
@@ -134,10 +134,9 @@ function saveProduct() {
         return;
     }
 
-    // Validate price to ensure it contains only numbers
-    if (isNaN(price)) {
-        alert("Prețul trebuie să fie un număr.");
-        return;
+    // Add "MDL" suffix to price if not already present
+    if (!price.toLowerCase().includes("mdl")) {
+        price = `${price} MDL`;
     }
 
     const product = {
@@ -155,8 +154,12 @@ function saveProduct() {
         product.isTrending = isTrending;
     }
 
-    const old_price = document.getElementById('old_price').value;
+    let old_price = document.getElementById('old_price').value.trim();
     if (old_price) {
+        // Add "MDL" suffix to old_price if not already present
+        if (!old_price.toLowerCase().includes("mdl")) {
+            old_price = `${old_price} MDL`;
+        }
         product.old_price = old_price;
     }
 
