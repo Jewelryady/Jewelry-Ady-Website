@@ -1,6 +1,7 @@
 [
     {
         "id": "1.1",
+<<<<<<< HEAD
         "name": "ferd",
         "price": "233",
         "images": [
@@ -8,5 +9,14 @@
         ],
         "category": "",
         "description": "reff"
+=======
+        "name": "erf",
+        "price": "3",
+        "images": [
+            "regeg"
+        ],
+        "category": "Inele",
+        "description": "erg"
+>>>>>>> parent of fd486e9 (fix)
     }
 ]
