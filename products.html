@@ -73,6 +73,8 @@
                     <option value="implicit">Sortare Implicită</option>
                     <option value="priceAsc">Preț Mic > Mare</option>
                     <option value="priceDesc">Preț Mare > Mic</option>
+                    <option value="nameAsc">Nume A-Z</option>
+                    <option value="nameDesc">Nume Z-A</option>
                 </select>
                 <span id="productCount">Produse: 0</span>
             </div>
@@ -228,6 +230,18 @@
                     const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('MDL', '').trim());
                     const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('MDL', '').trim());
                     return priceB - priceA;
+                });
+            } else if (sortOption === 'nameAsc') {
+                sortedProducts = products.sort((a, b) => {
+                    const nameA = a.querySelector('.product-name').textContent.toLowerCase();
+                    const nameB = b.querySelector('.product-name').textContent.toLowerCase();
+                    return nameA.localeCompare(nameB);
+                });
+            } else if (sortOption === 'nameDesc') {
+                sortedProducts = products.sort((a, b) => {
+                    const nameA = a.querySelector('.product-name').textContent.toLowerCase();
+                    const nameB = b.querySelector('.product-name').textContent.toLowerCase();
+                    return nameB.localeCompare(nameA);
                 });
             } else if (sortOption === 'implicit') {
                 // Reset filters and display products in default order
