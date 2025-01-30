@@ -69,8 +69,12 @@
             </div>
 
             <div class="product-header-right">
+                <select id="sortDropdown" onchange="sortProducts()">
+                    <option value="implicit">Sortare Implicită</option>
+                    <option value="priceAsc">Preț Mic > Mare</option>
+                    <option value="priceDesc">Preț Mare > Mic</option>
+                </select>
                 <span id="productCount">Produse: 0</span>
-
             </div>
         </div>
 
@@ -198,18 +202,46 @@
     <script src="JavaScript/cart.js"></script>
     <script src="JavaScript/getData.js"></script>
     <script src="JavaScript/chatBotCore.js"></script>
-</body>
-
-<script>
-    function toggleSidebar() {
-        var sidebar = document.querySelector(".aside");
-        var overlay = document.querySelector(".aside-overlay");
-        sidebar.classList.toggle("open");
-        if (overlay) {
-            overlay.style.pointerEvents = sidebar.classList.contains("open") ? "auto" : "none";
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector(".aside");
+            var overlay = document.querySelector(".aside-overlay");
+            sidebar.classList.toggle("open");
+            if (overlay) {
+                overlay.style.pointerEvents = sidebar.classList.contains("open") ? "auto" : "none";
+            }
         }
-    }
 
-</script>
+        function sortProducts() {
+            const sortOption = document.getElementById('sortDropdown').value;
+            let products = Array.from(document.querySelectorAll('.product-card'));
+            let sortedProducts;
+
+            if (sortOption === 'priceAsc') {
+                sortedProducts = products.sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('MDL', '').trim());
+                    const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('MDL', '').trim());
+                    return priceA - priceB;
+                });
+            } else if (sortOption === 'priceDesc') {
+                sortedProducts = products.sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('MDL', '').trim());
+                    const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('MDL', '').trim());
+                    return priceB - priceA;
+                });
+            } else if (sortOption === 'implicit') {
+                // Reset filters and display products in default order
+                window.location.reload();
+                return;
+            } else {
+                return;
+            }
+
+            const content = document.querySelector('.content');
+            content.innerHTML = '';
+            sortedProducts.forEach(product => content.appendChild(product));
+        }
+    </script>
+</body>
 
 </html>
