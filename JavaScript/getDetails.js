@@ -84,19 +84,24 @@ function generateDisabledDropdown() {
 
 function loadProductImages(images) {
     const previewContainer = document.querySelector('.prewiev-image-navigation');
-    previewContainer.innerHTML = '';
-    images.forEach(image => {
-        const previewSquare = document.createElement('div');
-        previewSquare.className = 'preview-square';
-        previewSquare.style.backgroundImage = `url(${image})`;
-        previewSquare.style.backgroundSize = 'cover';
-        previewSquare.style.backgroundPosition = 'center';
-        previewSquare.addEventListener('click', () => {
-            currentImageIndex = images.indexOf(image);
-            updateImageNavigation();
+    if (images.length <= 2) {
+        previewContainer.style.display = 'none';
+    } else {
+        previewContainer.style.display = 'flex';
+        previewContainer.innerHTML = '';
+        images.forEach(image => {
+            const previewSquare = document.createElement('div');
+            previewSquare.className = 'preview-square';
+            previewSquare.style.backgroundImage = `url(${image})`;
+            previewSquare.style.backgroundSize = 'cover';
+            previewSquare.style.backgroundPosition = 'center';
+            previewSquare.addEventListener('click', () => {
+                currentImageIndex = images.indexOf(image);
+                updateImageNavigation();
+            });
+            previewContainer.appendChild(previewSquare);
         });
-        previewContainer.appendChild(previewSquare);
-    });
+    }
 }
 
 function addAddToCartEvent(productId) {
