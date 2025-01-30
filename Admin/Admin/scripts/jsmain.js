@@ -28,8 +28,9 @@ function updateCategories() {
     categoriesContainer.innerHTML = ''; // Clear previous categories
 
     categories.forEach((category, index) => {
+        const productCount = products.filter(product => product.category === category).length;
         const categoryButton = document.createElement('button');
-        categoryButton.textContent = category;
+        categoryButton.textContent = `${category} (${productCount})`;
         categoryButton.className = 'categoryButton';
         categoryButton.onclick = () => selectCategory(category, index);
 
@@ -45,6 +46,13 @@ function updateCategories() {
 
         categoriesContainer.appendChild(categoryContainer);
     });
+    updateTotalCategoryCount();
+}
+
+function updateTotalCategoryCount() {
+    const totalProducts = products.length;
+    const filterDropdown = document.getElementById('filterDropdown');
+    filterDropdown.options[0].textContent = `Toate categoriile (${totalProducts})`;
 }
 
 function deleteCategory(category, index) {
@@ -185,6 +193,7 @@ function saveProduct() {
 
     saveProductsToJSON(); // Save products to JSON
     displayAllProducts(); // Refresh product display after saving
+    updateCategories(); // Update categories after saving
     resetProductForm(); // Reset form after saving
 }
 
@@ -312,7 +321,7 @@ function saveProductsToJSON() {
 
 function populateFilterDropdown() {
     const filterDropdown = document.getElementById('filterDropdown');
-    filterDropdown.innerHTML = '<option value="">Toate categoriile</option>'; // Default option
+    filterDropdown.innerHTML = '<option value="">Toate categoriile (0)</option>'; // Default option with count
 
     categories.forEach(category => {
         const option = document.createElement('option');
@@ -329,6 +338,7 @@ function populateFilterDropdown() {
             displayAllProducts();
         }
     });
+    updateTotalCategoryCount(); // Update total category count
 }
 
 function displayAllProducts() {

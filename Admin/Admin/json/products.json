@@ -1,14 +1,12 @@
 [
     {
         "id": "1.1",
-        "name": "Inel Pandora cu in",
-        "price": "123",
+        "name": "erf",
+        "price": "3",
         "images": [
-            "images/Cercei/cercei_1.jpg",
-            "images/Cercei/cercei_2.png"
+            "regeg"
         ],
         "category": "Inele",
-        "description": "Inel elegant din arg",
-        "isNew": true
+        "description": "erg"
     }
 ]
