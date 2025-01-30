@@ -84,7 +84,7 @@ function generateDisabledDropdown() {
 
 function loadProductImages(images) {
     const previewContainer = document.querySelector('.prewiev-image-navigation');
-    if (images.length <= 2) {
+    if (images.length <= 1) {
         previewContainer.style.display = 'none';
     } else {
         previewContainer.style.display = 'flex';
