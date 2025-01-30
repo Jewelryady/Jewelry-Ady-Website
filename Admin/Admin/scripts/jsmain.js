@@ -124,7 +124,7 @@ function saveProduct() {
     const id = document.getElementById('id').textContent;
     const name = document.getElementById('name').value.trim();
     let price = document.getElementById('price').value.trim();
-    const images = document.getElementById('images').value.split(',').map(img => img.trim()).filter(img => img !== '');
+    let images = document.getElementById('images').value.split(',').map(img => img.trim().replace(/\\/g, '/')).filter(img => img !== '');
     const category = document.getElementById('selectedCategory').textContent;
     const description = document.getElementById('description').value.trim();
 
@@ -295,6 +295,11 @@ function deleteProduct(productId) {
 }
 
 function saveProductsToJSON() {
+    // Replace backslashes with forward slashes in images field for all products
+    products.forEach(product => {
+        product.images = product.images.map(img => img.replace(/\\/g, '/'));
+    });
+
     fetch('save_product.php', {
         method: 'POST',
         headers: {
