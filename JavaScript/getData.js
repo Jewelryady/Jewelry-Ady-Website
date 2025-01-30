@@ -32,10 +32,10 @@ function displayProducts(products, category = "") {
     const productCountSpan = document.getElementById("productCount");
 
     currentCategoryElements.forEach(element => {
-        element.textContent = `> ${category || "Toate Produsele"}`;
+        element.textContent = `> ${category || "Toate"}`;
     });
 
-    productCountSpan.textContent = `Produse: ${products.length}`;
+    productCountSpan.textContent = `x${products.length}`;
     content.innerHTML = products.length === 0 ? `<p>Niciun produs nu a fost găsit în această categorie.</p>` : generateProductCards(products);
 
     addCartEventListeners();
