@@ -28,9 +28,8 @@ function updateCategories() {
     categoriesContainer.innerHTML = ''; // Clear previous categories
 
     categories.forEach((category, index) => {
-        const productCount = products.filter(product => product.category === category).length;
         const categoryButton = document.createElement('button');
-        categoryButton.textContent = `${category} (${productCount})`;
+        categoryButton.textContent = category;
         categoryButton.className = 'categoryButton';
         categoryButton.onclick = () => selectCategory(category, index);
 
@@ -46,13 +45,6 @@ function updateCategories() {
 
         categoriesContainer.appendChild(categoryContainer);
     });
-    updateTotalCategoryCount();
-}
-
-function updateTotalCategoryCount() {
-    const totalProducts = products.length;
-    const filterDropdown = document.getElementById('filterDropdown');
-    filterDropdown.options[0].textContent = `Toate categoriile (${totalProducts})`;
 }
 
 function deleteCategory(category, index) {
@@ -193,7 +185,6 @@ function saveProduct() {
 
     saveProductsToJSON(); // Save products to JSON
     displayAllProducts(); // Refresh product display after saving
-    updateCategories(); // Update categories after saving
     resetProductForm(); // Reset form after saving
 }
 
@@ -205,7 +196,6 @@ function loadProducts() {
             data.forEach(product => {
                 displayProduct(product); // Display each product
             });
-            updateCategories(); // Update categories after loading products
         })
         .catch(error => console.error('Error loading products:', error));
 }
@@ -251,7 +241,7 @@ function resetProductForm() {
 function editProduct(productId) {
     const product = products.find(prod => prod.id === productId);
     if (product) {
-        document.getElementById('id').value = product.id;
+        document.getElementById('id').textContent = product.id; // Use textContent instead of value
         document.getElementById('name').value = product.name;
         document.getElementById('price').value = product.price;
         document.getElementById('images').value = product.images.join(', ');
@@ -322,7 +312,7 @@ function saveProductsToJSON() {
 
 function populateFilterDropdown() {
     const filterDropdown = document.getElementById('filterDropdown');
-    filterDropdown.innerHTML = '<option value="">Toate categoriile (0)</option>'; // Default option with count
+    filterDropdown.innerHTML = '<option value="">Toate categoriile</option>'; // Default option
 
     categories.forEach(category => {
         const option = document.createElement('option');
@@ -339,7 +329,6 @@ function populateFilterDropdown() {
             displayAllProducts();
         }
     });
-    updateTotalCategoryCount(); // Update total category count
 }
 
 function displayAllProducts() {
