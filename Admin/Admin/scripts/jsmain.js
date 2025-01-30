@@ -207,6 +207,7 @@ function loadProducts() {
             data.forEach(product => {
                 displayProduct(product); // Display each product
             });
+            updateCategories(); // Update categories after loading products
         })
         .catch(error => console.error('Error loading products:', error));
 }
