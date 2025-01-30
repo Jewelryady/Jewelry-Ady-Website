@@ -251,7 +251,7 @@ function resetProductForm() {
 function editProduct(productId) {
     const product = products.find(prod => prod.id === productId);
     if (product) {
-        document.getElementById('id').textContent = product.id; // Use textContent instead of value
+        document.getElementById('id').value = product.id;
         document.getElementById('name').value = product.name;
         document.getElementById('price').value = product.price;
         document.getElementById('images').value = product.images.join(', ');

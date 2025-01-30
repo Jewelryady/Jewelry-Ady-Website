@@ -2,8 +2,13 @@
     {
         "id": "1.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "name": "ferd",
         "price": "233",
+=======
+        "name": "Inel Pandora cu inim\u0103 ro\u0219ie",
+        "price": "225.00",
+>>>>>>> parent of 85bc3da (update)
         "images": [
             "erf3"
         ],
@@ -16,7 +21,12 @@
             "regeg"
         ],
         "category": "Inele",
+<<<<<<< HEAD
         "description": "erg"
 >>>>>>> parent of fd486e9 (fix)
+=======
+        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
+        "isTrending": true
+>>>>>>> parent of 85bc3da (update)
     }
 ]
