@@ -51,8 +51,10 @@ function updateCategories() {
 
 function updateTotalCategoryCount() {
     const totalProducts = products.length;
+    const totalCategories = categories.length;
     const filterDropdown = document.getElementById('filterDropdown');
     filterDropdown.options[0].textContent = `Toate categoriile (${totalProducts})`;
+    document.getElementById('totalCategories').textContent = `Toate Categoriile (${totalCategories})`;
 }
 
 function deleteCategory(category, index) {

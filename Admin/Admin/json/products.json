@@ -1,12 +1,34 @@
 [
     {
         "id": "1.1",
-        "name": "erf",
-        "price": "3",
+        "name": "erf33",
+        "price": "32",
         "images": [
-            "regeg"
+            "erf"
         ],
         "category": "Inele",
-        "description": "erg"
+        "description": "er"
+    },
+    {
+        "id": "1.2",
+        "name": "rfer",
+        "price": "44444444444444444",
+        "images": [
+            "erf"
+        ],
+        "category": "",
+        "description": "erf",
+        "isNew": true
+    },
+    {
+        "id": "2.1",
+        "name": "frer",
+        "price": "23",
+        "images": [
+            "eff"
+        ],
+        "category": "Coliere",
+        "description": "erf",
+        "isNew": true
     }
 ]
