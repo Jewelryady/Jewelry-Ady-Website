@@ -203,7 +203,7 @@
             "images/Cercei/cercei_1.jpg"
         ],
         "category": "Cercei",
-        "description": ""
+        "description": "Cerceii \u00een form\u0103 de inim\u0103 sunt o alegere romantic\u0103 \u0219i plin\u0103 de farmec,simboliz\u00e2nd afec\u021biunea.Ei sunt adesea considera\u021bi un cadou simbolic pentru ocazii speciale,cum ar fi anivers\u0103rile sau Ziua \u00cendr\u0103gosti\u021bilor.Este efectuat din argint proba S925."
     },
     {
         "id": "4.2",
@@ -213,17 +213,17 @@
             "images/Cercei/cercei_2.png"
         ],
         "category": "Cercei",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
+        "description": "Cercei cu \u0218urub Cu Inim\u0103 infinit sunt realiza\u021bi din argint proba S925.Forma inimii este \u00eenso\u021bit\u0103 de simbolul \"infinit\"care reprezint\u0103 iubirea etern\u0103 \u0219i leg\u0103turile care nu se sf\u00e2r\u0219esc niciodata.Este perfect pentru purtatul zilnic."
     },
     {
         "id": "4.3",
-        "name": "Cercei cu \u0218urub \u00eencercui\u021bi Familia pentru totdeauna",
+        "name": "Cercei cu \u0218urub \u00cencercui\u021bi",
         "price": "499.00 MDL",
         "images": [
             "images/Cercei/cercei_3.png"
         ],
         "category": "Cercei",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
+        "description": "Cercei cu \u0218urub \u00cencercui\u021bi sunt realiza\u021bi din argint proba S925.Forma inimii este \u00eenso\u021bit\u0103 de simbolul \"infinit\"care reprezint\u0103 iubirea etern\u0103 \u0219i leg\u0103turile care nu se sf\u00e2r\u0219esc niciodata.Este perfect pentru purtatul zilnic."
     },
     {
         "id": "4.4",
@@ -233,7 +233,7 @@
             "images/Cercei/cercei_4.png"
         ],
         "category": "Cercei",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
+        "description": "Cerceii \u00een form\u0103 de inim\u0103 sunt o alegere romantic\u0103 \u0219i plin\u0103 de farmec,simboliz\u00e2nd afec\u021biunea.Ei sunt adesea considera\u021bi un cadou simbolic pentru ocazii speciale,cum ar fi anivers\u0103rile sau Ziua \u00cendr\u0103gosti\u021bilor.Este efectuat din argint proba S925."
     },
     {
         "id": "4.5",
@@ -243,7 +243,7 @@
             "images/Cercei/cercei_5.png"
         ],
         "category": "Cercei",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
+        "description": "Cercei Rotunzi sunt o bijuterie ce combin\u0103 pasiunea inimii.Ace\u0219ti cercei sunt realiza\u021bi din argint proba S925.Bucur\u0103 persoana drag\u0103 \u0219i iubit\u0103 cu a\u0219a cercei dr\u0103gu\u021bi."
     },
     {
         "id": "5.1",
@@ -253,7 +253,7 @@
             "images/Cutii/cutie_1.png"
         ],
         "category": "Cutii",
-        "description": "Descrierea cutiei",
+        "description": "Cutie Pandora",
         "isTrending": true
     },
     {
@@ -265,7 +265,7 @@
             "images/Cutii/cutie23.jpg"
         ],
         "category": "Cutii",
-        "description": "Descrierea cutiei",
+        "description": "Cutie Pandora",
         "isTrending": true
     },
     {
@@ -307,6 +307,6 @@
             "images/Cutii/cutie pandora.jpg"
         ],
         "category": "Cutii",
-        "description": ""
+        "description": "Pachet Pandora"
     }
 ]
