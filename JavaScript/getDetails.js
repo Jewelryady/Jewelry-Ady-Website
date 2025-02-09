@@ -64,22 +64,19 @@ function displayDetails(product) {
     }
 
     const sizeDropdownContainer = document.getElementById('sizeDropdownContainer');
-    sizeDropdownContainer.innerHTML = product.product_sizes && product.product_sizes.length > 0 ? generateSizeDropdown(product.product_sizes) : generateDisabledDropdown();
+    sizeDropdownContainer.innerHTML = product.product_sizes && product.product_sizes.length > 0 ? generateSizeDropdown(product.product_sizes) : '';
 
     loadProductImages(product.images);
     addAddToCartEvent(product.id);
 }
 
 function generateSizeDropdown(sizes) {
+    if (sizes.length === 0) return '';
     let dropdownOptions = `<select class="size-dropdown"><option disabled selected>Alege mărimea</option>`;
     sizes.forEach(size => {
         dropdownOptions += `<option value="${size}">${size}</option>`;
     });
     return dropdownOptions + `</select>`;
-}
-
-function generateDisabledDropdown() {
-    return `<select class="size-dropdown" disabled><option>Fără mărime disponibilă</option></select>`;
 }
 
 function loadProductImages(images) {
