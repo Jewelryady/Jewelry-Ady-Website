@@ -132,20 +132,12 @@
     {
         "id": "3.1",
         "name": "Set Cercei+Colier Elegan\u021b\u0103 Clasic\u0103",
-        "price": "425 MDL",
+        "price": "999.00 MDL",
         "images": [
             "images/Bratari/Bratara_2.png"
         ],
-        "category": "Inele",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "old_price": "1645 MDL",
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"
-        ]
+        "category": "Coliere",
+        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": "3.2",
