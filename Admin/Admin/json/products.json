@@ -284,11 +284,7 @@
         ],
         "category": "Cutii",
         "description": "Descrierea cutiei",
-        "isTrending": true,
-        "product_sizes": [
-            "1",
-            "2"
-        ]
+        "isTrending": true
     },
     {
         "id": "5.2",
@@ -300,11 +296,7 @@
         ],
         "category": "Cutii",
         "description": "Descrierea cutiei",
-        "isTrending": true,
-        "product_sizes": [
-            "1",
-            "2"
-        ]
+        "isTrending": true
     },
     {
         "id": "1.7",
