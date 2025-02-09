@@ -2,7 +2,7 @@
     {
         "id": "1.1",
         "name": "Inel Pandora cu Inim\u0103 Ro\u0219ie",
-        "price": "899 MDL",
+        "price": "899.00 MDL",
         "images": [
             "images/Inele/Inel_1.png",
             "images/Inele/IMG_1097.jpeg",
@@ -10,7 +10,7 @@
         ],
         "category": "Inele",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "old_price": "1200 MDL",
+        "old_price": "1200.00 MDL",
         "product_sizes": [
             "15",
             "16",
@@ -22,7 +22,7 @@
     {
         "id": "1.2",
         "name": "Inel cu inim\u0103 dubl\u0103",
-        "price": "799 MDL",
+        "price": "799.00 MDL",
         "images": [
             "images/Inele/ring22.jpg",
             "images/Inele/ring2.jpg"
@@ -40,13 +40,13 @@
     {
         "id": "1.3",
         "name": "Inel Pandora cu inim\u0103 alb\u0103",
-        "price": "899 MDL",
+        "price": "899.00 MDL",
         "images": [
             "images/Inele/Inel_2.png"
         ],
         "category": "Inele",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "old_price": "1200 MDL",
+        "old_price": "1200.00 MDL",
         "product_sizes": [
             "15",
             "16",
@@ -58,7 +58,7 @@
     {
         "id": "1.4",
         "name": "Inel Elegant",
-        "price": "599 MDL",
+        "price": "599.00 MDL",
         "images": [
             "images/Inele/Inel_3.png"
         ],
@@ -75,7 +75,7 @@
     {
         "id": "1.5",
         "name": "Inel cu Form\u0103 P\u0103trat\u0103",
-        "price": "710 MDL",
+        "price": "710.00 MDL",
         "images": [
             "images/Inele/Inel_4.png"
         ],
@@ -93,7 +93,7 @@
     {
         "id": "1.8",
         "name": "Inel rotund cu pietricele",
-        "price": "649 MDL",
+        "price": "649.00 MDL",
         "images": [
             "images/Inele/IMG_2420.JPG",
             "images/Inele/Inel_1.png",
@@ -112,7 +112,7 @@
     {
         "id": "2.1",
         "name": "Colier Str\u0103lucitor cu Inim\u0103 Alb\u0103",
-        "price": "630 MDL",
+        "price": "630.00 MDL",
         "images": [
             "images/Coliere/Colier_1.jpg"
         ],
