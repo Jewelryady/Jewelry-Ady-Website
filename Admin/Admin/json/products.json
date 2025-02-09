@@ -94,7 +94,7 @@
     {
         "id": "1.8",
         "name": "Inel rotund cu pietricele",
-        "price": "7625.00 MDL",
+        "price": "649 MDL",
         "images": [
             "images/Inele/IMG_2420.JPG",
             "images/Inele/Inel_1.png",
@@ -105,8 +105,9 @@
         "product_sizes": [
             "15",
             "16",
-            "567",
-            "68"
+            "17",
+            "18",
+            "19"
         ]
     },
     {
