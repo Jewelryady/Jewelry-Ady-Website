@@ -216,21 +216,14 @@
     {
         "id": "3.9",
         "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 alb\u0103",
-        "price": "1200.00 MDL",
+        "price": "999.00 MDL",
         "images": [
             "images/Bratari/br22.jpg",
             "images/Bratari/br23.jpg"
         ],
         "category": "Bratari",
         "description": "",
-        "isTrending": true,
-        "isNew": true,
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18"
-        ]
+        "isTrending": true
     },
     {
         "id": "3.10",
