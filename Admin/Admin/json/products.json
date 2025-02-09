@@ -22,14 +22,20 @@
     {
         "id": "1.2",
         "name": "Inel cu inim\u0103 dubl\u0103",
-        "price": "890.00 MDL",
+        "price": "799.00 MDL",
         "images": [
             "images/Inele/ring22.jpg",
             "images/Inele/ring2.jpg"
         ],
         "category": "Inele",
         "description": "Inel elegant din argint proba S925 cu un design clasic.Pietrele centrale sunt bine fixate \u00eentr-un montaj cu aspect sofisticat, fiind \u00eenconjurate de mici detalii str\u0103lucitoare care completeaz\u0103 designul.",
-        "old_price": "1200 MDL"
+        "product_sizes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+        ]
     },
     {
         "id": "1.3",
