@@ -86,10 +86,13 @@ function generateSizeDropdown(sizes) {
 
 function loadProductImages(images) {
     const previewContainer = document.querySelector('.prewiev-image-navigation');
+    const imageNavigation = document.querySelector('.image-navigation');
     if (images.length <= 1) {
         previewContainer.style.display = 'none';
+        imageNavigation.style.display = 'none';
     } else {
         previewContainer.style.display = 'flex';
+        imageNavigation.style.display = 'flex';
         previewContainer.innerHTML = '';
         images.forEach(image => {
             const previewSquare = document.createElement('div');

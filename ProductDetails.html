@@ -220,6 +220,20 @@
     <script src="JavaScript/cart.js"></script>
     <script src="JavaScript/chatBotCore.js"></script>
     <script src="JavaScript/productDetails.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const previewContainer = document.querySelector('.prewiev-image-navigation');
+            const imageNavigation = document.querySelector('.image-navigation');
+
+            if (previewContainer && imageNavigation) {
+                if (previewContainer.children.length > 0) {
+                    imageNavigation.style.display = 'flex';
+                } else {
+                    imageNavigation.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
