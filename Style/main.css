@@ -971,31 +971,9 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-
-/* Header Social Media */
-.header_social a {
-    font-size: 2rem; /* Face icon-urile mai mari */
-    margin: 0  3px; /* Creează spațiu între icon-uri */
-    display: inline-block; /* Asigură alinierea corectă */
-    text-decoration: none; /* Elimină sublinierea */
-    color: inherit; /* Menține culoarea inițială */
-    transition: transform 0.3s ease; /* Adaugă o animație la hover */
-}
-
-.header_social a:hover {
-    transform: scale(1.2); /* Mărește icon-urile la hover */
-}
-
-.header_social {
-    display: flex; /* Asigură alinierea pe orizontală */
-    justify-content: center; /* Centrează icon-urile */
-    align-items: center; /* Aliniază icon-urile pe verticală */
-}
-
 .text-message-center {
     text-align: center; /* Text aliniat pe mijloc */
 }
-
 
 #login {
     min-height: calc(100vh - 150px);
@@ -1252,4 +1230,20 @@ input[type=number] {
     width: 100%; /* Imaginea va ocupa întreaga lățime a pătrățelului */
     height: 100%; /* Imaginea va ocupa întreaga înălțime a pătrățelului */
     object-fit: contain; /* Asigură-te că imaginea va acoperi întregul pătrățel fără a distorsiona */
+}
+
+
+/* header social */
+
+.header_social {
+    display: flex; /* Așează iconițele pe orizontală */
+    gap: 15px;  /* Controlează distanța dintre iconițe */
+    justify-content: center; /* Centrează iconițele */
+    align-items: center;
+}
+
+.header_social img {
+    width: 32px;  /* Mărimea iconițelor (poți ajusta) */
+    height: 32px; /* Poți seta și auto dacă vrei proporții corecte */
+ 
 }
