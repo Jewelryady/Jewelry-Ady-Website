@@ -64,7 +64,12 @@ function displayDetails(product) {
     }
 
     const sizeDropdownContainer = document.getElementById('sizeDropdownContainer');
-    sizeDropdownContainer.innerHTML = product.product_sizes && product.product_sizes.length > 0 ? generateSizeDropdown(product.product_sizes) : '';
+    if (product.product_sizes && product.product_sizes.length > 0) {
+        sizeDropdownContainer.innerHTML = generateSizeDropdown(product.product_sizes);
+        sizeDropdownContainer.style.display = 'block';
+    } else {
+        sizeDropdownContainer.style.display = 'none';
+    }
 
     loadProductImages(product.images);
     addAddToCartEvent(product.id);
