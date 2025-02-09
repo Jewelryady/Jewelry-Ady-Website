@@ -464,19 +464,5 @@
             "1",
             "2"
         ]
-    },
-    {
-        "id": "5.4",
-        "name": "JewelryAdy",
-        "price": "0.00 MDL",
-        "images": [
-            "images/Cutii/pachet.jpg"
-        ],
-        "category": "Cutii",
-        "description": "Descrierea cutiei",
-        "product_sizes": [
-            "1",
-            "2"
-        ]
     }
 ]
