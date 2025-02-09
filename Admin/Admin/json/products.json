@@ -228,17 +228,12 @@
     {
         "id": "3.10",
         "name": "Br\u0103\u021bar\u0103 Cartier",
-        "price": "699.00 MDL",
+        "price": "320.00 MDL",
         "images": [
             "images/Bratari/IMG_2449.JPG"
         ],
         "category": "Bratari",
-        "description": "Bratara cartier excelent",
-        "old_price": "1200.00 MDL",
-        "product_sizes": [
-            "18",
-            "19"
-        ]
+        "description": "Br\u0103\u021bar\u0103 Cartier din oxel inoxidabil.O bijuterie dr\u0103gu\u021b\u0103 anume pentru TINE."
     },
     {
         "id": "4.1",
