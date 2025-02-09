@@ -210,7 +210,11 @@
             var overlay = document.querySelector(".aside-overlay");
             sidebar.classList.toggle("open");
             if (overlay) {
-                overlay.style.pointerEvents = sidebar.classList.contains("open") ? "auto" : "none";
+                if (window.innerWidth <= 768) {
+                    overlay.style.pointerEvents = sidebar.classList.contains("open") ? "auto" : "none";
+                } else {
+                    overlay.style.pointerEvents = "none";
+                }
             }
         }
 
