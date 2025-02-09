@@ -650,19 +650,20 @@ body.showCart .cart-overlay {
 }
 
 .btn_control .viewCart {
-    background-color: #FFFFFF; /* White */
-    border: 1px solid #000000;
+    background-color: #51c942; /* White */
+    border: 1px solid #51c942;
+    color: #fff;
 }
 
 .btn_control .checkout:hover,
 .btn_control .viewCart:hover {
-    background-color: #A0A0A0; /* Slightly darker grey */
+    background-color: #48b03a; /* Slightly darker grey */
     color: #fff;
     border: 1px solid #fff;
 }
 
 .btn_control .checkout {
-    background-color: #333333; /* Dark grey */
+    background-color: #51c942; /* Dark grey */
     color: #fff;
     border: none;
 }
@@ -890,7 +891,7 @@ body.showCart .cart-overlay {
 
     .btn_control .viewCart {
         margin-bottom: 12px;
-        color: #000;
+        color: #fff;
     }
 
     .btn_control .checkout,

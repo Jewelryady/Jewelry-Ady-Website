@@ -113,7 +113,7 @@ main .container {
 }
 
 #btn_add {
-    background-color: #B0B0B0; /* Medium grey */
+    background-color: #51c942; /* Medium grey */
     color: #fff;
     font-size: 16px;
     font-weight: 500;
@@ -131,7 +131,7 @@ main .container {
 }
 
 #btn_add:hover {
-    background-color: #A0A0A0; /* Slightly darker grey */
+    background-color: #48b03a; /* Slightly darker grey */
 }
 
 /* Stiluri responsive */
