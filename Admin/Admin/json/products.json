@@ -328,5 +328,15 @@
         ],
         "category": "Coliere",
         "description": ""
+    },
+    {
+        "id": "5.3",
+        "name": "Pachet Pandora",
+        "price": "190.00 MDL",
+        "images": [
+            "images/Cutii/cutie pandora.jpg"
+        ],
+        "category": "Cutii",
+        "description": ""
     }
 ]
