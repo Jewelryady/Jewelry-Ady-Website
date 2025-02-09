@@ -22,7 +22,7 @@
     {
         "id": "1.2",
         "name": "Inel cu inim\u0103 dubl\u0103",
-        "price": "799.00 MDL",
+        "price": "799 MDL",
         "images": [
             "images/Inele/ring22.jpg",
             "images/Inele/ring2.jpg"
@@ -58,7 +58,7 @@
     {
         "id": "1.4",
         "name": "Inel Elegant",
-        "price": "599.00 MDL",
+        "price": "599 MDL",
         "images": [
             "images/Inele/Inel_3.png"
         ],
@@ -75,7 +75,7 @@
     {
         "id": "1.5",
         "name": "Inel cu Form\u0103 P\u0103trat\u0103",
-        "price": "710.00 MDL",
+        "price": "710 MDL",
         "images": [
             "images/Inele/Inel_4.png"
         ],
@@ -112,33 +112,33 @@
     {
         "id": "2.1",
         "name": "Colier Str\u0103lucitor cu Inim\u0103 Alb\u0103",
-        "price": "630.00 MDL",
+        "price": "630 MDL",
         "images": [
             "images/Coliere/Colier_1.jpg"
         ],
-        "category": "Coliere",
+        "category": "Inele",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": "2.2",
         "name": "Colier str\u0103lucitor cu inim\u0103 ro\u0219ie",
-        "price": "630.00 MDL",
+        "price": "630 MDL",
         "images": [
             "images/Coliere/Colier_2.jpg"
         ],
-        "category": "Coliere",
+        "category": "Inele",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": "3.1",
         "name": "Set Cercei+Colier Elegan\u021b\u0103 Clasic\u0103",
-        "price": "425.00 MDL",
+        "price": "425 MDL",
         "images": [
             "images/Bratari/Bratara_2.png"
         ],
-        "category": "Bratari",
+        "category": "Inele",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "old_price": "1645.00 MDL",
+        "old_price": "1645 MDL",
         "product_sizes": [
             "15",
             "16",
@@ -150,11 +150,11 @@
     {
         "id": "3.2",
         "name": "Br\u0103\u021bar\u0103 Tennis",
-        "price": "449.00 MDL",
+        "price": "449 MDL",
         "images": [
             "images/Bratari/Bratara_3.png"
         ],
-        "category": "Bratari",
+        "category": "Inele",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.\"",
         "isTrending": true,
         "isNew": true
