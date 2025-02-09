@@ -111,21 +111,14 @@
     },
     {
         "id": "2.1",
-        "name": "Colier str\u0103lucitor cu inim\u0103 alb\u0103",
-        "price": "445.00 MDL",
+        "name": "Colier Str\u0103lucitor cu Inim\u0103 Alb\u0103",
+        "price": "630.00 MDL",
         "images": [
             "images/Coliere/Colier_1.jpg"
         ],
         "category": "Coliere",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "old_price": "635.00 MDL",
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"
-        ]
+        "old_price": "635.00 MDL"
     },
     {
         "id": "2.2",
