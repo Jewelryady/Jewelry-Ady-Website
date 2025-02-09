@@ -172,22 +172,13 @@
     {
         "id": "3.4",
         "name": "Br\u0103\u021bar\u0103 pentu Baieti 3",
-        "price": "259.00 MDL",
+        "price": "430.00 MDL",
         "images": [
             "images/Bratari/brataraboyjpg.jpg",
             "images/Bratari/brataraboy2.jpg"
         ],
         "category": "Bratari",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.\"",
-        "isTrending": true,
-        "isNew": true,
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"
-        ]
+        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.\""
     },
     {
         "id": "3.5",
