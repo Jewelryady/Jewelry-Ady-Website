@@ -129,7 +129,7 @@
             "images/Bratari/Bratara_3.png"
         ],
         "category": "Bratari",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.\""
+        "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi)."
     },
     {
         "id": "3.3",
@@ -160,7 +160,7 @@
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
+        "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi)."
     },
     {
         "id": "3.7",
@@ -182,30 +182,18 @@
             "images/Bratari/br3.jpg"
         ],
         "category": "Bratari",
-        "description": "Aceasta este o br\u0103\u021bar\u0103 elegant\u0103, cu un design rafinat \u0219i modern. Br\u0103\u021bara are un pandantiv central \u00een form\u0103 de inim\u0103, cu o piatr\u0103 de culoare ro\u0219ie intens\u0103, care adaug\u0103 un contrast vibrant \u0219i un element romantic. Designul s\u0103u o face potrivit\u0103 pentru ocazii speciale sau pentru a completa o \u021binut\u0103 elegant\u0103.",
+        "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte.",
         "isTrending": true
     },
     {
         "id": "3.9",
-        "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 alb\u0103",
-        "price": "999.00 MDL",
-        "images": [
-            "images/Bratari/br22.jpg",
-            "images/Bratari/br23.jpg"
-        ],
-        "category": "Bratari",
-        "description": "",
-        "isTrending": true
-    },
-    {
-        "id": "3.10",
         "name": "Br\u0103\u021bar\u0103 Cartier",
-        "price": "320.00 MDL",
+        "price": "449.00 MDL",
         "images": [
-            "images/Bratari/IMG_2449.JPG"
+            "images/Bratari/cartier.jpg"
         ],
         "category": "Bratari",
-        "description": "Br\u0103\u021bar\u0103 Cartier din oxel inoxidabil.O bijuterie dr\u0103gu\u021b\u0103 anume pentru TINE."
+        "description": "Br\u0103\u021bar\u0103 Cartier din oxel inoxidabil.O bijuterie dr\u0103gu\u021b\u0103 anume pentru TINE.Este una dintre cele mai populare,simboliz\u00e2nd iubirea etern\u0103.Aceast\u0103 br\u0103\u021bar\u0103 se potrive\u0219te perfect pentru \u021binuta de zi de zi,c\u00e2t \u0219i la ocazii speciale."
     },
     {
         "id": "4.1",
