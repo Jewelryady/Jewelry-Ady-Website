@@ -258,20 +258,12 @@
     {
         "id": "4.3",
         "name": "Cercei cu \u0218urub \u00eencercui\u021bi Familia pentru totdeauna",
-        "price": "625.00 MDL",
+        "price": "499 MDL",
         "images": [
             "images/Cercei/cercei_3.png"
         ],
         "category": "Cercei",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "isTrending": true,
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"
-        ]
+        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": "4.4",
