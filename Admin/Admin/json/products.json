@@ -86,42 +86,6 @@
         ]
     },
     {
-        "id": "1.6",
-        "name": "Inel cu fundi\u021b\u0103 ro\u0219ie",
-        "price": "699.00 MDL",
-        "images": [
-            "images/Inele/inelbant.jpg"
-        ],
-        "category": "Inele",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "isNew": true,
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"
-        ]
-    },
-    {
-        "id": "1.7",
-        "name": "Inel cu fundi\u021b\u0103 alb\u0103",
-        "price": "699.00 MDL",
-        "images": [
-            "images/Inele/inelbant2.jpg"
-        ],
-        "category": "Inele",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "isNew": true,
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"
-        ]
-    },
-    {
         "id": "1.8",
         "name": "Inel rotund cu pietricele",
         "price": "7625.00 MDL",
