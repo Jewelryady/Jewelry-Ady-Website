@@ -311,10 +311,10 @@
         "name": "Inel Printesa",
         "price": "870 MDL",
         "images": [
-            "inel printesa.jpg"
+            "images/Inele/inelprintesa.jpg"
         ],
         "category": "Inele",
-        "description": "",
+        "description": "descierea aici",
         "product_sizes": [
             "15",
             "16",
@@ -322,15 +322,5 @@
             "18",
             "19"
         ]
-    },
-    {
-        "id": "1.7",
-        "name": "inel printesa",
-        "price": "455 MDL",
-        "images": [
-            "images/Inele/inel printesa.jpg"
-        ],
-        "category": "Inele",
-        "description": ""
     }
 ]
