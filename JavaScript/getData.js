@@ -79,7 +79,7 @@ function generateProductCard(product, sizeDropdown) {
                 </a>
             </div>
             <div class="card-info">
-                <h4 class="product-name" onclick="displayDetails(${product.id});">${product.name}</h4>
+                <h4 class="product-name" onclick="displayDetails(${product.id});" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${product.name}</h4>
                 <h5 class="product-price">${product.price}</h5>
                 ${product.old_price ? `<h5 class="old-price">${product.old_price}</h5>` : ''}
                 ${sizeDropdown}
