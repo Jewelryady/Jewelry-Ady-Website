@@ -150,14 +150,12 @@
     {
         "id": "3.2",
         "name": "Br\u0103\u021bar\u0103 Tennis",
-        "price": "449 MDL",
+        "price": "449.00 MDL",
         "images": [
             "images/Bratari/Bratara_3.png"
         ],
         "category": "Inele",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.\"",
-        "isTrending": true,
-        "isNew": true
+        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.\""
     },
     {
         "id": "3.3",
@@ -187,7 +185,7 @@
         "images": [
             "images/Bratari/Bratara_4.png"
         ],
-        "category": "Bratari",
+        "category": "Inele",
         "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
     },
     {
