@@ -449,20 +449,5 @@
             "1",
             "2"
         ]
-    },
-    {
-        "id": "5.3",
-        "name": "Cutie Pandora roz",
-        "price": "279.00 MDL",
-        "images": [
-            "images/Cutii/cutie24.jpg"
-        ],
-        "category": "Cutii",
-        "description": "Descrierea cutiei",
-        "isTrending": true,
-        "product_sizes": [
-            "1",
-            "2"
-        ]
     }
 ]
