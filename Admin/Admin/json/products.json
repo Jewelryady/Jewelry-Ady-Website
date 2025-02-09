@@ -203,7 +203,7 @@
     {
         "id": "3.8",
         "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 ro\u0219ie",
-        "price": "1200.00 MDL",
+        "price": "999.00 MDL",
         "images": [
             "images/Bratari/Bratara1.jpg",
             "images/Bratari/bratara2.jpg",
@@ -211,14 +211,7 @@
         ],
         "category": "Bratari",
         "description": "Aceasta este o br\u0103\u021bar\u0103 elegant\u0103, cu un design rafinat \u0219i modern. Br\u0103\u021bara are un pandantiv central \u00een form\u0103 de inim\u0103, cu o piatr\u0103 de culoare ro\u0219ie intens\u0103, care adaug\u0103 un contrast vibrant \u0219i un element romantic. Designul s\u0103u o face potrivit\u0103 pentru ocazii speciale sau pentru a completa o \u021binut\u0103 elegant\u0103.",
-        "isTrending": true,
-        "isNew": true,
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18"
-        ]
+        "isTrending": true
     },
     {
         "id": "3.9",
