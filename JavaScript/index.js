@@ -2,17 +2,21 @@ let currentSlide = 1;
 window.addEventListener("load", getTrendingProducts);
 
 async function getTrendingProducts() {
-    const response = await fetch('Admin/Admin/json/products.json');
-    const products = await response.json();
-    const trendingProducts = products.filter(product => product.isTrending);
-    displayTrendingProducts(trendingProducts);
+    try {
+        const response = await fetch('Admin/Admin/json/products.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const products = await response.json();
+        const trendingProducts = products.filter(product => product.isTrending);
+        displayTrendingProducts(trendingProducts);
+    } catch (error) {
+        console.error('Failed to fetch trending products:', error);
+    }
 }
 
 function displayTrendingProducts(trendingProducts) {
     let content = ``;
     trendingProducts.forEach(product => {
-        const sizes = product.product_sizes || [];
-        const sizeDropdown = sizes.length > 0 ? generateSizeDropdown(sizes) : generateDisabledDropdown();
+        const sizeDropdown = generateSizeDropdown(product.product_sizes);
         content += generateProductCard(product, sizeDropdown);
     });
 
@@ -20,16 +24,13 @@ function displayTrendingProducts(trendingProducts) {
     addCartEventListeners();
 }
 
-function generateSizeDropdown(sizes) {
+function generateSizeDropdown(sizes = []) {
+    if (sizes.length === 0) return '';
     let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
     sizes.forEach(size => {
         dropdownOptions += `<option value="${size}">${size}</option>`;
     });
     return `<select class="size-dropdown">${dropdownOptions}</select>`;
-}
-
-function generateDisabledDropdown() {
-    return `<select class="size-dropdown" disabled><option>Fără mărime disponibilă</option></select>`;
 }
 
 function generateProductCard(product, sizeDropdown) {
@@ -61,21 +62,24 @@ function generateProductCard(product, sizeDropdown) {
 function addCartEventListeners() {
     const addToCartLinks = document.querySelectorAll('.addToCart');
     addToCartLinks.forEach(link => {
-        link.addEventListener('click', event => {
-            event.preventDefault();
-            const productCard = event.target.closest('.product-card');
-            if (productCard && productCard.dataset.id) {
-                const id_product = productCard.dataset.id;
-                const selectedSize = productCard.querySelector('.size-dropdown').value;
-                if (!productCard.querySelector('.size-dropdown').disabled && selectedSize === "Alege mărimea") {
-                    alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
-                    return;
-                }
-                addToCart(id_product, 1, selectedSize);
-                showToast();
-            }
-        });
+        link.addEventListener('click', handleAddToCartClick);
     });
+}
+
+function handleAddToCartClick(event) {
+    event.preventDefault();
+    const productCard = event.target.closest('.product-card');
+    if (productCard && productCard.dataset.id) {
+        const id_product = productCard.dataset.id;
+        const sizeDropdown = productCard.querySelector('.size-dropdown');
+        if (sizeDropdown && !sizeDropdown.disabled && sizeDropdown.value === "Alege mărimea") {
+            alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
+            return;
+        }
+        const selectedSize = sizeDropdown ? sizeDropdown.value : '';
+        addToCart(id_product, 1, selectedSize);
+        showToast();
+    }
 }
 
 function showToast() {

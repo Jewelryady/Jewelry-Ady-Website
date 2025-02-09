@@ -44,21 +44,18 @@ function displayProducts(products, category = "") {
 function generateProductCards(products) {
     return products.map(product => {
         const sizes = product.product_sizes || [];
-        const sizeDropdown = sizes.length > 0 ? generateSizeDropdown(sizes) : generateDisabledDropdown();
+        const sizeDropdown = sizes.length > 0 ? generateSizeDropdown(sizes) : '';
         return generateProductCard(product, sizeDropdown);
     }).join('');
 }
 
 function generateSizeDropdown(sizes) {
+    if (sizes.length === 0) return '';
     let dropdownOptions = `<option disabled selected>Alege mărimea</option>`;
     sizes.forEach(size => {
         dropdownOptions += `<option value="${size}">${size}</option>`;
     });
     return `<select class="size-dropdown">${dropdownOptions}</select>`;
-}
-
-function generateDisabledDropdown() {
-    return `<select class="size-dropdown" disabled><option>Fără mărime disponibilă</option></select>`;
 }
 
 function generateProductCard(product, sizeDropdown) {
@@ -95,11 +92,12 @@ function addCartEventListeners() {
             const productCard = event.target.closest('.product-card');
             if (productCard && productCard.dataset.id) {
                 const id_product = productCard.dataset.id;
-                const selectedSize = productCard.querySelector('.size-dropdown').value;
-                if (!productCard.querySelector('.size-dropdown').disabled && selectedSize === "Alege mărimea") {
+                const sizeDropdown = productCard.querySelector('.size-dropdown');
+                if (sizeDropdown && !sizeDropdown.disabled && sizeDropdown.value === "Alege mărimea") {
                     alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
                     return;
                 }
+                const selectedSize = sizeDropdown ? sizeDropdown.value : '';
                 addToCart(id_product, 1, selectedSize);
                 showToast();
             }
