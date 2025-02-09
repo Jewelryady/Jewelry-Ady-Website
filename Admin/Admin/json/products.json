@@ -82,7 +82,6 @@
         ],
         "category": "Inele",
         "description": "Inel elegant din argint S925,cu o piatr\u0103 central\u0103 p\u0103trat\u0103,inconjurat\u0103 de pietre mai mici str\u0103lucitoare.Modelul dat este potrivit pentru ocazii speciale ,precum logodne sau anivers\u0103ri.",
-        "isNew": true,
         "product_sizes": [
             "15",
             "16",
@@ -160,7 +159,9 @@
             "images/Bratari/Bratara_4.png"
         ],
         "category": "Bratari",
-        "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi)."
+        "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi).",
+        "isTrending": true,
+        "isNew": true
     },
     {
         "id": "3.7",
@@ -183,7 +184,8 @@
         ],
         "category": "Bratari",
         "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte.",
-        "isTrending": true
+        "isTrending": true,
+        "isNew": true
     },
     {
         "id": "3.9",
@@ -253,8 +255,7 @@
             "images/Cutii/cutie_1.png"
         ],
         "category": "Cutii",
-        "description": "Cutie Pandora",
-        "isTrending": true
+        "description": "Cutie Pandora"
     },
     {
         "id": "5.2",
@@ -265,8 +266,7 @@
             "images/Cutii/cutie23.jpg"
         ],
         "category": "Cutii",
-        "description": "Cutie Pandora",
-        "isTrending": true
+        "description": "Cutie Pandora"
     },
     {
         "id": "1.7",
@@ -297,7 +297,9 @@
             "images/Coliere/ColierRotund.jpg"
         ],
         "category": "Coliere",
-        "description": "Colierul Rotund este potrivit\u0103 at\u00e2t pentru un look acual,c\u00e2t \u0219i pentru ocazii elegenate.Simbolizeaz\u0103 armonia,\u0219i este o alegere ideal\u0103 pentru a exprima elegan\u021ba,echilibrul.Este din argint proba S925."
+        "description": "Colierul Rotund este potrivit\u0103 at\u00e2t pentru un look acual,c\u00e2t \u0219i pentru ocazii elegenate.Simbolizeaz\u0103 armonia,\u0219i este o alegere ideal\u0103 pentru a exprima elegan\u021ba,echilibrul.Este din argint proba S925.",
+        "isTrending": true,
+        "isNew": true
     },
     {
         "id": "5.3",
@@ -307,6 +309,7 @@
             "images/Cutii/cutie pandora.jpg"
         ],
         "category": "Cutii",
-        "description": "Pachet Pandora"
+        "description": "Pachet Pandora",
+        "isTrending": true
     }
 ]
