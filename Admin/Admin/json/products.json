@@ -449,5 +449,22 @@
             "1",
             "2"
         ]
+    },
+    {
+        "id": "1.6",
+        "name": "Inel Printesa",
+        "price": "870 MDL",
+        "images": [
+            "inel printesa.jpg"
+        ],
+        "category": "Inele",
+        "description": "",
+        "product_sizes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+        ]
     }
 ]
