@@ -5,8 +5,8 @@
         "price": "899.00 MDL",
         "images": [
             "images/Inele/Inel_1.png",
-            "images/Inele/IMG_1097.png",
-            "images/Inele/IMG_1098.png"
+            "images/Inele/IMG_1097.jpeg",
+            "images/Inele/IMG_1098.jpeg"
         ],
         "category": "Inele",
         "description": "Inel Pandora cu inim\u0103 ro\u0219ie,elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
@@ -42,7 +42,8 @@
         "name": "Inel Pandora cu inim\u0103 alb\u0103",
         "price": "899.00 MDL",
         "images": [
-            "images/Inele/Inel_2.png"
+            "images/Inele/Inel_2.png",
+            "images/Inele/PANDORA.jpg"
         ],
         "category": "Inele",
         "description": "Inel Pandora cu inim\u0103 alb\u0103,elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
@@ -152,7 +153,7 @@
     },
     {
         "id": "3.5",
-        "name": "Br\u0103\u021bar\u0103 Tennis Cercei cu \u0218urub cu Inimior\u0103 str\u0103lucitoare infinit",
+        "name": "Br\u0103\u021bar\u0103 Tennis",
         "price": "450.00 MDL",
         "images": [
             "images/Bratari/Bratara_4.png"
@@ -269,22 +270,19 @@
     },
     {
         "id": "1.7",
-        "name": "Inel Prin\u021besa",
-        "price": "799.00 MDL",
+        "name": "Inel Rotund",
+        "price": "730.00 MDL",
         "images": [
-            "images/Inele/inelprintesa.JPG"
+            "images/Inele/IMG_2420.JPG"
         ],
         "category": "Inele",
-        "description": "Inelul Prin\u021besa are un design regal,inspirat de coroane,simboliz\u00e2nd puterea.Este din argint proba S925.Forma sa \u00een V este accentuat\u0103 de o serie de pietre str\u0103lucitoare,pentru a crea un efect sotisficat.",
-        "isTrending": true,
-        "isNew": true,
+        "description": "",
         "product_sizes": [
             "15",
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
