@@ -103,6 +103,8 @@ function selectCategory(category, index) {
     // Set unique ID based on category index and product count within that category
     const productCount = products.filter(product => product.category === category).length + 1;
     document.getElementById('id').textContent = `${index + 1}.${productCount}`;
+    
+    
     filterProductsByCategory(category); // Filter products by selected category
 }
 
@@ -120,6 +122,7 @@ function filterProductsByCategory(category) {
     }
 }
 
+
 function saveProduct() {
     const id = document.getElementById('id').textContent;
     const name = document.getElementById('name').value.trim();
@@ -128,13 +131,11 @@ function saveProduct() {
     const category = document.getElementById('selectedCategory').textContent;
     const description = document.getElementById('description').value.trim();
 
-    // Validate required fields
     if (!name || !price || images.length === 0) {
         alert("Numele produsului, prețul și cel puțin o imagine sunt obligatorii.");
         return;
     }
 
-    // Add "MDL" suffix to price if not already present
     if (!price.toLowerCase().includes("mdl")) {
         price = `${price} MDL`;
     }
@@ -148,15 +149,11 @@ function saveProduct() {
         description: description
     };
 
-    // Get optional fields and add them only if they are set
     const isTrending = document.getElementById('isTrending').checked;
-    if (isTrending) {
-        product.isTrending = isTrending;
-    }
+    if (isTrending) product.isTrending = isTrending;
 
     let old_price = document.getElementById('old_price').value.trim();
     if (old_price) {
-        // Add "MDL" suffix to old_price if not already present
         if (!old_price.toLowerCase().includes("mdl")) {
             old_price = `${old_price} MDL`;
         }
@@ -164,38 +161,34 @@ function saveProduct() {
     }
 
     const out_Of_stock = document.getElementById('out_Of_stock').checked;
-    if (out_Of_stock) {
-        product.out_Of_stock = out_Of_stock;
-    }
+    if (out_Of_stock) product.out_Of_stock = out_Of_stock;
 
     const isNew = document.getElementById('isNew').checked;
-    if (isNew) {
-        product.isNew = isNew;
-    }
+    if (isNew) product.isNew = isNew;
 
     const product_sizes = document.getElementById('product_sizes').value.split(',').map(size => size.trim()).filter(size => size !== '');
     if (product_sizes.length > 0) {
         product.product_sizes = product_sizes;
     }
 
-    // If editing, update the product in the array
+    // 🚀 FIX: Verificăm dacă produsul există deja după ID și îl actualizăm fără a înlocui altul.
     const existingProductIndex = products.findIndex(prod => prod.id === id);
     if (existingProductIndex !== -1) {
-        products[existingProductIndex] = product; // Update the existing product
+        products[existingProductIndex] = product;
     } else {
-        products.push(product); // Add new product if not editing
+        products.push(product);
     }
 
-    saveProductsToJSON(); // Save products to JSON
-    displayAllProducts(); // Refresh product display after saving
-    resetProductForm(); // Reset form after saving
+    saveProductsToJSON();  
+    displayAllProducts(); // ✅ Reîmprospătăm UI-ul fără refresh  
+    resetProductForm();  
 
-    // Reapply the filter after saving a new product
     const selectedCategory = document.getElementById('filterDropdown').value;
     if (selectedCategory) {
         filterProductsByCategory(selectedCategory);
     }
 }
+
 
 function loadProducts() {
     fetch('json/products.json')
@@ -301,7 +294,6 @@ function deleteProduct(productId) {
 }
 
 function saveProductsToJSON() {
-    // Replace backslashes with forward slashes in images field for all products
     products.forEach(product => {
         product.images = product.images.map(img => img.replace(/\\/g, '/'));
     });
@@ -311,18 +303,20 @@ function saveProductsToJSON() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(products) // Trimite lista actualizată, inclusiv dacă este goală
+        body: JSON.stringify(products)
     })
     .then(response => response.json())
     .then(data => {
         if (data.status === "success") {
             console.log("Produse salvate cu succes în JSON.");
+            displayAllProducts(); // ✅ Reafișăm produsele fără a da refresh  
         } else {
             console.error("Eroare la salvarea produselor:", data.message);
         }
     })
     .catch(error => console.error('Eroare:', error));
 }
+
 
 function populateFilterDropdown() {
     const filterDropdown = document.getElementById('filterDropdown');

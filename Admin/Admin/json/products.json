@@ -240,23 +240,6 @@
         "description": "Cutie Pandora"
     },
     {
-        "id": "1.7",
-        "name": "Inel Prin\u021besa",
-        "price": "699.00 MDL",
-        "images": [
-            "images/Inele/inelprintesa.JPG"
-        ],
-        "category": "Inele",
-        "description": "",
-        "product_sizes": [
-            "15",
-            "16",
-            "17",
-            "18",
-            "19"
-        ]
-    },
-    {
         "id": "2.4",
         "name": "Colier Rotund",
         "price": "799.00 MDL",
@@ -318,5 +301,34 @@
         ],
         "category": "Br\u0103\u021b\u0103ri pentru b\u0103ie\u021bi",
         "description": ""
+    },
+    {
+        "id": "1.6",
+        "name": "Inel Prin\u021bes\u0103",
+        "price": "699.00 MDL",
+        "images": [
+            "images/Inele/inelprintesa.JPG"
+        ],
+        "category": "Inele",
+        "description": "",
+        "product_sizes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+        ]
+    },
+    {
+        "id": "1.7",
+        "name": "wedwed",
+        "price": "123 MDL",
+        "images": [
+            "images/Inele/inelprintesa.JPG"
+        ],
+        "category": "Inele",
+        "description": "wedwef",
+        "isTrending": true,
+        "isNew": true
     }
 ]
