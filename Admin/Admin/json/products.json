@@ -43,6 +43,7 @@
         "price": "899.00 MDL",
         "images": [
             "images/Inele/Inel_2.png",
+            "images/Inele/PANDOR1.jpg",
             "images/Inele/pand.jpg"
         ],
         "category": "Inele",
@@ -95,7 +96,8 @@
         "name": "Colier Str\u0103lucitor cu Inim\u0103 Alb\u0103",
         "price": "630.00 MDL",
         "images": [
-            "images/Coliere/Colier_1.jpg"
+            "images/Coliere/Colier_1.jpg",
+            "images/Coliere/colier22.jpg"
         ],
         "category": "Coliere",
         "description": "Colierul cu inim\u0103 este un simbol al iubirii,elegan\u021bei.Acesta este realizat din argint proba S925.Este decorat cu pietre str\u0103lucitoare,zirconiu.Ideal pentru persoana drag\u0103,sau ca o bijuterie sentimental\u0103."
@@ -105,7 +107,8 @@
         "name": "Colier str\u0103lucitor cu Inim\u0103 Ro\u0219ie",
         "price": "630.00 MDL",
         "images": [
-            "images/Coliere/Colier_2.jpg"
+            "images/Coliere/Colier_2.jpg",
+            "images/Coliere/colier12.JPG"
         ],
         "category": "Coliere",
         "description": "Colierul cu inim\u0103 este un simbol al iubirii,elegan\u021bei.Acesta este realizat din argint proba S925.Este decorat cu pietre str\u0103lucitoare,zirconiu.Ideal pentru persoana drag\u0103,sau ca o bijuterie sentimental\u0103."
