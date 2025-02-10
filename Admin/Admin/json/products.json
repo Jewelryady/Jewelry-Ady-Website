@@ -135,27 +135,6 @@
         "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi)."
     },
     {
-        "id": "3.3",
-        "name": "Br\u0103\u021bar\u0103 pentu Baieti 2",
-        "price": "419.00 MDL",
-        "images": [
-            "images/Bratari/boy.2.jpg"
-        ],
-        "category": "Bratari",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
-    },
-    {
-        "id": "3.4",
-        "name": "Br\u0103\u021bar\u0103 pentu Baieti 3",
-        "price": "430.00 MDL",
-        "images": [
-            "images/Bratari/brataraboyjpg.jpg",
-            "images/Bratari/brataraboy2.jpg"
-        ],
-        "category": "Bratari",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.\""
-    },
-    {
         "id": "3.5",
         "name": "Br\u0103\u021bar\u0103 Tennis",
         "price": "450.00 MDL",
@@ -166,16 +145,6 @@
         "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi).",
         "isTrending": true,
         "isNew": true
-    },
-    {
-        "id": "3.7",
-        "name": "Br\u0103\u021bar\u0103 pentru B\u0103ie\u021bi",
-        "price": "429.00 MDL",
-        "images": [
-            "images/Bratari/boy.jpg"
-        ],
-        "category": "Bratari",
-        "description": "Inel elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi."
     },
     {
         "id": "3.8",
@@ -274,13 +243,13 @@
     },
     {
         "id": "1.7",
-        "name": "Inel Rotund",
-        "price": "730.00 MDL",
+        "name": "Inel Prin\u021besa",
+        "price": "699.00 MDL",
         "images": [
-            "images/Inele/IMG_2420.JPG"
+            "images/Inele/inelprintesa.jpg"
         ],
         "category": "Inele",
-        "description": "Inelul Rotund are un design modern \u0219i elegant,realizat din oxel inoxidabil.Pe una dintre laturile inelului,sunt \u00eencrustate c\u00e2teva pietrcile suplimentare,ad\u0103ug\u00e2nd un plus de rafinament.Acest inel este potrivit pentru ocazii speciale,c\u00e2t \u0219i pentru purtare zilnic\u0103.",
+        "description": "",
         "product_sizes": [
             "15",
             "16",
@@ -311,5 +280,45 @@
         "category": "Cutii",
         "description": "Pachet Pandora",
         "isTrending": true
+    },
+    {
+        "id": "6.1",
+        "name": "Br\u0103\u021bar\u0103 pentru B\u0103ie\u021bi",
+        "price": "410.00 MDL",
+        "images": [
+            "images/Bratari/boy.jpg"
+        ],
+        "category": "Br\u0103\u021b\u0103ri pentru b\u0103ie\u021bi",
+        "description": ""
+    },
+    {
+        "id": "6.2",
+        "name": "Br\u0103\u021bar\u0103 pentru b\u0103ie\u021bi 2",
+        "price": "429.00 MDL",
+        "images": [
+            "images/Bratari/boy.2.jpg"
+        ],
+        "category": "Br\u0103\u021b\u0103ri pentru b\u0103ie\u021bi",
+        "description": ""
+    },
+    {
+        "id": "6.3",
+        "name": "Br\u0103\u021bar\u0103 MEN",
+        "price": "450.00 MDL",
+        "images": [
+            "images/Bratari/brataraboy2.jpg"
+        ],
+        "category": "Br\u0103\u021b\u0103ri pentru b\u0103ie\u021bi",
+        "description": ""
+    },
+    {
+        "id": "6.4",
+        "name": "MEN",
+        "price": "410.00 MDL",
+        "images": [
+            "images/Bratari/brataraboyjpg.jpg"
+        ],
+        "category": "Br\u0103\u021b\u0103ri pentru b\u0103ie\u021bi",
+        "description": ""
     }
 ]
