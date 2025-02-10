@@ -44,7 +44,7 @@
         "images": [
             "images/Inele/Inel_2.png",
             "images/Inele/PANDOR1.JPG",
-            "images/Inele/pand.jpg"
+            "images/Inele/pand.JPG"
         ],
         "category": "Inele",
         "description": "Inel Pandora cu inim\u0103 alb\u0103,elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
@@ -136,15 +136,13 @@
     },
     {
         "id": "3.5",
-        "name": "Br\u0103\u021bar\u0103 Tennis",
-        "price": "450.00 MDL",
+        "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 ro\u0219ie",
+        "price": "566.00 MDL",
         "images": [
-            "images/Bratari/Bratara_4.png"
+            "images/Bratari/br22.jpg"
         ],
         "category": "Bratari",
-        "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi).",
-        "isTrending": true,
-        "isNew": true
+        "description": ""
     },
     {
         "id": "3.8",
