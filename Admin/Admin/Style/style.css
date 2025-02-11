@@ -323,12 +323,12 @@ button:hover {
 }
 
 .categoryContainer .categoryActions .addItemButton {
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
 }
 
 .categoryContainer .categoryActions .addItemButton:hover {
-    background-color: #0056b3;
+    background-color: #218838;
 }
 
 .categoryContainer .categoryActions .deleteCategoryButton {

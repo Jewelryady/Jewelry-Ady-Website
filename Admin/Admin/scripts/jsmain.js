@@ -166,6 +166,20 @@ function filterProductsByCategory(category) {
     if (filteredProducts.length === 0) {
         productsContainer.innerHTML = '<p>Nu există produse disponibile în această categorie.</p>';
     }
+
+    // Highlight the selected category in the categoryContainer
+    document.querySelectorAll('.categoryContainer').forEach(container => {
+        container.classList.remove('selectedCategory');
+    });
+    const selectedCategoryContainer = Array.from(document.querySelectorAll('.categoryContainer')).find(container => container.querySelector('.categoryName').textContent.includes(category));
+    if (selectedCategoryContainer) {
+        selectedCategoryContainer.classList.add('selectedCategory');
+    }
+
+    // Update product count text
+    const totalProducts = products.length;
+    const categoryProductCount = filteredProducts.length;
+    document.querySelector('h2').textContent = `Produse (${totalProducts}) > ${category} (${categoryProductCount})`;
 }
 
 function saveProduct() {
@@ -412,9 +426,8 @@ function displayAllProducts() {
         document.getElementById('filterDropdown').value = selectedCategory;
     } else {
         document.getElementById('filterDropdown').value = ""; // Set to "Toate categoriile"
+        updateProductCount(); // Update total product count
     }
-
-    updateProductCount(); // Update total product count
 }
 
 function setupSearch() {
