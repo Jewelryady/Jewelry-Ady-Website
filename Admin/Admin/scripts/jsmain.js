@@ -122,7 +122,6 @@ function filterProductsByCategory(category) {
     }
 }
 
-
 function saveProduct() {
     const id = document.getElementById('id').textContent;
     const name = document.getElementById('name').value.trim();
@@ -171,7 +170,7 @@ function saveProduct() {
         product.product_sizes = product_sizes;
     }
 
-    // 🚀 FIX: Verificăm dacă produsul există deja după ID și îl actualizăm fără a înlocui altul.
+    // Verificăm dacă produsul există deja după ID și îl actualizăm fără a înlocui altul.
     const existingProductIndex = products.findIndex(prod => prod.id === id);
     if (existingProductIndex !== -1) {
         products[existingProductIndex] = product;
@@ -180,7 +179,7 @@ function saveProduct() {
     }
 
     saveProductsToJSON();  
-    displayAllProducts(); // ✅ Reîmprospătăm UI-ul fără refresh  
+    displayAllProducts(); // Reîmprospătăm UI-ul fără refresh  
     resetProductForm();  
 
     const selectedCategory = document.getElementById('filterDropdown').value;
@@ -189,15 +188,12 @@ function saveProduct() {
     }
 }
 
-
 function loadProducts() {
     fetch('json/products.json')
         .then(response => response.json())
         .then(data => {
             products = data; // Save the products to the global variable
-            data.forEach(product => {
-                displayProduct(product); // Display each product
-            });
+            displayAllProducts(); // Display all products
         })
         .catch(error => console.error('Error loading products:', error));
 }
@@ -309,14 +305,13 @@ function saveProductsToJSON() {
     .then(data => {
         if (data.status === "success") {
             console.log("Produse salvate cu succes în JSON.");
-            displayAllProducts(); // ✅ Reafișăm produsele fără a da refresh  
+            displayAllProducts(); // Reafișăm produsele fără a da refresh  
         } else {
             console.error("Eroare la salvarea produselor:", data.message);
         }
     })
     .catch(error => console.error('Eroare:', error));
 }
-
 
 function populateFilterDropdown() {
     const filterDropdown = document.getElementById('filterDropdown');
