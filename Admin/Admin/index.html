@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="Style/style.css">
- 
 </head>
 
 <body>
-    
-    <div>
-        <h2>Admin Panel |</h2>
-        <input type="text" id="categoryName" placeholder="Introduceți numele categoriei">
-        <button type="button" id="addCategoryButton" onclick="addCategory()">Adaugă categorie</button>
-        <h2>Categorii</h2>
+    <div id="adminHeader">
+        <h1>Admin Panel</h1>
+        <div id="addCategoryContainer">
+            <input type="text" id="newCategoryName" placeholder="Nume categorie">
+            <button id="addCategoryButton">Adaugă categorie</button>
+        </div>
     </div>
 
     <div id="categoriesContainer">
@@ -33,7 +32,6 @@
         <label for="searchInput">Caută produs:</label>
         <input type="text" id="searchInput" placeholder="Caută după nume, ID sau preț">
     </div>
-    
     
     <h2>Produse</h2>
     <div id="overlay"></div> <!-- Overlay for dimming background -->

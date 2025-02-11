@@ -6,8 +6,21 @@ let categoryCounter = 1; // Counter for unique category IDs
 document.addEventListener("DOMContentLoaded", () => {
     loadCategories();
     loadProducts();
-    populateFilterDropdown();
     setupSearch();
+
+    // Add event listener for the add category button
+    document.getElementById('addCategoryButton').addEventListener('click', () => {
+        const categoryName = document.getElementById('newCategoryName').value.trim();
+        if (categoryName) {
+            categories.push(categoryName);
+            updateCategories();
+            saveCategoriesToJSON(); // Save categories to JSON file
+            document.getElementById('newCategoryName').value = ''; // Clear input
+            populateFilterDropdown(); // Update filter dropdown
+        } else {
+            alert("Introduceți un nume valid pentru categorie.");
+        }
+    });
 });
 
 function addCategory() {
@@ -28,23 +41,42 @@ function updateCategories() {
     categoriesContainer.innerHTML = ''; // Clear previous categories
 
     categories.forEach((category, index) => {
-        const categoryButton = document.createElement('button');
-        categoryButton.textContent = category;
-        categoryButton.className = 'categoryButton';
-        categoryButton.onclick = () => selectCategory(category, index);
-
-        const deleteCategoryButton = document.createElement('button');
-        deleteCategoryButton.textContent = 'Șterge';
-        deleteCategoryButton.className = 'deleteCategoryButton';
-        deleteCategoryButton.onclick = () => deleteCategory(category, index);
-
         const categoryContainer = document.createElement('div');
         categoryContainer.className = 'categoryContainer';
-        categoryContainer.appendChild(categoryButton);
-        categoryContainer.appendChild(deleteCategoryButton);
+
+        const categoryName = document.createElement('span');
+        categoryName.className = 'categoryName';
+        const productCount = products.filter(product => product.category === category).length;
+        categoryName.textContent = `${category} (${productCount})`;
+
+        const categoryActions = document.createElement('div');
+        categoryActions.className = 'categoryActions';
+
+        const addItemButton = document.createElement('button');
+        addItemButton.className = 'addItemButton';
+        addItemButton.textContent = 'Adaugă produs';
+        addItemButton.onclick = () => selectCategory(category, index);
+
+        const deleteCategoryButton = document.createElement('button');
+        deleteCategoryButton.className = 'deleteCategoryButton';
+        deleteCategoryButton.textContent = 'Șterge';
+        deleteCategoryButton.onclick = () => deleteCategory(category, index);
+
+        categoryActions.appendChild(addItemButton);
+        categoryActions.appendChild(deleteCategoryButton);
+
+        categoryContainer.appendChild(categoryName);
+        categoryContainer.appendChild(categoryActions);
 
         categoriesContainer.appendChild(categoryContainer);
     });
+
+    updateProductCount();
+}
+
+function updateProductCount() {
+    const totalProducts = products.length;
+    document.querySelector('h2').textContent = `Produse (${totalProducts})`;
 }
 
 function deleteCategory(category, index) {
@@ -124,7 +156,6 @@ function filterProductsByCategory(category) {
     }
 }
 
-
 function saveProduct() {
     const id = document.getElementById('id').textContent;
     const name = document.getElementById('name').value.trim();
@@ -191,8 +222,9 @@ function saveProduct() {
         // Store selected category in local storage
         localStorage.setItem('selectedCategory', selectedCategory);
     }
-}
 
+    updateCategories(); // Update category product counts
+}
 
 function loadProducts() {
     fetch('json/products.json')
@@ -202,6 +234,8 @@ function loadProducts() {
             data.forEach(product => {
                 displayProduct(product); // Display each product
             });
+            updateProductCount(); // Update total product count
+            updateCategories(); // Update category product counts
         })
         .catch(error => console.error('Error loading products:', error));
 }
@@ -299,6 +333,7 @@ function deleteProduct(productId) {
         }
     }
     displayAllProducts(); // Refresh product display after deleting
+    updateCategories(); // Update category product counts
 }
 
 function saveProductsToJSON() {
@@ -324,7 +359,6 @@ function saveProductsToJSON() {
     })
     .catch(error => console.error('Eroare:', error));
 }
-
 
 function populateFilterDropdown() {
     const filterDropdown = document.getElementById('filterDropdown');
@@ -364,7 +398,11 @@ function displayAllProducts() {
     if (selectedCategory) {
         filterProductsByCategory(selectedCategory);
         document.getElementById('filterDropdown').value = selectedCategory;
+    } else {
+        document.getElementById('filterDropdown').value = ""; // Set to "Toate categoriile"
     }
+
+    updateProductCount(); // Update total product count
 }
 
 function setupSearch() {
