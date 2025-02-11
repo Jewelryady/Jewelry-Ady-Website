@@ -68,6 +68,18 @@ function updateCategories() {
         categoryContainer.appendChild(categoryName);
         categoryContainer.appendChild(categoryActions);
 
+        // Add event listener to categoryContainer for loading and selecting products
+        categoryContainer.addEventListener('click', () => {
+            filterProductsByCategory(category);
+            document.getElementById('filterDropdown').value = category;
+
+            // Highlight the selected category
+            document.querySelectorAll('.categoryContainer').forEach(container => {
+                container.classList.remove('selectedCategory');
+            });
+            categoryContainer.classList.add('selectedCategory');
+        });
+
         categoriesContainer.appendChild(categoryContainer);
     });
 

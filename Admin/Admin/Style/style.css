@@ -256,6 +256,11 @@ button:hover {
     background-color: #c82333;
 }
 
+.selectedCategory {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
 #adminHeader {
     display: flex;
     justify-content: space-between;
