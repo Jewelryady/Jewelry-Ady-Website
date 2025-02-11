@@ -103,8 +103,10 @@ function selectCategory(category, index) {
     // Set unique ID based on category index and product count within that category
     const productCount = products.filter(product => product.category === category).length + 1;
     document.getElementById('id').textContent = `${index + 1}.${productCount}`;
-    
-    
+
+    // Store selected category in local storage
+    localStorage.setItem('selectedCategory', category);
+
     filterProductsByCategory(category); // Filter products by selected category
 }
 
@@ -183,9 +185,11 @@ function saveProduct() {
     displayAllProducts(); // ✅ Reîmprospătăm UI-ul fără refresh  
     resetProductForm();  
 
-    const selectedCategory = document.getElementById('filterDropdown').value;
+    const selectedCategory = document.getElementById('selectedCategory').textContent;
     if (selectedCategory) {
         filterProductsByCategory(selectedCategory);
+        // Store selected category in local storage
+        localStorage.setItem('selectedCategory', selectedCategory);
     }
 }
 
@@ -256,6 +260,10 @@ function editProduct(productId) {
 
         document.getElementById('itemFormContainer').style.display = 'block'; // Show form for editing
         document.getElementById('overlay').style.display = 'block'; // Show overlay
+
+        // Store selected category in local storage
+        const selectedCategory = document.getElementById('selectedCategory').textContent;
+        localStorage.setItem('selectedCategory', selectedCategory);
     } else {
         alert("Produsul nu a fost găsit.");
     }
@@ -349,6 +357,13 @@ function displayAllProducts() {
 
     if (products.length === 0) {
         productsContainer.innerHTML = '<p>Nu există produse disponibile.</p>';
+    }
+
+    // Retrieve selected category from local storage and filter products
+    const selectedCategory = localStorage.getItem('selectedCategory');
+    if (selectedCategory) {
+        filterProductsByCategory(selectedCategory);
+        document.getElementById('filterDropdown').value = selectedCategory;
     }
 }
 
