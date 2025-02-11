@@ -305,7 +305,12 @@ function saveProductsToJSON() {
     .then(data => {
         if (data.status === "success") {
             console.log("Produse salvate cu succes în JSON.");
-            displayAllProducts(); // Reafișăm produsele fără a da refresh  
+            const selectedCategory = document.getElementById('filterDropdown').value;
+            if (selectedCategory) {
+                filterProductsByCategory(selectedCategory);
+            } else {
+                displayAllProducts();
+            }
         } else {
             console.error("Eroare la salvarea produselor:", data.message);
         }
