@@ -136,16 +136,6 @@
         "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi)."
     },
     {
-        "id": "3.5",
-        "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 ro\u0219ie",
-        "price": "566.00 MDL",
-        "images": [
-            "images/Bratari/br22.jpg"
-        ],
-        "category": "Bratari",
-        "description": ""
-    },
-    {
         "id": "3.8",
         "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 ro\u0219ie",
         "price": "999.00 MDL",
@@ -158,16 +148,6 @@
         "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte.",
         "isTrending": true,
         "isNew": true
-    },
-    {
-        "id": "3.9",
-        "name": "Br\u0103\u021bar\u0103 Cartier",
-        "price": "449.00 MDL",
-        "images": [
-            "images/Bratari/cartier.JPG"
-        ],
-        "category": "Bratari",
-        "description": "Br\u0103\u021bar\u0103 Cartier din oxel inoxidabil.O bijuterie dr\u0103gu\u021b\u0103 anume pentru TINE.Este una dintre cele mai populare,simboliz\u00e2nd iubirea etern\u0103.Aceast\u0103 br\u0103\u021bar\u0103 se potrive\u0219te perfect pentru \u021binuta de zi de zi,c\u00e2t \u0219i la ocazii speciale."
     },
     {
         "id": "4.1",
@@ -319,5 +299,52 @@
             "18",
             "19"
         ]
+    },
+    {
+        "id": "1.7",
+        "name": "Inel Lacrim\u0103",
+        "price": "699.00 MDL",
+        "images": [
+            "images/Inele/inelring.jpg",
+            "images/Inele/123.jpg"
+        ],
+        "category": "Inele",
+        "description": "",
+        "product_sizes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+        ]
+    },
+    {
+        "id": "1.8",
+        "name": "Inel Silver Zirconia",
+        "price": "789.00 MDL",
+        "images": [
+            "images/Inele/ringg.jpg",
+            "images/Inele/222.jpg",
+            "images/Inele/23.jpg"
+        ],
+        "category": "Inele",
+        "description": "",
+        "product_sizes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+        ]
+    },
+    {
+        "id": "3.4",
+        "name": "Br\u0103\u021bar\u0103 Cartier",
+        "price": "456.00 MDL",
+        "images": [
+            "images/Bratari/00.jpg"
+        ],
+        "category": "Bratari",
+        "description": ""
     }
 ]
