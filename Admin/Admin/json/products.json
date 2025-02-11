@@ -346,15 +346,5 @@
         ],
         "category": "Bratari",
         "description": ""
-    },
-    {
-        "id": "1.9",
-        "name": "tygerg",
-        "price": "234 MDL",
-        "images": [
-            "erf"
-        ],
-        "category": "Inele",
-        "description": "erferf"
     }
 ]
