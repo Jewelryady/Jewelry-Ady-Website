@@ -650,6 +650,7 @@ body.showCart .cart-overlay {
 }
 
 .btn_control .viewCart {
+    width: 100%; /* Extinde butonul pe toată lățimea */
     background-color: #51c942; /* White */
     border: 1px solid #51c942;
     color: #fff;
