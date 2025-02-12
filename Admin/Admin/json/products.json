@@ -359,5 +359,35 @@
         ],
         "category": "Bratari",
         "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte."
+    },
+    {
+        "id": "3.5",
+        "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 roz",
+        "price": "999.00 MDL",
+        "images": [
+            "images/Bratari/bratara_gold.png"
+        ],
+        "category": "Bratari",
+        "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte."
+    },
+    {
+        "id": "1.9",
+        "name": "Inel Fundita",
+        "price": "799.00 MDL",
+        "images": [
+            "images/Inele/inelfundita.png"
+        ],
+        "category": "Inele",
+        "description": "buna sara bussioanka"
+    },
+    {
+        "id": "1.11",
+        "name": "Inel fundita rosie",
+        "price": "799.00 MDL",
+        "images": [
+            "images/Inele/inelbant.png"
+        ],
+        "category": "Inele",
+        "description": "dfghn"
     }
 ]
