@@ -338,7 +338,7 @@
         ]
     },
     {
-        "id": "3.4",
+        "id": "3.3",
         "name": "Br\u0103\u021bar\u0103 Cartier",
         "price": "456.00 MDL",
         "images": [
@@ -346,5 +346,18 @@
         ],
         "category": "Bratari",
         "description": ""
+    },
+    {
+        "id": "3.4",
+        "name": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 alb\u0103",
+        "price": "999.00 MDL",
+        "images": [
+            "images/Bratari/bratara_pan_1.png",
+            "images/Bratari/bratara_pan_2.png",
+            "images/Bratari/bratara_pan_3.png",
+            "images/Bratari/bratara_pan_4.png"
+        ],
+        "category": "Bratari",
+        "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte."
     }
 ]
