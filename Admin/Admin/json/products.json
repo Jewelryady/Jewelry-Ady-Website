@@ -26,8 +26,7 @@
         "price": "799.00 MDL",
         "images": [
             "images/Inele/ring22.jpg",
-            "images/Inele/ring2.jpg",
-            "images/Inele/1233.jpg"
+            "images/Inele/ring2.jpg"
         ],
         "category": "Inele",
         "description": "Inel Pandora cu inim\u0103 dubl\u0103.Este din argint proba S925.Inelul dat simbolizeaz\u0103 dragostea \u0219i conexiunea,fiind ideal pentru un cadou special.",
@@ -131,7 +130,6 @@
         "name": "Br\u0103\u021bar\u0103 Tennis",
         "price": "449.00 MDL",
         "images": [
-            "images/Bratari/ten.jpg",
             "images/Bratari/Bratara_3.png"
         ],
         "category": "Bratari",
@@ -250,7 +248,7 @@
         "name": "Br\u0103\u021bar\u0103 pentru B\u0103ie\u021bi",
         "price": "410.00 MDL",
         "images": [
-            "images/Bratari/boy.jpg"
+            "images/Bratari/boy.png"
         ],
         "category": "Br\u0103\u021b\u0103ri pentru b\u0103ie\u021bi",
         "description": ""
@@ -290,8 +288,7 @@
         "name": "Inel Prin\u021bes\u0103",
         "price": "699.00 MDL",
         "images": [
-            "images/Inele/inelprintesa.JPG",
-            "images/Inele/2222.jpg"
+            "images/Inele/inelprintesa.JPG"
         ],
         "category": "Inele",
         "description": "",
@@ -369,8 +366,8 @@
         "price": "999.00 MDL",
         "images": [
             "images/Bratari/bratara_gold.png",
-            "images/Bratari/444.jpg",
-            "images/Bratari/777.jpg"
+            "images/Bratari/444.png",
+            "images/Bratari/777.png"
         ],
         "category": "Bratari",
         "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte."
