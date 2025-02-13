@@ -281,7 +281,8 @@
             "images/Bratari/brataraboyjpg.jpg"
         ],
         "category": "Br\u0103\u021b\u0103ri pentru b\u0103ie\u021bi",
-        "description": ""
+        "description": "",
+        "isTrending": true
     },
     {
         "id": "1.6",
@@ -370,7 +371,9 @@
             "images/Bratari/777.png"
         ],
         "category": "Bratari",
-        "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte."
+        "description": "Br\u0103\u021bar\u0103 Pandora cu inim\u0103 este simbolic\u0103,perfect\u0103 pentru a ad\u0103uga un strop de rafinament \u0219i sentiment \u00een colec\u021bia ta de bijuterii.Este realizat din argint proba S925.Poate fi purtat\u0103 ca un accesoriu personalizat care s\u0103 te reprezinte.",
+        "isTrending": true,
+        "isNew": true
     },
     {
         "id": "1.9",
@@ -380,7 +383,8 @@
             "images/Inele/inelfundita.png"
         ],
         "category": "Inele",
-        "description": "buna sara bussioanka"
+        "description": "buna sara bussioanka",
+        "isTrending": true
     },
     {
         "id": "1.11",
@@ -390,6 +394,8 @@
             "images/Inele/inelbant.png"
         ],
         "category": "Inele",
-        "description": "dfghn"
+        "description": "dfghn",
+        "isTrending": true,
+        "isNew": true
     }
 ]
