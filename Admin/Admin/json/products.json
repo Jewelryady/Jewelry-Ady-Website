@@ -26,7 +26,8 @@
         "price": "799.00 MDL",
         "images": [
             "images/Inele/ring22.jpg",
-            "images/Inele/ring2.jpg"
+            "images/Inele/ring2.jpg",
+            "images/Inele/1233.jpg"
         ],
         "category": "Inele",
         "description": "Inel Pandora cu inim\u0103 dubl\u0103.Este din argint proba S925.Inelul dat simbolizeaz\u0103 dragostea \u0219i conexiunea,fiind ideal pentru un cadou special.",
@@ -130,6 +131,7 @@
         "name": "Br\u0103\u021bar\u0103 Tennis",
         "price": "449.00 MDL",
         "images": [
+            "images/Bratari/ten.jpg",
             "images/Bratari/Bratara_3.png"
         ],
         "category": "Bratari",
@@ -288,7 +290,8 @@
         "name": "Inel Prin\u021bes\u0103",
         "price": "699.00 MDL",
         "images": [
-            "images/Inele/inelprintesa.JPG"
+            "images/Inele/inelprintesa.JPG",
+            "images/Inele/2222.jpg"
         ],
         "category": "Inele",
         "description": "",
