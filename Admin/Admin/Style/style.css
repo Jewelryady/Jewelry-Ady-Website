@@ -1,3 +1,7 @@
+:root {
+    --button-spacing: 50px; /* Variable to control spacing between buttons */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
@@ -125,6 +129,7 @@ button:hover {
 }
 
 .product {
+    position: relative;
     background-color: #ffffff;
     border: 1px solid #ced4da;
     border-radius: 8px;
@@ -147,19 +152,25 @@ button:hover {
 
 .editButton,
 .deleteButton {
-    background-color: #ffc107;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    margin-right: 5px;
+    position: absolute;
+    top: 10px;
+    width: auto;
+    padding: 5px 8px;
+    font-size: 10px;
+    margin: 0;
     transition: background-color 0.3s;
 }
 
+.editButton {
+    right: calc(10px + var(--button-spacing)); /* Adjust the position to the left of the delete button */
+}
+
+.deleteButton {
+    right: 10px;
+}
+
 .editButton:hover {
-    background-color: #e0a800;
+    background-color: #0067d6;
 }
 
 .deleteButton {
