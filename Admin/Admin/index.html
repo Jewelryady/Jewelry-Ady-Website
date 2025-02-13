@@ -81,6 +81,24 @@
     </div>
 
     <script src="scripts/jsmain.js"></script>
+    <script>
+        function saveProduct() {
+            const product = {
+                id: document.getElementById('id').innerText.trim(), // Ensure ID is treated as a string
+                name: document.getElementById('name').value.trim(),
+                price: document.getElementById('price').value.trim(),
+                images: document.getElementById('images').value.trim(),
+                description: document.getElementById('description').value.trim(),
+                isTrending: document.getElementById('isTrending').checked,
+                old_price: document.getElementById('old_price').value.trim(),
+                out_Of_stock: document.getElementById('out_Of_stock').checked,
+                isNew: document.getElementById('isNew').checked,
+                product_sizes: document.getElementById('product_sizes').value.trim(),
+                category: document.getElementById('selectedCategory').innerText.trim()
+            };
+            // ...existing code...
+        }
+    </script>
 </body>
 
 </html>

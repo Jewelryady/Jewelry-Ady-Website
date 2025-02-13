@@ -17,7 +17,7 @@ if ($data !== null) {
     // Actualizăm produsele existente cu noile date
     foreach ($data as &$newProduct) {
         foreach ($existingProducts as &$existingProduct) {
-            if ($newProduct['id'] === $existingProduct['id']) {
+            if ((string)$newProduct['id'] === (string)$existingProduct['id']) {
                 // Preservăm categoria existentă dacă nu este setată în noile date
                 if (!isset($newProduct['category']) || $newProduct['category'] === "") {
                     $newProduct['category'] = $existingProduct['category'];

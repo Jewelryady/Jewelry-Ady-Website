@@ -40,7 +40,7 @@ function generateProductCard(product, sizeDropdown) {
                 ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
                 ${product.isNew ? `<div class="new-flag">NOU</div>` : ''}
                 ${product.out_Off_stock ? `<div class="out-of-stock">Stoc epuizat</div>` : ''}
-                <img src="${product.images[0]}" onclick="displayDetails(${product.id});">
+                <img src="${product.images[0]}" onclick="displayDetails('${product.id}');">
                 <div class="card-watermark-logo">
                     <a href="link_catre_imagine.html">
                         <img src="images/logo_block.png" alt="Image description">
@@ -51,7 +51,7 @@ function generateProductCard(product, sizeDropdown) {
                 </a>
             </div>
             <div class="card-info">
-                <h4 class="product-name" onclick="displayDetails(${product.id});" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${product.name}</h4>
+                <h4 class="product-name" onclick="displayDetails('${product.id}');" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${product.name}</h4>
                 <h5 class="product-price">${product.price}</h5>
                 ${product.old_price ? `<h5 class="old-price">${product.old_price}</h5>` : ''}
                 ${sizeDropdown}

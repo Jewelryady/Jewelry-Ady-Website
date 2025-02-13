@@ -28,10 +28,10 @@ function saveCart() {
 }
 
 function addToCart(productId, inputQuantity = 1, selectedSize = "Mărime necunoscută") {
-    let product = products.find(p => p.id == productId);
+    let product = products.find(p => p.id === productId);
     if (product) {
         // Verificăm dacă produsul există deja în coș cu aceeași mărime
-        let existingProduct = cart.find(p => p.id == productId && p.size === selectedSize);
+        let existingProduct = cart.find(p => p.id === productId && p.size === selectedSize);
         if (existingProduct) {
             // Dacă există, actualizăm cantitatea
             existingProduct.quantity += inputQuantity;

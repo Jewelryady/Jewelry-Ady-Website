@@ -10,7 +10,7 @@ async function getData() {
     try {
         const response = await fetch('Admin/Admin/json/products.json');
         const json = await response.json();
-        const product = json.find(item => item.id == productId);
+        const product = json.find(item => item.id === productId);
         if (product) {
             displayDetails(product);
         } else {
@@ -153,7 +153,7 @@ async function loadProductDetails() {
     try {
         const response = await fetch('Admin/Admin/json/products.json');
         const products = await response.json();
-        const product = products.find(prod => prod.id == productId);
+        const product = products.find(prod => prod.id === productId);
 
         if (product) {
             document.getElementById('product_image').src = product.images[0];
