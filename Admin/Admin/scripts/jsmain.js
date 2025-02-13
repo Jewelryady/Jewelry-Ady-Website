@@ -506,14 +506,39 @@ function updateImagePathsContainer(imagePaths) {
         pathDiv.className = 'imagePath';
         pathDiv.textContent = path;
 
+        const editIcon = document.createElement('span');
+        editIcon.className = 'editIcon';
+        editIcon.textContent = '✏️';
+        editIcon.onclick = () => editImagePath(index);
+
         const deleteIcon = document.createElement('span');
         deleteIcon.className = 'deleteIcon';
         deleteIcon.textContent = '❌';
         deleteIcon.onclick = () => deleteImagePath(index);
 
+        pathDiv.appendChild(editIcon);
         pathDiv.appendChild(deleteIcon);
         imagePathsContainer.appendChild(pathDiv);
     });
+}
+
+function editImagePath(index) {
+    const fileInput = document.getElementById('imageFileInput');
+    fileInput.onchange = () => {
+        const file = fileInput.files[0];
+        const category = document.getElementById('selectedCategory').textContent.trim(); // Get the selected category
+        if (file && category) {
+            // Construct the file path with category
+            const filePath = `images/${category}/${file.name}`;
+            const imagesInput = document.getElementById('images');
+            let currentImages = imagesInput.value ? imagesInput.value.split(', ').map(img => img.trim()) : [];
+            currentImages[index] = filePath; // Update the image path at the specified index
+            imagesInput.value = currentImages.join(', ');
+            updateImagePathsContainer(currentImages);
+        }
+        fileInput.onchange = addImagePath; // Reset the onchange handler
+    };
+    fileInput.click(); // Trigger the file input click
 }
 
 function deleteImagePath(index) {

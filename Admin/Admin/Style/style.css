@@ -374,3 +374,13 @@ button:hover {
 .deleteIcon:hover {
     color: #c82333;
 }
+
+.editIcon {
+    cursor: pointer;
+    color: #007bff;
+    margin-left: 48%;
+}
+
+.editIcon:hover {
+    color: #0056b3;
+}
