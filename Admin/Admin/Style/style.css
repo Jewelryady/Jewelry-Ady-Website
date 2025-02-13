@@ -124,13 +124,13 @@ button:hover {
 #productsContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 15px;
 }
 
 .product {
     position: relative;
-    background-color: #ffffff;
+    background-color: #ebebeb;
     border: 1px solid #ced4da;
     border-radius: 8px;
     padding: 10px;
@@ -230,8 +230,8 @@ button:hover {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    margin-top: 0; /* Remove top margin to align horizontally */
-    width: auto; /* Adjust width to fit content */
+    margin-top: 5; /* Remove top margin to align horizontally */
+    width: 100%; /* Adjust width to fit content */
 }
 
 .cancelButton:hover {
@@ -301,7 +301,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 0px;
 }
 
 #addCategoryContainer input[type="text"] {
@@ -338,6 +338,8 @@ button:hover {
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 100%; /* Ensure both buttons have the same width */
 }
 
 .categoryContainer .categoryActions .addItemButton {

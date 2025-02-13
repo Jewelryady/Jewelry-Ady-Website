@@ -7,20 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCategories();
     loadProducts();
     setupSearch();
-
-    // Add event listener for the add category button
-    document.getElementById('addCategoryButton').addEventListener('click', () => {
-        const categoryName = document.getElementById('newCategoryName').value.trim();
-        if (categoryName) {
-            categories.push(categoryName);
-            updateCategories();
-            saveCategoriesToJSON(); // Save categories to JSON file
-            document.getElementById('newCategoryName').value = ''; // Clear input
-            populateFilterDropdown(); // Update filter dropdown
-        } else {
-            alert("Introduceți un nume valid pentru categorie.");
-        }
-    });
 });
 
 function addCategory() {
