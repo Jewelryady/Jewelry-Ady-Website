@@ -54,12 +54,12 @@ function updateCategories() {
 
         const addItemButton = document.createElement('button');
         addItemButton.className = 'addItemButton';
-        addItemButton.textContent = 'Adaugă produs';
+        addItemButton.textContent = 'Adaugă Produs Nou';
         addItemButton.onclick = () => selectCategory(category, index);
 
         const deleteCategoryButton = document.createElement('button');
         deleteCategoryButton.className = 'deleteCategoryButton';
-        deleteCategoryButton.textContent = 'Șterge Cat';
+        deleteCategoryButton.textContent = 'Șterge Categoria';
         deleteCategoryButton.onclick = () => deleteCategory(category, index);
 
         categoryActions.appendChild(addItemButton);

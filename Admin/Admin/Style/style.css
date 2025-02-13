@@ -300,10 +300,11 @@ button:hover {
 #addCategoryContainer {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 #addCategoryContainer input[type="text"] {
-    margin-right: 10px;
     padding: 5px;
     font-size: 12px;
     border-radius: 4px;
@@ -358,6 +359,32 @@ button:hover {
 }
 
 .categoryContainer .categoryActions .deleteCategoryButton:hover {
+    background-color: #c82333;
+}
+
+.categoryButton, .deleteCategoryButton {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.categoryButton {
+    background-color: #28a745;
+    color: white;
+}
+
+.categoryButton:hover {
+    background-color: #218838;
+}
+
+.deleteCategoryButton {
+    background-color: #dc3545;
+    color: white;
+}
+
+.deleteCategoryButton:hover {
     background-color: #c82333;
 }
 
