@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="Style/style.css">
+    <style>
+        /* CSS pentru notificări */
+        #notification {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+        #notification.success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #notification.error {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,6 +95,8 @@
             <button type="button" class="cancelButton" onclick="resetProductForm()">Anulează</button>
         </form>
     </div>
+
+    <div id="notification"></div> <!-- Container pentru notificări -->
 
     <div id="productsContainer">
         <!-- Produsele vor fi adăugate aici -->

@@ -109,6 +109,16 @@ function deleteCategory(category, index) {
     }
 }
 
+function showNotification(message, type) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.className = type;
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000);
+}
+
 function saveCategoriesToJSON() {
     fetch('save_categories.php', {
         method: 'POST',
@@ -120,12 +130,12 @@ function saveCategoriesToJSON() {
     .then(response => response.json())
     .then(data => {
         if (data.status === "success") {
-            console.log("Categorii salvate cu succes în JSON.");
+            showNotification("Categorii salvate cu succes în JSON.", "success");
         } else {
-            console.error("Eroare la salvarea categoriilor:", data.message);
+            showNotification("Eroare la salvarea categoriilor: " + data.message, "error");
         }
     })
-    .catch(error => console.error('Eroare:', error));
+    .catch(error => showNotification('Eroare: ' + error, "error"));
 }
 
 function loadCategories() {
@@ -382,13 +392,13 @@ function saveProductsToJSON() {
     .then(response => response.json())
     .then(data => {
         if (data.status === "success") {
-            console.log("Produse salvate cu succes în JSON.");
+            showNotification("Produse salvate cu succes în JSON.", "success");
             displayAllProducts(); // ✅ Reafișăm produsele fără a da refresh  
         } else {
-            console.error("Eroare la salvarea produselor:", data.message);
+            showNotification("Eroare la salvarea produselor: " + data.message, "error");
         }
     })
-    .catch(error => console.error('Eroare:', error));
+    .catch(error => showNotification('Eroare: ' + error, "error"));
 }
 
 function populateFilterDropdown() {
