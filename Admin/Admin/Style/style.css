@@ -349,3 +349,28 @@ button:hover {
 .categoryContainer .categoryActions .deleteCategoryButton:hover {
     background-color: #c82333;
 }
+
+#imagePathsContainer {
+    margin-top: 10px;
+}
+
+.imagePath {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    background-color: #f8f9fa;
+}
+
+.deleteIcon {
+    cursor: pointer;
+    color: #dc3545;
+    margin-left: 10px;
+}
+
+.deleteIcon:hover {
+    color: #c82333;
+}

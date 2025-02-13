@@ -69,9 +69,10 @@
             <input type="text" id="price" required>
 
             <label for="images">Imagini (separate prin virgule):</label>
-            <input type="text" id="images" placeholder="images/Inele/ring22.jpg, images/Inele/ring2.jpg" required>
+            <input type="text" id="images" placeholder="images/Inele/ring22.jpg, images/Inele/ring2.jpg" required readonly>
             <button type="button" onclick="document.getElementById('imageFileInput').click()">Adaugă o poză</button>
             <input type="file" id="imageFileInput" style="display: none;" accept="image/*" onchange="addImagePath()">
+            <div id="imagePathsContainer"></div> <!-- Container for image paths with delete icons -->
 
             <label for="description">Descriere:</label>
             <textarea id="description" required></textarea>

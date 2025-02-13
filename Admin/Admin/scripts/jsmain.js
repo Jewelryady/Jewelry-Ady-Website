@@ -333,6 +333,9 @@ function editProduct(productId) {
         document.getElementById('isNew').checked = product.isNew || false;
         document.getElementById('product_sizes').value = product.product_sizes ? product.product_sizes.join(', ') : '';
 
+        // Update image paths container
+        updateImagePathsContainer(product.images);
+
         document.getElementById('itemFormContainer').style.display = 'block'; // Show form for editing
         document.getElementById('overlay').style.display = 'block'; // Show overlay
 
@@ -475,6 +478,7 @@ function searchProducts(query) {
 function addImagePath() {
     const fileInput = document.getElementById('imageFileInput');
     const imagesInput = document.getElementById('images');
+    const imagePathsContainer = document.getElementById('imagePathsContainer');
     const file = fileInput.files[0];
     const category = document.getElementById('selectedCategory').textContent.trim(); // Get the selected category
 
@@ -489,5 +493,33 @@ function addImagePath() {
         }
 
         imagesInput.value = currentImages.join(', ');
+        updateImagePathsContainer(currentImages);
     }
+}
+
+function updateImagePathsContainer(imagePaths) {
+    const imagePathsContainer = document.getElementById('imagePathsContainer');
+    imagePathsContainer.innerHTML = ''; // Clear previous paths
+
+    imagePaths.forEach((path, index) => {
+        const pathDiv = document.createElement('div');
+        pathDiv.className = 'imagePath';
+        pathDiv.textContent = path;
+
+        const deleteIcon = document.createElement('span');
+        deleteIcon.className = 'deleteIcon';
+        deleteIcon.textContent = '❌';
+        deleteIcon.onclick = () => deleteImagePath(index);
+
+        pathDiv.appendChild(deleteIcon);
+        imagePathsContainer.appendChild(pathDiv);
+    });
+}
+
+function deleteImagePath(index) {
+    const imagesInput = document.getElementById('images');
+    let currentImages = imagesInput.value ? imagesInput.value.split(', ').map(img => img.trim()) : [];
+    currentImages.splice(index, 1); // Remove the image path at the specified index
+    imagesInput.value = currentImages.join(', ');
+    updateImagePathsContainer(currentImages);
 }

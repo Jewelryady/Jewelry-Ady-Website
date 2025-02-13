@@ -398,5 +398,16 @@
         "description": "dfghn",
         "isTrending": true,
         "isNew": true
+    },
+    {
+        "id": "5.4",
+        "name": "sd",
+        "price": "34 MDL",
+        "images": [
+            "images/Cutii/cutielogo.JPG",
+            "images/Cutii/pachet.jpg"
+        ],
+        "category": "Cutii",
+        "description": "sdc"
     }
 ]
