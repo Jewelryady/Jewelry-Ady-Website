@@ -70,6 +70,8 @@
 
             <label for="images">Imagini (separate prin virgule):</label>
             <input type="text" id="images" placeholder="images/Inele/ring22.jpg, images/Inele/ring2.jpg" required>
+            <button type="button" onclick="document.getElementById('imageFileInput').click()">Adaugă o poză</button>
+            <input type="file" id="imageFileInput" style="display: none;" accept="image/*" onchange="addImagePath()">
 
             <label for="description">Descriere:</label>
             <textarea id="description" required></textarea>

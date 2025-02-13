@@ -471,3 +471,23 @@ function searchProducts(query) {
         productsContainer.innerHTML = '<p>Nu există produse care să corespundă căutării.</p>';
     }
 }
+
+function addImagePath() {
+    const fileInput = document.getElementById('imageFileInput');
+    const imagesInput = document.getElementById('images');
+    const file = fileInput.files[0];
+    const category = document.getElementById('selectedCategory').textContent.trim(); // Get the selected category
+
+    if (file && category) {
+        // Construct the file path with category
+        const filePath = `images/${category}/${file.name}`;
+
+        // Add to input only if not already present
+        const currentImages = imagesInput.value ? imagesInput.value.split(', ').map(img => img.trim()) : [];
+        if (!currentImages.includes(filePath)) {
+            currentImages.push(filePath);
+        }
+
+        imagesInput.value = currentImages.join(', ');
+    }
+}
