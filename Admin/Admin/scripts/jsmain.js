@@ -144,9 +144,14 @@ function selectCategory(category, index) {
     document.getElementById('itemFormContainer').style.display = 'block';
     document.getElementById('overlay').style.display = 'block'; // Show overlay
 
-    // Set unique ID based on category index and product count within that category
-    const productCount = products.filter(product => product.category === category).length + 1;
-    document.getElementById('id').textContent = `${index + 1}.${productCount}`;
+    // Set unique ID based on the highest existing ID in the category
+    const categoryProducts = products.filter(product => product.category === category);
+    const highestId = categoryProducts.reduce((maxId, product) => {
+        const productId = parseFloat(product.id.split('.')[1]);
+        return productId > maxId ? productId : maxId;
+    }, 0);
+    const newProductId = `${index + 1}.${highestId + 1}`;
+    document.getElementById('id').textContent = newProductId;
 
     // Store selected category in local storage
     localStorage.setItem('selectedCategory', category);
