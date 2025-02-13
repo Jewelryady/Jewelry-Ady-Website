@@ -398,5 +398,15 @@
         "description": "dfghn",
         "isTrending": true,
         "isNew": true
+    },
+    {
+        "id": "5.4",
+        "name": "we",
+        "price": "23 MDL",
+        "images": [
+            "images/Cutii/Colier_2.jpg"
+        ],
+        "category": "Cutii",
+        "description": ""
     }
 ]

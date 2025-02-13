@@ -364,6 +364,13 @@ function deleteProduct(productId) {
     }
     displayAllProducts(); // Refresh product display after deleting
     updateCategories(); // Update category product counts
+
+    const selectedCategory = document.getElementById('selectedCategory').textContent;
+    if (selectedCategory) {
+        filterProductsByCategory(selectedCategory);
+        // Store selected category in local storage
+        localStorage.setItem('selectedCategory', selectedCategory);
+    }
 }
 
 function saveProductsToJSON() {
