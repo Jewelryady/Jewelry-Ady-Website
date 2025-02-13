@@ -59,7 +59,7 @@ function updateCategories() {
 
         const deleteCategoryButton = document.createElement('button');
         deleteCategoryButton.className = 'deleteCategoryButton';
-        deleteCategoryButton.textContent = 'Șterge';
+        deleteCategoryButton.textContent = 'Șterge Cat';
         deleteCategoryButton.onclick = () => deleteCategory(category, index);
 
         categoryActions.appendChild(addItemButton);
