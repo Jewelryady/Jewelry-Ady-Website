@@ -365,10 +365,14 @@ button:hover {
     background-color: #f8f9fa;
 }
 
+.iconContainer {
+    display: flex;
+    gap: 5px;
+}
+
 .deleteIcon {
     cursor: pointer;
     color: #dc3545;
-    margin-left: 10px;
 }
 
 .deleteIcon:hover {
@@ -378,7 +382,6 @@ button:hover {
 .editIcon {
     cursor: pointer;
     color: #007bff;
-    margin-left: 48%;
 }
 
 .editIcon:hover {

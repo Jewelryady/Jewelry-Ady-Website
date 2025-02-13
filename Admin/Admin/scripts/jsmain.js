@@ -506,6 +506,9 @@ function updateImagePathsContainer(imagePaths) {
         pathDiv.className = 'imagePath';
         pathDiv.textContent = path;
 
+        const iconContainer = document.createElement('div');
+        iconContainer.className = 'iconContainer';
+
         const editIcon = document.createElement('span');
         editIcon.className = 'editIcon';
         editIcon.textContent = '✏️';
@@ -516,8 +519,9 @@ function updateImagePathsContainer(imagePaths) {
         deleteIcon.textContent = '❌';
         deleteIcon.onclick = () => deleteImagePath(index);
 
-        pathDiv.appendChild(editIcon);
-        pathDiv.appendChild(deleteIcon);
+        iconContainer.appendChild(editIcon);
+        iconContainer.appendChild(deleteIcon);
+        pathDiv.appendChild(iconContainer);
         imagePathsContainer.appendChild(pathDiv);
     });
 }
