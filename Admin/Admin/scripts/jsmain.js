@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCategories();
     loadProducts();
     setupSearch();
+    setupDragAndDrop(); // Initialize drag-and-drop functionality
 });
 
 function addCategory() {
@@ -497,10 +498,19 @@ function updateImagePathsContainer(imagePaths) {
     imagePaths.forEach((path, index) => {
         const pathDiv = document.createElement('div');
         pathDiv.className = 'imagePath';
-        pathDiv.textContent = path;
+        pathDiv.setAttribute('draggable', true);
+        pathDiv.dataset.index = index;
+
+        const pathText = document.createElement('span');
+        pathText.className = 'pathText';
+        pathText.textContent = path;
 
         const iconContainer = document.createElement('div');
         iconContainer.className = 'iconContainer';
+
+        const dragIcon = document.createElement('span');
+        dragIcon.className = 'dragIcon';
+        dragIcon.textContent = '↕️';
 
         const editIcon = document.createElement('span');
         editIcon.className = 'editIcon';
@@ -512,8 +522,10 @@ function updateImagePathsContainer(imagePaths) {
         deleteIcon.textContent = '❌';
         deleteIcon.onclick = () => deleteImagePath(index);
 
+        iconContainer.appendChild(dragIcon);
         iconContainer.appendChild(editIcon);
         iconContainer.appendChild(deleteIcon);
+        pathDiv.appendChild(pathText);
         pathDiv.appendChild(iconContainer);
         imagePathsContainer.appendChild(pathDiv);
     });
@@ -544,4 +556,48 @@ function deleteImagePath(index) {
     currentImages.splice(index, 1); // Remove the image path at the specified index
     imagesInput.value = currentImages.join(', ');
     updateImagePathsContainer(currentImages);
+}
+
+function setupDragAndDrop() {
+    const imagePathsContainer = document.getElementById('imagePathsContainer');
+    imagePathsContainer.addEventListener('dragstart', handleDragStart);
+    imagePathsContainer.addEventListener('dragover', handleDragOver);
+    imagePathsContainer.addEventListener('drop', handleDrop);
+}
+
+function handleDragStart(event) {
+    if (event.target.classList.contains('imagePath')) {
+        event.dataTransfer.setData('text/plain', event.target.dataset.index);
+        event.target.classList.add('dragging');
+    }
+}
+
+function handleDragOver(event) {
+    event.preventDefault();
+    const draggingElement = document.querySelector('.dragging');
+    const targetElement = event.target.closest('.imagePath');
+    if (targetElement && targetElement !== draggingElement) {
+        const imagePathsContainer = document.getElementById('imagePathsContainer');
+        const draggingIndex = parseInt(draggingElement.dataset.index, 10);
+        const targetIndex = parseInt(targetElement.dataset.index, 10);
+        if (draggingIndex < targetIndex) {
+            imagePathsContainer.insertBefore(draggingElement, targetElement.nextSibling);
+        } else {
+            imagePathsContainer.insertBefore(draggingElement, targetElement);
+        }
+    }
+}
+
+function handleDrop(event) {
+    event.preventDefault();
+    const draggingElement = document.querySelector('.dragging');
+    draggingElement.classList.remove('dragging');
+    updateImagePathsOrder();
+}
+
+function updateImagePathsOrder() {
+    const imagePathsContainer = document.getElementById('imagePathsContainer');
+    const imagePaths = Array.from(imagePathsContainer.querySelectorAll('.imagePath .pathText')).map(pathSpan => pathSpan.textContent.trim());
+    document.getElementById('images').value = imagePaths.join(', ');
+    saveProductsToJSON(); // Save the updated order to JSON
 }

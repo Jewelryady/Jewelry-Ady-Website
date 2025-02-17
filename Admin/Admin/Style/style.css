@@ -423,3 +423,12 @@ button:hover {
 .editIcon:hover {
     color: #0056b3;
 }
+
+.dragIcon {
+    cursor: move;
+    color: #007bff;
+}
+
+.dragIcon:hover {
+    color: #0056b3;
+}
