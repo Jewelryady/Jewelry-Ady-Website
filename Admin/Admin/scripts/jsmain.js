@@ -193,7 +193,7 @@ function saveProduct() {
     const name = document.getElementById('name').value.trim();
     let price = document.getElementById('price').value.trim();
     let images = document.getElementById('images').value.split(',').map(img => img.trim().replace(/\\/g, '/')).filter(img => img !== '');
-    const category = document.getElementById('selectedCategory').textContent;
+    const category = localStorage.getItem('selectedCategory'); // Use the selected category from local storage
     const description = document.getElementById('description').value.trim();
 
     if (!name || !price || images.length === 0) {
@@ -248,18 +248,17 @@ function saveProduct() {
     displayAllProducts(); // Refresh UI without refresh  
     resetProductForm();  
 
-    const selectedCategory = document.getElementById('selectedCategory').textContent;
-    if (selectedCategory) {
-        filterProductsByCategory(selectedCategory);
+    if (category) {
+        filterProductsByCategory(category);
         // Store selected category in local storage
-        localStorage.setItem('selectedCategory', selectedCategory);
+        localStorage.setItem('selectedCategory', category);
     }
 
     updateCategories(); // Update category product counts
     updateProductCount(); // Ensure product count is updated
 
     // Ensure the selected category remains selected
-    document.getElementById('filterDropdown').value = selectedCategory;
+    document.getElementById('filterDropdown').value = category;
 }
 
 function loadProducts() {
@@ -335,8 +334,7 @@ function editProduct(productId) {
         document.getElementById('overlay').style.display = 'block'; // Show overlay
 
         // Store selected category in local storage
-        const selectedCategory = document.getElementById('selectedCategory').textContent;
-        localStorage.setItem('selectedCategory', selectedCategory);
+        localStorage.setItem('selectedCategory', product.category); // Ensure the correct category is stored
     } else {
         alert("Produsul nu a fost găsit.");
     }
