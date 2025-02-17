@@ -13,11 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
 function addCategory() {
     const categoryName = document.getElementById('categoryName').value.trim();
     if (categoryName) {
-        categories.push(categoryName);
-        updateCategories();
-        saveCategoriesToJSON(); // Save categories to JSON file
-        document.getElementById('categoryName').value = ''; // Clear input
-        populateFilterDropdown(); // Update filter dropdown
+        if (!categories.includes(categoryName)) { // Ensure category is unique
+            categories.push(categoryName);
+            updateCategories();
+            saveCategoriesToJSON(); // Save categories to JSON file
+            document.getElementById('categoryName').value = ''; // Clear input
+            populateFilterDropdown(); // Update filter dropdown
+        } else {
+            alert("Categoria există deja.");
+        }
     } else {
         alert("Introduceți un nume valid pentru categorie.");
     }
@@ -232,7 +236,7 @@ function saveProduct() {
         product.product_sizes = product_sizes;
     }
 
-    // 🚀 FIX: Verificăm dacă produsul există deja după ID și îl actualizăm fără a înlocui altul.
+    // Ensure product ID is unique and update existing product if found
     const existingProductIndex = products.findIndex(prod => prod.id === id);
     if (existingProductIndex !== -1) {
         products[existingProductIndex] = product;
@@ -241,7 +245,7 @@ function saveProduct() {
     }
 
     saveProductsToJSON();  
-    displayAllProducts(); // ✅ Reîmprospătăm UI-ul fără refresh  
+    displayAllProducts(); // Refresh UI without refresh  
     resetProductForm();  
 
     const selectedCategory = document.getElementById('selectedCategory').textContent;
@@ -252,6 +256,10 @@ function saveProduct() {
     }
 
     updateCategories(); // Update category product counts
+    updateProductCount(); // Ensure product count is updated
+
+    // Ensure the selected category remains selected
+    document.getElementById('filterDropdown').value = selectedCategory;
 }
 
 function loadProducts() {
@@ -365,6 +373,7 @@ function deleteProduct(productId) {
     }
     displayAllProducts(); // Refresh product display after deleting
     updateCategories(); // Update category product counts
+    updateProductCount(); // Ensure product count is updated
 
     const selectedCategory = document.getElementById('selectedCategory').textContent;
     if (selectedCategory) {
@@ -390,7 +399,16 @@ function saveProductsToJSON() {
     .then(data => {
         if (data.status === "success") {
             showNotification("Produse salvate cu succes în JSON.", "success");
-            displayAllProducts(); // ✅ Reafișăm produsele fără a da refresh  
+            displayAllProducts(); // Refresh products without refresh  
+            updateCategories(); // Update category product counts
+            updateProductCount(); // Ensure product count is updated
+
+            // Ensure the selected category remains selected
+            const selectedCategory = localStorage.getItem('selectedCategory');
+            if (selectedCategory) {
+                filterProductsByCategory(selectedCategory);
+                document.getElementById('filterDropdown').value = selectedCategory;
+            }
         } else {
             showNotification("Eroare la salvarea produselor: " + data.message, "error");
         }
