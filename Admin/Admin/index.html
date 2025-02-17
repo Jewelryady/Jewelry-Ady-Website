@@ -179,15 +179,19 @@
         function addCategory() {
             const categoryName = document.getElementById('newCategoryName').value.trim();
             if (categoryName) {
-                categories.push(categoryName);
-                updateCategories();
-                saveCategoriesToJSON(); // Save categories to JSON file
-                document.getElementById('newCategoryName').value = ''; // Clear input
-                document.getElementById('newCategoryName').style.display = 'none';
-                document.getElementById('confirmAddCategoryButton').style.display = 'none';
-                document.getElementById('cancelAddCategoryButton').style.display = 'none';
-                document.getElementById('showAddCategoryButton').style.display = 'block';
-                populateFilterDropdown(); // Update filter dropdown
+                if (!categories.includes(categoryName)) { // Ensure category is unique
+                    categories.push(categoryName);
+                    updateCategories();
+                    saveCategoriesToJSON(); // Save categories to JSON file
+                    document.getElementById('newCategoryName').value = ''; // Clear input
+                    document.getElementById('newCategoryName').style.display = 'none';
+                    document.getElementById('confirmAddCategoryButton').style.display = 'none';
+                    document.getElementById('cancelAddCategoryButton').style.display = 'none';
+                    document.getElementById('showAddCategoryButton').style.display = 'block';
+                    populateFilterDropdown(); // Update filter dropdown
+                } else {
+                    alert("Categoria există deja.");
+                }
             } else {
                 alert("Introduceți un nume valid pentru categorie.");
             }

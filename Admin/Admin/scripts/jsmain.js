@@ -97,6 +97,9 @@ function deleteCategory(category, index) {
         updateCategories();
         displayAllProducts();
         populateFilterDropdown(); // Update filter dropdown
+
+        // Refresh the page
+        location.reload();
     }
 }
 
