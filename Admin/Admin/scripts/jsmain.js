@@ -148,6 +148,9 @@ function selectCategory(category, index) {
     document.getElementById('itemFormContainer').style.display = 'block';
     document.getElementById('overlay').style.display = 'block'; // Show overlay
 
+    // Reset image paths container
+    updateImagePathsContainer([]);
+
     // Set unique ID based on the highest existing ID in the category
     const categoryProducts = products.filter(product => product.category === category);
     const highestId = categoryProducts.reduce((maxId, product) => {
@@ -333,6 +336,9 @@ function editProduct(productId) {
         // Update image paths container
         updateImagePathsContainer(product.images);
 
+        // Update description character count
+        updateDescriptionCharCount();
+
         document.getElementById('itemFormContainer').style.display = 'block'; // Show form for editing
         document.getElementById('overlay').style.display = 'block'; // Show overlay
 
@@ -342,6 +348,25 @@ function editProduct(productId) {
         alert("Produsul nu a fost găsit.");
     }
 }
+
+function updateDescriptionCharCount() {
+    const description = document.getElementById('description').value;
+    const charCount = description.length;
+    const charCountDisplay = document.getElementById('charCountDisplay');
+    const descriptionLabel = document.querySelector('label[for="description"]');
+    if (charCountDisplay) {
+        charCountDisplay.textContent = ` (${charCount}) Char`;
+    } else {
+        const newCharCountDisplay = document.createElement('span');
+        newCharCountDisplay.id = 'charCountDisplay';
+        newCharCountDisplay.textContent = ` (${charCount}) Char`;
+        if (descriptionLabel) {
+            descriptionLabel.appendChild(newCharCountDisplay);
+        }
+    }
+}
+
+document.getElementById('description').addEventListener('input', updateDescriptionCharCount);
 
 function deleteProduct(productId) {
     const confirmation = confirm(`Sigur doriți să ștergeți produsul cu ID: ${productId}?`);
@@ -548,6 +573,12 @@ function updateImagePathsContainer(imagePaths) {
         pathDiv.appendChild(iconContainer);
         imagePathsContainer.appendChild(pathDiv);
     });
+
+    // Update the image count display
+    const imagesLabel = document.querySelector('label[for="images"]');
+    if (imagesLabel) {
+        imagesLabel.textContent = `Imagini (${imagePaths.length})`;
+    }
 
     setupDragAndDrop(); // Reinitialize drag-and-drop events
 }
