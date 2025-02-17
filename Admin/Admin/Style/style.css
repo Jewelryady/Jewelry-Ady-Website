@@ -84,7 +84,7 @@ button:hover {
     max-height: 250px;
     overflow-y: auto;
     padding: 10px;
-    border: 1px solid #ced4da;
+    border: 0px solid #ced4da;
     border-radius: 4px;
     background-color: #ffffff;
 }

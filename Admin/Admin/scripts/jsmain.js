@@ -547,6 +547,8 @@ function updateImagePathsContainer(imagePaths) {
         pathDiv.appendChild(iconContainer);
         imagePathsContainer.appendChild(pathDiv);
     });
+
+    setupDragAndDrop(); // Reinitialize drag-and-drop events
 }
 
 function editImagePath(index) {
@@ -617,5 +619,6 @@ function updateImagePathsOrder() {
     const imagePathsContainer = document.getElementById('imagePathsContainer');
     const imagePaths = Array.from(imagePathsContainer.querySelectorAll('.imagePath .pathText')).map(pathSpan => pathSpan.textContent.trim());
     document.getElementById('images').value = imagePaths.join(', ');
-    saveProductsToJSON(); // Save the updated order to JSON
 }
+
+// ...existing code...
