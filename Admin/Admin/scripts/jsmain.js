@@ -292,7 +292,7 @@ function displayProduct(product) {
     productDiv.className = 'product';
     productDiv.setAttribute('data-id', product.id); // Adăugați un atribut pentru identificare
     productDiv.innerHTML = `
-        <h3>${product.name}</h3>
+        <h3 style="cursor: pointer;" onclick="editProduct('${product.id}')">${product.name}</h3>
         <p>ID: ${product.id}</p>
         <p>Price: ${product.price}</p>
         <p>Description: ${product.description}</p>
