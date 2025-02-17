@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 20px;
     color: #333;
+    scroll-behavior: smooth; /* Smooth scroll */
 }
 
 h1 {
@@ -22,6 +23,11 @@ form {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+form:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hover effect */
 }
 
 label {
@@ -38,6 +44,13 @@ textarea {
     border: 1px solid #ced4da;
     border-radius: 4px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Focus effect */
 }
 
 textarea {
@@ -54,10 +67,12 @@ button {
     font-size: 14px;
     margin-top: 8px;
     width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Hover effect */
 }
 
 .optional {
@@ -67,15 +82,11 @@ button:hover {
     border-radius: 4px;
     background-color: #f9f9f9;
     display: block;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-.optional label {
-    display: block;
-    margin: 8px 0 4px;
-}
-
-.optional input[type="checkbox"] {
-    margin-right: 5px;
+.optional:hover {
+    background-color: #e9e9e9; /* Hover effect */
 }
 
 #categoriesContainer {
@@ -87,6 +98,11 @@ button:hover {
     border: 0px solid #ced4da;
     border-radius: 4px;
     background-color: #ffffff;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+#categoriesContainer:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hover effect */
 }
 
 .categoryButton {
@@ -98,10 +114,12 @@ button:hover {
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
 }
 
 .categoryButton:hover {
     background-color: #218838;
+    transform: scale(1.05); /* Hover effect */
 }
 
 #addCategoryButton {
@@ -109,9 +127,16 @@ button:hover {
     font-size: 12px;
 }
 
-#filterContainer {
-    margin-top: 15px;
-    text-align: center;
+#filterContainer,
+#searchContainer {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+#filterContainer:hover,
+#searchContainer:hover {
+    opacity: 0.8; /* Hover effect */
 }
 
 #filterDropdown {
@@ -119,6 +144,11 @@ button:hover {
     font-size: 12px;
     border-radius: 4px;
     border: 1px solid #ced4da;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+#filterDropdown:focus {
+    border-color: #007bff; /* Focus effect */
 }
 
 #productsContainer {
@@ -137,6 +167,12 @@ button:hover {
     margin: 5px;
     width: calc(30% - 10px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for box-shadow and transform */
+}
+
+.product:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Hover effect */
 }
 
 .product h3 {
@@ -158,7 +194,7 @@ button:hover {
     padding: 5px 8px;
     font-size: 10px;
     margin: 0;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
 }
 
 .editButton {
@@ -171,6 +207,7 @@ button:hover {
 
 .editButton:hover {
     background-color: #0067d6;
+    transform: scale(1.05); /* Hover effect */
 }
 
 .deleteButton {
@@ -179,6 +216,7 @@ button:hover {
 
 .deleteButton:hover {
     background-color: #c82333;
+    transform: scale(1.05); /* Hover effect */
 }
 
 #itemFormContainer {
@@ -196,6 +234,17 @@ button:hover {
     max-width: 500px;
     max-height: 80%;
     overflow-y: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
+}
+
+#itemFormContainer.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Show effect */
+}
+
+#itemFormContainer.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9); /* Hide effect */
 }
 
 #itemFormContainer h2 {
@@ -220,6 +269,16 @@ button:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 999;
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+#overlay.show {
+    display: block;
+    opacity: 1; /* Show effect */
+}
+
+#overlay.hide {
+    opacity: 0; /* Hide effect */
 }
 
 .cancelButton {
@@ -232,10 +291,12 @@ button:hover {
     font-size: 14px;
     margin-top: 5; /* Remove top margin to align horizontally */
     width: 100%; /* Adjust width to fit content */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
 }
 
 .cancelButton:hover {
     background-color: #c82333;
+    transform: scale(1.05); /* Hover effect */
 }
 
 #searchContainer {
@@ -249,6 +310,11 @@ button:hover {
     border-radius: 4px;
     border: 1px solid #ced4da;
     width: 200px;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+#searchInput:focus {
+    border-color: #007bff; /* Focus effect */
 }
 
 .categoryContainer {
@@ -260,6 +326,12 @@ button:hover {
     border-radius: 4px;
     margin: 5px 0;
     background-color: #f8f9fa;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+.categoryContainer:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hover effect */
+    background-color: #e3e3e3;
 }
 
 .deleteCategoryButton {
@@ -271,10 +343,12 @@ button:hover {
     cursor: pointer;
     font-size: 12px;
     margin-left: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
 }
 
 .deleteCategoryButton:hover {
     background-color: #c82333;
+    transform: scale(1.05); /* Hover effect */
 }
 
 .selectedCategory {
@@ -290,6 +364,11 @@ button:hover {
     background-color: #ffffff;
     border-bottom: 1px solid #ced4da;
     color: #333;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+#adminHeader:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hover effect */
 }
 
 #adminHeader h1 {
@@ -309,6 +388,11 @@ button:hover {
     font-size: 12px;
     border-radius: 4px;
     border: 1px solid #ced4da;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+#addCategoryContainer input[type="text"]:focus {
+    border-color: #007bff; /* Focus effect */
 }
 
 #addCategoryContainer button {
@@ -316,9 +400,13 @@ button:hover {
     font-size: 12px;
     border-radius: 4px;
     border: none;
-
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+}
+
+#addCategoryContainer button:hover {
+    transform: scale(1.05); /* Hover effect */
 }
 
 .categoryContainer .categoryName {
@@ -340,6 +428,7 @@ button:hover {
     cursor: pointer;
     white-space: nowrap; /* Prevent text from wrapping */
     width: 100%; /* Ensure both buttons have the same width */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
 }
 
 .categoryContainer .categoryActions .addItemButton {
@@ -349,6 +438,7 @@ button:hover {
 
 .categoryContainer .categoryActions .addItemButton:hover {
     background-color: #218838;
+    transform: scale(1.05); /* Hover effect */
 }
 
 .categoryContainer .categoryActions .deleteCategoryButton {
@@ -358,6 +448,7 @@ button:hover {
 
 .categoryContainer .categoryActions .deleteCategoryButton:hover {
     background-color: #c82333;
+    transform: scale(1.05); /* Hover effect */
 }
 
 .categoryButton, .deleteCategoryButton {
@@ -366,6 +457,7 @@ button:hover {
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
 }
 
 .categoryButton {
@@ -375,6 +467,7 @@ button:hover {
 
 .categoryButton:hover {
     background-color: #218838;
+    transform: scale(1.05); /* Hover effect */
 }
 
 .deleteCategoryButton {
@@ -384,6 +477,7 @@ button:hover {
 
 .deleteCategoryButton:hover {
     background-color: #c82333;
+    transform: scale(1.05); /* Hover effect */
 }
 
 #imagePathsContainer {
@@ -399,6 +493,11 @@ button:hover {
     border-radius: 4px;
     margin-bottom: 5px;
     background-color: #dee7ff;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+.imagePath:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hover effect */
 }
 
 .iconContainer {
@@ -409,26 +508,29 @@ button:hover {
 .deleteIcon {
     cursor: pointer;
     color: #dc3545;
+    transition: color 0.3s ease; /* Smooth transition for color */
 }
 
 .deleteIcon:hover {
-    color: #c82333;
+    color: #c82333; /* Hover effect */
 }
 
 .editIcon {
     cursor: pointer;
     color: #007bff;
+    transition: color 0.3s ease; /* Smooth transition for color */
 }
 
 .editIcon:hover {
-    color: #0056b3;
+    color: #0056b3; /* Hover effect */
 }
 
 .dragIcon {
     cursor: move;
     color: #007bff;
+    transition: color 0.3s ease; /* Smooth transition for color */
 }
 
 .dragIcon:hover {
-    color: #0056b3;
+    color: #0056b3; /* Hover effect */
 }
