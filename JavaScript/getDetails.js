@@ -115,11 +115,11 @@ function addAddToCartEvent(productId) {
         event.preventDefault();
         const sizeSelect = document.querySelector('.size-dropdown select');
         const selectedSize = sizeSelect ? sizeSelect.value : null;
-        if (selectedSize === "Alege mărimea" || selectedSize === null) {
+        if (sizeSelect && sizeSelect.style.display !== 'none' && (selectedSize === "Alege mărimea" || selectedSize === null)) {
             alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
             return;
         }
-        addToCart(productId, parseInt(quantity.value) || 1, selectedSize);
+        addToCart(productId, parseInt(quantity.value) || 1, selectedSize || '');
         showToast();
     });
 }
