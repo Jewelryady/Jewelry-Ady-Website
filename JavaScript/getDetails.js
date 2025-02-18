@@ -113,7 +113,7 @@ function addAddToCartEvent(productId) {
     const linkAdd = document.getElementById("btn_add");
     linkAdd.addEventListener("click", event => {
         event.preventDefault();
-        const sizeSelect = document.querySelector('.size-dropdown');
+        const sizeSelect = document.querySelector('.size-dropdown select');
         const selectedSize = sizeSelect ? sizeSelect.value : null;
         if (selectedSize === "Alege mărimea" || selectedSize === null) {
             alert("Te rugăm să alegi o mărime înainte de a adăuga produsul în coș!");
