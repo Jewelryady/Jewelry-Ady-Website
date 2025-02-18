@@ -3,7 +3,7 @@ window.addEventListener("load", getTrendingProducts);
 
 async function getTrendingProducts() {
     try {
-        const response = await fetch('Admin/Admin/json/products.json');
+        const response = await fetch(`Admin/Admin/json/products.json?cache_bust=${new Date().getTime()}`);
         if (!response.ok) throw new Error('Network response was not ok');
         const products = await response.json();
         const trendingProducts = products.filter(product => product.isTrending);

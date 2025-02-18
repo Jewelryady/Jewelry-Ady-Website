@@ -12,10 +12,11 @@ getData();
 checkCart();
 
 async function getData() {
-    let response = await fetch('Admin/Admin/json/products.json');
+    let response = await fetch(`Admin/Admin/json/products.json?cache_bust=${new Date().getTime()}`);
     let json = await response.json();
     products = json;
 }
+
 function loadCart() {
     let storedCart = localStorage.getItem('cart');
     if (storedCart) {
