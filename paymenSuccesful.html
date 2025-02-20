@@ -114,34 +114,55 @@
             </p>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const orderDetails = localStorage.getItem("orderDetails");
             if (orderDetails) {
                 const generalOrderDetailsContainer = document.getElementById("general-order-details");
                 const orderDetailsContainer = document.getElementById("order-details");
-                const orderDetailsArray = orderDetails.split('\n\n');
-                
-                // Extract general order details
-                const generalDetails = orderDetailsArray.slice(-1)[0];
-                const generalDetailsHtml = generalDetails.replace(/\n/g, '<br>');
-                generalOrderDetailsContainer.innerHTML = generalDetailsHtml;
-
-                // Extract product details
-                const productDetailsHtml = orderDetailsArray.slice(0, -1).map(detail => {
-                    const productContainer = document.createElement('div');
-                    productContainer.classList.add('product-container');
-                    const productDetails = detail.split('\n');
-                    const productImageLine = productDetails.find(line => line.includes('Image:'));
-                    const productImage = productImageLine ? productImageLine.split('Image: ')[1] : '';
-                    const productInfo = productDetails.filter(line => !line.includes('Image:')).join('<br>');
-                    productContainer.innerHTML = `<img src="${productImage}" alt="Product Image"><div>${productInfo}</div>`;
-                    return productContainer.outerHTML;
-                }).join('');
-
-                orderDetailsContainer.innerHTML = productDetailsHtml;
+    
+                const orderLines = orderDetails.split('\n');
+                let generalOrderInfo = "";
+                let productHtml = "";
+    
+                orderLines.forEach((line, index) => {
+                    if (line.startsWith("Total:") || line.startsWith("Order Details:") || line.startsWith("Date")) {
+                        // Dacă este informație generală, o adăugăm în `general-order-details`
+                        generalOrderInfo += line + "<br>";
+                    } else if (line.match(/^\d+\)/)) {
+                        // Dacă este un produs (ex: "1) Product Name | Quantity x2 | Size M")
+                        let productData = line.split('|');
+                        let productName = productData[0].split(') ')[1]; // Extrage numele produsului
+                        let productQuantity = productData[1].trim(); // Cantitatea
+                        let productSize = productData[2].trim(); // Mărimea
+                        
+                        // Verificăm dacă există imaginea produsului pe linia următoare
+                        let productImage = "";
+                        if (orderLines[index + 1] && orderLines[index + 1].includes("Image:")) {
+                            productImage = orderLines[index + 1].split("Image: ")[1].trim();
+                        }
+    
+                        // Construim HTML-ul pentru produs
+                        productHtml += `
+                            <div class="product-container">
+                                <img src="${productImage}" alt="${productName}">
+                                <div>
+                                    <strong>${productName}</strong><br>
+                                    ${productQuantity}<br>
+                                    ${productSize}
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+    
+                // Afișează informațiile generale despre comandă
+                generalOrderDetailsContainer.innerHTML = generalOrderInfo;
+                // Afișează doar produsele în `order-details`
+                orderDetailsContainer.innerHTML = productHtml;
             }
         });
     </script>
+    
     <style>
         .general-order-details {
             border: 1px solid #ccc;
