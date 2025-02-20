@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(categories => {
             const categoriesContainer = document.querySelector('.shop_categories');
             categoriesContainer.innerHTML = `
-                <a href="#" class="categories_link active" productCategory="">Toate Produsele</a>
+                <a href="#" class="categories_link active" productCategory="Toate Produsele">Toate Produsele</a>
             `;
             categories.forEach(category => {
                 const categoryLink = document.createElement('a');
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             // Load selected category from localStorage
-            const savedCategory = localStorage.getItem('selectedCategory') || "";
+            const savedCategory = localStorage.getItem('selectedCategory') || "Toate Produsele";
             markActiveCategory(savedCategory);
             getData(savedCategory);
         })
