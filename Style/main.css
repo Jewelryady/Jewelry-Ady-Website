@@ -1002,7 +1002,7 @@ input[type=number] {
 
 #login .container {
     width: 600px;
-    padding: 30 16px;
+    padding: 40px 16px;
     background-color: white; /* Fundal alb pentru container */
     border-radius: 8px; /* Colțuri rotunjite pentru container */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Umbră pentru container */

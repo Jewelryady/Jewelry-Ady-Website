@@ -123,9 +123,13 @@
                 const orderLines = orderDetails.split('\n');
                 let generalOrderInfo = "";
                 let productHtml = "";
+                let shippingInfoHtml = "";
     
                 orderLines.forEach((line, index) => {
-                    if (line.startsWith("Total:") || line.startsWith("Order Details:") || line.startsWith("Date")) {
+                    if (line.startsWith("Nume:") || line.startsWith("Locatia:") || line.startsWith("Telefon:") || line.startsWith("Telegram:") || line.startsWith("Codul Postal:")) {
+                        // Dacă este informație de livrare, o adăugăm în `general-order-details`
+                        shippingInfoHtml += line + "<br>";
+                    } else if (line.startsWith("Total:") || line.startsWith("Order Details:") || line.startsWith("Date")) {
                         // Dacă este informație generală, o adăugăm în `general-order-details`
                         generalOrderInfo += line + "<br>";
                     } else if (line.match(/^\d+\)/)) {
@@ -155,8 +159,8 @@
                     }
                 });
     
-                // Afișează informațiile generale despre comandă
-                generalOrderDetailsContainer.innerHTML = generalOrderInfo;
+                // Afișează informațiile de livrare
+                generalOrderDetailsContainer.innerHTML = shippingInfoHtml + "<br>" + generalOrderInfo;
                 // Afișează doar produsele în `order-details`
                 orderDetailsContainer.innerHTML = productHtml;
             }
