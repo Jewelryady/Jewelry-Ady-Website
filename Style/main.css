@@ -1163,12 +1163,10 @@ input[type=number] {
     font-size: 14px;
     font-family: Arial, sans-serif;
     color: #333;
-    border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
-    appearance: none; /* Elimină stilul implicit al browserului */
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 /* Stilul când dropdown-ul este activ */
