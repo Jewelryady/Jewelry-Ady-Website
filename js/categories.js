@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     getData(category);
                     // Save selected category to localStorage
                     localStorage.setItem('selectedCategory', category);
+                    // Update URL with selected category
+                    updateURL(category);
                     // Close the sidebar after selecting a category
                     toggleSidebar();
                 });
@@ -37,3 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error('Error fetching categories:', error));
 });
+
+function updateURL(category) {
+    const newURL = `products.html?category=${category}`;
+    window.history.pushState({ path: newURL }, "", newURL);
+}
