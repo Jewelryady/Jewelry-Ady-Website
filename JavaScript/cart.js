@@ -152,11 +152,11 @@ function checkCart() {
 function checkCartPage(total, totalQuantity) {
     if (window.location.pathname.includes("cartPage.html")) {
         if (cart.length == 0) {
-            cartItemsCount.innerHTML = `(0 items)`;
+            cartItemsCount.innerHTML = `(0 Itemi)`;
             document.getElementById("Subtotal").innerHTML = `$0.00`;
             document.getElementById("total_order").innerHTML = `$0.00`;
         } else {
-            cartItemsCount.innerHTML = `(${totalQuantity} items)`;
+            cartItemsCount.innerHTML = `(${totalQuantity} Itemi)`;
             displayInCartPage(total);
         }
     }
@@ -198,7 +198,7 @@ function checkOut() {
     let formattedDate = `${currentDate.toLocaleDateString()} | ${currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}`;
 
     // Crearea mesajului de comandă
-    let orderDetails = `Order Details:\nItems:\nDate ${formattedDate}\n\n`;
+    let orderDetails = `Order Details:\nItemi:\nDate ${formattedDate}\n\n`;
     cart.forEach((product, index) => {
         orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity} | Size ${product.size}\n`;
     });
