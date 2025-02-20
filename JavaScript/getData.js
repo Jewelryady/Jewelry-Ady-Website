@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let categoryFromURL = new URLSearchParams(window.location.search).get("category");
 
     if (!categoryFromURL) {
-        categoryFromURL = "Inele"; // Setăm categoria implicită
+        categoryFromURL = "Toate"; // Setăm categoria implicită
         updateURL(categoryFromURL);
     }
 
@@ -18,7 +18,10 @@ async function getData(category = "") {
     try {
         const response = await fetch(`Admin/Admin/json/products.json?cache_bust=${new Date().getTime()}`);
         const products = await response.json();
-        const filteredProducts = category ? products.filter(product => product.category === category) : products;
+
+        // Dacă categoria este "Toate Produsele", afișăm toate produsele
+        const filteredProducts = category && category !== "Toate" ? products.filter(product => product.category === category) : products;
+        
         displayProducts(filteredProducts, category);
     } catch (error) {
         console.error("Eroare la încărcarea datelor:", error);
@@ -123,8 +126,10 @@ function getCategory(e) {
     if (category) {
         localStorage.setItem("selectedCategory", category);
         updateURL(category);
+        markActiveCategory(category); // Adăugăm această linie
     }
 }
+
 
 function updateURL(category) {
     const newURL = `products.html?category=${category}`;
