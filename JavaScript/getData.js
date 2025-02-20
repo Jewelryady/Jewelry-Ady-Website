@@ -2,8 +2,14 @@ let productsContainer = [];
 const linkName = document.getElementsByClassName("categories_link");
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedCategory = localStorage.getItem("selectedCategory") || "";
-    const categoryFromURL = new URLSearchParams(window.location.search).get("category") || savedCategory;
+    let categoryFromURL = new URLSearchParams(window.location.search).get("category");
+
+    if (!categoryFromURL) {
+        categoryFromURL = "Inele"; // Setăm categoria implicită
+        updateURL(categoryFromURL);
+    }
+
+    localStorage.setItem("selectedCategory", categoryFromURL);
     markActiveCategory(categoryFromURL);
     getData(categoryFromURL);
 });
@@ -37,7 +43,6 @@ function displayProducts(products, category = "") {
 
     productCountSpan.textContent = `x${products.length}`;
     content.innerHTML = products.length === 0 ? `<p>Niciun produs nu a fost găsit în această categorie.</p>` : generateProductCards(products);
-
     addCartEventListeners();
 }
 
@@ -114,27 +119,23 @@ function showCart() {
 }
 
 function getCategory(e) {
-    const category = e.target.getAttribute('productCategory');
-    setActiveLink(e.target);
-    localStorage.setItem("selectedCategory", category);
-    getData(category);
-    if (window.innerWidth <= 768) {
-        toggleSidebar();
+    const category = e.target.getAttribute("productCategory");
+    if (category) {
+        localStorage.setItem("selectedCategory", category);
+        updateURL(category);
     }
 }
 
-function setActiveLink(activeLink) {
-    Array.from(linkName).forEach(link => {
-        link.classList.remove('active');
-    });
-    activeLink.classList.add('active');
+function updateURL(category) {
+    const newURL = `products.html?category=${category}`;
+    window.history.pushState({ path: newURL }, "", newURL);
+    getData(category);
 }
 
-Array.from(linkName).forEach(element => {
-    element.addEventListener('click', getCategory);
+Array.from(document.getElementsByClassName("categories_link")).forEach(element => {
+    element.addEventListener("click", getCategory);
 });
 
 function displayDetails(productId) {
     window.location.href = `ProductDetails.html?productId=${productId}`;
 }
-
