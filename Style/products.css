@@ -310,3 +310,27 @@ main .container {
         display: none;
     }
 }
+
+/* Add a scroll area for the category buttons if there are many elements */
+.shop_categories {
+    max-height: 400px; /* Set a maximum height for the category list */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Add some padding to the right for better appearance */
+}
+
+/* Add custom scrollbar styles */
+.shop_categories::-webkit-scrollbar {
+    width: 8px;
+}
+
+.shop_categories::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light grey background */
+}
+
+.shop_categories::-webkit-scrollbar-thumb {
+    background: #888; /* Medium grey thumb */
+}
+
+.shop_categories::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker grey on hover */
+}
