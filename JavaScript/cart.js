@@ -200,7 +200,7 @@ function checkOut() {
     // Crearea mesajului de comandă
     let orderDetails = `Order Details:\nItemi:\nDate ${formattedDate}\n\n`;
     cart.forEach((product, index) => {
-        orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity} | Size ${product.size}\n`;
+        orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity} | Size ${product.size}\nImage: ${product.images[0]}\n\n`;
     });
 
     let totalOrderPrice = `${updateTotalPrice().toFixed(2)} MDL`;
@@ -210,6 +210,9 @@ function checkOut() {
     orderDetails += `Telefon: ${shippingInfo.Telefon}\n`;
     orderDetails += `Telegram: ${shippingInfo.Telegram}\n`;
     orderDetails += `Codul Postal: ${shippingInfo.CodulPostal}`;
+
+    // Save order details to localStorage
+    localStorage.setItem("orderDetails", orderDetails);
 
     // Trimiterea mesajului prin Telegram API
     const telegramApiUrls = [

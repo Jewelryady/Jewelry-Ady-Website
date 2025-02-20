@@ -57,6 +57,15 @@
                     nostru. Fiți pe fază!</p>
             </div>
 
+            <div id="general-order-details" class="general-order-details">
+                <!-- General order details will be populated here -->
+            </div>
+
+            
+            <div id="order-details" class="order-details">
+                <!-- Product details will be populated here -->
+            </div>
+           
             <div id="form">
                 <div class="submit">
                     <button id="btn-login" onclick="window.location.href='index.html'">Întoarce-te în magazin.</button>
@@ -104,6 +113,68 @@
                 © 2025 Toate drepturile rezervate.
             </p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const orderDetails = localStorage.getItem("orderDetails");
+            if (orderDetails) {
+                const generalOrderDetailsContainer = document.getElementById("general-order-details");
+                const orderDetailsContainer = document.getElementById("order-details");
+                const orderDetailsArray = orderDetails.split('\n\n');
+                
+                // Extract general order details
+                const generalDetails = orderDetailsArray.slice(-1)[0];
+                const generalDetailsHtml = generalDetails.replace(/\n/g, '<br>');
+                generalOrderDetailsContainer.innerHTML = generalDetailsHtml;
+
+                // Extract product details
+                const productDetailsHtml = orderDetailsArray.slice(0, -1).map(detail => {
+                    const productContainer = document.createElement('div');
+                    productContainer.classList.add('product-container');
+                    const productDetails = detail.split('\n');
+                    const productImageLine = productDetails.find(line => line.includes('Image:'));
+                    const productImage = productImageLine ? productImageLine.split('Image: ')[1] : '';
+                    const productInfo = productDetails.filter(line => !line.includes('Image:')).join('<br>');
+                    productContainer.innerHTML = `<img src="${productImage}" alt="Product Image"><div>${productInfo}</div>`;
+                    return productContainer.outerHTML;
+                }).join('');
+
+                orderDetailsContainer.innerHTML = productDetailsHtml;
+            }
+        });
+    </script>
+    <style>
+        .general-order-details {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .order-details {
+            display: flex;
+            flex-direction: column; /* Change to column for vertical alignment */
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .product-container img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
 </body>
 
 </html>
