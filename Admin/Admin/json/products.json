@@ -385,7 +385,14 @@
         ],
         "category": "Inele",
         "description": "buna sara bussioanka",
-        "isTrending": true
+        "isTrending": true,
+        "product_sizes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+        ]
     },
     {
         "id": "1.11",
@@ -397,6 +404,13 @@
         "category": "Inele",
         "description": "dfghn",
         "isTrending": true,
-        "isNew": true
+        "isNew": true,
+        "product_sizes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+        ]
     }
 ]
