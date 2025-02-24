@@ -73,6 +73,7 @@ function displayProducts(products, category = "") {
         productCard.className = 'product-card';
         productCard.setAttribute('data-id', product.id);
 
+        
         productCard.innerHTML = `
             <div class="card-img">
                 ${product.old_price ? `<div class="sale-flag">Reducere</div>` : ''}
