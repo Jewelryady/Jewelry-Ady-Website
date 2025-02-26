@@ -2,7 +2,7 @@
     {
         "id": "1.1",
         "name": "Inel Pandora cu Inim\u0103 Ro\u0219ie",
-        "price": "799.00 MDL",
+        "price": "899.00 MDL",
         "images": [
             "images/Inele/Inel_1.png",
             "images/Inele/IMG_1097.png",
@@ -11,14 +11,13 @@
         "category": "Inele",
         "description": "Inel Pandora cu inim\u0103 ro\u0219ie,elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
         "isTrending": true,
-        "old_price": "1100.00 MDL",
+        "old_price": "1200.00 MDL",
         "product_sizes": [
             "15",
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
@@ -36,14 +35,13 @@
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
         "id": "1.3",
         "name": "Inel Pandora cu inim\u0103 alb\u0103",
-        "price": "799.00 MDL",
+        "price": "899.00 MDL",
         "images": [
             "images/Inele/Inel_2.png",
             "images/Inele/pandor.png",
@@ -51,14 +49,13 @@
         ],
         "category": "Inele",
         "description": "Inel Pandora cu inim\u0103 alb\u0103,elegant din argint S925, cu un design clasic \u0219i rafinat, potrivit pentru orice ocazie. Este ideal at\u00e2t pentru a fi purtat de oricine, c\u00e2t \u0219i pentru a fi oferit cadou persoanei dragi.",
-        "old_price": "1100.00 MDL",
+        "old_price": "1200.00 MDL",
         "product_sizes": [
             "15",
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
@@ -75,8 +72,7 @@
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
@@ -94,8 +90,7 @@
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
@@ -206,8 +201,8 @@
     },
     {
         "id": "5.1",
-        "name": "Cutie Pandora",
-        "price": "230.00 MDL",
+        "name": "Cutie cu fundi\u021b\u0103",
+        "price": "199.00 MDL",
         "images": [
             "images/Cutii/cutie_1.png"
         ],
@@ -304,8 +299,7 @@
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
@@ -323,8 +317,7 @@
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
@@ -343,8 +336,7 @@
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
@@ -386,32 +378,31 @@
     },
     {
         "id": "1.9",
-        "name": "Inel Fundi\u021b\u0103 Alb\u0103",
+        "name": "Inel Fundita",
         "price": "799.00 MDL",
         "images": [
             "images/Inele/inelfundita.png"
         ],
         "category": "Inele",
-        "description": "Inel cu fundi\u021b\u0103 alb\u0103  este realizat din argint 925 \u0219i prezint\u0103 dou\u0103 pietre din zirconiu cubic roz \u00een form\u0103 de inim\u0103, form\u00e2nd o fund\u0103 delicat\u0103. Designul simbolizeaz\u0103 lumina \u0219i festivitatea, ad\u0103ug\u00e2nd o not\u0103 de rafinament oric\u0103rei \u021binute.",
+        "description": "buna sara bussioanka",
         "isTrending": true,
         "product_sizes": [
             "15",
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
     },
     {
         "id": "1.11",
-        "name": "Inel Fundi\u021b\u0103 Ro\u0219ie",
+        "name": "Inel fundita rosie",
         "price": "799.00 MDL",
         "images": [
             "images/Inele/inelbant.png"
         ],
         "category": "Inele",
-        "description": "Inel cu fundi\u021b\u0103 ro\u0219ie  este realizat din argint 925 \u0219i prezint\u0103 dou\u0103 pietre din zirconiu cubic roz \u00een form\u0103 de inim\u0103, form\u00e2nd o fund\u0103 delicat\u0103. Designul simbolizeaz\u0103 lumina \u0219i festivitatea, ad\u0103ug\u00e2nd o not\u0103 de rafinament oric\u0103rei \u021binute.",
+        "description": "dfghn",
         "isTrending": true,
         "isNew": true,
         "product_sizes": [
@@ -419,8 +410,17 @@
             "16",
             "17",
             "18",
-            "19",
-            "20"
+            "19"
         ]
+    },
+    {
+        "id": "5.4",
+        "name": "Cutie cu fundi\u021b\u0103",
+        "price": "199.00 MDL",
+        "images": [
+            "images/Cutii/cutieee.jpg"
+        ],
+        "category": "Cutii",
+        "description": ""
     }
 ]
