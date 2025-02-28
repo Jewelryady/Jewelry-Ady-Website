@@ -188,7 +188,7 @@ function checkOut() {
     // Validare informații utilizator
     for (let key in shippingInfo) {
         if (!shippingInfo[key]) {
-            alert(`Please fill in the ${key} field.`);
+            alert(`Vă rugăm să completați câmpul ${key}.`);
             return;
         }
     }
@@ -198,9 +198,9 @@ function checkOut() {
     let formattedDate = `${currentDate.toLocaleDateString()} | ${currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}`;
 
     // Crearea mesajului de comandă
-    let orderDetails = `Order Details:\nItemi:\nDate ${formattedDate}\n\n`;
+    let orderDetails = `Detalii Comandă:\nItemi:\nData ${formattedDate}\n\n`;
     cart.forEach((product, index) => {
-        orderDetails += `${index + 1}) ${product.name} | Quantity x${product.quantity} | Size ${product.size}\nImage: ${product.images[0]}\n\n`;
+        orderDetails += `${index + 1}) ${product.name} | Cantitate x${product.quantity} | Mărime ${product.size}\nImagine: ${product.images[0]}\n\n`;
     });
 
     let totalOrderPrice = `${updateTotalPrice().toFixed(2)} MDL`;
@@ -234,7 +234,7 @@ function checkOut() {
             }
         })
         .catch(error => {
-            console.error("Error sending order details:", error);
+            console.error("Eroare la trimiterea detaliilor comenzii:", error);
             // Redirecționează către pagina de eșec
             window.location.href = "paymenFailed.html";
         });

@@ -146,11 +146,11 @@
                     if (line.startsWith("Nume:") || line.startsWith("Locatia:") || line.startsWith("Telefon:") || line.startsWith("Telegram:") || line.startsWith("Codul Postal:")) {
                         // Dacă este informație de livrare, o adăugăm în `general-order-details`
                         shippingInfoHtml += line + "<br>";
-                    } else if (line.startsWith("Total:") || line.startsWith("Order Details:") || line.startsWith("Date")) {
+                    } else if (line.startsWith("Total:") || line.startsWith("Detalii Comandă:") || line.startsWith("Data")) {
                         // Dacă este informație generală, o adăugăm în `general-order-details`
                         generalOrderInfo += line + "<br>";
                     } else if (line.match(/^\d+\)/)) {
-                        // Dacă este un produs (ex: "1) Product Name | Quantity x2 | Size M")
+                        // Dacă este un produs (ex: "1) Product Name | Cantitate x2 | Mărime M")
                         let productData = line.split('|');
                         let productName = productData[0].split(') ')[1]; // Extrage numele produsului
                         let productQuantity = productData[1].trim(); // Cantitatea
@@ -158,14 +158,14 @@
                         
                         // Verificăm dacă există imaginea produsului pe linia următoare
                         let productImage = "";
-                        if (orderLines[index + 1] && orderLines[index + 1].includes("Image:")) {
-                            productImage = orderLines[index + 1].split("Image: ")[1].trim();
+                        if (orderLines[index + 1] && orderLines[index + 1].includes("Imagine:")) {
+                            productImage = orderLines[index + 1].split("Imagine: ")[1].trim();
                         }
     
                         // Construim HTML-ul pentru produs
                         productHtml += `
                             <div class="product-container">
-                                <img src="${productImage}" alt="${productName}">
+                                <img src="${productImage}" alt="${productName}" onerror="this.src='images/default_image.jpg';">
                                 <div>
                                     <strong>${productName}</strong><br>
                                     ${productQuantity}<br>
