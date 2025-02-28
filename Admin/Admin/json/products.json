@@ -419,5 +419,15 @@
             "19",
             "20"
         ]
+    },
+    {
+        "id": "5.4",
+        "name": "cutie",
+        "price": "249.00 MDL",
+        "images": [
+            "images/Cutii/cutieee.jpg"
+        ],
+        "category": "Cutii",
+        "description": ""
     }
 ]
