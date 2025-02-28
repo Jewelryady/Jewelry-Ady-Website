@@ -139,7 +139,8 @@
             "images/Bratari/Bratara_3.png"
         ],
         "category": "Bratari",
-        "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi)."
+        "description": "Br\u0103\u021bara Tennis este o bijuterie cunoscut\u0103 pentru designul s\u0103u clasic \u0219i str\u0103lucirea sa deosebit\u0103.Aceasta este format\u0103 dintr-un \u0219ir continuu de pietre zirconiu.Aceast\u0103 br\u0103\u021bar\u0103 este unisex(pentru fete \u0219i pentru b\u0103ie\u021bi).",
+        "isTrending": true
     },
     {
         "id": "3.8",
@@ -393,7 +394,6 @@
         ],
         "category": "Inele",
         "description": "Inel cu fundi\u021b\u0103 ro\u0219ie este realizat din argint 925 \u0219i prezint\u0103 dou\u0103 pietre din zirconiu cubic roz \u00een form\u0103 de inim\u0103, form\u00e2nd o fund\u0103 delicat\u0103. Designul simbolizeaz\u0103 lumina \u0219i festivitatea, ad\u0103ug\u00e2nd o not\u0103 de rafinament oric\u0103rei \u021binute.",
-        "isTrending": true,
         "old_price": "1049.00 MDL",
         "product_sizes": [
             "15",
@@ -445,6 +445,6 @@
         ],
         "category": "Cercei",
         "description": "Cercei Rotunzi Inima Roz efectuat din Argint Proba S925.Ei sunt adesea considera\u021bi un cadou simbolic pentru ocazii speciale,cum ar fi anivers\u0103rile,zi de na\u0219tere.",
-        "isNew": true
+        "isTrending": true
     }
 ]
