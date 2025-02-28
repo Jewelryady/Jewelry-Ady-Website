@@ -98,7 +98,7 @@
     {
         "id": "2.1",
         "name": "Colier Str\u0103lucitor cu Inim\u0103 Alb\u0103",
-        "price": "630.00 MDL",
+        "price": "949.00 MDL",
         "images": [
             "images/Coliere/Colier_1.jpg",
             "images/Coliere/colier22.jpg"
@@ -109,7 +109,7 @@
     {
         "id": "2.2",
         "name": "Colier str\u0103lucitor cu Inim\u0103 Ro\u0219ie",
-        "price": "630.00 MDL",
+        "price": "949.00 MDL",
         "images": [
             "images/Coliere/Colier_2.jpg",
             "images/Coliere/kolier.jpg"
@@ -130,7 +130,7 @@
     {
         "id": "3.2",
         "name": "Br\u0103\u021bar\u0103 Tennis",
-        "price": "449.00 MDL",
+        "price": "320.00 MDL",
         "images": [
             "images/Bratari/Bratara_3.png"
         ],
@@ -154,7 +154,7 @@
     {
         "id": "4.1",
         "name": "Cercei \u00een Form\u0103 de Inim\u0103",
-        "price": "530.00 MDL",
+        "price": "780.00 MDL",
         "images": [
             "images/Cercei/cercei_1.jpg"
         ],
@@ -164,7 +164,7 @@
     {
         "id": "4.2",
         "name": "Cercei cu \u0218urub cu Inimior\u0103 str\u0103lucitoare infinit",
-        "price": "499.00 MDL",
+        "price": "530.00 MDL",
         "images": [
             "images/Cercei/cercei_2.png"
         ],
@@ -184,7 +184,7 @@
     {
         "id": "4.4",
         "name": "Cercei cu Form\u0103 Inim\u0103 roz",
-        "price": "510.00 MDL",
+        "price": "780.00 MDL",
         "images": [
             "images/Cercei/cercei_4.png"
         ],
@@ -347,7 +347,7 @@
     {
         "id": "3.3",
         "name": "Br\u0103\u021bar\u0103 Cartier",
-        "price": "456.00 MDL",
+        "price": "329.00 MDL",
         "images": [
             "images/Bratari/00.jpg"
         ],
@@ -419,5 +419,15 @@
             "19",
             "20"
         ]
+    },
+    {
+        "id": "5.4",
+        "name": "cutie",
+        "price": "249.00 MDL",
+        "images": [
+            "images/Cutii/cutieee.jpg"
+        ],
+        "category": "Cutii",
+        "description": ""
     }
 ]
