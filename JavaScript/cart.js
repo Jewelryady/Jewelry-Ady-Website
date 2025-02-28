@@ -66,7 +66,7 @@ function addCartToHTML() {
                         <h4 class="product_name">${product.name}</h4>
                         <span class="product_price">${price.toFixed(2)} MDL</span>
                         <br> <!-- Adăugăm un break pentru a muta mărimea pe un rând nou -->
-                        ${product.size ? `<span class="product_size">Mărime: ${product.size}</span>` : ''} <!-- Afișăm mărimea doar dacă există -->
+                        ${product.size && product.size !== "Mărime necunoscută" ? `<span class="product_size">Mărime: ${product.size}</span>` : ''} <!-- Afișăm mărimea doar dacă există -->
                     </div>
                     <div class="remove_product" onclick="removeFromCart(${index})">
                         <ion-icon name="close-outline"></ion-icon>
@@ -88,8 +88,6 @@ function addCartToHTML() {
         element.innerHTML = content;
     });
 }
-
-
 
 function removeFromCart(index) {
     cart.splice(index, 1);
@@ -200,7 +198,7 @@ function checkOut() {
     // Crearea mesajului de comandă
     let orderDetails = `Detalii Comandă:\nItemi:\nData ${formattedDate}\n\n`;
     cart.forEach((product, index) => {
-        orderDetails += `${index + 1}) ${product.name} | Cantitate x${product.quantity} | Mărime ${product.size}\nImagine: ${product.images[0]}\n\n`;
+        orderDetails += `${index + 1}) ${product.name} | Cantitate x${product.quantity} | ${product.size && product.size !== "Mărime necunoscută" ? `Mărime ${product.size}` : ''}\nImagine: ${product.images[0]}\n\n`;
     });
 
     let totalOrderPrice = `${updateTotalPrice().toFixed(2)} MDL`;
