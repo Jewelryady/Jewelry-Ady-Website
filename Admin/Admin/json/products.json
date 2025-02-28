@@ -80,42 +80,46 @@
     {
         "id": "1.5",
         "name": "Inel cu Form\u0103 P\u0103trat\u0103",
-        "price": "710.00 MDL",
+        "price": "749.00 MDL",
         "images": [
             "images/Inele/Inel_4.png",
             "images/Inele/inelpatrat.jpg"
         ],
         "category": "Inele",
         "description": "Inel elegant din argint S925,cu o piatr\u0103 central\u0103 p\u0103trat\u0103,inconjurat\u0103 de pietre mai mici str\u0103lucitoare.Modelul dat este potrivit pentru ocazii speciale ,precum logodne sau anivers\u0103ri.",
+        "old_price": "989.00 MDL",
         "product_sizes": [
             "15",
             "16",
             "17",
             "18",
-            "19"
+            "19",
+            "20"
         ]
     },
     {
         "id": "2.1",
         "name": "Colier Str\u0103lucitor cu Inim\u0103 Alb\u0103",
-        "price": "949.00 MDL",
+        "price": "911.00 MDL",
         "images": [
             "images/Coliere/Colier_1.jpg",
             "images/Coliere/colier22.jpg"
         ],
         "category": "Coliere",
-        "description": "Colierul cu inim\u0103 este un simbol al iubirii,elegan\u021bei.Acesta este realizat din argint proba S925.Este decorat cu pietre str\u0103lucitoare,zirconiu.Ideal pentru persoana drag\u0103,sau ca o bijuterie sentimental\u0103."
+        "description": "Colierul cu inim\u0103 este un simbol al iubirii,elegan\u021bei.Acesta este realizat din argint proba S925.Este decorat cu pietre str\u0103lucitoare,zirconiu.Ideal pentru persoana drag\u0103,sau ca o bijuterie sentimental\u0103.",
+        "old_price": "1138.00 MDL"
     },
     {
         "id": "2.2",
         "name": "Colier str\u0103lucitor cu Inim\u0103 Ro\u0219ie",
-        "price": "949.00 MDL",
+        "price": "911.00 MDL",
         "images": [
             "images/Coliere/Colier_2.jpg",
             "images/Coliere/kolier.jpg"
         ],
         "category": "Coliere",
-        "description": "Colierul cu inim\u0103 este un simbol al iubirii,elegan\u021bei.Acesta este realizat din argint proba S925.Este decorat cu pietre str\u0103lucitoare,zirconiu.Ideal pentru persoana drag\u0103,sau ca o bijuterie sentimental\u0103."
+        "description": "Colierul cu inim\u0103 este un simbol al iubirii,elegan\u021bei.Acesta este realizat din argint proba S925.Este decorat cu pietre str\u0103lucitoare,zirconiu.Ideal pentru persoana drag\u0103,sau ca o bijuterie sentimental\u0103.",
+        "old_price": "1138.00 MDL"
     },
     {
         "id": "3.1",
