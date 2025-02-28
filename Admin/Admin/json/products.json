@@ -235,17 +235,6 @@
         "isNew": true
     },
     {
-        "id": "5.3",
-        "name": "Pachet Pandora",
-        "price": "190.00 MDL",
-        "images": [
-            "images/Cutii/cutie pandora.jpg"
-        ],
-        "category": "Cutii",
-        "description": "Pachet Pandora",
-        "isTrending": true
-    },
-    {
         "id": "6.1",
         "name": "Br\u0103\u021bar\u0103 pentru B\u0103ie\u021bi",
         "price": "410.00 MDL",
@@ -429,5 +418,16 @@
         ],
         "category": "Cutii",
         "description": ""
+    },
+    {
+        "id": "5.5",
+        "name": "Pachet Pandora",
+        "price": "190.00 MDL",
+        "images": [
+            "images/Cutii/cutpand.png"
+        ],
+        "category": "Cutii",
+        "description": "Pachet Pandora",
+        "isTrending": true
     }
 ]
