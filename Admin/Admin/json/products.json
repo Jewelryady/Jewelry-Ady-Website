@@ -202,16 +202,6 @@
         "description": "Cercei Rotunzi sunt o bijuterie ce combin\u0103 pasiunea inimii.Ace\u0219ti cercei sunt realiza\u021bi din argint proba S925.Bucur\u0103 persoana drag\u0103 \u0219i iubit\u0103 cu a\u0219a cercei dr\u0103gu\u021bi."
     },
     {
-        "id": "5.1",
-        "name": "Cutie Pandora",
-        "price": "230.00 MDL",
-        "images": [
-            "images/Cutii/cutie_1.png"
-        ],
-        "category": "Cutii",
-        "description": "Cutie Pandora"
-    },
-    {
         "id": "5.2",
         "name": "Cutie Pandora 2",
         "price": "250.00 MDL",
@@ -422,8 +412,18 @@
     },
     {
         "id": "5.4",
-        "name": "cutie",
-        "price": "249.00 MDL",
+        "name": "Cutie cu Fundi\u021b\u0103",
+        "price": "149.00 MDL",
+        "images": [
+            "images/Cutii/cutie_1.png"
+        ],
+        "category": "Cutii",
+        "description": ""
+    },
+    {
+        "id": "5.5",
+        "name": "Cutie cu Fundi\u021b\u0103",
+        "price": "149.00 MDL",
         "images": [
             "images/Cutii/cutieee.jpg"
         ],
