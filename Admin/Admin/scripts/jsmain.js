@@ -1,14 +1,14 @@
-let categories = [];
-let products = []; // Lista de produse
-let productCounter = 1; // Counter for unique product IDs
-let categoryCounter = 1; // Counter for unique category IDs
-
 document.addEventListener("DOMContentLoaded", () => {
     loadCategories();
     loadProducts();
     setupSearch();
     setupDragAndDrop(); // Initialize drag-and-drop functionality
 });
+
+let categories = [];
+let products = []; // Lista de produse
+let productCounter = 1; // Counter for unique product IDs
+let categoryCounter = 1; // Counter for unique category IDs
 
 function addCategory() {
     const categoryName = document.getElementById('categoryName').value.trim();
@@ -652,5 +652,3 @@ function updateImagePathsOrder() {
     const imagePaths = Array.from(imagePathsContainer.querySelectorAll('.imagePath .pathText')).map(pathSpan => pathSpan.textContent.trim());
     document.getElementById('images').value = imagePaths.join(', ');
 }
-
-// ...existing code...
